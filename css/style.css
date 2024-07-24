@@ -20,6 +20,10 @@ body {
 		  background: linear-gradient(to bottom, #000000 0%, #5788fe 100%);
 }
 
+a,title,li
+{
+	color:white;
+}
 canvas, header, footer
 {
 	position:absolute;
