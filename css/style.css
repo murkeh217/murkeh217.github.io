@@ -11,15 +11,6 @@ body {
   -webkit-font-smoothing: antialiased;
   font-size: 15px;
   color: #585757;
-}
-
-canvas
-{
-	position:absolute;
-	z-index:-217;
-}
-		html,
-		body {
 		  margin: 0;
 		  overflow: hidden;
 		  width: 100%;
@@ -27,7 +18,13 @@ canvas
 		  cursor: default;
 		  background: black;
 		  background: linear-gradient(to bottom, #000000 0%, #5788fe 100%);
-		}
+}
+
+canvas
+{
+	position:absolute;
+	z-index:-217;
+}
 		
 		.filter {
 		  width: 100%;
@@ -39,6 +36,8 @@ canvas
 		  animation: colorChange 30s ease-in-out infinite;
 		  animation-fill-mode: both;
 		  mix-blend-mode: overlay;
+	z-index:-217;
+
 		}
 		
 		@keyframes colorChange {
@@ -62,6 +61,8 @@ canvas
 		  background-size: 1000px 250px;
 		  background-repeat: repeat-x;
 		  background-position: center bottom;
+	z-index:-217;
+
 		}
 p, .paragraph {
   font-weight: 400;
