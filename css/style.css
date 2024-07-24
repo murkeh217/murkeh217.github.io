@@ -20,7 +20,7 @@ body {
 		  background: linear-gradient(to bottom, #000000 0%, #5788fe 100%);
 }
 
-canvas
+canvas, header, footer
 {
 	position:absolute;
 	z-index:-217;
