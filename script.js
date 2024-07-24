@@ -8,7 +8,7 @@ Dot.prototype.draw = function() {
 	ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
 	ctx.closePath();
 	ctx.fill();
-
+/*
  // Set the text properties
   ctx.font = '${Math.floor(Math.random() * 46) + 25}px Arial';
   ctx.fillStyle = 'white';
@@ -17,6 +17,7 @@ Dot.prototype.draw = function() {
 
   // Draw the text in the center of the circle
   ctx.fillText(text, this.x, this.y);
+  */
 }
 
 function Star(id, x, y){
@@ -204,47 +205,11 @@ function drawIfMouseMoving(){
 function degToRad(deg) {
 	return deg * (Math.PI / 180);
 }
+
+
 /*=========================================================================================================================================================================
 ===========================================================================================================================================================================
 */
-	document.addEventListener('DOMContentLoaded', function () {
-    let items = document.querySelectorAll('.slider .item');
-    let next = document.getElementById('next');
-    let prev = document.getElementById('prev');
-    
-    let active = 3;
-    function loadShow() {
-        let stt = 0;
-        items[active].style.transform = `none`;
-        items[active].style.zIndex = 1;
-        items[active].style.filter = 'none';
-        items[active].style.opacity = 1;
-        for (let i = active + 1; i < items.length; i++) {
-            stt++;
-            items[i].style.transform = `translateX(${120 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(-1deg)`;
-            items[i].style.zIndex = -stt;
-            items[i].style.filter = 'blur(5px)';
-            items[i].style.opacity = stt > 2 ? 0 : 0.6;
-        }
-        stt = 0;
-        for (let i = active - 1; i >= 0; i--) {
-            stt++;
-            items[i].style.transform = `translateX(${-120 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(1deg)`;
-            items[i].style.zIndex = -stt;
-            items[i].style.filter = 'blur(5px)';
-            items[i].style.opacity = stt > 2 ? 0 : 0.6;
-        }
-    }
-    
-    loadShow();
-    
-    next.addEventListener('click', function () {
-        active = active + 1 < items.length ? active + 1 : active;
-        loadShow();
-    });
-    
-    prev.addEventListener('click', function () {
-        active = active - 1 >= 0 ? active - 1 : active;
-        loadShow();
-    });
-});
+
+
+
