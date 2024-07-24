@@ -22,9 +22,14 @@ body {
 
 a,title,li
 {
-	color:white;
+	all: unset;
+	color:white !important;
 }
-canvas, header, footer
+canvas,
+{
+z-index:101;
+}
+header, footer
 {
 	position:absolute;
 	z-index:-217;
