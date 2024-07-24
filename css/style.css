@@ -20,7 +20,7 @@ body {
 		  background: linear-gradient(to bottom, #000000 0%, #5788fe 100%);
 }
 
-a,title,li
+a,title,li,head
 {
 	all: unset;
 	color:white !important;
