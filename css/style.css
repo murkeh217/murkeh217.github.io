@@ -12,6 +12,12 @@ body {
   font-size: 15px;
   color: #585757;
 }
+
+canvas
+{
+	position:absolute;
+	z-index:-217;
+}
 		html,
 		body {
 		  margin: 0;
