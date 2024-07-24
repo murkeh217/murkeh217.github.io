@@ -1,201 +1,78 @@
 <!DOCTYPE html>
-<html lang="zxx">
-
+<html>
 <head>
-    <meta charset="utf-8">
     <title>Murtaza Kanorwala | Portfolio</title>
-
-    <!-- mobile responsive meta -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!-- theme meta -->
-    <meta name="theme-name" content="parsa" />
-
-    <!-- ** Plugins Needed for the Project ** -->
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-    <!-- slick slider -->
-    <link rel="stylesheet" href="plugins/slick/slick.css">
-    <!-- themefy-icon -->
-    <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
-
-    <!-- Main Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-
-    <!--Favicon-->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+    <script src="script.js" defer></script>
 </head>
-
 <body>
-
-<canvas id="canvas"></canvas>
-<div class="landscape">
-<div class="filter">
-
-    <header class="navigation">
-
-        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="index.html"><h3>Murtaza Kanorwala'<s></s> Portfolio</h3></a>
-            <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navogation"
-                    aria-controls="navogation" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-    </header>
-    <section class="section">
-        <div class="container">
-            <div class="row masonry-container">
-                <div class="col-lg-4 col-sm-6 mb-5">
-                    <article class="text-center">
-                        <img class="img-fluid mb-4" src="images/projects/post-1.gif" alt="post-thumb">
-                        <h4 class="title-border">2.5D Fighting Game</h4>
-                    </article>
-                    <ul>
-                        <li>Hit/Hurt boxes</li>
-                        <li>Asset management</li>
-                        <li>Singleton</li>
-                        <li>Post-Processing</li>
-                    </ul>
-                    <article class="text-center">
-                        <a href="https://github.com/murkeh217/2.5D-Fighting-Game" target="_blank" class="btn btn-transparent">GitHub</a>
-                    </article>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-5">
-                    <article class="text-center">
-                        <img class="img-fluid mb-4" src="images/projects/post-3.gif" alt="post-thumb">
-                        <h4 class="title-border">3D Battle Tanks</h4>
-                    </article>
-                    <ul>
-                        <li>Scriptable Objects</li>
-                        <li>Singleton</li>
-                        <li>Observer</li>
-                        <li>State Machine Behaviour</li>
-                        <li>AI</li>
-                    </ul>
-                    <article class="text-center">
-                        <a href="https://github.com/murkeh217/battle-tank-game/tree/Feature-7-Optimization-and-Bonus/" target="_blank" class="btn btn-transparent">GitHub</a>
-                    </article>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-5">
-                    <article class="text-center">
-                        <img class="img-fluid mb-4" src="images/projects/post-2.gif" alt="post-thumb">
-                        <h4 class="title-border">2D Platformer</h4>
-                    </article>
-                    <ul>
-                        <li>Asset management</li>
-                        <li>Scene management</li>
-                        <li>AI</li>
-                    </ul>
-                    <article class="text-center">
-                        <a href="https://github.com/murkeh217/2D-platformer-game" target="_blank" class="btn btn-transparent">GitHub</a>
-                    </article>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-5">
-                    <article class="text-center">
-                        <img class="img-fluid mb-4" src="images/projects/post-4.gif" alt="post-thumb">
-                        <h4 class="title-border">Doodle Jump Clone</h4>
-                    </article>
-                    <ul>
-                        <li>Object Pooling</li>
-                        <li>Mobile controls</li>
-                    </ul>
-                    <article class="text-center">
-                        <a href="https://github.com/murkeh217/Doodle-Jump-Clone" target="_blank" class="btn btn-transparent">GitHub</a>
-                    </article>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-5">
-                    <article class="text-center">
-                        <img class="img-fluid mb-4" src="images/projects/post-6.gif" alt="post-thumb">
-                        <h4 class="title-border">Line Ball Clone</h4>
-                    </article>
-                    <ul>
-                        <li>Object Pooling</li>
-                        <li>Custom Assets</li>
-                    </ul>
-                    <article class="text-center">
-                        <a href="https://github.com/murkeh217/LineBall/tree/v2" target="_blank" class="btn btn-transparent">GitHub</a>
-                    </article>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-5">
-                    <article class="text-center">
-                        <img class="img-fluid mb-4" src="images/projects/post-5.gif" alt="post-thumb">
-                        <h4 class="title-border">Simple Ball Game</h4>
-                    </article>
-                    <ul>
-                        <li>Streak counter</li>
-                        <li>Time counter</li>
-                    </ul>
-                    <article class="text-center">
-                        <a href="https://github.com/murkeh217/3D-game" target="_blank" class="btn btn-transparent">GitHub</a>
-                    </article>
-                </div>
-            </div>
-    </section>
-    <!-- /blog post -->
-    <!--
-        <!-- instagram -->
-    <section>
-        <div class="container-fluid px-0">
-            <div class="row no-gutters instagram-slider" id="instafeed" data-userId="4044026246"
-                 data-accessToken="4044026246.1677ed0.8896752506ed4402a0519d23b8f50a17"></div>
+    <div class="landscape"></div>
+    <div class="filter"></div>
+    <canvas id="canvas"></canvas>
+    <div class="slider">
+        <div class="item">
+            <!-- <imgsrc="post-1.gif" alt="post-thumb"> -->
+            <h4>2.5D Fighting Game</h4>
+            <ul>
+                <li>Hit/Hurt boxes</li>
+                <li>Asset management</li>
+                <li>Singleton</li>
+                <li>Post-Processing</li>
+            </ul>
+            <a href="https://github.com/murkeh217/2.5D-Fighting-Game" target="_blank">GitHub</a>
         </div>
-    </section>
-    <footer class="bg-secondary">
-        <div class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
-                        <a href="index.html"><img src="images/logo.png" alt="murtaza kanorwala" class="img-fluid"></a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
-                        <h6>Address</h6>
-                        <ul class="list-unstyled">
-                            <li class="font-secondary text-dark">Pune, India</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
-                        <h6>Contact Info</h6>
-                        <ul class="list-unstyled">
-                            <li class="font-secondary text-dark">kanorwalamurtaza217@gmail.com</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <div class="item">
+            <!-- <imgsrc="post-3.gif" alt="post-thumb"> -->
+            <h4>3D Battle Tanks</h4>
+            <ul>
+                <li>Scriptable Objects</li>
+                <li>Singleton</li>
+                <li>Observer</li>
+                <li>State Machine Behaviour</li>
+                <li>AI</li>
+            </ul>
+            <a href="https://github.com/murkeh217/battle-tank-game/tree/Feature-7-Optimization-and-Bonus/" target="_blank">GitHub</a>
         </div>
-    </footer>
-<!--
-    <!-- jQuery -->
-    <script src="plugins/jQuery/jquery.min.js"></script>
- <!-- Time -->
-<a href="https://time.is/sound" id="time_is_link" rel="nofollow" style="font-size:36px">Time in Pune:</a>
-<span id="Pune_z424" style="font-size:36px"></span>
-<script src="//widget.time.is/t.js"></script>
-<script>
-time_is_widget.init({Pune_z424:{}});
-</script>
-    <!-- Bootstrap JS -->
-    <script src="plugins/bootstrap/bootstrap.min.js"></script>
-    <!-- slick slider -->
-    <script src="plugins/slick/slick.min.js"></script>
-    <!-- masonry -->
-    <script src="plugins/masonry/masonry.js"></script>
-    <!-- instafeed -->
-    <script src="plugins/instafeed/instafeed.min.js"></script>
-    <!-- smooth scroll -->
-    <script src="plugins/smooth-scroll/smooth-scroll.js"></script>
-    <!-- headroom -->
-    <script src="plugins/headroom/headroom.js"></script>
-    <!-- reading time -->
-    <script src="plugins/reading-time/readingTime.min.js"></script>
-
-    <!-- Main Script -->
-    <script src="js/script.js"></script>
--->
-</div>
-</div>
+        <div class="item">
+            <!-- <imgsrc="post-2.gif" alt="post-thumb"> -->
+            <h4>2D Platformer</h4>
+            <ul>
+                <li>Asset management</li>
+                <li>Scene management</li>
+                <li>AI</li>
+            </ul>
+            <a href="https://github.com/murkeh217/2D-platformer-game" target="_blank">GitHub</a>
+        </div>
+        <div class="item">
+            <!-- <imgsrc="post-4.gif" alt="post-thumb"> -->
+            <h4>Doodle Jump Clone</h4>
+            <ul>
+                <li>Object Pooling</li>
+                <li>Mobile controls</li>
+            </ul>
+            <a href="https://github.com/murkeh217/Doodle-Jump-Clone" target="_blank">GitHub</a>
+        </div>
+        <div class="item">
+            <!-- <imgsrc="post-6.gif" alt="post-thumb"> -->
+            <h4>Line Ball Clone</h4>
+            <ul>
+                <li>Object Pooling</li>
+                <li>Custom Assets</li>
+            </ul>
+            <a href="https://github.com/murkeh217/LineBall/tree/v2" target="_blank">GitHub</a>
+        </div>
+        <div class="item">
+            <!-- <imgsrc="post-5.gif" alt="post-thumb"> -->
+            <h4>Simple Ball Game</h4>
+            <ul>
+                <li>Streak counter</li>
+                <li>Time counter</li>
+            </ul>
+            <a href="https://github.com/murkeh217/3D-game" target="_blank">GitHub</a>
+        </div>
+    </div>
+    <button id="next">></button>
+    <button id="prev"><</button>
 </body>
 </html>

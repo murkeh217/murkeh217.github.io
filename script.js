@@ -1,5 +1,23 @@
-  var dict = ["variable","temporary","dynamic","decadence"];
+  var dict = ["variable","state","dynamics"];
   var text = dict[Math.floor(Math.random() * dict.length)];
+
+Dot.prototype.draw = function() {
+	ctx.fillStyle = this.color;
+	ctx.shadowBlur = this.r * 2;
+	ctx.beginPath();
+	ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
+	ctx.closePath();
+	ctx.fill();
+
+ // Set the text properties
+  ctx.font = '${Math.floor(Math.random() * 46) + 25}px Arial';
+  ctx.fillStyle = 'white';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+
+  // Draw the text in the center of the circle
+  ctx.fillText(text, this.x, this.y);
+}
 
 function Star(id, x, y){
 	this.id = id;
@@ -25,13 +43,12 @@ Star.prototype.move = function() {
 	this.draw();
 }
 
-
 function Dot(id, x, y, r) {
 	this.id = id;
 	this.x = x;
 	this.y = y;
-	this.r = Math.floor(Math.random()*1)+1;
-	this.maxLinks = 5;
+	this.r = Math.floor(Math.random()*5)+1;
+	this.maxLinks = 2;
 	this.speed = .5;
 	this.a = .5;
 	this.aReduction = .005;
@@ -40,26 +57,6 @@ function Dot(id, x, y, r) {
 
 	this.dir = Math.floor(Math.random()*140)+200;
 }
-
-Dot.prototype.draw = function() {
-	ctx.fillStyle = this.color;
-	ctx.shadowBlur = this.r * 2;
-	ctx.beginPath();
-	ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
-	ctx.closePath();
-	ctx.fill();
-
- // Set the text properties
-
-  ctx.font = '${Math.floor(Math.random() * 46) + 25}px Arial';
-  ctx.fillStyle = 'white';
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-
-  // Draw the text in the center of the circle
-  ctx.fillText(text, this.x, this.y);
-}
-
 
 Dot.prototype.link = function() {
 	if (this.id == 0) return;
@@ -91,8 +88,8 @@ Dot.prototype.move = function() {
 	}
 	this.color = "rgba(255,255,255,"+this.a+")";
 	this.linkColor = "rgba(255,255,255,"+this.a/4+")";
-	this.x = this.x + Math.cos(degToRad(this.dir))*(this.speed+params.dotsSpeed/10),
-	this.y = this.y + Math.sin(degToRad(this.dir))*(this.speed+params.dotsSpeed/10);
+	this.x = this.x + Math.cos(degToRad(this.dir))*(this.speed+params.dotsSpeed/100),
+	this.y = this.y + Math.sin(degToRad(this.dir))*(this.speed+params.dotsSpeed/100);
 
 	this.draw();
 	this.link();
@@ -113,21 +110,22 @@ var canvas  = document.getElementById('canvas'),
 	mouseX,
 	mouseY,
 	stars = [],
-	initStarsPopulation = 7,
+	initStarsPopulation = 80,
 	dots = [],
-	dotsMinDist = 10,
+	dotsMinDist = 2,
 	params = {
-		maxDistFromCursor: 21,
+		maxDistFromCursor: 50,
 		dotsSpeed: 0,
 		backgroundSpeed: 0
 	};
-
+/*
 var gui;
 gui = new dat.GUI();
-gui.add(params, 'maxDistFromCursor').min(0).max(10).step(2).name('Size');
+gui.add(params, 'maxDistFromCursor').min(0).max(100).step(10).name('Size');
 gui.add(params, 'dotsSpeed').min(0).max(100).step(.5).name('Speed');
 gui.add(params, 'backgroundSpeed').min(0).max(150).step(1).name('Sky speed');
 gui.open();
+*/
 
 setCanvasSize();
 init();
@@ -193,10 +191,10 @@ function drawIfMouseMoving(){
 
 	if (diffX < dotsMinDist || diffY < dotsMinDist) return;
 
-	var xVariation = Math.random() > .2 ? -1 : 1;
-	xVariation = xVariation*Math.floor(Math.random()*params.maxDistFromCursor)+7;
-	var yVariation = Math.random() > .2 ? -1 : 1;
-	yVariation = yVariation*Math.floor(Math.random()*params.maxDistFromCursor)+7;
+	var xVariation = Math.random() > .5 ? -1 : 1;
+	xVariation = xVariation*Math.floor(Math.random()*params.maxDistFromCursor)+1;
+	var yVariation = Math.random() > .5 ? -1 : 1;
+	yVariation = yVariation*Math.floor(Math.random()*params.maxDistFromCursor)+1;
 	dots[dots.length] = new Dot(dots.length, mouseX+xVariation, mouseY+yVariation);
 	dots[dots.length-1].draw();
 	dots[dots.length-1].link();
@@ -206,121 +204,47 @@ function drawIfMouseMoving(){
 function degToRad(deg) {
 	return deg * (Math.PI / 180);
 }
-//------------------------------------------------------------------------------------------=========================================
-
-
-//------------------------------------------------------------------------------------------=========================================
-
-(function ($) {
-  'use strict';
-
-  // Preloader js    
-  $(window).on('load', function () {
-    $('.preloader').fadeOut(700);
-  });
-
-  // headroom js
-  $('.navigation').headroom();
-
-  // Background-images
-  $('[data-background]').each(function () {
-    $(this).css({
-      'background-image': 'url(' + $(this).data('background') + ')'
-    });
-  });
-
-  $('.featured-post-slider').slick({
-    dots: false,
-    speed: 300,
-    autoplay: true,
-    arrows: false,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    responsive: [{
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 4
+/*=========================================================================================================================================================================
+===========================================================================================================================================================================
+*/
+	document.addEventListener('DOMContentLoaded', function () {
+    let items = document.querySelectorAll('.slider .item');
+    let next = document.getElementById('next');
+    let prev = document.getElementById('prev');
+    
+    let active = 3;
+    function loadShow() {
+        let stt = 0;
+        items[active].style.transform = `none`;
+        items[active].style.zIndex = 1;
+        items[active].style.filter = 'none';
+        items[active].style.opacity = 1;
+        for (let i = active + 1; i < items.length; i++) {
+            stt++;
+            items[i].style.transform = `translateX(${120 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(-1deg)`;
+            items[i].style.zIndex = -stt;
+            items[i].style.filter = 'blur(5px)';
+            items[i].style.opacity = stt > 2 ? 0 : 0.6;
         }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 3
+        stt = 0;
+        for (let i = active - 1; i >= 0; i--) {
+            stt++;
+            items[i].style.transform = `translateX(${-120 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(1deg)`;
+            items[i].style.zIndex = -stt;
+            items[i].style.filter = 'blur(5px)';
+            items[i].style.opacity = stt > 2 ? 0 : 0.6;
         }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2
-        }
-      }
-    ]
-  });
-
-  // Masonry
-  $(document).ready(function () {
-    $('.masonry-container').masonry({
-      itemSelector: '.masonry-container > div',
-      columnWidth: 1
+    }
+    
+    loadShow();
+    
+    next.addEventListener('click', function () {
+        active = active + 1 < items.length ? active + 1 : active;
+        loadShow();
     });
-  });
-
-
-  // instafeed
-  if (($('#instafeed').length) !== 0) {
-    var userId = $('#instafeed').attr('data-userId');
-    var accessToken = $('#instafeed').attr('data-accessToken');
-    var userFeed = new Instafeed({
-      get: 'user',
-      userId: userId,
-      resolution: 'low_resolution',
-      accessToken: accessToken,
-      template: '<div class="instagram-post"><img class="img-fluid w-100" src="{{image}}" alt="instagram-image"><ul class="list-inline text-center"><li class="list-inline-item"><a href="{{link}}" target="_blank" class="text-white"><i class="ti-heart mr-2"></i>{{likes}}</a></li><li class="list-inline-item"><a href="{{link}}" target="_blank" class="text-white"><i class="ti-comments mr-2"></i>{{comments}}</a></li></ul></div>'
+    
+    prev.addEventListener('click', function () {
+        active = active - 1 >= 0 ? active - 1 : active;
+        loadShow();
     });
-    userFeed.run();
-  }
-
-  setTimeout(function () {
-    $('.instagram-slider').slick({
-      dots: false,
-      speed: 300,
-      autoplay: true,
-      arrows: false,
-      slidesToShow: 6,
-      slidesToScroll: 1,
-      responsive: [{
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 4
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 3
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 2
-          }
-        }
-      ]
-    });
-  }, 2000);
-
-  // article reading time
-  $('article').each(function () {
-
-    let _this = $(this);
-
-    _this.readingTime({
-      readingTimeTarget: _this.find('.eta'),
-      remotePath: _this.attr('data-file'),
-      remoteTarget: _this.attr('data-target')
-    });
-  });
-
-
-})(jQuery);
+});
