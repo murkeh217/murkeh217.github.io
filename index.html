@@ -1,87 +1,118 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Murtaza Kanorwala | Portfolio</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
-        <script src="script.js" defer></script>
-    </head>
-    <body>
-        <div id="container">
-            <canvas id="canvas"></canvas>
-        
-            <div id="overlay">
-                <main id="carousel">
-                    <div class="item">
-                        <img src="post-1.gif" alt="post-thumb">  
-                        <h4>2.5D Fighting Game</h4>
-                        <ul>
-                            <li>Hit/Hurt boxes</li>
-                            <li>Asset management</li>
-                            <li>Singleton</li>
-                            <li>Post-Processing</li>
-                        </ul>
-                        <a href="https://github.com/murkeh217/2.5D-Fighting-Game" target="_blank">GitHub</a>
-                    </div>
-                    <div class="item">
-                        <img src="post-3.gif" alt="post-thumb">  
-                        <h4>3D Battle Tanks</h4>
-                        <ul>
-                            <li>Scriptable Objects</li>
-                            <li>Singleton</li>
-                            <li>Observer</li>
-                            <li>State Machine Behaviour</li>
-                            <li>AI</li>
-                        </ul>
-                        <a href="https://github.com/murkeh217/battle-tank-game/tree/Feature-7-Optimization-and-Bonus/" target="_blank">GitHub</a>
-                    </div>
-                    <div class="item">
-                        <img src="post-2.gif" alt="post-thumb">  
-                        <h4>2D Platformer</h4>
-                        <ul>
-                            <li>Asset management</li>
-                            <li>Scene management</li>
-                            <li>AI</li>
-                        </ul>
-                        <a href="https://github.com/murkeh217/2D-platformer-game" target="_blank">GitHub</a>
-                    </div>
-                    <div class="item">
-                        <img src="post-4.gif" alt="post-thumb">  
-                        <h4>Doodle Jump Clone</h4>
-                        <ul>
-                            <li>Object Pooling</li>
-                            <li>Mobile controls</li>
-                        </ul>
-                        <a href="https://github.com/murkeh217/Doodle-Jump-Clone" target="_blank">GitHub</a>
-                    </div>
-                    <div class="item">
-                        <img src="post-6.gif" alt="post-thumb">  
-                        <h4>Line Ball Clone</h4>
-                        <ul>
-                            <li>Object Pooling</li>
-                            <li>Custom Assets</li>
-                        </ul>
-                        <a href="https://github.com/murkeh217/LineBall/tree/v2" target="_blank">GitHub</a>
-                    </div>
-                    <div class="item">
-                        <img src="post-5.gif" alt="post-thumb">  
-                        <h4>Simple Ball Game</h4>
-                        <ul>
-                            <li>Streak counter</li>
-                            <li>Time counter</li>
-                        </ul>
-                        <a href="https://github.com/murkeh217/3D-game" target="_blank">GitHub</a>
-                    </div>
-                </main>
-
-                <input type="radio" name="position" checked />
-                <input type="radio" name="position" />
-                <input type="radio" name="position" />
-                <input type="radio" name="position" />
-                <input type="radio" name="position" />   
-                <input type="radio" name="position" />
-
-            </div>
-        </div>
-    </body>
-</html>
+	<head>
+		<title>Murtaza Kanorwala | Portfolio</title>
+		<link rel="stylesheet" href="style.css">
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"/>
+			<script src="script.js" defer>< script>
+		</head>
+		<body>
+			<div id="container">
+				<canvas id="canvas"/>
+				<div id="overlay">
+					<div class="carousel-container">
+						<ul class="carousel my-carousel carousel--scale">
+							<input class="carousel__activator" type="radio" id="1" name="scale" checked="checked"/>
+							<input class="carousel__activator" type="radio" id="2" name="scale"/>
+							<input class="carousel__activator" type="radio" id="3" name="scale"/>
+							<input class="carousel__activator" type="radio" id="4" name="scale"/>
+							<input class="carousel__activator" type="radio" id="5" name="scale"/>
+							<input class="carousel__activator" type="radio" id="6" name="scale"/>
+							<div class="carousel__controls">
+								<label class="carousel__control carousel__control--backward" for="6"/>
+								<label class="carousel__control carousel__control--forward" for="1"/>
+							</div>
+							<div class="carousel__controls">
+								<label class="carousel__control carousel__control--backward" for="1"/>
+								<label class="carousel__control carousel__control--forward" for="2"/>
+							</div>
+							<div class="carousel__controls">
+								<label class="carousel__control carousel__control--backward" for="2"/>
+								<label class="carousel__control carousel__control--forward" for="3"/>
+							</div>
+							<div class="carousel__controls">
+								<label class="carousel__control carousel__control--backward" for="3"/>
+								<label class="carousel__control carousel__control--forward" for="4"/>
+							</div>
+							<div class="carousel__controls">
+								<label class="carousel__control carousel__control--backward" for="4"/>
+								<label class="carousel__control carousel__control--forward" for="5"/>
+							</div>
+							<div class="carousel__controls">
+								<label class="carousel__control carousel__control--backward" for="5"/>
+								<label class="carousel__control carousel__control--forward" for="6"/>
+							</div>
+							<li class="carousel__slide">
+								<img src="post-1.gif" alt="post-thumb">
+									<h4>2.5D Fighting Game</h4>
+									<ul>
+										<li>Hit/Hurt boxes</li>
+										<li>Asset management</li>
+										<li>Singleton</li>
+										<li>Post-Processing</li>
+									</ul>
+									<a href="https://github.com/murkeh217/2.5D-Fighting-Game" target="_blank">GitHub</a>
+								</li>
+								<li class="carousel__slide">
+									<img src="post-3.gif" alt="post-thumb">
+										<h4>3D Battle Tanks</h4>
+										<ul>
+											<li>Scriptable Objects</li>
+											<li>Singleton</li>
+											<li>Observer</li>
+											<li>State Machine Behaviour</li>
+											<li>AI</li>
+										</ul>
+										<a href="https://github.com/murkeh217/battle-tank-game/tree/Feature-7-Optimization-and-Bonus/" target="_blank">GitHub</a>
+									</li>
+									<li class="carousel__slide">
+										<img src="post-2.gif" alt="post-thumb">
+											<h4>2D Platformer</h4>
+											<ul>
+												<li>Asset management</li>
+												<li>Scene management</li>
+												<li>AI</li>
+											</ul>
+											<a href="https://github.com/murkeh217/2D-platformer-game" target="_blank">GitHub</a>
+										</li>
+										<li class="carousel__slide">
+											<img src="post-4.gif" alt="post-thumb">
+												<h4>Doodle Jump Clone</h4>
+												<ul>
+													<li>Object Pooling</li>
+													<li>Mobile controls</li>
+												</ul>
+												<a href="https://github.com/murkeh217/Doodle-Jump-Clone" target="_blank">GitHub</a>
+											</li>
+											<li class="carousel__slide">
+												<img src="post-6.gif" alt="post-thumb">
+													<h4>Line Ball Clone</h4>
+													<ul>
+														<li>Object Pooling</li>
+														<li>Custom Assets</li>
+													</ul>
+													<a href="https://github.com/murkeh217/LineBall/tree/v2" target="_blank">GitHub</a>
+												</li>
+												<li class="carousel__slide">
+													<img src="post-5.gif" alt="post-thumb">
+														<h4>Simple Ball Game</h4>
+														<ul>
+															<li>Streak counter</li>
+															<li>Time counter</li>
+														</ul>
+														<a href="https://github.com/murkeh217/3D-game" target="_blank">GitHub</a>
+													</li>
+													<div class="carousel__indicators">
+														<label class="carousel__indicator" for="1"/>
+														<label class="carousel__indicator" for="2"/>
+														<label class="carousel__indicator" for="3"/>
+														<label class="carousel__indicator" for="4"/>
+														<label class="carousel__indicator" for="5"/>
+														<label class="carousel__indicator" for="6"/>
+													</div>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</body>
+							</html>
