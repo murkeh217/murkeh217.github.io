@@ -34,11 +34,11 @@
 }
 
 .btn.btn-primary {
-    box-shadow: inset 0 0 0 0 var(--bs-dark);
+    box-shadow: inset 0 0 0 0 var(--bs-light);
 }
 
 .btn.btn-primary:hover {
-    box-shadow: inset 200px 0 0 0 var(--bs-dark) !important;
+    box-shadow: inset 200px 0 0 0 var(--bs-light) !important;
     color: var(--bs-blue) !important;
 }
 
@@ -48,7 +48,7 @@
 
 .btn.btn-dark:hover {
     box-shadow: inset 200px 0 0 0 var(--bs-blue);
-    color: var(--bs-dark) !important;
+    color: var(--bs-light) !important;
 }
 
 
@@ -145,7 +145,7 @@
 
 .dropdown .dropdown-menu a:hover,
 .dropdown .dropdown-menu a.active {
-    background: var(--bs-dark);
+    background: var(--bs-light);
     color: var(--bs-blue);
 }
 
@@ -220,7 +220,7 @@
 #carouselId .carousel-indicators li {
     width: 24px;
     height: 24px;
-    background: var(--bs-dark);
+    background: var(--bs-light);
     border: 2px solid var(--bs-blue);
     border-radius: 24px;
     margin: 0 10px 30px 10px;
@@ -297,7 +297,7 @@
     content: "";
     width: 100%;
     height: 40%;
-    background: var(--bs-dark);
+    background: var(--bs-light);
     position: absolute;
     top: 0px;
     left: 0px;
@@ -370,7 +370,7 @@
 .services-inner-icon {
     width: 130px;
     height: 130px;
-    background: var(--bs-dark);
+    background: var(--bs-light);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -396,7 +396,7 @@
     margin-top: -50%;
     margin-left: -50%;
     background: var(--bs-blue);
-    color: var(--bs-dark);
+    color: var(--bs-light);
     
 } 
 
@@ -406,7 +406,7 @@
 }
 
 .services-item:hover i {
-    color: var(--bs-dark) !important;
+    color: var(--bs-light) !important;
     z-index: 1;
     rotate: 360deg;
 }
@@ -432,7 +432,7 @@
     content: "";
     width: 100%;
     height: 40%;
-    background: var(--bs-dark);
+    background: var(--bs-light);
     position: absolute;
     top: 0px;
     left: 0px;
@@ -504,7 +504,7 @@
     left: 50%;
     transform: translate(-50%, -50%) scale(1) rotate(0deg);
     background: var(--bs-blue);
-    color: var(--bs-dark) !important;
+    color: var(--bs-light) !important;
     opacity: 1;
 
 }
@@ -534,18 +534,18 @@
 }
 
 .blog-carousel .owl-nav .owl-prev {
-    box-shadow: inset 0 0 0 0 var(--bs-dark);
+    box-shadow: inset 0 0 0 0 var(--bs-light);
     transition: .5s;
 }
 
 .blog-carousel .owl-nav .owl-prev:hover {
-    box-shadow: inset 200px 0 0 0 var(--bs-dark);
+    box-shadow: inset 200px 0 0 0 var(--bs-light);
     color: var(--bs-blue) !important;
 }
 
 .blog-carousel .owl-prev,
 .blog-carousel .owl-next {
-    color: var(--bs-dark);
+    color: var(--bs-light);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -647,13 +647,13 @@
 }
 
 .team-item .team-content {
-    box-shadow: inset 0 0 0 0 var(--bs-dark);
+    box-shadow: inset 0 0 0 0 var(--bs-light);
     transition: 1s;
     
 }
 
 .team-item:hover .team-content {
-    box-shadow: inset 550px 0 0 0 var(--bs-dark);
+    box-shadow: inset 550px 0 0 0 var(--bs-light);
     color: var(--bs-blue) !important;
 }
 /*** Team End ***/
@@ -694,17 +694,17 @@
     width: 60px;
     height: 40px;
     background: var(--bs-blue);
-    color: var(--bs-dark);
+    color: var(--bs-light);
     font-size: 22px;
     top: 14%;
     left: 0px;
     border-radius: 30px 0 0 30px;
-    box-shadow: inset 0 0 0 0 var(--bs-dark);
+    box-shadow: inset 0 0 0 0 var(--bs-light);
     transition: .5s;
 }
 
 .testimonial-carousel .owl-nav .owl-prev:hover {
-    box-shadow: inset 200px 0 0 0 var(--bs-dark);
+    box-shadow: inset 200px 0 0 0 var(--bs-light);
     color: var(--bs-blue) !important;
 }
 
@@ -715,7 +715,7 @@
 }
 
 .testimonial-carousel .owl-nav .owl-next:hover {
-    box-shadow: inset 200px 0 0 0 var(--bs-dark);
+    box-shadow: inset 200px 0 0 0 var(--bs-light);
     color: var(--bs-blue) !important;
 }
 
