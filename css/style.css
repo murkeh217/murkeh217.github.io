@@ -1,17 +1,20 @@
-
 /*** Spinner Start ***/
 #spinner {
     opacity: 0;
     visibility: hidden;
-    transition: opacity .8s ease-out, visibility 0s linear .5s;
+    transition:
+        opacity 0.8s ease-out,
+        visibility 0s linear 0.5s;
     z-index: 99999;
- }
+}
 
- #spinner.show {
-     transition: opacity .8s ease-out, visibility 0s linear .0s;
-     visibility: visible;
-     opacity: 1;
- }
+#spinner.show {
+    transition:
+        opacity 0.8s ease-out,
+        visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
 
 /*** Spinner End ***/
 
@@ -30,7 +33,7 @@
 .btn {
     text-transform: uppercase;
     font-weight: 500;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .btn.btn-primary {
@@ -50,8 +53,6 @@
     box-shadow: inset 200px 0 0 0 var(--bs-blue);
     color: var(--bs-light) !important;
 }
-
-
 
 /*** Topbar Start ***/
 
@@ -113,13 +114,13 @@
     font-weight: 500;
     font-size: 16px;
     outline: none;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .navbar .navbar-nav .nav-link:hover,
-.navbar .navbar-nav .nav-link.active  {
+.navbar .navbar-nav .nav-link.active {
     color: var(--bs-primary);
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .navbar .dropdown-toggle::after {
@@ -138,7 +139,7 @@
         top: 100%;
         transform: rotateX(-75deg);
         transform-origin: 0% 0%;
-        transition: .5s;
+        transition: 0.5s;
         opacity: 0;
     }
 }
@@ -152,7 +153,7 @@
 .navbar .nav-item:hover .dropdown-menu {
     transform: rotateX(0deg);
     visibility: visible;
-    transition: .5s;
+    transition: 0.5s;
     opacity: 1;
 }
 
@@ -164,8 +165,6 @@
 }
 
 /*** Navbar End ***/
-
-
 
 /*** Carousel Start ***/
 
@@ -180,7 +179,7 @@
     height: 100%;
     top: 0;
     right: 0;
-    background: rgba(0, 0, 0, .7);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .carousel-caption {
@@ -199,10 +198,9 @@
     left: 0;
     background: var(--bs-blue);
     border-radius: 0 30px 30px 0;
-    transition: .5s;
+    transition: 0.5s;
     opacity: 1;
 }
-
 
 .carousel-control-next {
     width: 80px;
@@ -212,7 +210,7 @@
     right: 0;
     background: var(--bs-blue);
     border-radius: 30px 0 0 30px;
-    transition: .5s;
+    transition: 0.5s;
     opacity: 1;
 }
 
@@ -275,13 +273,14 @@
     }
 }
 .page-header {
-    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/carousel-2.jpg) center center no-repeat;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(../img/carousel-2.jpg) center center no-repeat;
     background-size: cover;
     margin-bottom: 6rem;
 }
 
 /*** Carousel End ***/
-
 
 /*** About Start ***/
 
@@ -289,7 +288,7 @@
     width: 100%;
     height: 100%;
     position: relative;
-    padding: 30px 30px 30px 30px ;
+    padding: 30px 30px 30px 30px;
     overflow: hidden;
 }
 
@@ -304,7 +303,6 @@
     z-index: 1;
     border-radius: 10px 10px 10px 10px;
 }
-
 
 .about-img::after {
     content: "";
@@ -359,24 +357,28 @@
 }
 
 @keyframes mymove {
-    from {top: -202px;}
-    to {top: 102%;}
+    from {
+        top: -202px;
+    }
+    to {
+        top: 102%;
+    }
 }
 
 /*** About End ***/
 
-
 /*** Services Start ***/
+
 .services-inner-icon {
-    width: 130px;
-    height: 130px;
+    width: 180px;
+    height: 180px;
     background: var(--bs-light);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: .5s;
-    position: relative;
-    
+    transition: 0.2s;
+    position: relative; /* Ensure relative positioning for stacking context */
+    z-index: 99; /* Content of .services-inner-icon stays above */
 }
 
 .services-inner-icon::after {
@@ -384,31 +386,31 @@
     position: absolute;
     width: 0;
     height: 0;
-    border-radius: 62px;
+    border-radius: 50%; /* Ensures it's a perfect circle */
     top: 50%;
     left: 50%;
-    transition: .5s;
+    transform: translate(-50%, -50%);
+    transition: 0.2s;
+    background: var(--bs-blue);
+    z-index: -99; /* Push ::after behind the content */
 }
 
 .services-item:hover .services-inner-icon::after {
     width: 100%;
     height: 100%;
-    margin-top: -50%;
-    margin-left: -50%;
-    background: var(--bs-blue);
-    color: var(--bs-light);
-    
-} 
+}
 
 .services-item i {
     text-align: center;
-    transition: .5s;
+    transition: 0.5s;
+    position: relative; /* Ensures it stays above the ::after element */
+    z-index: 00; /* Keep icon above both background and hover effect */
 }
 
 .services-item:hover i {
     color: var(--bs-light) !important;
-    z-index: 1;
-    rotate: 360deg;
+    z-index: 99;
+    transform: rotate(360deg); /* Corrected syntax from "rotate" to "transform" */
 }
 
 .services-btn {
@@ -424,7 +426,7 @@
     width: 100%;
     height: 100%;
     position: relative;
-    padding: 30px 30px 30px 30px ;
+    padding: 30px 30px 30px 30px;
     overflow: hidden;
 }
 
@@ -439,7 +441,6 @@
     z-index: 1;
     border-radius: 10px 10px 10px 10px;
 }
-
 
 .project-item::after {
     content: "";
@@ -495,7 +496,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: .5s;
+    transition: 0.5s;
     opacity: 0;
 }
 
@@ -506,12 +507,9 @@
     background: var(--bs-blue);
     color: var(--bs-light) !important;
     opacity: 1;
-
 }
 
-
 /*** prohect Start ***/
-
 
 /*** Blog Start ***/
 
@@ -520,7 +518,6 @@
     height: 100%;
     position: relative;
 }
-
 
 .blog-carousel .owl-nav .owl-prev {
     position: absolute;
@@ -535,7 +532,7 @@
 
 .blog-carousel .owl-nav .owl-prev {
     box-shadow: inset 0 0 0 0 var(--bs-light);
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .blog-carousel .owl-nav .owl-prev:hover {
@@ -563,7 +560,7 @@
 
 .blog-carousel .owl-nav .owl-next {
     box-shadow: inset 0 0 0 0 #000000;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .blog-carousel .owl-nav .owl-next:hover {
@@ -573,45 +570,42 @@
 
 /*** Blog End ***/
 
-
 /*** Pricing Start ***/
 .pricing-item {
-    transition: .5s;
-    
+    transition: 0.5s;
 }
 
 .pricing-item:hover {
-    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     margin: -20px 0 20px 0;
 }
 
 .pricing-label {
     border-bottom: 20px solid var(--bs-light);
     border-radius: 0 0 300px 300px;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .pricing-item:hover .pricing-label {
-    border-color: rgba(0, 0, 0, .5);
+    border-color: rgba(0, 0, 0, 0.5);
 }
 
 .pricing-item:hover .pricing-label.pricing-featured {
-    border-color: rgba(255, 255, 255, .5);
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
-
 /*** Pricing End ***/
-
 
 /*** Call To Action start ***/
 
 .call-to-action {
-    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/carousel-1.jpg) center center no-repeat;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(../img/carousel-1.jpg) center center no-repeat;
     background-size: cover;
 }
 
 /*** Call To Action End ***/
-
 
 /*** Team Start ***/
 .team-item {
@@ -626,7 +620,7 @@
     top: 15px;
     right: -80px;
     rotate: -30deg;
-    transition: .5s;
+    transition: 0.5s;
     visibility: hidden;
 }
 
@@ -649,7 +643,6 @@
 .team-item .team-content {
     box-shadow: inset 0 0 0 0 var(--bs-light);
     transition: 1s;
-    
 }
 
 .team-item:hover .team-content {
@@ -700,7 +693,7 @@
     left: 0px;
     border-radius: 30px 0 0 30px;
     box-shadow: inset 0 0 0 0 var(--bs-light);
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .testimonial-carousel .owl-nav .owl-prev:hover {
@@ -734,7 +727,7 @@
     height: 15px;
     background: var(--bs-secondary);
     border-radius: 15px;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .testimonial-carousel .owl-dot.active {
@@ -744,12 +737,11 @@
 
 /*** testimonial End ***/
 
-
 /*** Contact Start ***/
 .contact-link a i,
 .contact-link a h5,
 .contact-link a.h5 {
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .contact-link a i:hover,
@@ -760,23 +752,23 @@
 
 /*** Contact End ***/
 
-
 /*** terter Start ***/
 .footer {
-    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), center center no-repeat;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        center center no-repeat;
     background-size: cover;
-    color: rgba(255, 255, 255, .7);
+    color: rgba(255, 255, 255, 0.7);
     margin-top: 6rem;
 }
 
 .footer-item,
 .footer-item a {
-    color: rgba(255, 255, 255, .7);
+    color: rgba(255, 255, 255, 0.7);
     text-transform: capitalize;
 }
 
 /*** Footer End ***/
-
 
 /*** Copywright Start ***/
 
@@ -787,15 +779,14 @@
 }
 
 .copyright .copyright-icon {
-    width: 44px; 
-    height: 44px; 
+    width: 44px;
+    height: 44px;
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
 }
 
 /*** Copywright End ***/
-
 
 /* Chatbot 
 
