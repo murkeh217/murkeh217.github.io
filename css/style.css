@@ -164,6 +164,20 @@
     border: 2px solid var(--bs-blue) !important;
 }
 
+/* dropdown submenu */
+/* Ensure the dropdown is positioned to the right */
+.dropdown.dropend .dropdown-menu {
+    left: 100%;
+    top: 0;
+    margin-left: 0;
+}
+
+/* rotate caret on hover */
+.dropdown-menu > li > a:hover:after {
+    text-decoration: underline;
+    transform: rotate(-90deg);
+}
+
 /*** Navbar End ***/
 
 /*** Carousel Start ***/
