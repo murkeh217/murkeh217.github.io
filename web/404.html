@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Techprof LTD</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="" name="keywords" />
+        <meta content="" name="description" />
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap" rel="stylesheet" />
+
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet" />
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <!-- Spinner Start -->
+        <div
+            id="spinner"
+            class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Topbar Start -->
+        <div class="container-fluid topbar-top bg-primary">
+            <div class="container">
+                <div class="d-flex justify-content-between topbar py-2">
+                    <div class="d-flex align-items-center flex-shrink-0 topbar-info">
+                        <a href="404.html" class="me-4 text-light-emphasis"
+                            ><i class="fas fa-map-marker-alt me-2 text-dark"></i>Surrey, England</a
+                        >
+                        <a href="tel:+447852656796" class="me-4 text-light-emphasis"
+                            ><i class="fas fa-phone-alt me-2 text-dark"></i>+447852656796</a
+                        >
+                        <a href="mailto:muffaddal@gmail.com" class="text-light-emphasis"
+                            ><i class="fas fa-envelope me-2 text-dark"></i>muffaddal@gmail.com</a
+                        >
+                    </div>
+                    <!--<div class="text-end pe-4 me-4 border-end border-dark search-btn">
+                        <div class="search-form">
+                            <form method="post" action="index.html">
+                                <div class="form-group">
+                                    <div class="d-flex">
+                                        <input type="search" class="form-control border-0 rounded-pill" name="search-input" value="" placeholder="Search Here" required=""/>
+                                        <button type="submit" value="Search Now!" class="btn"><i class="fa fa-search text-dark"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>-->
+                    <div class="d-flex align-items-center justify-content-center topbar-icon">
+                        <a href="404.html" class="me-4"><i class="fab fa-facebook-f text-dark"></i></a>
+                        <a href="404.html" class="me-4"><i class="fab fa-twitter text-dark"></i></a>
+                        <a href="404.html" class="me-4"><i class="fab fa-instagram text-dark"></i></a>
+                        <a href="404.html" class=""><i class="fab fa-linkedin-in text-dark"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Topbar End -->
+
+        <!-- Navbar Start -->
+        <div class="container-fluid bg-dark">
+            <div class="container">
+                <nav class="navbar navbar-dark navbar-expand-lg py-lg-0">
+                    <a href="index.html" class="navbar-brand">
+                        <h1 class="text-primary mb-0 display-5">
+                            Tech<span class="text-white">prof</span><i class="fa text-primary ms-2">LTD</i>
+                        </h1>
+                    </a>
+                    <button
+                        class="navbar-toggler bg-primary"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars text-dark"></span>
+                    </button>
+                    <div class="collapse navbar-collapse me-n3" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto">
+                            <a href="index.html" class="nav-item nav-link active">Home</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Us</a>
+                                <div class="dropdown-menu m-0 bg-primary">
+                                    <a href="about/what-we-do.html" class="dropdown-item">What We Do</a>
+                                    <a href="about/what-we-deliver.html" class="dropdown-item">What We Deliver</a>
+                                    <a href="about/what-we-support.html" class="dropdown-item">What We Support</a>
+                                    <a href="about/modern-slavery.html" class="dropdown-item">Modern Slavery</a>
+                                    <a href="about/carbon-reduction-plan.html" class="dropdown-item"
+                                        >Carbon Reduction Plan</a
+                                    >
+                                    <a href="about/ethical-statement.html" class="dropdown-item">Ethical Statement</a>
+                                    <a href="about/sustainability-statement.html" class="dropdown-item"
+                                        >Sustainability Statement</a
+                                    >
+                                    <a href="about/diversity-and-inclusion-statement.html" class="dropdown-item"
+                                        >Diversity & Inclusion Statement</a
+                                    >
+                                </div>
+                            </div>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle">IT Services</a>
+                                <div class="dropdown-menu m-0 bg-primary">
+                                    <a href="it/consulting-services.html" class="dropdown-item">Consulting Services</a>
+                                    <a href="it/it-managed-services.html" class="dropdown-item">IT Managed Services</a>
+                                    <a href="it/it-governance-services.html" class="dropdown-item"
+                                        >IT Governance Servies</a
+                                    >
+                                    <a href="it/it-support-and-maintenance.html" class="dropdown-item"
+                                        >IT Support & Maintenance</a
+                                    >
+                                    <a href="it/qa-testing-services.html" class="dropdown-item">QA Testing Services</a>
+
+                                    <div class="dropdown-divider"></div>
+                                    <a href="it/cloud-platform.html" class="dropdown-item">Cloud Platform</a>
+                                    <a href="it/oracle-cloud.html" class="dropdown-item">Oracle Cloud</a>
+                                    <a href="it/microsoft-cloud.html" class="dropdown-item">Microsoft Cloud</a>
+                                    <a href="it/amazon-web-services.html" class="dropdown-item">Amazon Web Services</a>
+                                    <a href="it/google-cloud.html" class="dropdown-item">Google Cloud</a>
+                                    <a href="it/saas-platform.html" class="dropdown-item">SaaS Platform</a>
+                                    <div class="dropdown-divider"></div>
+
+                                    <a href="it/ai-and-data-analytics-engineering.html" class="dropdown-item"
+                                        >AI & Data Analytics Engineering</a
+                                    >
+                                    <a href="it/software-licensing-services.html" class="dropdown-item"
+                                        >Software Licensing Services</a
+                                    >
+                                </div>
+                            </div>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Web Services</a>
+                                <div class="dropdown-menu m-0 bg-primary">
+                                    <a href="404.html" class="dropdown-item">Web Design & Revamp Development</a>
+                                    <a href="404.html" class="dropdown-item">Mobile App Development</a>
+                                    <a href="404.html" class="dropdown-item">Digital Marketing</a>
+                                    <a href="404.html" class="dropdown-item">eCommerce</a>
+                                    <a href="404.html" class="dropdown-item">UI & UX Design</a>
+                                    <a href="404.html" class="dropdown-item">Branding & Infographic</a>
+                                    <a href="404.html" class="dropdown-item">Custom Software Development</a>
+                                </div>
+                            </div>
+                            <a href="404.html" class="nav-item nav-link">Career</a>
+                            <a href="404.html" class="nav-item nav-link">Profile</a>
+                            <a href="404.html" class="nav-item nav-link">Contact</a>
+                            <a href="404.html"
+                                ><button type="button" class="btn btn-primary border-0">Get Quote</button></a
+                            >
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Navbar End -->
+
+        <!-- Page Header Start -->
+        <div class="container-fluid page-header py-5">
+            <div class="container text-center py-5">
+                <h1 class="display-2 text-white mb-4 animated slideInDown">404 Error</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center mb-0 animated slideInDown">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                        <li class="breadcrumb-item text-white" aria-current="page">404 Error</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+        <!-- 404 Start -->
+        <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="container text-center py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <i class="bi bi-exclamation-triangle display-1 text-primary"></i>
+                        <h1 class="display-1">404</h1>
+                        <h1 class="mb-4">Page Not Found</h1>
+                        <p class="mb-4">
+                            We’re sorry, the page you have looked for does not exist in our website! Maybe go to our
+                            home page or try to use a search?
+                        </p>
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="">Go Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 404 End -->
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay=".1s">
+            <div class="container py-5">
+                <div class="row g-4 footer-inner">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-item">
+                            <h4 class="text-white fw-bold mb-4">IT Services</h4>
+                            <div class="d-flex flex-column align-items-start">
+                                <a class="btn btn-link ps-0" href="404.html"
+                                    ><i class="fa fa-check me-2"></i>Consulting Services</a
+                                >
+                                <a class="btn btn-link ps-0" href="404.html"
+                                    ><i class="fa fa-check me-2"></i>IT Managed Services</a
+                                >
+                                <a class="btn btn-link ps-0" href="404.html"
+                                    ><i class="fa fa-check me-2"></i>IT Governance Services</a
+                                >
+                                <a class="btn btn-link ps-0" href="404.html"
+                                    ><i class="fa fa-check me-2"></i>IT Support & Maintenance</a
+                                >
+                                <a class="btn btn-link ps-0" href="404.html"
+                                    ><i class="fa fa-check me-2"></i>QA Testing Services</a
+                                >
+                                <a class="btn btn-link ps-0" href="404.html"
+                                    ><i class="fa fa-check me-2"></i>Cloud Computing</a
+                                >
+                                <a class="btn btn-link ps-0" href="404.html"
+                                    ><i class="fa fa-check me-2"></i>AI & Data Analytics Engineering</a
+                                >
+                                <a class="btn btn-link ps-0" href="404.html"
+                                    ><i class="fa fa-check me-2"></i>Software Licensing Services</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-item">
+                            <h4 class="text-white fw-bold mb-4">Web & App Services</h4>
+                            <div class="d-flex flex-column align-items-start">
+                                <a class="btn btn-link ps-0" href="404.html"
+                                    ><i class="fa fa-check me-2"></i>Web Design & Revamp Development</a
+                                >
+                                <a class="btn btn-link ps-0" href="404.html"
+                                    ><i class="fa fa-check me-2"></i>Mobile App Development</a
+                                >
+                                <a class="btn btn-link ps-0" href="404.html"
+                                    ><i class="fa fa-check me-2"></i>Digital Marketing</a
+                                >
+                                <a class="btn btn-link ps-0" href="404.html"
+                                    ><i class="fa fa-check me-2"></i>eCommerce</a
+                                >
+                                <a class="btn btn-link ps-0" href="404.html"
+                                    ><i class="fa fa-check me-2"></i>UI & UX Design</a
+                                >
+                                <a class="btn btn-link ps-0" href="404.html"
+                                    ><i class="fa fa-check me-2"></i>Branding & Infographic</a
+                                >
+                                <a class="btn btn-link ps-0" href=""
+                                    ><i class="fa fa-check me-2"></i>Custom Software Development</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-item">
+                            <h4 class="text-white fw-bold mb-4">Contact Us</h4>
+                            <a href="404.html" class="btn btn-link w-100 text-start ps-0 pb-3 border-bottom rounded-0"
+                                ><i class="fa fa-map-marker-alt me-3"></i>Suite 27 Chessington Business Centre, Cox
+                                Lane, Chessington, Surrey, England, KT9 1SD</a
+                            >
+                            <a
+                                href="tel:+447852656796"
+                                class="btn btn-link w-100 text-start ps-0 py-3 border-bottom rounded-0"
+                                ><i class="fa fa-phone-alt me-3"></i>+447852656796</a
+                            >
+                            <a
+                                href="mailto:muffaddal@gmail.com"
+                                class="btn btn-link w-100 text-start ps-0 py-3 border-bottom rounded-0"
+                                ><i class="fa fa-envelope me-3"></i>muffaddal@gmail.com</a
+                            >
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4 p-4 footer-inner justify-content-center">
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <div class="footer-item">
+                            <img src="img/verify1.webp" class="img-fluid" alt="Verification Image 1" />
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <div class="footer-item">
+                            <img src="img/verify2.png" class="img-fluid" alt="Verification Image 2" />
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <div class="footer-item">
+                            <img src="img/verify3.png" class="img-fluid" alt="Verification Image 3" />
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <div class="footer-item">
+                            <img src="img/verify4.png" class="img-fluid" alt="Verification Image 4 - G-Cloud" />
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <div class="footer-item">
+                            <img
+                                src="img/verify5.png"
+                                class="img-fluid"
+                                alt="Verification Image 5 - Cyber Essentials" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright bg-dark py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                        <a href="index.html" class="text-primary mb-0 display-6"
+                            >Tech<span class="text-white">prof</span><i class="fa text-primary ms-2">LTD</i></a
+                        >
+                    </div>
+                    <div class="col-md-4 copyright-btn text-center text-md-start mb-3 mb-md-0 flex-shrink-0">
+                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href="404.html"
+                            ><i class="fab fa-twitter"></i
+                        ></a>
+                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href="404.html"
+                            ><i class="fab fa-facebook-f"></i
+                        ></a>
+                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href="404.html"
+                            ><i class="fab fa-youtube"></i
+                        ></a>
+                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href="404.html"
+                            ><i class="fab fa-linkedin-in"></i
+                        ></a>
+                    </div>
+                    <!--<div class="col-md-4 my-auto text-center text-md-end text-white">
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                    <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                    <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br>Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary rounded-circle border-3 back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+        <!-- Chatbot 
+        <button id="chat-toggle"><i class="far fa-comment"></i></button>
+        <div id="chat-widget">
+            <div id="chat-container">
+                <div id="chat-title">Assistant</div>
+                <div id="chat-messages"></div>
+                <div id="chat-input-container">
+                    <input id="chat-input" type="text" placeholder="Write your message" />
+                    <button id="chat-send">Send</button>
+                    <div id="loading">
+                        <div class="spinner"></div>
+                        <div class="message">Loading...</div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+        <script id="messenger-widget-b" src="https://cdn.botpenguin.com/website-bot.js" defer>
+            675035b51e158902c1f2e150,6750338cc57a960450ef0b7d
+        </script>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+        <!-- Chatbot -->
+        <script src="js/script.js"></script>
+    </body>
+</html>
