@@ -83,7 +83,23 @@
             }
         }
     });
-    
-    
+
+    $('.owl-carousel').owlCarousel({
+    loop: true,
+    margin: 10, // Space between items
+    nav: true, // Enable navigation
+    responsive: {
+        0: {
+            items: 2 // Display 2 items at smallest screen size
+        },
+        600: {
+            items: 3 // Display 3 items at medium screen size
+        },
+        1000: {
+            items: 5 // Display 5 items at larger screen size
+        }
+    }
+});
+
     
 })(jQuery);
