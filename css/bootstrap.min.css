@@ -5348,7 +5348,7 @@ fieldset:disabled .btn {
   pointer-events: none;
 }
 .modal.fade .modal-dialog {
-  transition: transform 0.3s ease-out;
+  transition: transform 0.1s ease-out;
   transform: translate(0, -50px);
 }
 @media (prefers-reduced-motion: reduce) {
@@ -6131,7 +6131,7 @@ fieldset:disabled .btn {
   --bs-offcanvas-border-width: var(--bs-border-width);
   --bs-offcanvas-border-color: var(--bs-border-color-translucent);
   --bs-offcanvas-box-shadow: var(--bs-box-shadow-sm);
-  --bs-offcanvas-transition: transform 0.3s ease-in-out;
+  --bs-offcanvas-transition: transform 0.1s ease-in-out;
   --bs-offcanvas-title-line-height: 1.5;
 }
 @media (max-width: 575.98px) {

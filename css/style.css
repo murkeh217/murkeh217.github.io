@@ -246,13 +246,13 @@
     .carousel-item {
         width: 100%;
         height: 90vh;
-        /*transition: height 0.3s ease-in-out;*/
+        /*transition: height 0.1s ease-in-out;*/
     }
 
     .carousel-item img {
         height: 100%; /* Stretches to fill the container */
         /*object-fit: cover; /* Ensures image maintains aspect ratio */
-        /*transition: object-position 0.3s ease-in-out;*/
+        /*transition: object-position 0.1s ease-in-out;*/
     }
 
     .carousel-control-prev,
