@@ -784,7 +784,7 @@
 .footer-item,
 .footer-item a {
     color: rgba(255, 255, 255, 0.7);
-    text-transform: capitalize;
+    text-transform: none;
 }
 
 /*** Footer End ***/
@@ -806,3 +806,8 @@
 }
 
 /*** Copywright End ***/
+
+h1
+{
+    color: var(--bs-blue);
+}
