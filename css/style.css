@@ -391,41 +391,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.2s;
     position: relative; /* Ensure relative positioning for stacking context */
-    z-index: 99; /* Content of .services-inner-icon stays above */
+    z-index: 10; /* Icon stays above the background */
 }
 
 .services-inner-icon::after {
     content: "";
     position: absolute;
-    width: 0;
-    height: 0;
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
     border-radius: 50%; /* Ensures it's a perfect circle */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: 0.2s;
-    background: var(--bs-blue);
-    z-index: -99; /* Push ::after behind the content */
-}
-
-.services-item:hover .services-inner-icon::after {
-    width: 100%;
-    height: 100%;
+    background: var(--bs-dark); /* Background color for the circle */
+    z-index: -1; /* Push the background behind the content */
 }
 
 .services-item i {
     text-align: center;
-    transition: 0.5s;
-    position: relative; /* Ensures it stays above the ::after element */
-    z-index: 00; /* Keep icon above both background and hover effect */
-}
-
-.services-item:hover i {
-    color: var(--bs-light) !important;
-    z-index: 99;
-    transform: rotate(360deg); /* Corrected syntax from "rotate" to "transform" */
+    position: relative; /* Ensures the icon stays above the background */
+    z-index: 1; /* Keep icon above the circle */
+    color: var(--bs-dark); /* Default icon color */
 }
 
 .services-btn {
@@ -433,8 +420,6 @@
     align-items: center;
     justify-content: center;
 }
-
-/*** Services Start ***/
 
 /*** Project Start ***/
 .project-item {
@@ -1115,3 +1100,17 @@ h1
 .my-float{
 	margin-top:16px;
 }
+
+@media (max-width: 767px) {
+    .float {
+      width: 50px;
+      height: 50px;
+      bottom: 20px;
+      right: 20px;
+      font-size: 24px;
+    }
+  
+    .my-float {
+      margin-top: 12px;
+    }
+  }
