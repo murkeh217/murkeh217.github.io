@@ -3808,7 +3808,7 @@ input, select, textarea {
   .logos:after {
     position: absolute;
     top: 0;
-    width: 150px;
+    width: 5px;
     height: 100%;
     content: "";
     z-index: 2;
@@ -3851,5 +3851,5 @@ input, select, textarea {
   
   .logos-slide img {
     height: 280px;
-    margin: 0 40px;
+    margin: 0 20px;
   }
