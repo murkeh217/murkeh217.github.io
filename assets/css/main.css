@@ -99,11 +99,11 @@ input, select, textarea {
 	}
 
 	body {
-		background-color: #008dc5c4;
-		background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #01025ec4 15%, #008dc5c4 85%);
-		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #01025ec4 15%, #008dc5c4 85%);
-		background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #01025ec4 15%, #008dc5c4 85%);
-		background-image: url("images/overlay.png"), linear-gradient(45deg, #01025ec4 15%, #008dc5c4 85%);
+		background-color: #d6b810c4;
+		background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #fbff00 2%, #d6b810c4 85%);
+		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #fbff00 2%, #d6b810c4 85%);
+		background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #fbff00 2%, #d6b810c4 85%);
+		background-image: url("images/overlay.png"), linear-gradient(45deg, #fbff00 2%, #d6b810c4 85%);
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -3073,7 +3073,7 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		padding: 5em 5em 1em 5em ;
+		padding: 5em 5em 5em 5em ;
 		text-align: center;
 	}
 
@@ -3087,7 +3087,7 @@ input, select, textarea {
 		}
 
 		#header.alt {
-			padding: 7em 5em 4em 5em ;
+			padding: 2em 5em 2em 5em ;
 		}
 
 			#header.alt h1 {
@@ -3128,11 +3128,11 @@ input, select, textarea {
 		@media screen and (max-width: 1280px) {
 
 			#header {
-				padding: 4em 4em 0.1em 4em ;
+				padding: 4em 4em 4em 4em ;
 			}
 
 				#header.alt {
-					padding: 6em 4em 3em 4em ;
+					padding: 2em 4em 2em 4em ;
 				}
 
 		}
@@ -3140,11 +3140,11 @@ input, select, textarea {
 		@media screen and (max-width: 980px) {
 
 			#header {
-				padding: 4em 3em 0.1em 3em ;
+				padding: 4em 3em 4em 3em ;
 			}
 
 				#header.alt {
-					padding: 5em 3em 2em 3em ;
+					padding: 2em 3em 2em 3em ;
 				}
 
 		}
@@ -3152,7 +3152,7 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#header {
-				padding: 3em 2em 0.1em 2em ;
+				padding: 3em 2em 3em 2em ;
 			}
 
 				#header p {
@@ -3165,7 +3165,7 @@ input, select, textarea {
 					}
 
 				#header.alt {
-					padding: 4em 2em 1em 2em ;
+					padding: 2em 2em 4em 2em ;
 				}
 
 					#header.alt h1 {
@@ -3177,11 +3177,11 @@ input, select, textarea {
 		@media screen and (max-width: 480px) {
 
 			#header {
-				padding: 3em 1.5em 0.1em 1.5em ;
+				padding: 3em 1.5em 3em 1.5em ;
 			}
 
 				#header.alt {
-					padding: 4em 1.5em 1em 1.5em ;
+					padding: 2em 1.5em 4em 2em ;
 				}
 
 		}
@@ -3189,11 +3189,11 @@ input, select, textarea {
 		@media screen and (max-width: 360px) {
 
 			#header {
-				padding: 2.5em 1em 0.1em 1em ;
+				padding: 2.5em 1em 2.5em 1em ;
 			}
 
 				#header.alt {
-					padding: 3.5em 1em 0.5em 1em ;
+					padding: 2em 1em 2em 1em ;
 				}
 
 		}
@@ -3764,7 +3764,7 @@ input, select, textarea {
 /* Wrapper */
 
 	#wrapper {
-		width: 64em;
+		width: 80em;
 		max-width: calc(100% - 4em);
 		margin: 0 auto;
 	}
