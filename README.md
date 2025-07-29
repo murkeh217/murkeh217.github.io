@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🌍 Dynamic Tunnel Sharing from Raspberry Pi
 
 This project is a **self-updating link broadcaster** for a web server hosted on a **Raspberry Pi**. It allows anyone to access your locally-hosted project via the internet, even though you're behind NAT or don’t have a static IP.
@@ -72,3 +73,7 @@ You can:
 ---
 
 Want help setting up the full workflow with logging, gist creation, or auto-start on boot? Check the `start_portfolio.sh` script or message me here!
+=======
+# website
+my website
+>>>>>>> origin/main
