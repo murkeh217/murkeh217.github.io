@@ -71,9 +71,3 @@ You can:
 - Showcase hobby projects without paying for hosting
 
 ---
-
-Want help setting up the full workflow with logging, gist creation, or auto-start on boot? Check the `start_portfolio.sh` script or message me here!
-=======
-# website
-my website
->>>>>>> origin/main
