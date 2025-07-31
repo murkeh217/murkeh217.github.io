@@ -27,7 +27,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-somehashhere" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<script>
+    <script>
 function checkAndRedirect() {
   const gistUrl = "https://gist.githubusercontent.com/murkeh217/543f8d84ff1b2a982207ba372b78db9a/raw/current-url.txt?" + Date.now();
 
@@ -39,8 +39,11 @@ function checkAndRedirect() {
       // Try loading an image from the server as a live check
       const img = new Image();
       img.onload = () => {
-        // If image loads, assume server is alive
-        if (window.location.href !== trimmedUrl) {
+        const lastRedirectedUrl = sessionStorage.getItem('lastRedirectedUrl');
+
+        // Prevent reload if already on this page or already redirected
+        if (window.location.href !== trimmedUrl && lastRedirectedUrl !== trimmedUrl) {
+          sessionStorage.setItem('lastRedirectedUrl', trimmedUrl);
           window.location.href = trimmedUrl;
         }
       };
@@ -49,17 +52,14 @@ function checkAndRedirect() {
         showFallbackMessage();
       };
 
-      // Add dummy image path — the file doesn't have to exist
       img.src = trimmedUrl + "/favicon.ico?" + Date.now();
     })
     .catch(() => {
-      // Gist fetch failed
       showFallbackMessage();
     });
 }
 
 function showFallbackMessage() {
-  // Only run once
   if (document.getElementById('fallback-msg')) return;
 
   const msg = document.createElement('div');
@@ -69,12 +69,10 @@ function showFallbackMessage() {
   document.body.appendChild(msg);
 }
 
-// Run on page load
 checkAndRedirect();
-
-// Repeat every 60 seconds
-setInterval(checkAndRedirect, 300000);
+setInterval(checkAndRedirect, 300000); // every 5 minutes
 </script>
+
 
 
 </head>
@@ -93,7 +91,7 @@ setInterval(checkAndRedirect, 300000);
     <div id="page" class="s-pagewrap">
 
 
-        <!-- # site header 
+        <!-- # site header
         ================================================== -->
         <header id="masthead" class="s-header">
 
@@ -178,7 +176,7 @@ setInterval(checkAndRedirect, 300000);
                 <div class="row">
                     <div class="column lg-12">
                         <h2 class="text-pretitle animate-on-load">About Me</h2>
-    
+
                         <p class="attention-getter animate-on-load">
                             Hi, I'm a 32-year-old Game Developer based in India with a strong focus on Unity3D development. I bring a multidisciplinary skill set to the table with additional experience in web design and basic proficiency in Blender for 3D modeling and asset creation.<br>
 
@@ -197,7 +195,7 @@ I’m constantly experimenting and sharing my work—both playable prototypes an
                 <div class="row s-about__career-header">
                     <div class="column lg-12">
                         <h2 class="text-pretitle">Resume</h2>
-    
+
                         <p class="text-huge-title">
                         Here is my education, work experience, & some skills I've got.
                         </p>
@@ -206,11 +204,11 @@ I’m constantly experimenting and sharing my work—both playable prototypes an
 
                 <div class="row s-about__timeline" data-animate-block>
                     <div class="column lg-6 stack-on-900 s-about__timeline-section" data-animate-el>
-    
+
                         <h2 class="text-subtitle">
                             Experience
                         </h2>
-    
+
                         <div class="timeline">
 
     <div class="timeline__block">
@@ -239,15 +237,15 @@ I’m constantly experimenting and sharing my work—both playable prototypes an
 
 </div> <!-- end timeline -->
 
-    
+
                     </div> <!-- end s-about__timeline-section -->
-    
+
                     <div class="column lg-6 stack-on-900 s-about__timeline-section" data-animate-el>
-    
+
                         <h2 class="text-subtitle">
                             Education
                         </h2>
-    
+
                         <div class="timeline">
 
     <div class="timeline__block">
@@ -276,18 +274,18 @@ I’m constantly experimenting and sharing my work—both playable prototypes an
 
 </div> <!-- end timeline -->
 
-                        
+
                     </div> <!-- end s-about__timeline-section -->
-    
+
                 </div> <!-- end about__timeline -->
 
                 <div class="row s-about__skills" data-animate-block>
                     <div class="column lg-12" data-animate-el>
-    
+
                         <h2 class="text-subtitle">
                             Skills & Expertise
                         </h2>
-    
+
                         <ul class="skill-bars">
                             <li>
                             <div class="progress percent80"></div>
@@ -314,15 +312,15 @@ I’m constantly experimenting and sharing my work—both playable prototypes an
                             <strong>NodeJS</strong>
                             </li>
                         </ul>
-    
+
                     </div>
                 </div> <!-- end s-about__skills -->
 
                 <!-- <div class="row s-about__clients" data-animate-block>
                     <div class="column lg-12" data-animate-el>
-    
+
                         <h2 class="text-pretitle">Selected Clients</h2>
-    
+
                         <ul class="clients-list text-huge-title">
                             <li><a href="#0">Microsoft</a></li>
                             <li><a href="#0">Amazon</a></li>
@@ -335,7 +333,7 @@ I’m constantly experimenting and sharing my work—both playable prototypes an
                             <li><a href="#0">Square</a></li>
                             <li><a href="#0">Brave</a></li>
                         </ul>
-    
+
                     </div>
                 </div> <!-- end s-about__clients-->
 
@@ -361,9 +359,9 @@ I’m constantly experimenting and sharing my work—both playable prototypes an
             <div class="row folio-list block-lg-one-full block-stack-on-550" data-animate-block>
                 <div class="column" data-animate-el>
                     <section id="second" class="main special">
-		
+
                 		<iframe src="about:blank" name="gameplay" width="100%" height="650px" id="myIframe"></iframe>
-		                
+
                         <script>
                         document.addEventListener("DOMContentLoaded", () => {
                             const iframe = document.getElementById("myIframe");
@@ -518,16 +516,16 @@ I’m constantly experimenting and sharing my work—both playable prototypes an
 
                         <div class="game-links">
                         <ul>
-                            <a href="https://murkeh217.github.io/fingers_crossed" target="gameplay">Fingers Crossed</a> | 
-                            <a href="https://murkeh217.github.io/hurdle-race" target="gameplay">Hurdle Runner</a> | 
-                            <a href="https://murkeh217.github.io/jojo_arrow" target="gameplay">JOJO Arrow</a> | 
+                            <a href="https://murkeh217.github.io/fingers_crossed" target="gameplay">Fingers Crossed</a> |
+                            <a href="https://murkeh217.github.io/hurdle-race" target="gameplay">Hurdle Runner</a> |
+                            <a href="https://murkeh217.github.io/jojo_arrow" target="gameplay">JOJO Arrow</a> |
                             <!--<a href="https://murkeh217.github.io/sisiphus" target="gameplay">Sisiphus</a> | -->
-                            <a href="https://murkeh217.github.io/rpsls" target="gameplay">RPSLS</a> | 
+                            <a href="https://murkeh217.github.io/rpsls" target="gameplay">RPSLS</a> |
                             <!--<a href="https://murkeh217.github.io/rhythm_tiles" target="gameplay">Rhythm Tiles</a> | -->
-                            <a href="https://murkeh217.github.io/bass_rhythm" target="gameplay">Bass Rhythm</a> | 
-                            <a href="https://murkeh217.github.io/Killer-Wave" target="gameplay">Killer Wave</a> | 
+                            <a href="https://murkeh217.github.io/bass_rhythm" target="gameplay">Bass Rhythm</a> |
+                            <a href="https://murkeh217.github.io/Killer-Wave" target="gameplay">Killer Wave</a> |
                             <!--<a href="https://murkeh217.github.io/battle-tank-game" target="gameplay">Battle Tanks</a> | -->
-                            <a href="https://murkeh217.github.io/2.5D-Fighting-Game" target="gameplay">JOJO Fight</a><!-- | 
+                            <a href="https://murkeh217.github.io/2.5D-Fighting-Game" target="gameplay">JOJO Fight</a><!-- |
                             <a href="https://murkeh217.github.io/Doodle-Jump-Clone" target="gameplay">Doodle Jump Clone</a> | -->
                             <!--<a href="https://murkeh217.github.io/LineBall" target="gameplay">Line Ball Clone</a> | -->
                             <!--<a href="https://murkeh217.github.io/3D-game" target="gameplay">3D Game</a> | -->
@@ -592,13 +590,13 @@ I’m constantly experimenting and sharing my work—both playable prototypes an
                             <li><a href="https://steamcommunity.com/profiles/76561198874984852">Steam</a></li>
                         </ul>
                     </div>
-                    
+
                 </div>
             </div> <!-- end s-footer__contact-content -->
 
             <div class="row s-footer__bottom">
                 <div class="column ss-copyright">
-                    <span>© Copyright Augustine 2022</span> 
+                    <span>© Copyright Augustine 2022</span>
                     <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
                 </div>
 
