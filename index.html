@@ -32,27 +32,19 @@
     .then(res => res.text())
     .then(url => {
       const trimmedUrl = url.trim();
-      fetch(trimmedUrl, { method: 'GET' })
-        .then(res => res.text())
-        .then(html => {
-          const lower = html.toLowerCase();
-          if (
-            !lower.includes("no matching tunnelmole domain") &&
-            !lower.includes("tunnel not found") &&
-            !lower.includes("tunnelmole unavailable") &&
-            !lower.includes("this tunnel does not exist") &&
-            !lower.includes("502 bad gateway")
-          ) {
-            window.location.href = trimmedUrl;
-          }
-          // else: do nothing, stay on static site
+
+      // Try pinging the URL with a GET and ignore CORS using no-cors
+      fetch(trimmedUrl, { method: 'GET', mode: 'no-cors' })
+        .then(() => {
+          // If fetch didn't throw, assume it's up and redirect
+          window.location.href = trimmedUrl;
         })
         .catch(() => {
-          // Fetch to live server failed, stay on static site
+          // If fetch failed, just stay on static site
         });
     })
     .catch(() => {
-      // Gist fetch failed, stay on static site
+      // Couldn't fetch the gist
     });
 </script>
 
