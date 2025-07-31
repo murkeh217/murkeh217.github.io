@@ -29,7 +29,6 @@
 
 <script>
 function checkAndRedirect() {
-  // Add cache-busting query parameter
   const gistUrl = "https://gist.githubusercontent.com/murkeh217/543f8d84ff1b2a982207ba372b78db9a/raw/current-url.txt?" + Date.now();
 
   fetch(gistUrl)
@@ -37,28 +36,44 @@ function checkAndRedirect() {
     .then(url => {
       const trimmedUrl = url.trim();
 
-      // Try pinging the URL (no-cors means we can't check status but we assume success if no error)
-      fetch(trimmedUrl, { method: 'GET', mode: 'no-cors' })
-        .then(() => {
-          // Redirect regardless of status if fetch succeeds
-          if (window.location.href !== trimmedUrl) {
-            window.location.href = trimmedUrl;
-          }
-        })
-        .catch(() => {
-          // If fetch fails, do nothing (stay on static site)
-        });
+      // Try loading an image from the server as a live check
+      const img = new Image();
+      img.onload = () => {
+        // If image loads, assume server is alive
+        if (window.location.href !== trimmedUrl) {
+          window.location.href = trimmedUrl;
+        }
+      };
+      img.onerror = () => {
+        // Image failed to load — server is likely down or URL is outdated
+        showFallbackMessage();
+      };
+
+      // Add dummy image path — the file doesn't have to exist
+      img.src = trimmedUrl + "/favicon.ico?" + Date.now();
     })
     .catch(() => {
-      // If fetching the gist fails, do nothing
+      // Gist fetch failed
+      showFallbackMessage();
     });
 }
 
-// Initial check
+function showFallbackMessage() {
+  // Only run once
+  if (document.getElementById('fallback-msg')) return;
+
+  const msg = document.createElement('div');
+  msg.id = 'fallback-msg';
+  msg.textContent = "🔌 No tunnel found. Showing static version...";
+  msg.style = "position:fixed;bottom:10px;left:10px;background:#ffeb3b;padding:8px 12px;border-radius:6px;font-family:sans-serif;color:#000;z-index:9999;";
+  document.body.appendChild(msg);
+}
+
+// Run on page load
 checkAndRedirect();
 
-// Repeat every 60 seconds (adjust as needed)
-setInterval(checkAndRedirect, 60000);
+// Repeat every 60 seconds
+setInterval(checkAndRedirect, 300000);
 </script>
 
 
