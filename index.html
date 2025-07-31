@@ -27,25 +27,38 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-somehashhere" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <script>
-  fetch("https://gist.githubusercontent.com/murkeh217/543f8d84ff1b2a982207ba372b78db9a/raw/current-url.txt")
+<script>
+function checkAndRedirect() {
+  // Add cache-busting query parameter
+  const gistUrl = "https://gist.githubusercontent.com/murkeh217/543f8d84ff1b2a982207ba372b78db9a/raw/current-url.txt?" + Date.now();
+
+  fetch(gistUrl)
     .then(res => res.text())
     .then(url => {
       const trimmedUrl = url.trim();
 
-      // Try pinging the URL with a GET and ignore CORS using no-cors
+      // Try pinging the URL (no-cors means we can't check status but we assume success if no error)
       fetch(trimmedUrl, { method: 'GET', mode: 'no-cors' })
         .then(() => {
-          // If fetch didn't throw, assume it's up and redirect
-          window.location.href = trimmedUrl;
+          // Redirect regardless of status if fetch succeeds
+          if (window.location.href !== trimmedUrl) {
+            window.location.href = trimmedUrl;
+          }
         })
         .catch(() => {
-          // If fetch failed, just stay on static site
+          // If fetch fails, do nothing (stay on static site)
         });
     })
     .catch(() => {
-      // Couldn't fetch the gist
+      // If fetching the gist fails, do nothing
     });
+}
+
+// Initial check
+checkAndRedirect();
+
+// Repeat every 60 seconds (adjust as needed)
+setInterval(checkAndRedirect, 60000);
 </script>
 
 
