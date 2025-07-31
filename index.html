@@ -27,43 +27,40 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-somehashhere" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <script>
+  fetch("https://gist.githubusercontent.com/murkeh217/543f8d84ff1b2a982207ba372b78db9a/raw/current-url.txt")
+    .then(res => res.text())
+    .then(url => {
+      const trimmedUrl = url.trim();
+      fetch(trimmedUrl, { method: 'GET' })
+        .then(res => res.text())
+        .then(html => {
+          const lower = html.toLowerCase();
+          if (
+            !lower.includes("no matching tunnelmole domain") &&
+            !lower.includes("tunnel not found") &&
+            !lower.includes("tunnelmole unavailable") &&
+            !lower.includes("this tunnel does not exist") &&
+            !lower.includes("502 bad gateway")
+          ) {
+            window.location.href = trimmedUrl;
+          }
+          // else: do nothing, stay on static site
+        })
+        .catch(() => {
+          // Fetch to live server failed, stay on static site
+        });
+    })
+    .catch(() => {
+      // Gist fetch failed, stay on static site
+    });
+</script>
+
 
 </head>
 
 
 <body id="top">
-  <script>
-    fetch("https://gist.githubusercontent.com/murkeh217/543f8d84ff1b2a982207ba372b78db9a/raw/current-url.txt")
-      .then(res => res.text())
-      .then(url => {
-        const trimmedUrl = url.trim();
-        fetch(trimmedUrl, { method: 'GET' })
-          .then(res => res.text())
-          .then(html => {
-            const lower = html.toLowerCase();
-            if (
-              lower.includes("no matching tunnelmole domain") ||
-              lower.includes("tunnel not found") ||
-              lower.includes("tunnelmole unavailable") ||
-              lower.includes("this tunnel does not exist") ||
-              lower.includes("502 bad gateway")
-            ) {
-              // Tunnelmole reports unavailable
-              document.body.innerHTML = "<h2>Live server not available.</h2>";
-            } else {
-              // Tunnel appears live, redirect
-              window.location.href = trimmedUrl;
-            }
-          })
-          .catch(() => {
-            document.body.innerHTML = "<h2>Live server not available.</h2>";
-          });
-      })
-      .catch(() => {
-        document.body.innerHTML = "<h2>Could not fetch live server URL.</h2>";
-      });
-  </script>
-
     <!-- preloader
     ================================================== -->
     <div id="preloader">
