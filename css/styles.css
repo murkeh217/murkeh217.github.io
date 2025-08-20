@@ -92,15 +92,15 @@
     /* color-1(#5F9295)
      * color-2(#2D2327)
      */
-    --color-1                      : hsla(183, 22%, 48%, 1);
+    --color-1                      : hsla(92, 22%, 48%, 1);
     --color-2                      : hsla(336, 13%, 16%, 1);
 
     /* theme color variations
      */
-    --color-1-lighter              : hsla(183, 22%, 68%, 1);
-    --color-1-light                : hsla(183, 22%, 58%, 1);
-    --color-1-dark                 : hsla(183, 22%, 38%, 1);
-    --color-1-darker               : hsla(183, 22%, 28%, 1);
+    --color-1-lighter              : hsla(92, 22%, 68%, 1);
+    --color-1-light                : hsla(92, 22%, 58%, 1);
+    --color-1-dark                 : hsla(92, 22%, 38%, 1);
+    --color-1-darker               : hsla(92, 22%, 28%, 1);
 
     --color-2-lighter              : hsla(336, 13%, 36%, 1);
     --color-2-light                : hsla(336, 13%, 26%, 1);
@@ -126,12 +126,12 @@
      * (https://maketintsandshades.com/)
      */
     --color-black                  : #000000;
-    --color-gray-19                : #0d0f0f;
-    --color-gray-18                : #1b1e1e;
-    --color-gray-17                : #282d2e;
-    --color-gray-16                : #363c3d;
-    --color-gray-15                : #444b4c;
-    --color-gray-14                : #515a5b;
+    /*--color-gray-19                : #0d0f0d;
+    --color-gray-18                : #1b1e1b;
+    --color-gray-17                : #292e28;
+    --color-gray-16                : #373d36;
+    --color-gray-15                : #444c45;
+    --color-gray-14                : #515b53;
     --color-gray-13                : #5f696a;
     --color-gray-12                : #6c787a;
     --color-gray-11                : #7a8789;
@@ -144,15 +144,34 @@
     --color-gray-4                 : #cfd5d6;
     --color-gray-3                 : #dbe0e0;
     --color-gray-2                 : #e7eaea;
-    --color-gray-1                 : #f3f5f5;
+    --color-gray-1                 : #f3f5f5;*/
+    --color-gray-19                : #2a2c2a;
+--color-gray-18                : #383b38;
+--color-gray-17                : #464a46;
+--color-gray-16                : #545954;
+--color-gray-15                : #626862;
+--color-gray-14                : #707770;
+--color-gray-13                : #7e867e;
+--color-gray-12                : #8c958c;
+--color-gray-11                : #9aa49a;
+--color-gray-10                : #a8b3a8;
+--color-gray-9                 : #b6c2b6;
+--color-gray-8                 : #c4d1c4;
+--color-gray-7                 : #d2e0d2;
+--color-gray-6                 : #e0efe0;
+--color-gray-5                 : #eefeee;
+--color-gray-4                 : #f6fef6;
+--color-gray-3                 : #f9fef9;
+--color-gray-2                 : #fcfffc;
+--color-gray-1                 : #ffffff;
     --color-white                  : #ffffff;
 
     /* text
      */
     --color-text                   : var(--color-gray-17);
     --color-text-dark              : var(--color-gray-19);
-    --color-text-light             : var(--color-gray-12);
-    --color-placeholder            : var(--color-gray-12);
+    --color-text-light             : var(--color-gray-8);
+    --color-placeholder            : var(--color-gray-8);
 
     /* buttons
      */
@@ -177,8 +196,8 @@
 
     /* others
      */
-    --color-body                   : rgba(0, 0, 0, 0.15);
-    --color-border                 : rgba(0, 0, 0, .08);
+    --color-body                   : rgba(16, 41, 0, 0.137);
+    --color-border                 : rgba(255, 255, 255, 0.507);
     --border-radius                : 3px;
 }
 
@@ -2884,7 +2903,7 @@ img.u-pull-left {
     z-index          : 100;
     display          : flex;
     height           : var(--header-height);
-    background-color : var(--color-body);
+    background-color : var(--color-gray-10); /* Changed from var(--color-body) to solid color */
     width            : 100%;
     transition       : height 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
     position         : absolute;
@@ -2929,6 +2948,7 @@ img.u-pull-left {
     outline : 0;
     border  : none;
     color   : var(--color-text-dark);
+    
 }
 
 /* --------------------------------------------------------------------
@@ -2942,16 +2962,17 @@ img.u-pull-left {
 .s-header__nav a {
     display             : block;
     font-size           : 2rem;
-    font-weight         : 400;
     line-height         : var(--vspace-1);
-    color               : var(--color-text-dark);
+    font-weight         : 400;
+    color               : var(--color-white);
     padding             : 0 1.8rem;
     transition-property : color, background-color;
 }
 
 .s-header__nav a:focus,
 .s-header__nav a:hover {
-    color : var(--color-1);
+    color : var(--color-1-darker);
+    font-weight: 700;
 }
 
 .s-header__nav ul {
@@ -3224,7 +3245,7 @@ img.u-pull-left {
     line-height    : 1.0998;
     letter-spacing : -.01em;
     margin-top     : 0;
-    color          : white;
+    color          : rgba(0, 0, 0, 0.884);
 }
 
 .s-intro__text h3 span {
@@ -3238,7 +3259,7 @@ img.u-pull-left {
     letter-spacing   : -0.015em;
     margin-top       : calc(var(--text-huge-size) / 2 * -1.2);
     margin-bottom    : var(--vspace-1_25);
-    color            : white;
+    color            : rgba(0, 0, 0, 0.884);
 }
 
 /* --------------------------------------------------------------------
