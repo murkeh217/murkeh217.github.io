@@ -83,7 +83,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #f2f5f3;
+		background: #292929;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -3105,3 +3105,41 @@ input, select, textarea {
 			}
 
 	}
+
+/* icons spacing */
+
+a.icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* space between icon and text */
+  text-decoration: none;
+}
+
+/* Override all section backgrounds */
+body,
+#header,
+#main,
+#footer,
+#footer h2.major span,
+#copyright {
+    background: #292929 !important;
+    color: #f2f2f2; /* optional: light text for contrast */
+}
+
+/* Section title spans */
+h2.major span,
+#footer h2.major span {
+    background: rgba(107, 119, 112, 0.75) !important;
+    color: #fff; /* keeps the text readable */
+}
+
+/* The lines above/below the spans */
+h2.major,
+#footer h2.major {
+    border-top: solid 5px rgba(107, 119, 112, 0.75) !important;
+}
+
+/* Navbar with same transparent tone */
+#nav {
+    background-color: rgba(107, 119, 112, 0.75) !important;
+}

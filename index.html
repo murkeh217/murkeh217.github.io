@@ -47,15 +47,16 @@
 			}
 
 			function showFallbackMessage() {
-			if (document.getElementById('fallback-msg')) return;
+				if (window.self !== window.top) return; // prevent message inside iframe
+				if (document.getElementById('fallback-msg')) return;
 
-			const msg = document.createElement('div');
-			msg.id = 'fallback-msg';
-			msg.textContent = "🔌 No tunnel found. Showing static version...";
-			msg.style = "position:fixed;bottom:10px;left:10px;background:#ffeb3b;padding:8px 12px;border-radius:6px;font-family:sans-serif;color:#000;z-index:9999;";
-			document.body.appendChild(msg);
+				const msg = document.createElement('div');
+				msg.id = 'fallback-msg';
+				msg.textContent = "🔌 No tunnel found. Showing static version...";
+				msg.style = "position:fixed;bottom:10px;left:10px;background:#ffeb3b;padding:8px 12px;border-radius:6px;font-family:sans-serif;color:#000;z-index:9999;";
+				document.body.appendChild(msg);
 			}
-
+			 	 	 	
 			checkAndRedirect();
 			// Removed: setInterval(checkAndRedirect, 300000);
 		</script>
@@ -159,31 +160,16 @@
 
 										<!-- Something -->
 											<section>
-												<h2 class="major"><!--<span>Ipsum Dolore</span>--></h2>
 												<span class="image featured"><img src="images/intro-bg.jpg" alt="" /></span>
-												<ul>
-													<li><a href="https://discord.com/users/404565785105924097">Discord</a></li>
-													<li><a href="https://github.com/murkeh217">Github</a></li>
-													<li><a href="https://www.youtube.com/@murkeh217">YouTube</a></li>
-													<li><a href="https://steamcommunity.com/profiles/76561198874984852">Steam</a></li>
-												</ul>
-												<ul>
-													<li><a href="mailto:kanorwalamurtaza217@gmail.com">kanorwalamurtaza217@gmail.com</a></li>
-													<li><a href="tel:+919307565891">+91 9307565891</a></li>
-												</ul>
-
-												
-
-								<!-- Contact -->
-												<h2 class="major"><span>Resume</span></h2>
-												<ul class="contact">
-													<li><a class="icon brands fa-facebook-f" href="#"><span class="label">Facebook</span></a></li>
-													<li><a class="icon brands fa-twitter" href="#"><span class="label">Twitter</span></a></li>
-													<li><a class="icon brands fa-instagram" href="#"><span class="label">Instagram</span></a></li>
-													<li><a class="icon brands fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
-													<li><a class="icon brands fa-linkedin-in" href="#"><span class="label">LinkedIn</span></a></li>
-												</ul>
-
+												<h2 class="major"><span>Contact</span></h2>
+												<a class="icon brands fa-discord" href="https://discord.com/users/404565785105924097">Discord</a><br>
+												<a class="icon brands fa-github" href="https://github.com/murkeh217">Github</a><br>
+												<a class="icon brands fa-youtube" href="https://www.youtube.com/@murkeh217">YouTube</a><br>
+												<a class="icon brands fa-steam" href="https://steamcommunity.com/profiles/76561198874984852">Steam</a><br>
+												<a class="icon brands fa-google-play" href="https://play.google.com/store/apps/dev?id=8964139791369830071">Google Play Developer</a><br>
+												<a class="icon solid fa-envelope" href="mailto:kanorwalamurtaza217@gmail.com">kanorwalamurtaza217@gmail.com</a><br>
+												<a class="icon solid fa-mobile-alt" href="tel:+919307565891">+91 9307565891</a><br>
+												<a class="icon solid fa-file-pdf" href="files/Murtaza_Kanorwala_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a><br>
 											</section>
 
 								</div>
@@ -199,7 +185,7 @@
 
 													<!-- Feature -->
 														<section class="box feature">
-															<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+															<a href="#" class="image featured"><img src="images/unity.png" alt="" /></a>
 															<h3><a href="#">></a></h3>
 															<h4 class="timeline__title">Freelance</h4>
 															<h5 class="timeline__meta">Unity Developer</h5>
@@ -212,7 +198,7 @@
 
 													<!-- Feature -->
 														<section class="box feature">
-															<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+															<a href="#" class="image featured"><img src="images/ubi.jpg" alt="" /></a>
 															<h3><a href="#">></a></h3>
 															<h4 class="timeline__title">Ubisoft</h4>
 															<h5 class="timeline__meta">Game Tester</h5>
@@ -225,7 +211,7 @@
 
 													<!-- Feature -->
 														<section class="box feature">
-															<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+															<a href="#" class="image featured"><img src="images/outscal.png" alt="" /></a>
 															<h3><a href="#">></a></h3>
 															<h4 class="timeline__title">Outscal</h4>
 															<h5 class="timeline__meta">FullStack Game Development</h5>
@@ -238,7 +224,7 @@
 
 													<!-- Feature -->
 														<section class="box feature">
-															<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+															<a href="#" class="image featured"><img src="images/mu.png" alt="" /></a>
 															<h3><a href="#">></a></h3>
 															<h4 class="timeline__title">Thakur College of Science & Commerce</h4>
 															<h5 class="timeline__meta">B.Sc. Computer Science</h5>
