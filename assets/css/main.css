@@ -2321,7 +2321,7 @@ input, select, textarea {
 		}
 
 			#header .logo div {
-				background: #fff;
+				background: rgba(107, 119, 112, 1);
 				position: relative;
 				display: inline-block;
 				padding: 0 1.5em 0 1.5em;
@@ -2389,7 +2389,7 @@ input, select, textarea {
 				position: relative;
 				display: block;
 				text-decoration: none;
-				color: #6b7770;
+				color: rgba(107, 119, 112, 1);
 				top: -6px;
 				padding: 6px 1.5em 0.25em 1.5em;
 				border-bottom-left-radius: 6px;
@@ -2402,7 +2402,7 @@ input, select, textarea {
 			}
 
 			#nav li:hover a, #nav li:hover span {
-				background: #C1CAC5;
+				background:  #b1ddab;
 				color: #fff;
 			}
 
@@ -3142,4 +3142,52 @@ h2.major,
 /* Navbar with same transparent tone */
 #nav {
     background-color: rgba(107, 119, 112, 1) !important;
+}
+
+a {
+	color:  #b1ddab   /* subtle green-grey for normal state */ !important;
+}
+
+a:hover {
+	color: #fff !important;   /* bright green on hover */
+	text-decoration: none !important;
+}
+
+/*carousel - upcoming projects */
+.upcoming-section {
+  background: #292929;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.carousel-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  animation: slideLoop 60s linear infinite; /* slow scroll */
+}
+
+.carousel-slide {
+  flex: 0 0 33.333%; /* show 3 at once */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+  background: transparent;
+}
+
+/* Infinite slide animation */
+@keyframes slideLoop {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-300%); } 
 }
