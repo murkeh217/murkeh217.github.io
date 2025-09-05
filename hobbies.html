@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSS Only Responsive Tab View Example - 13 Tabs</title>
+<style>
+body {
+  background-color: #fafafa;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.responsive-tabs {
+  margin: 20px auto;
+  width: 90%;
+}
+
+.responsive-tabs .state {
+  position: absolute;
+  left: -10000px;
+}
+
+.responsive-tabs .flex-tabs {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.responsive-tabs .flex-tabs .tab {
+  flex-grow: 1;
+  max-height: 40px;
+}
+
+.responsive-tabs .flex-tabs .panel {
+  background-color: #fcfcfc;
+  padding: 20px;
+  min-height: 200px;
+  display: none;
+  width: 100%;
+  flex-basis: auto;
+}
+
+.responsive-tabs .tab {
+  display: inline-block;
+  padding: 10px;
+  vertical-align: top;
+  background-color: #eee;
+  cursor: pointer;
+  border-left: 10px solid #ccc;
+}
+
+.responsive-tabs .tab:hover { background-color: #fff; }
+
+/* Active states for 13 tabs */
+#tab-1:checked ~ .tabs #tab-1-label,
+#tab-2:checked ~ .tabs #tab-2-label,
+#tab-3:checked ~ .tabs #tab-3-label,
+#tab-4:checked ~ .tabs #tab-4-label,
+#tab-5:checked ~ .tabs #tab-5-label,
+#tab-6:checked ~ .tabs #tab-6-label,
+#tab-7:checked ~ .tabs #tab-7-label,
+#tab-8:checked ~ .tabs #tab-8-label,
+#tab-9:checked ~ .tabs #tab-9-label,
+#tab-10:checked ~ .tabs #tab-10-label,
+#tab-11:checked ~ .tabs #tab-11-label,
+#tab-12:checked ~ .tabs #tab-12-label,
+#tab-13:checked ~ .tabs #tab-13-label {
+  background-color: #fff;
+  cursor: default;
+  border-left-color: #69be28;
+}
+
+/* Show the selected panel */
+#tab-1:checked ~ .tabs #tab-1-panel,
+#tab-2:checked ~ .tabs #tab-2-panel,
+#tab-3:checked ~ .tabs #tab-3-panel,
+#tab-4:checked ~ .tabs #tab-4-panel,
+#tab-5:checked ~ .tabs #tab-5-panel,
+#tab-6:checked ~ .tabs #tab-6-panel,
+#tab-7:checked ~ .tabs #tab-7-panel,
+#tab-8:checked ~ .tabs #tab-8-panel,
+#tab-9:checked ~ .tabs #tab-9-panel,
+#tab-10:checked ~ .tabs #tab-10-panel,
+#tab-11:checked ~ .tabs #tab-11-panel,
+#tab-12:checked ~ .tabs #tab-12-panel,
+#tab-13:checked ~ .tabs #tab-13-panel {
+  display: block;
+}
+
+/* Responsive stacking */
+@media (max-width: 600px) {
+  .flex-tabs { flex-direction: column; }
+  .flex-tabs .tab { background: #fff; border-bottom: 1px solid #ccc; }
+  .flex-tabs .tab:last-of-type { border-bottom: none; }
+}
+</style>
+
+</head>
+
+<body>
+<h1 style="margin:50px auto 20px auto;text-align:center;">MK</h1>
+<div class="responsive-tabs">
+  <!-- Radios -->
+  <input class="state" type="radio" name="tabs-state" id="tab-1" checked />
+  <input class="state" type="radio" name="tabs-state" id="tab-2" />
+  <input class="state" type="radio" name="tabs-state" id="tab-3" />
+  <input class="state" type="radio" name="tabs-state" id="tab-4" />
+  <input class="state" type="radio" name="tabs-state" id="tab-5" />
+  <input class="state" type="radio" name="tabs-state" id="tab-6" />
+  <input class="state" type="radio" name="tabs-state" id="tab-7" />
+  <input class="state" type="radio" name="tabs-state" id="tab-8" />
+  <input class="state" type="radio" name="tabs-state" id="tab-9" />
+  <input class="state" type="radio" name="tabs-state" id="tab-10" />
+  <input class="state" type="radio" name="tabs-state" id="tab-11" />
+  <input class="state" type="radio" name="tabs-state" id="tab-12" />
+  <input class="state" type="radio" name="tabs-state" id="tab-13" />
+
+  <div class="tabs flex-tabs">
+    <!-- Labels -->
+    <label for="tab-1" id="tab-1-label" class="tab">Zodiac</label>
+    <label for="tab-2" id="tab-2-label" class="tab">Operating Systems</label>
+    <label for="tab-3" id="tab-3-label" class="tab">Workout</label>
+    <label for="tab-4" id="tab-4-label" class="tab">Phone</label>
+    <label for="tab-5" id="tab-5-label" class="tab">Music</label>
+    <label for="tab-6" id="tab-6-label" class="tab">Art</label>
+    <label for="tab-7" id="tab-7-label" class="tab">Swimming</label>
+    <label for="tab-8" id="tab-8-label" class="tab">Riding</label>
+    <label for="tab-9" id="tab-9-label" class="tab">Driving</label>
+    <label for="tab-10" id="tab-10-label" class="tab">Anime</label>
+    <label for="tab-11" id="tab-11-label" class="tab">Food</label>
+    <label for="tab-12" id="tab-12-label" class="tab">NSFW</label>
+    <label for="tab-13" id="tab-13-label" class="tab">Social</label>
+
+    <!-- Panels -->
+    <div id="tab-1-panel" class="panel"><p>21st July 1992 - Cancer - Monkey</p></div>
+    <div id="tab-2-panel" class="panel"><p>Project Bluefin https://projectbluefin.io/ | LineageOS</p></div>
+    <div id="tab-3-panel" class="panel"><p>P90X - Calisthenics - Parkour - Tai Cheng</p></div>
+    <div id="tab-4-panel" class="panel"><p>Motorola | Nokia | Sony | HTC | Asus | Blackberry</p></div>
+    <div id="tab-5-panel" class="panel"><p>Disturbed - Le Sserrafim - Shakira - Eminem - Linkin Park | https://open.spotify.com/user/31xloxfvosvfz7zyiezeywdvkf4e?si=2c5d32472b1c46a9</p></div>
+    <div id="tab-6-panel" class="panel"><p>Insert some drawings/paintings here:</p></div>
+    <div id="tab-7-panel" class="panel"><p>Frog, Breastroke, Butterfly</p></div>
+    <div id="tab-8-panel" class="panel"><p>Cruiser Motorcycles</p></div>
+    <div id="tab-9-panel" class="panel"><p>Tesla</p></div>
+    <div id="tab-10-panel" class="panel"><p>Insert all my anime here: dan da dan, dr. stone, jojo's bizzare adventures, digimon, pokemon, dragon ball z, bleach, naruto, boruto, one piee, to be hero x, the rising of shield hero, death note, hell's paradise, fire force, grand blue, konosuba, rezero, beheneko, chuhai lips, chiikawa, black clover, jujutsu kaisen, demon slayer, mushoku tensei, demon king, promised neverland, gleipnir, parasyte, mono, doraemon, shinchan, go go loser ranger,</p></div>
+    <div id="tab-11-panel" class="panel"><p>Not picky in vegetables, tropical fruits, white meat, coca cola, vanila icecream cone, spicy</p></div>
+    <div id="tab-12-panel" class="panel"><p>Japanese, Chinese, Latin, Whiskey/Rum with cola</p></div>
+    <div id="tab-13-panel" class="panel"><p>HelloTalk, Xiaohongshu, Reddit, Youtube</p></div>
+  </div>
+</div>
+</body>
+</html>
