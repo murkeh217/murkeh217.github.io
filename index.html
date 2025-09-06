@@ -8,7 +8,7 @@
 	<head>
 		<title>MK Portfolio (Static)</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 
 		<!-- Google tag (gtag.js) -->
@@ -287,7 +287,7 @@
 
 											const descriptions = {
 												"fingers_crossed": `
-													<br><br><ul>
+													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
 														<li>Implemented a branching dialogue system using ScriptableObjects for modular story paths</li>
 														<li>Persistent decision tracking via custom game state manager (saved across sessions)</li>
 														<li>Designed custom UI dialogue system with typewriter effect and speaker tagging</li>
@@ -296,7 +296,7 @@
 													</ul>
 												`,
 												"hurdle-race": `
-													<br><br><ul>
+													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
 														<li>Developed a fast-paced 2D runner using Rigidbody2D physics and timed animation cycles</li>
 														<li>Precision-based jump timing with frame-perfect input windows for increased difficulty</li>
 														<li>Obstacle collision detection and hit feedback using custom collision boxes</li>
@@ -304,7 +304,7 @@
 													</ul>
 												`,
 												"jojo_arrow": `
-													<br><br><ul>
+													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
 														<li>Built a rhythm input system using beat mapping and fixed-time step updates</li>
 														<li>Integrated Unity Timeline and Animator for synchronized feedback animations</li>
 														<li>Dynamic difficulty scaling based on player performance tracking</li>
@@ -313,7 +313,7 @@
 												`,
 
 												"sisiphus": `
-													<br><br><ul>
+													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
 														<li>Physics-based challenge loop using Unity’s Rigidbody2D and configurable slopes</li>
 														<li>Endless uphill push mechanic simulating "Sisyphean" struggle via friction and drag tuning</li>
 														<li>Minimalist environment built with tilemaps and scrolling parallax backgrounds</li>
@@ -321,7 +321,7 @@
 													</ul>
 												`,
 												"rpsls": `
-													<br><br><ul>
+													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
 														<li>Implemented Rock-Paper-Scissors-Lizard-Spock logic using extensible rule sets</li>
 														<li>UI built with Unity UI Toolkit for scalable and themeable components</li>
 														<li>AI opponent uses weighted randomness and past-pattern tracking</li>
@@ -329,7 +329,7 @@
 													</ul>
 												`,
 												"rhythm_tiles": `
-													<br><br><ul>
+													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
 														<li>Grid-based rhythm puzzle with timing-sensitive inputs mapped to beat events</li>
 														<li>Used ScriptableObjects to define tile types, beat patterns, and visual behavior</li>
 														<li>Visual metronome synced with BPM using Unity’s audio analysis tools</li>
@@ -337,7 +337,7 @@
 													</ul>
 												`,
 												"bass_rhythm": `
-													<br><br><ul>
+													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
 														<li>Core gameplay loop built around BPM-based audio event triggers</li>
 														<li>Custom timing input system for real-time beat synchronization</li>
 														<li>Level generation based on beat data parsed from audio waveform</li>
@@ -345,7 +345,7 @@
 													</ul>
 												`,
 												"Killer-Wave": `
-													<br><br><ul>
+													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
 														<li>Procedural wave terrain generation using Perlin noise curves in 2D space</li>
 														<li>Implemented tight jump control using variable gravity and physics damping</li>
 														<li>Single-tap control with increasing wave difficulty curve over time</li>
@@ -353,7 +353,7 @@
 													</ul>
 												`,
 												"battle-tank-game": `
-													<br><br><ul>
+													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
 														<li>Top-down twin-stick tank combat with modular tank parts and armor logic</li>
 														<li>Projectile physics using raycasting and rigidbody-based shell simulation</li>
 														<li>Implemented health, damage, and explosion systems with object pooling for performance</li>
@@ -361,7 +361,7 @@
 													</ul>
 												`,
 												"2.5D-Fighting-Game": `
-													<br><br><ul>
+													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
 														<li>2.5D fighting engine with directional hitboxes and buffered combo inputs</li>
 														<li>Used Mecanim Animator layers and blend trees for responsive combat transitions</li>
 														<li>Implemented super meter system with charge buildup and cinematic camera triggers</li>
@@ -369,7 +369,7 @@
 													</ul>
 												`,
 												"Doodle-Jump-Clone": `
-													<br><br><ul>
+													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
 														<li>Vertical platformer using infinite procedural level generation and jump boosting platforms</li>
 														<li>Custom collision system to support one-way platform interactions</li>
 														<li>Camera follows player vertically with dynamic bounds and parallax layers</li>
@@ -377,7 +377,7 @@
 													</ul>
 												`,
 												"LineBall": `
-													<br><br><ul>
+													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
 														<li>Precision ball bouncing game with hand-drawn line interactions using mouse/touch input</li>
 														<li>Implemented custom bezier curve renderer and collision detection against drawn lines</li>
 														<li>Real-time trajectory prediction and feedback using LineRenderer and Raycast</li>
@@ -385,7 +385,7 @@
 													</ul>
 												`,
 												"3D-game": `
-													<br><br><ul>
+													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
 														<li>Third-person exploration prototype using Unity's CharacterController and Cinemachine</li>
 														<li>Scene built using modular 3D kits with baked lighting and occlusion culling</li>
 														<li>Basic interaction system with raycast-based object detection and prompt feedback</li>
@@ -393,7 +393,7 @@
 													</ul>
 												`,
 												"2D-platformer-game": `
-													<br><br><ul>
+													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
 														<li>Classic side-scrolling platformer with tight controls and coyote-time jump logic</li>
 														<li>Built modular level system with Unity tilemaps and custom hazard components</li>
 														<li>Checkpoint, coin collection, and enemy patrol AI systems implemented</li>
@@ -479,13 +479,13 @@
  										
 										<h2>Terrain Digger</h2>
 										<p>An interesting project that uses math and logic</p>
-        								<img src="images/terraindigger.png"><br>
+        								<img src="images/terraindigger.png" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;"><br>
 										<a href="https://gist.github.com/murkeh217/053b21cab9e8731c7e20f1d160571e29">Github Gist</a>
 										<br>
 										<br>
 										<h2><p>RPSLS</p></h2>
 										<p>Concept behind my version of Rock-Paper-Scissors-Lizard-Spock game</p>
-										<img src="images/cinema-of-ghosts.jpg"><br>
+										<img src="images/cinema-of-ghosts.jpg" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;"><br>
   
 									</section>
 
@@ -498,7 +498,10 @@
 									<section>
 										<h2 class="major"><span>Websites</span></h2>
 										<p>Websites I have built for my client and published online.</p>
-										<a href="https://techprofessional.co.uk/">Techprofessional LTD</a> | <a href="https://skinhance.uk/">Skinhance LTD</a>
+										<ul style="list-style-position: inside; text-align: center; padding-left: 0;">
+											<li><a href="https://techprofessional.co.uk/">Techprofessional LTD</a> </li>
+											<li><a href="https://skinhance.uk/">Skinhance LTD</a></li> 
+										</ul>
 											<!-- onsen, nodejs, python, ai, team collaboration, contracts-->
 									</section>
 
