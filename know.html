@@ -108,6 +108,24 @@ body {
   .flex-tabs .tab { background: #fff; border-bottom: 1px solid #ccc; }
   .flex-tabs .tab:last-of-type { border-bottom: none; }
 }
+
+/* responsiveness for iframe */
+
+.iframe-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* For a 16:9 aspect ratio (9 / 16 = 0.5625) */
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 </style>
 
 </head>
@@ -162,13 +180,16 @@ body {
 
     <!-- Panels -->
     <div id="tab-1-panel" class="panel">
-      <p>21st July 1992</p>
+      <!--<p>21st July 1992</p>
       <p>Cancer - Solar Zodiac</p>
       <img src="images/know/cancer.jpg">
       <p>Monkey - Lunar Zodiac</p>
       <img src="images/know/monkey.png">
       <p>Madagascar</p>
-      <img src="images/know/madagascar.png">
+      <img src="images/know/madagascar.png">-->
+      <div class="iframe-container">
+      <iframe src="zodiac/index.html" class="responsive-iframe"></iframe>
+      </div>
     </div>
     <div id="tab-2-panel" class="panel">
       <br>
@@ -201,13 +222,16 @@ body {
       <p>Nokia | Sony</p>
     </div>
     <div id="tab-5-panel" class="panel">
-      <p>Disturbed</p>
-      <img src="images/know/disturbed.webp">
+      <!--<p>Disturbed</p>
+      <img src="music/disturbed.webp">
       <p>Le Sserrafim</p>
-      <img src="images/know/lesserafim.webp">
+      <img src="music/lesserafim.webp">
       <p>Shakira</p>
-      <img src="images/know/shakira.webp">
-      <p>Violin | Classical | Rock | Trance</p>
+      <img src="music/shakira.webp">
+      <p>Violin | Classical | Rock | Trance</p>-->
+      <div class="iframe-container">
+      <iframe src="music/index.html" class="responsive-iframe"></iframe>
+      </div>
     </div>
     <div id="tab-6-panel" class="panel"><p>Insert some drawings/paintings here:</p></div>
     <div id="tab-7-panel" class="panel">
@@ -217,15 +241,18 @@ body {
       <img src="images/know/butterfly.gif">
     </div>
     <div id="tab-8-panel" class="panel">
-      <p>Hero Impusle 2011 | BMX</p>
+      <!--<p>Hero Impusle 2011 | BMX</p>
       <img src="images/know/heroimpulse.avif">
-      <img src="images/know/bmx.jpg">
+      <img src="images/know/bmx.jpg">-->
+      <div class="iframe-container">
+      <iframe src="riding/index.html" class="responsive-iframe"></iframe>
+      </div>
     </div>
     <div id="tab-9-panel" class="panel">
       <p>...</p>
     </div>
     <div id="tab-10-panel" class="panel">
-      <p>Anime List</p>
+      <!--<p>Anime List</p>
       <img src="images/know/anime/beheneko.jpg">
       <img src="images/know/anime/bleach.jpg">
       <img src="images/know/anime/boruto.jpg"> 
@@ -278,7 +305,10 @@ body {
       <img src="images/know/anime/tokyorevengers.jpg"> 
       <img src="images/know/anime/uruseiyatsura.jpg"> 
       <img src="images/know/anime/vinlandsaga.jpg"> 
-      <img src="images/know/anime/windbreaker.jpg">
+      <img src="images/know/anime/windbreaker.jpg">-->
+      <div class="iframe-container">
+      <iframe src="anime/index.html" class="responsive-iframe"></iframe>
+      </div>
     </div>
     <div id="tab-11-panel" class="panel">
       <p>Potatoes, Eggplant, Carrots, Onions, Tomatoes, Corn...</p> 
@@ -289,6 +319,7 @@ body {
       <p>Chicken, Crab, Prawn, Lobster, Fish...</p> 
       <p>Monster, Coca Cola..</p> 
       <p>Vanilla Ice-Cream, Cone</p>
+      <p>Eggs, Apples, Corns, Chicken, Cucumber, Sweet Potato, Milk</p>
     </div>
     <div id="tab-12-panel" class="panel">
       <p>Japanese, Chinese, Latin</p>
@@ -299,25 +330,36 @@ body {
       <p>HelloTalk, Xiaohongshu, Reddit, Youtube</p>
     </div>
     <div id="tab-14-panel" class="panel">
-      <p>God of War | Prince of Persia 2008 | Stellar Blade</p>
-      <img src="images/know/gow.png">
-      <img src="images/know/pop2008.webp">
-      <img src="images/know/stellarblade.jpg">
+      <!--<p>God of War | Prince of Persia 2008 | Stellar Blade</p>
+      <img src="games/gow.png">
+      <img src="games/pop2008.webp">
+      <img src="games/stellarblade.jpg">-->
+      <div class="iframe-container">
+      <iframe src="games/index.html" class="responsive-iframe"></iframe>
+      </div>
     </div>
     <div id="tab-15-panel" class="panel">
-      <p>Nihilism, Buddhism, Atheism</p>
+      <!--<p>Nihilism</p>
+      <img src="images/know/nietze.jpg">
+      <p>Buddhism</p>
+      <img src="images/know/buddha.jpg">
+      <p>Atheism</p>
+      <img src="images/know/darwin.jpg">-->
+      <div class="iframe-container">
+      <iframe src="philosophy/index.html" class="responsive-iframe"></iframe>
+      </div>
     </div>
     <div id="tab-16-panel" class="panel"><p>English, Gujarati, Hindi, Chinese, Arabic, Udru, Marathi, Japanese</p></div>
     <div id="tab-17-panel" class="panel">
       <p>Casual, Light, Comfy, Standout</p>
-      <p>Long Curly Hair, Black glasses, Goatee + Full Beard</p>
-      <p></p>
+      <p>Long Curly Hair, Goatee + Full Beard</p>s
+      <p>White Frame Glasses, Green Ring</p>
     </div>
     <div id="tab-18-panel" class="panel"><p>Beaches, Mountains, Forest, Flight, Train, Car</p></div>
     <div id="tab-19-panel" class="panel">
-      <p>Nice, Kind, Respectful, Sweet, Polite, Gentle, Intelligent, Honest...</p>
-      <p>Shy, Overthinking, Lazy, Judgemental, Racist, Sarcastic, Sensitive, Moody, Sentimental, Crybaby, Debating...</p>
-      <p>Deep Thinker, Creative, Soft Spoken, Gentleman, Charismatic...</p>
+      <p>Nice, Kind, Respectful, Sweet, Polite, Gentle, Intelligent, Honest, Open-mind...</p>
+      <p>Shy, Overthinking, Lazy, Judgemental, Sarcastic, Sensitive, Moody, Sentimental, Clingy...</p>
+      <p>Deep Thinker, Creative, Soft Spoken, Gentleman, Charismatic, Good Memory...</p>
     </div>
     <div id="tab-20-panel" class="panel">
       <p>BBC Sherlock | The White Storm | Mr. Right</p>

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Grid for Multi-Sized Avatars</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!--
+	The markup here is a copy-paste from generated output that includes a lot of extra bits that aren't strictly required.
+
+	Here's the minimal markup required for this to work:
+
+	<div>
+
+		// this is a normal image
+		<a href="#">
+			<img src="..." alt="..." />
+		</a>
+
+		// this is a larger image
+		<a href="#" class="gold">
+			<img src="..." alt="..." />
+		</a>
+
+		// add as many as you want
+		...
+	</div>
+-->
+
+<div class="supporter-list">
+	<a href="https://codetv.dev/profile/birdman" title="T D">
+		<img alt="T D" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/birdman-1740532069183?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/birdman-1740532069183?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/birdman-1740532069183?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/jeremymorgan" title="Jeremy Morgan">
+		<img alt="Jeremy Morgan" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/jeremymorgan-1745800599206?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/jeremymorgan-1745800599206?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/jeremymorgan-1745800599206?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/aufdemrand" title="Jeremy Schroeder">
+		<img alt="Jeremy Schroeder" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/aufdemrand-1743614691481?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/aufdemrand-1743614691481?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/aufdemrand-1743614691481?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/cdvillard" title="Charles Villard">
+		<img alt="Charles Villard" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/cdvillard-1743739783203?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/cdvillard-1743739783203?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/cdvillard-1743739783203?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/brob" title="Bryan Robinson">
+		<img alt="Bryan Robinson" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/brob-1741105857842?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/brob-1741105857842?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/brob-1741105857842?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/joetannenbaum" title="Joe Tannenbaum">
+		<img alt="Joe Tannenbaum" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/joetannenbaum-1743786396799?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/joetannenbaum-1743786396799?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/joetannenbaum-1743786396799?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/nikmclaughlin" title="Nik McLaughlin">
+		<img alt="Nik McLaughlin" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/nikmclaughlin-1741111804527?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/nikmclaughlin-1741111804527?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/nikmclaughlin-1741111804527?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/tekgadgt" title="Ryan McGovern">
+		<img alt="Ryan McGovern" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/tekgadgt-1741116687060?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/tekgadgt-1741116687060?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/tekgadgt-1741116687060?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/thescientist13" title="Owen Buckley">
+		<img alt="Owen Buckley" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/thescientist13-1744710727146?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/thescientist13-1744710727146?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/thescientist13-1744710727146?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/rosethekatie" title="Katie Felten">
+		<img alt="Katie Felten" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/rosethekatie-1741124755421?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/rosethekatie-1741124755421?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/rosethekatie-1741124755421?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/thetigur" title="Chris Simiskey">
+		<img alt="Chris Simiskey" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/thetigur-1746395526143?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/thetigur-1746395526143?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/thetigur-1746395526143?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/kiliman" title="Michael Carter">
+		<img alt="Michael Carter" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/kiliman-1746414749301?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/kiliman-1746414749301?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/kiliman-1746414749301?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/jmorby" title="Jil Morby">
+		<img alt="Jil Morby" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/jmorby-1741194417976?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/jmorby-1741194417976?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/jmorby-1741194417976?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/brittanyellich" title="Brittany Ellich" class="gold">
+		<img alt="Brittany Ellich" loading="lazy" decoding="async" sizes="(min-width: 160px) 160px, 100vw" style="
+				object-fit: cover;
+				max-width: 160px;
+				max-height: 160px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/brittanyellich-1741199851528?_a=BAMClqOb0 160w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_320,h_320,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/brittanyellich-1741199851528?_a=BAMClqOb0 320w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/brittanyellich-1741199851528?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/coreyja" title="Corey Alexander">
+		<img alt="Corey Alexander" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/coreyja-1741200232255?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/coreyja-1741200232255?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/coreyja-1741200232255?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/crutchcorn" title="Corbin Crutchley">
+		<img alt="Corbin Crutchley" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/crutchcorn-1746471954334?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/crutchcorn-1746471954334?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/crutchcorn-1746471954334?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/craigsdennis" title="Craig Dennis">
+		<img alt="Craig Dennis" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/craigsdennis-1741207651859?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/craigsdennis-1741207651859?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/craigsdennis-1741207651859?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/33creativepartners" title="33 Creative Partners">
+		<img alt="33 Creative Partners" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/33creativepartners-1741207748649?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/33creativepartners-1741207748649?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/33creativepartners-1741207748649?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/nickytonline" title="Nick Taylor">
+		<img alt="Nick Taylor" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/nickytonline-1741213520987?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/nickytonline-1741213520987?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/nickytonline-1741213520987?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/meganesulli" title="Megan Sullivan">
+		<img alt="Megan Sullivan" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/meganesulli-1741215417612?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/meganesulli-1741215417612?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/meganesulli-1741215417612?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/cmgriffing" title="Chris Griffing">
+		<img alt="Chris Griffing" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/cmgriffing-1741220302065?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/cmgriffing-1741220302065?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/cmgriffing-1741220302065?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/lukekarrys" title="Luke Karrys">
+		<img alt="Luke Karrys" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/lukekarrys-1741234171169?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/lukekarrys-1741234171169?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/lukekarrys-1741234171169?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/elviskahoro" title="Elvis Kahoro">
+		<img alt="Elvis Kahoro" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/elviskahoro-1741239722032?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/elviskahoro-1741239722032?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/elviskahoro-1741239722032?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/piccalilli" title="Piccalilli _" class="gold">
+		<img alt="Piccalilli _" loading="lazy" decoding="async" sizes="(min-width: 160px) 160px, 100vw" style="
+				object-fit: cover;
+				max-width: 160px;
+				max-height: 160px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/piccalilli-1741254789217?_a=BAMClqOb0 160w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_320,h_320,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/piccalilli-1741254789217?_a=BAMClqOb0 320w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/piccalilli-1741254789217?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/leftshotdev" title="Pat Clarke" class="gold">
+		<img alt="Pat Clarke" loading="lazy" decoding="async" sizes="(min-width: 160px) 160px, 100vw" style="
+				object-fit: cover;
+				max-width: 160px;
+				max-height: 160px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/leftshotdev-1743950157475?_a=BAMClqOb0 160w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_320,h_320,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/leftshotdev-1743950157475?_a=BAMClqOb0 320w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/leftshotdev-1743950157475?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/tessak22" title="Tessa Kriesel">
+		<img alt="Tessa Kriesel" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/tessak22-1741284423631?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/tessak22-1741284423631?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/tessak22-1741284423631?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/grodier" title="George Rodier">
+		<img alt="George Rodier" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/grodier-1741383276893?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/grodier-1741383276893?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/grodier-1741383276893?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/sheng" title="Sheng Slogar">
+		<img alt="Sheng Slogar" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/sheng-1741384527663?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/sheng-1741384527663?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/sheng-1741384527663?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/kendallm" title="Kendall Morgan">
+		<img alt="Kendall Morgan" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/kendallm-1741386063798?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/kendallm-1741386063798?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/kendallm-1741386063798?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/mattobee" title="Matt Obee">
+		<img alt="Matt Obee" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/mattobee-1741387205380?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/mattobee-1741387205380?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/mattobee-1741387205380?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/mumptastic" title="Michael Nichols" class="gold">
+		<img alt="Michael Nichols" loading="lazy" decoding="async" sizes="(min-width: 160px) 160px, 100vw" style="
+				object-fit: cover;
+				max-width: 160px;
+				max-height: 160px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/mumptastic-1744720454492?_a=BAMClqOb0 160w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_320,h_320,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/mumptastic-1744720454492?_a=BAMClqOb0 320w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/mumptastic-1744720454492?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/adamfortuna" title="Adam Fortuna">
+		<img alt="Adam Fortuna" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/adamfortuna-1741546194499?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/adamfortuna-1741546194499?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/adamfortuna-1741546194499?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/fimion" title="Alex Riviere">
+		<img alt="Alex Riviere" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/fimion-1744892854826?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/fimion-1744892854826?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/fimion-1744892854826?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/potch" title="Potch Claypotch">
+		<img alt="Potch Claypotch" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/potch-1741650365754?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/potch-1741650365754?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/potch-1741650365754?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/amberley" title="Amberley Romo" class="gold">
+		<img alt="Amberley Romo" loading="lazy" decoding="async" sizes="(min-width: 160px) 160px, 100vw" style="
+				object-fit: cover;
+				max-width: 160px;
+				max-height: 160px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/amberley-1744383901359?_a=BAMClqOb0 160w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_320,h_320,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/amberley-1744383901359?_a=BAMClqOb0 320w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/amberley-1744383901359?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/sdegagne" title="Staci  DeGagne">
+		<img alt="Staci  DeGagne" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/sdegagne-1747006515385?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/sdegagne-1747006515385?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/sdegagne-1747006515385?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/focusotter" title="Michael Liendo">
+		<img alt="Michael Liendo" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/1F188A38-5E5B-4C56-95F0-FCDFF12317AE?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/1F188A38-5E5B-4C56-95F0-FCDFF12317AE?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/1F188A38-5E5B-4C56-95F0-FCDFF12317AE?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/robertgroves" title="Robert Groves">
+		<img alt="Robert Groves" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/robertgroves-1741806310883?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/robertgroves-1741806310883?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/robertgroves-1741806310883?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/turoczy" title="Rick Turoczy" class="gold">
+		<img alt="Rick Turoczy" loading="lazy" decoding="async" sizes="(min-width: 160px) 160px, 100vw" style="
+				object-fit: cover;
+				max-width: 160px;
+				max-height: 160px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/turoczy-1741838712823?_a=BAMClqOb0 160w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_320,h_320,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/turoczy-1741838712823?_a=BAMClqOb0 320w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/turoczy-1741838712823?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/vbakkenes" title="Vincent Bakkenes">
+		<img alt="Vincent Bakkenes" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/vbakkenes-1741858968434?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/vbakkenes-1741858968434?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/vbakkenes-1741858968434?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/vincentriemer" title="Vincent Riemer">
+		<img alt="Vincent Riemer" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/vincentriemer-1741881880247?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/vincentriemer-1741881880247?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/vincentriemer-1741881880247?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/samarth" title="Samarth Joshi">
+		<img alt="Samarth Joshi" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/samarth-1745860946124?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/samarth-1745860946124?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/samarth-1745860946124?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/tddawson" title="Tyler Dawson">
+		<img alt="Tyler Dawson" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/tddawson-1741917897023?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/tddawson-1741917897023?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/tddawson-1741917897023?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/kurtkemple" title="Kurtis Kemple" class="gold">
+		<img alt="Kurtis Kemple" loading="lazy" decoding="async" sizes="(min-width: 160px) 160px, 100vw" style="
+				object-fit: cover;
+				max-width: 160px;
+				max-height: 160px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/kurtis-kemple?_a=BAMClqOb0 160w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_320,h_320,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/kurtis-kemple?_a=BAMClqOb0 320w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/kurtis-kemple?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/braydoncoyer" title="Braydon Coyer">
+		<img alt="Braydon Coyer" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/braydoncoyer-1744740500186?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/braydoncoyer-1744740500186?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/braydoncoyer-1744740500186?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/mrvdog" title="Vinny Benson" class="gold">
+		<img alt="Vinny Benson" loading="lazy" decoding="async" sizes="(min-width: 160px) 160px, 100vw" style="
+				object-fit: cover;
+				max-width: 160px;
+				max-height: 160px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/mrvdog-1742065003822?_a=BAMClqOb0 160w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_320,h_320,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/mrvdog-1742065003822?_a=BAMClqOb0 320w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_160,w_160/v1/codetv/people/mrvdog-1742065003822?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/faddah" title="Faddah Wolf">
+		<img alt="Faddah Wolf" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/faddah-1742075770626?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/faddah-1742075770626?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/faddah-1742075770626?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/eveporcello" title="Eve Porcello">
+		<img alt="Eve Porcello" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/eveporcello-1747348541585?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/eveporcello-1747348541585?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/eveporcello-1747348541585?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/gildotdev" title="Gil Creque">
+		<img alt="Gil Creque" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/gildotdev-1744907886399?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/gildotdev-1744907886399?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/gildotdev-1744907886399?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/shashilo" title="Shashi Lo">
+		<img alt="Shashi Lo" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/shashilo-1742311368106?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/shashilo-1742311368106?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/shashilo-1742311368106?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/kilian" title="Kilian Valkhof">
+		<img alt="Kilian Valkhof" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/kilian-1747732912308?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/kilian-1747732912308?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/kilian-1747732912308?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/eristic" title="Scott Stewart">
+		<img alt="Scott Stewart" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/eristic-1748060585605?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/eristic-1748060585605?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/eristic-1748060585605?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/xdesro" title="Henry Desroches">
+		<img alt="Henry Desroches" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/xdesro-1748063740148?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/xdesro-1748063740148?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/xdesro-1748063740148?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/danielroe" title="Daniel Roe">
+		<img alt="Daniel Roe" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/danielroe-1748095800581?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/danielroe-1748095800581?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/danielroe-1748095800581?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/ericedwards02" title="Eric Edwards">
+		<img alt="Eric Edwards" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/ericedwards02-1748104971809?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/ericedwards02-1748104971809?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/ericedwards02-1748104971809?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/lexaprogrammer" title="Lexa Programmer">
+		<img alt="Lexa Programmer" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/lexaprogrammer-1742859977229?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/lexaprogrammer-1742859977229?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/lexaprogrammer-1742859977229?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/bryn_codes" title="Bryn Newell">
+		<img alt="Bryn Newell" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/bryn_codes-1748141899110?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/bryn_codes-1748141899110?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/bryn_codes-1748141899110?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/whitep4nth3r" title="Salma Alam-Naylor">
+		<img alt="Salma Alam-Naylor" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/whitep4nth3r-1748078125455?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/whitep4nth3r-1748078125455?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/whitep4nth3r-1748078125455?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/syllie" title="Syl S">
+		<img alt="Syl S" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/syllie-1742953536351?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/syllie-1742953536351?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/syllie-1742953536351?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/thomasballinger" title="Tom Ballinger">
+		<img alt="Tom Ballinger" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/thomasballinger-1742956814213?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/thomasballinger-1742956814213?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/thomasballinger-1742956814213?_a=BAMClqOb0" /> </a><a href="https://codetv.dev/profile/chaance" title="Chance Strickland">
+		<img alt="Chance Strickland" loading="lazy" decoding="async" sizes="(min-width: 80px) 80px, 100vw" style="
+				object-fit: cover;
+				max-width: 80px;
+				max-height: 80px;
+				aspect-ratio: 1;
+				width: 100%;
+			" srcset="
+				https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/chaance-1747094954848?_a=BAMClqOb0    80w,
+				https://res.cloudinary.com/jlengstorf/image/upload/w_160,h_160,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/chaance-1747094954848?_a=BAMClqOb0 160w
+			" src="https://res.cloudinary.com/jlengstorf/image/upload/w_80,h_80,q_auto,f_auto,c_lfill/c_fill,h_80,w_80/v1/codetv/people/chaance-1747094954848?_a=BAMClqOb0" />
+	</a>
+</div>
+
+<p>
+	This is a list of <a href="https://codetv.dev">CodeTV</a> supporters as of May 2025.
+</p>
+<!-- partial -->
+  
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CSS image stack cycle (infinitely cycling)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<section style="--n: 2; --k: 0">
+  <article style="--i: 0; --a: 1.92deg">
+    <h2>Motorbike</h2><em>Hero Impulse 2011</em><img src="heroimpulse.avif"/>
+  </article>
+  <article style="--i: 1; --a: -3.77deg">
+    <h2>Bicycle</h2><em>BMX</em><img src="bmx.jpg"/>
+  </article>
+  <!--<article style="--i: 2; --a: -11.7deg">
+    <h2>Leopard</h2><em>Panthera pardus</em><img src="https://images.unsplash.com/photo-1566489564594-f2163930c034?w=400" alt="blue-eyed leopard resting high up with its head on its front paws"/>
+  </article>
+  <article style="--i: 3; --a: 3.34deg">
+    <h2>Jaguar</h2><em>Panthera onca</em><img src="https://images.unsplash.com/photo-1601544359642-c76c4f7c3221?w=400" alt="jaguar closeup"/>
+  </article>
+  <article style="--i: 4; --a: 1.35deg">
+    <h2>Snow leopard</h2><em>Panthera uncia</em><img src="https://images.unsplash.com/photo-1689847190291-f8e0823f13ab?w=400" alt="snow leopard lying low on some rocks, its fur blending in perfecty"/>
+  </article>
+  <article style="--i: 5; --a: -0.09deg">
+    <h2>Cheetah</h2><em>Acinonyx jubatus</em><img src="https://images.unsplash.com/photo-1693702366986-cbfbd1cf0450?w=400" alt="cheetah in the grass at dusk"/>
+  </article>
+  <article style="--i: 6; --a: 12.78deg">
+    <h2>Cougar</h2><em>Puma concolor</em><img src="https://images.unsplash.com/photo-1661004527094-07d861089aed?w=400" alt="cougar walking through the snow"/>
+  </article>-->
+  <div>
+    <button aria-label="previous" data-inc="-1"></button>
+    <button aria-label="next" data-inc="1"></button>
+  </div>
+</section>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

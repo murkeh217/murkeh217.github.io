@@ -1,0 +1,511 @@
+@layer support, lessons;
+
+@import "https://unpkg.com/open-props" layer(support.design-system);
+@import "https://unpkg.com/open-props/normalize.min.css" layer(support.demo);
+@import "https://unpkg.com/open-props/buttons.min.css" layer(support.demo);
+
+/* 
+  HTML Structure, 3 elements
+
+  .scroll--root 
+    > .scroll--viewport 
+      > .scroll--content
+        > YOUR_CONTENT
+*/
+
+@layer lessons.essentials {
+  /*
+    - always specify both axis to prevent surprises
+    - always specify overscroll behavior on the scrolling axis
+    - always match your padding with your scroll-padding (for snap)
+    - respect motion prefs when setting scroll-behavior
+  */
+  
+  .scroll--viewport {
+    display: flex;
+    place-items: center start;
+    
+    overflow: auto hidden;
+    overscroll-behavior-x: contain;
+    
+    padding-inline: var(--size-8);
+    scroll-padding-inline: var(--size-8);
+    
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+@layer lessons.colorize {
+  /*
+    - webkit scrollbars for more customization (Chromium, Safari)
+    - scrollbar-color (Firefox, exclusively not Chromium even tho it has support)
+    - most mobile browser scrollbars completely ignore all this
+  */
+  
+  .scroll--viewport {
+    
+    /* we'll be showing our own scroller focus states */
+    &:is(:focus-visible, :focus-within) {
+      outline-offset: -2px;
+      outline: none;
+    }
+    
+    /* to be fair, Switch doesn't show it at all */
+    &::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    /* transparent track is usually best */
+    &::-webkit-scrollbar-track {
+      background: #0000;
+      
+      /* so we can push away from the edge/border */
+      background-clip: padding-box;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      /* create 50% opacity variant of a design system surface color */
+      background: color-mix(in srgb, 
+        light-dark(
+          var(--surface-4), 
+          var(--surface-2)
+        ), 
+        #0000 50%
+      );
+      
+      /* maximum radius */
+      border-radius: 1e3px;
+      
+      /* creates illusion of being inset, matches background */
+      /* also free cool looking forced colors mode styles */
+      border: 3px solid var(--surface-1);
+    }
+    
+    /* highlight thumb to indicate focus is inside */
+    &:is(:focus-visible, :focus-within)::-webkit-scrollbar-thumb {
+      background: var(--link);
+    }
+    
+    /* if user can hover, we can make it respond to hover */
+    @media (hover) {
+
+      /* make the thumb color solid on hover for full legibility */
+      &::-webkit-scrollbar-thumb:hover {
+        background: light-dark(var(--surface-4), var(--surface-2));
+      }
+      
+      /* default now to 50% faded out */
+      &::-webkit-scrollbar {
+        opacity: .5;
+      }
+
+      /* hover full opacity */
+      /* many native OS's wait for hover on the thumb, could try that */
+      &::-webkit-scrollbar:hover {
+        opacity: 1;
+      }
+    }
+    
+    /* styles for Firefox */
+    /* this can't be @supports (scrollbar-color: white black) */
+    /* or not (scrollbar-color: white black) */
+    /* chromium is eager to switch to scrollbar-* and will drop all webkit-scrollbar
+       styles if there's any scent of the standard ones
+    */
+    /* we can still provide a very nice experience for keyboard, mouse */
+    @supports (-moz-appearance:none) {
+      scrollbar-width: thin;
+      scrollbar-color: var(--surface-4) #0000;
+      transition: scrollbar-color .3s ease;
+
+      &:is(:focus-visible, :focus-within) {
+        scrollbar-color: var(--link) #0000;
+      }
+
+      @media (hover) {
+        scrollbar-color: 
+          color-mix(in srgb, var(--surface-4), #0000 50%) 
+          #0000;
+
+        &:hover {
+          scrollbar-color: var(--surface-4) #0000;
+        }
+      }
+    }
+  }
+}
+
+@layer lessons.containerize {
+  /*
+    - scrollers are often fixed / extrinsically sized 
+      - this one fills vertical space between 
+        the intrinsically sized header and footer
+    - children want to use @container
+    - scroll-state snapped, stuck, or overflowing can be queried
+  */
+  
+  .scroll--root {
+    container: --main / size;
+  }
+  
+  .scroll--viewport {
+    container: --main-scroller / size scroll-state;
+  }
+  
+  .scroll--content > li {
+    /* children will use snapped scroll-state() */
+    container-type: scroll-state;
+  }
+}
+
+@layer lessons.scroll-snap {
+  /*
+    - perfect resting alignments
+    - enables scroll-state(snapped) for showing 
+      - highlight
+      - game title
+    - enables overscroll elastic effect
+  */
+  
+  .scroll--viewport {
+    scroll-snap-type: x mandatory;
+  }
+  
+  .scroll--content > li {
+    scroll-snap-align: start;
+  }
+}
+
+@layer lessons.scroll-state {
+  /*
+    - upgrade if supported
+    - highlight snapped game art
+    - animate game title
+  */
+  
+  /* pulsing blue outline color */
+  @keyframes game-focus {
+    from {
+      outline-color: hsl(200 100% 50%);
+    }
+    to {
+      outline-color: hsl(200 100% 80%);
+    }
+  }
+  
+  /* adjust space for features */
+  .scroll--viewport {
+    @supports (container-type: scroll-state) {
+      padding-inline: var(--size-9);
+      scroll-padding-inline: var(--size-9);
+    }
+  }
+  
+  .game {
+    
+    /* img child asks nearest scroll-state container
+       ? are you snapped 
+    */
+    img {
+      @container scroll-state(snapped: x) {
+        /* create outline */
+        outline: 5px solid blue;
+        outline-offset: 5px;
+        
+        /* infinite outline animation */
+        animation: game-focus .5s var(--ease-3) alternate infinite;
+      }
+    }
+    
+    /* if motion is ok, animate game titles */
+    figcaption {
+      @media (prefers-reduced-motion: no-preference) {
+        z-index: -1;
+        transition: 
+          translate .5s var(--ease-spring-2) .2s,
+          opacity .5s var(--ease-3) .2s;
+
+        /* you = nearest scroll-state container */
+        /* if you are not snapped… then hide yo'self! */
+        /* if you are snapped, stay visible! */
+        @container not scroll-state(snapped: x) {
+          translate: 0 50px;
+          opacity: 0;
+        }
+        /* saves from writing the out and in, 
+           since in is the natural state we just tell things 
+           what to do when they're out 
+        */
+      }
+    }
+  }
+}
+
+@layer lessons.overscroll-effect {
+  /*
+    - some OSs have overscroll effects built in
+    - this add some some fun to overscrolling
+    - also provides a hint that you're at the end
+    - this works because of scroll-snap-stop: x mandatory
+      - the scroller MUST snap on something
+      - we'll be creating pseudo elements that ARE NOT snaps
+      - so while we can scroll to see them, they'll never snap
+  */
+  
+  .scroll--content {
+    
+    /* flex is often best for this
+       we dont need columns, we need a row of intrinsic sized items
+    */
+    display: flex;
+    
+    /* our overscroll effect sentinels */
+    &::before,
+    &::after {
+      /* empty nodes to consume space */
+      content: "";
+      display: block;
+      
+      /* how much space to consume */
+      inline-size: 25cqi;
+      
+      /* uhuh, can't shrink me */
+      flex-shrink: 0;
+    }
+
+    /* the after in this one is hella big so
+       the last item can be snapped/highlighted/title shown
+    */
+    &::after {
+      inline-size: 90cqi;
+    }
+  }
+}
+
+@layer lessons.scroll-animation {
+  /*
+    - subtle but effective exit scrollport animation
+    - stylistically no entry animations
+    - animation-range and view(x) make this easy
+  */
+  
+  /* just the to keyframe effect */
+  @keyframes leaving-scroller {
+    to {
+      opacity: .2;
+    }
+  }
+  
+  /* each game, if motion is coo and browser has support… */
+  .scroll--content .game {
+    @media (prefers-reduced-motion: no-preference) {
+      @supports (animation-timeline: view(x)) {
+        
+        /* attach an animation to each game */
+        animation: leaving-scroller linear both;
+        
+        /* power it with horizontal scroll viewport intersection */
+        animation-timeline: view(x);
+        
+        /* clamp the timing to the last 50% of the element leaving */
+        animation-range: exit 50% exit 100%;
+      }
+    }
+  }
+}
+
+@layer lessons.loading-animation {
+  /*
+    - extra flair, introduce the elements
+    - only if it's cool with the user's pref
+    - would love to have used sibling-index()
+    - magic is mostly from @starting-style
+  */
+  
+  .scroll--content .game {
+    @media (prefers-reduced-motion: no-preference) {
+      transition: transform 1s var(--ease-spring-2);
+      transition-delay: calc(var(--i) * .05s);
+
+      @starting-style {
+        transform: translateX(100vw) translateZ(calc(var(--i) * -1px));
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@layer support.demo {
+  body {
+    block-size: 100lvh;
+    display: grid;
+    grid-template-rows: auto 1fr min-content;
+  }
+  
+  header {
+    display: flex;
+    place-content: space-between;
+    padding-block: var(--size-fluid-3);
+    padding-inline: var(--size-8);
+    
+    @media (height < 450px) {
+      padding-block: var(--size-2);
+    }
+    
+    > [label="accounts"] {
+      button {
+        padding: 2px;
+        aspect-ratio: 1;
+        border-radius: var(--radius-round);
+        inline-size: var(--size-8);
+        text-indent: 100cqi;
+        overflow: hidden;
+        background-image: 
+          radial-gradient(#0000 65%, var(--surface-1) 0), 
+          var(--img);
+        background-size: cover;
+        
+        @media (height < 450px) {
+          inline-size: var(--size-7);
+        }
+      }
+    }
+    
+    > [label="status bar"] {
+      display: flex;
+      place-items: center;
+      gap: var(--size-4);
+      
+      datetime {
+        font-weight: bold;
+        font-size: var(--font-size-2);
+      }
+    }
+    
+    .battery {
+      display: flex;
+      place-items: center;
+      gap: var(--size-1);
+    }
+  }
+  
+  .scroll--root {
+    display: grid;
+  }
+  
+  .scroll--viewport {
+    /* undo what normalize sets on the document */
+    /* if not undone, webkit selectors wont match */
+    scrollbar-color: auto;
+    scrollbar-width: auto;
+  }
+  
+  .scroll--content {
+    display: flex;
+    list-style-type: none;
+    gap: var(--size-3);
+    margin: 0;
+    padding: 0;
+
+    > li {
+      padding: 0;
+      flex-shrink: 0;
+    }
+  }
+  
+  .game {
+    figure {
+      display: flex;
+      flex-direction: column-reverse; /* caption on top */
+      gap: 1ch;
+      
+      @supports (container-type: scroll-state) {
+        gap: var(--size-4);
+      }
+      
+      img {
+        background: var(--surface-2);
+        block-size: 70cqb;
+        inline-size: auto;
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+    }
+    
+    figcaption {
+      text-box: cap alphabetic;
+      text-align: center;
+      white-space: nowrap;
+      font-size: max(var(--font-size-4), 5cqb);
+      font-weight: 500;
+      letter-spacing: var(--font-letterspacing-2);
+      color: light-dark(var(--blue-7), var(--blue-3));
+      
+      @media (height < 450px) {
+        font-size: .9rem;
+      }
+    }
+  }
+  
+  footer {
+    display: flex;
+    place-content: center;
+    padding: var(--size-fluid-3);
+    gap: var(--size-3);
+    max-inline-size: 100vw;
+    overflow-x: auto;
+    
+    @media (height < 450px) {
+      padding: var(--size-fluid-2);
+    }
+    
+    button {
+      flex-shrink: 0;
+      inline-size: var(--size-9);
+      block-size: var(--size-9);
+      border-radius: var(--radius-round);
+      border-color: transparent;
+      padding: 0;
+        
+      @media (height < 450px) {
+        inline-size: var(--size-8);
+        block-size: var(--size-8);
+      }
+      
+      > svg {
+        inline-size: 60%;
+        height: auto;
+      }
+      
+      &.online {
+        background: red;
+        color: white;
+        font-size: var(--font-size-00);
+        text-shadow: none;
+        text-transform: uppercase;
+        
+        display: grid;
+        place-items: center;
+        place-content: center;
+        gap: 0;
+        
+        > svg {
+          width: 80%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
