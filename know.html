@@ -7,8 +7,9 @@
 <title>Know MK (2025)</title>
 <style>
 body {
-  background-color: #fafafa;
+  background-color: #000000;
   font-family: 'Open Sans', sans-serif;
+  color: #69be28; /* neon green text */
 }
 
 .responsive-tabs {
@@ -32,25 +33,35 @@ body {
   max-height: 40px;
 }
 
+/* Panels */
 .responsive-tabs .flex-tabs .panel {
-  background-color: #fcfcfc;
+  background-color: #111; /* dark panel background */
+  color: #69be28; /* green text */
   padding: 20px;
   min-height: 200px;
   display: none;
   width: 100%;
   flex-basis: auto;
+  border: 1px solid #69be28;
+  border-top: none;
 }
 
+/* Tabs */
 .responsive-tabs .tab {
   display: inline-block;
   padding: 10px;
   vertical-align: top;
-  background-color: #eee;
+  background-color: #222;
+  color: #69be28;
   cursor: pointer;
-  border-bottom: 5px solid #ccc; 
+  border-bottom: 5px solid #444;
+  transition: background 0.3s, color 0.3s;
 }
 
-.responsive-tabs .tab:hover { background-color: #fff; }
+.responsive-tabs .tab:hover { 
+  background-color: #333; 
+  color: #a3ff5c;
+}
 
 /* Active states for 20 tabs */
 #tab-1:checked ~ .tabs #tab-1-label,
@@ -73,9 +84,10 @@ body {
 #tab-18:checked ~ .tabs #tab-18-label,
 #tab-19:checked ~ .tabs #tab-19-label,
 #tab-20:checked ~ .tabs #tab-20-label {
-  background-color: #fff;
+  background-color: #000;
+  color: #69be28;
   cursor: default;
-  border-bottom-color: #69be28; 
+  border-bottom-color: #69be28;
 }
 
 /* Show the selected panel */
@@ -105,17 +117,22 @@ body {
 /* Responsive stacking */
 @media (max-width: 600px) {
   .flex-tabs { flex-direction: column; }
-  .flex-tabs .tab { background: #fff; border-bottom: 1px solid #ccc; }
+  .flex-tabs .tab { 
+    background: #111; 
+    border-bottom: 1px solid #69be28; 
+  }
   .flex-tabs .tab:last-of-type { border-bottom: none; }
 }
 
-/* responsiveness for iframe */
-
+/* Responsive iframe (black & green border) */
 .iframe-container {
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding-top: 56.25%; /* For a 16:9 aspect ratio (9 / 16 = 0.5625) */
+  padding-top: 56.25%;
+  border: 2px solid #69be28;
+  border-radius: 6px;
+  background: #000;
 }
 
 .responsive-iframe {
@@ -124,6 +141,22 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  border: none;
+}
+
+a {
+  color: #69be28; /* neon green */
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+a:hover {
+  color: #a3ff5c; /* brighter green on hover */
+  text-shadow: 0 0 8px #69be28; /* subtle glow */
+}
+
+a:visited {
+  color: #4e8f1c; /* darker green for visited links */
 }
 
 </style>
@@ -180,13 +213,6 @@ body {
 
     <!-- Panels -->
     <div id="tab-1-panel" class="panel">
-      <!--<p>21st July 1992</p>
-      <p>Cancer - Solar Zodiac</p>
-      <img src="images/know/cancer.jpg">
-      <p>Monkey - Lunar Zodiac</p>
-      <img src="images/know/monkey.png">
-      <p>Madagascar</p>
-      <img src="images/know/madagascar.png">-->
       <div class="iframe-container">
       <iframe src="zodiac/index.html" class="responsive-iframe"></iframe>
       </div>
@@ -202,18 +228,10 @@ body {
       <img src="images/know/lineageos.jpg">
     </div>
     <div id="tab-3-panel" class="panel">
-      <p>Calistenics - Pushups | Squats | Core | Pullups | Dips</p>
-      <p>P90X - Tony Horton</p>
-      <img src="images/know/tonyhorton.jpg">
-      <br>
-      <p>Insanity - Shaun T</p>
-      <img src="images/know/shaunt.jpg">
-      <br>
-      <p>Tai Cheng - Dr. Mark Cheng</p>
-      <img src="images/know/markcheng.png">
-      <br>
-      <p>Parkour - David Belle</p>
-      <img src="images/know/davidbelle.jpg">
+      <!--<p>Calistenics - Pushups | Squats | Core | Pullups | Dips</p>-->
+      <div class="iframe-container">
+      <iframe src="workout/index.html" class="responsive-iframe"></iframe>
+      </div>
     </div>
     <div id="tab-4-panel" class="panel">
       <p>Motorola | HTC</p>
@@ -222,28 +240,19 @@ body {
       <p>Nokia | Sony</p>
     </div>
     <div id="tab-5-panel" class="panel">
-      <!--<p>Disturbed</p>
-      <img src="music/disturbed.webp">
-      <p>Le Sserrafim</p>
-      <img src="music/lesserafim.webp">
-      <p>Shakira</p>
-      <img src="music/shakira.webp">
-      <p>Violin | Classical | Rock | Trance</p>-->
+      <!--<p>Violin | Classical | Rock | Trance</p>-->
       <div class="iframe-container">
       <iframe src="music/index.html" class="responsive-iframe"></iframe>
       </div>
     </div>
     <div id="tab-6-panel" class="panel"><p>Insert some drawings/paintings here:</p></div>
     <div id="tab-7-panel" class="panel">
-      <p>One-Armstroke | Breastroke | Butterfly | Float</p>
-      <img src="images/know/armstroke.gif">
-      <img src="images/know/breastroke.gif">
-      <img src="images/know/butterfly.gif">
+      <!-- Float -->
+      <div class="iframe-container">
+      <iframe src="swimming/index.html" class="responsive-iframe"></iframe>
+      </div>
     </div>
     <div id="tab-8-panel" class="panel">
-      <!--<p>Hero Impusle 2011 | BMX</p>
-      <img src="images/know/heroimpulse.avif">
-      <img src="images/know/bmx.jpg">-->
       <div class="iframe-container">
       <iframe src="riding/index.html" class="responsive-iframe"></iframe>
       </div>
@@ -252,60 +261,6 @@ body {
       <p>...</p>
     </div>
     <div id="tab-10-panel" class="panel">
-      <!--<p>Anime List</p>
-      <img src="images/know/anime/beheneko.jpg">
-      <img src="images/know/anime/bleach.jpg">
-      <img src="images/know/anime/boruto.jpg"> 
-      <img src="images/know/anime/bungostraydogs.jpg"> 
-      <img src="images/know/anime/chainsawman.jpg"> 
-      <img src="images/know/anime/chiikawa.jpg"> 
-      <img src="images/know/anime/chuhailips.jpg">
-      <img src="images/know/anime/dandadan.jpg">
-      <img src="images/know/anime/deathnote.jpg">
-      <img src="images/know/anime/demonslayer.jpg"> 
-      <img src="images/know/anime/doraemon.jpg">
-      <img src="images/know/anime/dragonball.jpg"> 
-      <img src="images/know/anime/dragonballdaima.jpg"> 
-      <img src="images/know/anime/dragongoeshousehunting.jpg"> 
-      <img src="images/know/anime/drstone.jpg">
-      <img src="images/know/anime/fireforce.jpg"> 
-      <img src="images/know/anime/fullmetalalchemistbrotherhood.jpg"> 
-      <img src="images/know/anime/gogoloserranger.jpg">
-      <img src="images/know/anime/grandblue.jpg">
-      <img src="images/know/anime/hellsparadise.jpg"> 
-      <img src="images/know/anime/hiscoregirl.jpg"> 
-      <img src="images/know/anime/isekaiquartet.jpg"> 
-      <img src="images/know/anime/jujutsukaisen.jpg"> 
-      <img src="images/know/anime/kaiju8.jpg"> 
-      <img src="images/know/anime/konosuba.jpg"> 
-      <img src="images/know/anime/lazarus.jpg"> 
-      <img src="images/know/anime/loveflops.jpg"> 
-      <img src="images/know/anime/loveiswar.jpg"> 
-      <img src="images/know/anime/marsred.jpg"> 
-      <img src="images/know/anime/mashle.jpg"> 
-      <img src="images/know/anime/mono.jpg"> 
-      <img src="images/know/anime/mushokutensei.jpg"> 
-      <img src="images/know/anime/myheroacademia.jpg">
-      <img src="images/know/anime/myheroacademiavigilantes.jpg"> 
-      <img src="images/know/anime/naruto.jpg"> 
-      <img src="images/know/anime/ninjakamui.jpg"> 
-      <img src="images/know/anime/onepiece.jpg"> 
-      <img src="images/know/anime/parasyte.jpg"> 
-      <img src="images/know/anime/pleaseputthemontakaminesan.jpg"> 
-      <img src="images/know/anime/promisedneverland.jpg"> 
-      <img src="images/know/anime/ranma.jpg"> 
-      <img src="images/know/anime/rezero.jpg"> 
-      <img src="images/know/anime/sagaoftanya.jpg"> 
-      <img src="images/know/anime/shangrilafrontier.jpg"> 
-      <img src="images/know/anime/shinchan.jpg"> 
-      <img src="images/know/anime/sololeveling.jpg"> 
-      <img src="images/know/anime/spyxfamily.jpg">
-      <img src="images/know/anime/therisingofshieldhero.jpg"> 
-      <img src="images/know/anime/tobeherox.jpg"> 
-      <img src="images/know/anime/tokyorevengers.jpg"> 
-      <img src="images/know/anime/uruseiyatsura.jpg"> 
-      <img src="images/know/anime/vinlandsaga.jpg"> 
-      <img src="images/know/anime/windbreaker.jpg">-->
       <div class="iframe-container">
       <iframe src="anime/index.html" class="responsive-iframe"></iframe>
       </div>
@@ -330,29 +285,23 @@ body {
       <p>HelloTalk, Xiaohongshu, Reddit, Youtube</p>
     </div>
     <div id="tab-14-panel" class="panel">
-      <!--<p>God of War | Prince of Persia 2008 | Stellar Blade</p>
-      <img src="games/gow.png">
-      <img src="games/pop2008.webp">
-      <img src="games/stellarblade.jpg">-->
       <div class="iframe-container">
       <iframe src="games/index.html" class="responsive-iframe"></iframe>
       </div>
     </div>
     <div id="tab-15-panel" class="panel">
-      <!--<p>Nihilism</p>
-      <img src="images/know/nietze.jpg">
-      <p>Buddhism</p>
-      <img src="images/know/buddha.jpg">
-      <p>Atheism</p>
-      <img src="images/know/darwin.jpg">-->
       <div class="iframe-container">
       <iframe src="philosophy/index.html" class="responsive-iframe"></iframe>
       </div>
     </div>
-    <div id="tab-16-panel" class="panel"><p>English, Gujarati, Hindi, Chinese, Arabic, Udru, Marathi, Japanese</p></div>
+    <div id="tab-16-panel" class="panel">
+      <div class="iframe-container">
+      <iframe src="languages/index.html" class="responsive-iframe"></iframe>
+      </div>
+    </div>
     <div id="tab-17-panel" class="panel">
       <p>Casual, Light, Comfy, Standout</p>
-      <p>Long Curly Hair, Goatee + Full Beard</p>s
+      <p>Long Curly Hair, Goatee + Full Beard</p>
       <p>White Frame Glasses, Green Ring</p>
     </div>
     <div id="tab-18-panel" class="panel"><p>Beaches, Mountains, Forest, Flight, Train, Car</p></div>
@@ -362,10 +311,9 @@ body {
       <p>Deep Thinker, Creative, Soft Spoken, Gentleman, Charismatic, Good Memory...</p>
     </div>
     <div id="tab-20-panel" class="panel">
-      <p>BBC Sherlock | The White Storm | Mr. Right</p>
-      <img src="images/know/bbcsherlock.jpg">
-      <img src="images/know/whitestorm.avif">
-      <img src="images/know/mrright.jpg">
+      <div class="iframe-container">
+      <iframe src="tv/index.html" class="responsive-iframe"></iframe>
+      </div>
     </div>
   </div>
 </div>
