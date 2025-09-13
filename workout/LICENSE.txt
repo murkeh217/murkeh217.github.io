@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) 2025 Mert Cukuren (https://codepen.io/knyttneve/pen/YgZbLO)
+Copyright (c) 2025 Yexx (https://codepen.io/yexx/pen/PwqMvjB)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
