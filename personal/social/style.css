@@ -1,0 +1,50 @@
+body {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  background: url(bongo.jpg) no-repeat center/cover;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0 20px;
+}
+li:nth-child(1) button {
+  background: #2f3ba7;
+}
+li:nth-child(2) button {
+  background: #ff2843;
+}
+li:nth-child(3) button {
+  background: #ff4500;
+}
+li:nth-child(4) button {
+  background: #ffffff;
+}
+
+button {
+  position: relative;
+  background: rebeccapurple;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #ea6ed4;
+  color: #ea6ed4;
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 50px;
+  cursor: pointer;
+  padding: 0;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+}
