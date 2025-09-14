@@ -33,5 +33,5 @@ body {
   min-height: 100vh;
   display: grid;
   place-content: center;
-  background: #60c4ff;
+  background: transparent;
 }

@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   min-width: .75rem;
   min-height: 100vh;
-  background: gainsboro;
+  background: transparent;
   font: .75rem satisfy, cursive;
 }
 @media (min-width: 23rem) and (min-height: 23em) {

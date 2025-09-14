@@ -1,9 +1,9 @@
 #myCanvasContainer {
-	background: #000;
+	background: transparent;
 }
 
 body {
-	background: #000;
+	background: transparent;
 }
 
 h1.header {

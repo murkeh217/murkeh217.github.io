@@ -9,7 +9,7 @@ body {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  background: #100721;
+  background: transparent;
   font-family: "Ubuntu Mono", monospace;
   font-weight: 400;
 }
@@ -26,7 +26,7 @@ body {
   border-radius: 0.5rem;
   transition: 0.5s ease-in-out;
   cursor: pointer;
-  box-shadow: 1px 5px 15px #1e0e3e;
+  box-shadow: 1px 5px 15px darkgreen;
   position: relative;
   overflow: hidden;
 }
@@ -65,7 +65,7 @@ body {
 }
 .container > div:hover {
   flex: 0 0 250px;
-  box-shadow: 1px 3px 15px #7645d8;
+  box-shadow: 1px 3px 15px green;
   transform: translatey(-30px);
 }
 .container > div:hover .content {

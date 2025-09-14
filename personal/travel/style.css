@@ -12,7 +12,7 @@ img {
   object-fit: cover;
   padding: var(--s);
   border: var(--s) solid #0000;
-  background: #CD8C52;
+  background: green;
   border-radius: calc(3.5*var(--s)); 
   mask: 
     radial-gradient(calc(sqrt(2)*var(--s)),#000 calc(100% - 1px),#0000),
@@ -68,5 +68,5 @@ body {
   min-height: 100vh;
   display: grid;
   place-content: center;
-  background: #F6F7BD;
+  background: transparent;
 }

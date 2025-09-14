@@ -27,5 +27,5 @@ body {
   min-height: 100vh;
   display: grid;
   place-content: center;
-  background: #aabbfb;
+	background: transparent;
 }
