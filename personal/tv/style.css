@@ -47,10 +47,10 @@ span {
   background-image: url("mrright.jpg");
   transform: rotateY( 80deg) translateZ(430px); }
 .carousel__face:nth-child(4) {
-  background-image: url("darkknightrises.jpg");
+  background-image: url("darkknight.jpg");
   transform: rotateY(120deg) translateZ(430px); }
 .carousel__face:nth-child(5) { 
-  background-image: url("https://images.pexels.com/photos/969679/pexels-photo-969679.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-image: url("");
  transform: rotateY(160deg) translateZ(430px); }
 .carousel__face:nth-child(6) { 
   background-image: url("https://images.pexels.com/photos/1834400/pexels-photo-1834400.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
