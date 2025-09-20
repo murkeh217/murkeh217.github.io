@@ -32,6 +32,8 @@
 
 <script src="script.js"></script>
 
+<link rel="manifest" href="/site.webmanifest">
+
 </head>
 
 <body>
@@ -62,13 +64,15 @@
   <input class="state" type="radio" name="tabs-state" id="tab-18" />
   <input class="state" type="radio" name="tabs-state" id="tab-19" />
   <input class="state" type="radio" name="tabs-state" id="tab-20" />
+  <input class="state" type="radio" name="tabs-state" id="tab-21" />
+
 
   <div class="tabs flex-tabs">
     <!-- Labels -->
     <label for="tab-1" id="tab-1-label" class="tab">Zodiac</label>
     <label for="tab-2" id="tab-2-label" class="tab">OS</label>
     <label for="tab-3" id="tab-3-label" class="tab">Workouts</label>
-    <label for="tab-4" id="tab-4-label" class="tab">Gadgets</label>
+    <label for="tab-4" id="tab-4-label" class="tab">Collection</label>
     <label for="tab-5" id="tab-5-label" class="tab">Music</label>
     <label for="tab-6" id="tab-6-label" class="tab">Art</label>
     <label for="tab-7" id="tab-7-label" class="tab">Swimming</label>
@@ -85,6 +89,7 @@
     <label for="tab-18" id="tab-18-label" class="tab">Travel</label>
     <label for="tab-19" id="tab-19-label" class="tab">Personality</label>
     <label for="tab-20" id="tab-20-label" class="tab">TV</label>
+    <label for="tab-21" id="tab-21-label" class="tab">Wishlist</label>
 
     <!-- Panels -->
     <div class="panel-wrapper">
@@ -115,7 +120,7 @@
         <!--<p>Nokia | Sony</p>-->
         <div class="iframe-container">
           <div class="iframe-loader"><div class="iframe-spinner"></div></div>
-          <iframe src="gadgets/index.html" class="responsive-iframe" style="transform: scale(1.75); transform-origin: center; border:0;" onload="this.previousElementSibling.style.display='none';"></iframe>
+          <iframe src="collection/index.html" class="responsive-iframe" style="transform: scale(1.5); transform-origin: center; border:0;" onload="this.previousElementSibling.style.display='none';"></iframe>
         </div>
       </div>
       <div id="tab-5-panel" class="panel">
@@ -220,6 +225,12 @@
         <div class="iframe-container">
           <div class="iframe-loader"><div class="iframe-spinner"></div></div>
           <iframe src="tv/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+        </div>
+      </div>
+      <div id="tab-21-panel" class="panel">
+        <div class="iframe-container">
+          <div class="iframe-loader"><div class="iframe-spinner"></div></div>
+          <iframe src="wishlist/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
         </div>
       </div>
     </div>
