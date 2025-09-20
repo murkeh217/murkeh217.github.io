@@ -20,9 +20,24 @@
 <!-- For Android/Chrome -->
 <link rel="manifest" href="/site.webmanifest">
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-489Z6TPN92"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-489Z6TPN92');
+</script>
+
+<script src="script.js"></script>
+
 </head>
 
 <body>
+
+<!-- ===== PAGE LOADER ===== -->
+<div id="page-loader"><div class="spinner"></div></div>
   
 <h1 style="margin:50px auto 20px auto;text-align:center;">Know MK - 2025</h1>
 <div class="responsive-tabs">
@@ -72,120 +87,140 @@
     <label for="tab-20" id="tab-20-label" class="tab">TV</label>
 
     <!-- Panels -->
-    <div id="tab-1-panel" class="panel">
-      <div class="iframe-container">
-      <iframe src="zodiac/index.html" class="responsive-iframe" style="transform: scale(1.75); transform-origin: center; border:0;"></iframe>
+    <div class="panel-wrapper">
+      <div id="tab-1-panel" class="panel">
+        <div class="iframe-container">
+          <div class="iframe-loader"><div class="iframe-spinner"></div></div>
+          <iframe src="zodiac/index.html" class="responsive-iframe" style="transform: scale(1.75); transform-origin: center; border:0;" onload="this.previousElementSibling.style.display='none';"></iframe>
+        </div>
       </div>
-    </div>
-    <div id="tab-2-panel" class="panel">
-      <!--
-      https://universal-blue.org
-      https://lineageos.org/
-      -->
-      <div class="iframe-container">
-      <iframe src="os/index.html" class="responsive-iframe" style="transform: scale(1.25); transform-origin: center; border:0;"></iframe>
+      <div id="tab-2-panel" class="panel">
+        <!--
+        https://universal-blue.org
+        https://lineageos.org/
+        -->
+        <div class="iframe-container">
+          <div class="iframe-loader"><div class="iframe-spinner"></div></div>
+          <iframe src="os/index.html" class="responsive-iframe" style="transform: scale(1.25); transform-origin: center; border:0;" onload="this.previousElementSibling.style.display='none';"></iframe>
+        </div>
       </div>
-    </div>
-    <div id="tab-3-panel" class="panel">
-      <!--<p>Calistenics - Pushups | Squats | Core | Pullups | Dips</p>-->
-      <div class="iframe-container">
-      <iframe src="workout/index.html" class="responsive-iframe"></iframe>
+      <div id="tab-3-panel" class="panel">
+        <!--<p>Calistenics - Pushups | Squats | Core | Pullups | Dips</p>-->
+        <div class="iframe-container">
+          <div class="iframe-loader"><div class="iframe-spinner"></div></div>
+          <iframe src="workout/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+        </div>
       </div>
-    </div>
-    <div id="tab-4-panel" class="panel">
-      <!--<p>Nokia | Sony</p>-->
-      <div class="iframe-container">
-      <iframe src="gadgets/index.html" class="responsive-iframe" style="transform: scale(1.75); transform-origin: center; border:0;></iframe>
+      <div id="tab-4-panel" class="panel">
+        <!--<p>Nokia | Sony</p>-->
+        <div class="iframe-container">
+          <div class="iframe-loader"><div class="iframe-spinner"></div></div>
+          <iframe src="gadgets/index.html" class="responsive-iframe" style="transform: scale(1.75); transform-origin: center; border:0;" onload="this.previousElementSibling.style.display='none';"></iframe>
+        </div>
       </div>
-    </div>
-    <div id="tab-5-panel" class="panel">
-      <!--<p>Violin | Classical | Rock | Trance</p>-->
-      <div class="iframe-container">
-      <iframe src="music/index.html" class="responsive-iframe"></iframe>
+      <div id="tab-5-panel" class="panel">
+        <!--<p>Violin | Classical | Rock | Trance</p>-->
+        <div class="iframe-container">
+          <div class="iframe-loader"><div class="iframe-spinner"></div></div>
+          <iframe src="music/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+        </div>
       </div>
-    </div>
-    <div id="tab-6-panel" class="panel">
-      <div class="iframe-container">
-      <iframe src="art/index.html" class="responsive-iframe" style="transform: scale(1.5); transform-origin: center; border:0;"></iframe>
+      <div id="tab-6-panel" class="panel">
+        <div class="iframe-container">
+          <div class="iframe-loader"><div class="iframe-spinner"></div></div>
+          <iframe src="art/index.html" class="responsive-iframe" style="transform: scale(1.5); transform-origin: center; border:0;" onload="this.previousElementSibling.style.display='none';"></iframe>
+        </div>
       </div>
-    </div>
-    <div id="tab-7-panel" class="panel">
-      <!-- Floating -->
-      <div class="iframe-container">
-      <iframe src="swimming/index.html" class="responsive-iframe" style="transform: scale(2); transform-origin: center; border:0;"></iframe>
+      <div id="tab-7-panel" class="panel">
+        <!-- Floating -->
+        <div class="iframe-container">
+          <div class="iframe-loader"><div class="iframe-spinner"></div></div>
+          <iframe src="swimming/index.html" class="responsive-iframe" style="transform: scale(2); transform-origin: center; border:0;" onload="this.previousElementSibling.style.display='none';"></iframe>
+        </div>
       </div>
-    </div>
-    <div id="tab-8-panel" class="panel">
-      <div class="iframe-container">
-      <iframe src="riding/index.html" class="responsive-iframe" style="transform: scale(2); transform-origin: center; border:0;"></iframe>
+      <div id="tab-8-panel" class="panel">
+        <div class="iframe-container">
+          <div class="iframe-loader"><div class="iframe-spinner"></div></div>
+          <iframe src="riding/index.html" class="responsive-iframe" style="transform: scale(2); transform-origin: center; border:0;" onload="this.previousElementSibling.style.display='none';"></iframe>
+        </div>
       </div>
-    </div>
-    <div id="tab-9-panel" class="panel">
-      <p>...</p>
-    </div>
-    <div id="tab-10-panel" class="panel">
-      <div class="iframe-container">
-      <iframe src="anime/index.html" class="responsive-iframe" style="transform: scale(2); transform-origin: center; border:0;"></iframe>
+      <div id="tab-9-panel" class="panel">
+        <p>...</p>
       </div>
-    </div>
-    <div id="tab-11-panel" class="panel">
-      <!--
-      <p>Grilled, Smoked</p>
-      <p>Eggs, Apples, Corns, Chicken, Cucumber, Sweet Potato, Milk</p>
-      <p>Protein, Fruit, Fibre, Protein, Veg, Fibre, Milk/Yoghurt</p>
-      <p>Eat 5 times a day</p>
-      -->
-      <div class="iframe-container">
-      <iframe src="diet/index.html" class="responsive-iframe"></iframe>
+      <div id="tab-10-panel" class="panel">
+        <div class="iframe-container">
+          <div class="iframe-loader"><div class="iframe-spinner"></div></div>
+          <iframe src="anime/index.html" class="responsive-iframe" style="transform: scale(2); transform-origin: center; border:0;" onload="this.previousElementSibling.style.display='none';"></iframe>
+        </div>
       </div>
-    </div>
-    <div id="tab-12-panel" class="panel">
-      <!--
-      <p>Erotica</p>
-      -->
-      <div class="iframe-container">
-      <iframe src="nsfw/index.html" class="responsive-iframe"></iframe>
+      <div id="tab-11-panel" class="panel">
+        <!--
+        <p>Grilled, Smoked</p>
+        <p>Eggs, Apples, Corns, Chicken, Cucumber, Sweet Potato, Milk</p>
+        <p>Protein, Fruit, Fibre, Protein, Veg, Fibre, Milk/Yoghurt</p>
+        <p>Eat 5 times a day</p>
+        -->
+        <div class="iframe-container">
+          <div class="iframe-loader"><div class="iframe-spinner"></div></div>
+          <iframe src="diet/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+        </div>
       </div>
-    </div>
-    <div id="tab-13-panel" class="panel">
-      <div class="iframe-container">
-      <iframe src="social/index.html" class="responsive-iframe"></iframe>
+      <div id="tab-12-panel" class="panel">
+        <!--
+        <p>Erotica</p>
+        -->
+        <div class="iframe-container">
+          <div class="iframe-loader"><div class="iframe-spinner"></div></div>
+          <iframe src="nsfw/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+        </div>
       </div>
-    </div>
-    <div id="tab-14-panel" class="panel">
-      <div class="iframe-container">
-      <iframe src="games/index.html" class="responsive-iframe"></iframe>
+      <div id="tab-13-panel" class="panel">
+        <div class="iframe-container">
+          <div class="iframe-loader"><div class="iframe-spinner"></div></div>
+          <iframe src="social/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+        </div>
       </div>
-    </div>
-    <div id="tab-15-panel" class="panel">
-      <div class="iframe-container">
-      <iframe src="philosophy/index.html" class="responsive-iframe"></iframe>
+      <div id="tab-14-panel" class="panel">
+        <div class="iframe-container">
+          <div class="iframe-loader"><div class="iframe-spinner"></div></div>
+          <iframe src="games/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+        </div>
       </div>
-    </div>
-    <div id="tab-16-panel" class="panel">
-      <div class="iframe-container">
-      <iframe src="languages/index.html" class="responsive-iframe"></iframe>
+      <div id="tab-15-panel" class="panel">
+        <div class="iframe-container">
+          <div class="iframe-loader"><div class="iframe-spinner"></div></div>
+          <iframe src="philosophy/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+        </div>
       </div>
-    </div>
-    <div id="tab-17-panel" class="panel">
-      <p>Casual, Light, Comfy, Standout</p>
-      <p>Long Curly Hair, Goatee + Full Beard</p>
-      <p>White Frame Glasses, Green Ring</p>
-    </div>
-    <div id="tab-18-panel" class="panel">
-      <!--<p>Train, Car</p>-->
-      <div class="iframe-container">
-      <iframe src="travel/index.html" class="responsive-iframe"></iframe>
+      <div id="tab-16-panel" class="panel">
+        <div class="iframe-container">
+        <div class="iframe-loader"><div class="iframe-spinner"></div></div>
+        <iframe src="languages/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+        </div>
       </div>
-    </div>
-    <div id="tab-19-panel" class="panel">
-      <div class="iframe-container">
-      <iframe src="personality/index.html" class="responsive-iframe"></iframe>
+      <div id="tab-17-panel" class="panel">
+        <p>Casual, Light, Comfy, Standout</p>
+        <p>Long Curly Hair, Goatee + Full Beard</p>
+        <p>White Frame Glasses, Green Ring</p>
       </div>
-    </div>
-    <div id="tab-20-panel" class="panel">
-      <div class="iframe-container">
-      <iframe src="tv/index.html" class="responsive-iframe"></iframe>
+      <div id="tab-18-panel" class="panel">
+        <!--<p>Train, Car</p>-->
+        <div class="iframe-container">
+          <div class="iframe-loader"><div class="iframe-spinner"></div></div>
+          <iframe src="travel/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+        </div>
+      </div>
+      <div id="tab-19-panel" class="panel">
+        <div class="iframe-container">
+          <div class="iframe-loader"><div class="iframe-spinner"></div></div>
+          <iframe src="personality/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+        </div>
+      </div>
+      <div id="tab-20-panel" class="panel">
+        <div class="iframe-container">
+          <div class="iframe-loader"><div class="iframe-spinner"></div></div>
+          <iframe src="tv/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+        </div>
       </div>
     </div>
   </div>

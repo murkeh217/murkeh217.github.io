@@ -208,34 +208,26 @@ class TagCloud extends React.Component {
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Independent")), /*#__PURE__*/
 
-
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Loving")), /*#__PURE__*/
-
 
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Supportive")), /*#__PURE__*/
 
-
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Humble")), /*#__PURE__*/
-
 
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Loyal")), /*#__PURE__*/
 
-
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Understanding")), /*#__PURE__*/
-
 
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Manipulative")), /*#__PURE__*/
 
-
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Passive Aggressive")), /*#__PURE__*/
-
 
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Can't be sneaky with me. I have spiritual gifts")), /*#__PURE__*/
@@ -243,83 +235,71 @@ class TagCloud extends React.Component {
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Keeps score of your wrongdoings")), /*#__PURE__*/
 
-
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Have my eye on your every move")), /*#__PURE__*/
-
 
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Dreams the truth")), /*#__PURE__*/
 
-
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Don't like public embarrassment")), /*#__PURE__*/
-
 
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Kids smile at me")), /*#__PURE__*/
 
-
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Animals approach me")), /*#__PURE__*/
-
 
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Strangers tell me their stories")), /*#__PURE__*/
 
-
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "My energy doesn't lie")), /*#__PURE__*/
-
 
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Irreplaceable")), /*#__PURE__*/
 
-
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Selfless")), /*#__PURE__*/
-
 
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Grudge holder")), /*#__PURE__*/
 
-
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Possessive")), /*#__PURE__*/
-
 
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Emotional storm, a sharp memory and maybe even a dramatic exit worthy of a movie scene")), /*#__PURE__*/
 
+      React.createElement("li", null, /*#__PURE__*/
+      React.createElement("a", { href: "/" }, "Hate Stress")), /*#__PURE__*/
+
+      React.createElement("li", null, /*#__PURE__*/
+      React.createElement("a", { href: "/" }, "Lazy")), /*#__PURE__*/
+
+      React.createElement("li", null, /*#__PURE__*/
+      React.createElement("a", { href: "/" }, "Intense")), /*#__PURE__*/
+
+      React.createElement("li", null, /*#__PURE__*/
+      React.createElement("a", { href: "/" }, "Contemporary")), /*#__PURE__*/
+
+      React.createElement("li", null, /*#__PURE__*/
+      React.createElement("a", { href: "/" }, "Mellow")), /*#__PURE__*/
+      
+      React.createElement("li", null, /*#__PURE__*/
+      React.createElement("a", { href: "/" }, "Violin")), /*#__PURE__*/
+
+      React.createElement("li", null, /*#__PURE__*/
+      React.createElement("a", { href: "/" }, "Classical")), /*#__PURE__*/
+
+      React.createElement("li", null, /*#__PURE__*/
+      React.createElement("a", { href: "/" }, "Rock")), /*#__PURE__*/
+
+      React.createElement("li", null, /*#__PURE__*/
+      React.createElement("a", { href: "/" }, "Pop")), /*#__PURE__*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     ))));
-
-
-
-
-
   }}
-
 
 ReactDOM.render( /*#__PURE__*/React.createElement(TagCloud, null), mountNode);

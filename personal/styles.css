@@ -1,3 +1,4 @@
+/* ====== Responsive Tabs Container ====== */
 .responsive-tabs {
   margin: 20px auto;
   width: 90%;
@@ -5,14 +6,14 @@
 
 .responsive-tabs .state {
   position: absolute;
-  left: -10000px;
+  left: -10000px;  /* hide radio inputs */
 }
 
 .responsive-tabs .flex-tabs {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.2rem;
+  gap: 0.4rem;
 }
 
 .responsive-tabs .flex-tabs .tab {
@@ -20,43 +21,52 @@
   max-height: 40px;
 }
 
-/* Panels */
-.responsive-tabs .flex-tabs .panel {
-  background: rgba(0, 0, 0, 0.5); /* glass effect */
-  color: #ffffff;
-  text-shadow: 0 0 6px rgba(0,0,0,0.7); /* readability boost */
-  padding: 20px;
-  min-height: 200px;
-  display: none;
+/* ====== Panel Wrapper & Panels ====== */
+.panel-wrapper {
+  position: relative;      /* establishes positioning context */
   width: 100%;
-  flex-basis: auto;
+  min-height: 200px;       /* keeps space for tallest panel */
+  transition: height 0.6s ease;
+}
+
+.panel-wrapper .panel {
+  position: absolute;      /* stack panels */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 20px;
   border: 1px solid rgba(255,255,255,0.3);
   border-top: none;
   backdrop-filter: blur(8px);
+  opacity: 0;              /* hidden by default */
+  pointer-events: none;
+  transition: opacity 0.6s ease;
 }
 
-/* Tabs */
+/* ====== Tabs ====== */
 .responsive-tabs .tab {
   display: inline-block;
   padding: 10px;
   vertical-align: top;
-  background: rgba(0, 0, 0, 0.4); /* transparent glass */
+  background: rgba(0, 0, 0, 0.4); /* transparent glass look */
   color: #ffffff;
   text-shadow: 0 0 6px rgba(0,0,0,0.7);
-  flex: 1 1 auto; /* grow, shrink, auto width */
+  flex: 1 1 auto;          /* grow and shrink as needed */
   text-align: center;
   cursor: pointer;
   border-bottom: 3px solid rgba(255,255,255,0.3);
   transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
 
-.responsive-tabs .tab:hover { 
+.responsive-tabs .tab:hover {
   background: rgba(0, 0, 0, 0.6);
   color: #ffffff;
   border-bottom-color: rgba(255,255,255,0.6);
 }
 
-/* Active states for 20 tabs */
+/* ====== Active Tab Styling (1–20) ====== */
 #tab-1:checked ~ .tabs #tab-1-label,
 #tab-2:checked ~ .tabs #tab-2-label,
 #tab-3:checked ~ .tabs #tab-3-label,
@@ -84,7 +94,7 @@
   cursor: default;
 }
 
-/* Show the selected panel */
+/* ====== Show Selected Panel ====== */
 #tab-1:checked ~ .tabs #tab-1-panel,
 #tab-2:checked ~ .tabs #tab-2-panel,
 #tab-3:checked ~ .tabs #tab-3-panel,
@@ -105,20 +115,22 @@
 #tab-18:checked ~ .tabs #tab-18-panel,
 #tab-19:checked ~ .tabs #tab-19-panel,
 #tab-20:checked ~ .tabs #tab-20-panel {
-  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
 }
 
-/* Responsive stacking */
+/* ====== Responsive Stacking ====== */
 @media (max-width: 600px) {
   .flex-tabs { flex-direction: column; }
-  .flex-tabs .tab { 
-    background: rgba(0, 0, 0, 0.5); 
-    border-bottom: 1px solid rgba(255,255,255,0.3); 
+  .flex-tabs .tab {
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
   }
   .flex-tabs .tab:last-of-type { border-bottom: none; }
 }
 
-/* Responsive iframe (glass look) */
+/* ====== Iframe Container ====== */
 .iframe-container {
   position: relative;
   overflow: hidden;
@@ -138,24 +150,20 @@
   border: none;
 }
 
-/* Links */
+/* ====== Links ====== */
 a {
   color: #ffffff;
   text-decoration: none;
   text-shadow: 0 0 6px rgba(0,0,0,0.7);
   transition: color 0.3s, text-shadow 0.3s;
 }
-
 a:hover {
   color: #ffffff;
   text-shadow: 0 0 10px #ffffff;
 }
+a:visited { color: #dddddd; }
 
-a:visited {
-  color: #dddddd;
-}
-
-/* Body gradient background */
+/* ====== Body Background ====== */
 body {
   background: linear-gradient(-45deg, white, #a8e6cf, #23d5ab, green);
   background-size: 400% 400%;
@@ -171,4 +179,63 @@ body {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+/* ====== Global Page Loader ====== */
+#page-loader {
+  position: fixed;
+  inset: 0;
+  background: #111;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+#page-loader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(255,255,255,0.2);
+  border-top-color: green;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ====== Iframe Loader ====== */
+.iframe-loader {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+.iframe-loader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+.iframe-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255,255,255,0.4);
+  border-top-color: green;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.panel-wrapper,
+.panel-wrapper .panel,
+.iframe-container {
+  max-width: 100%;    /* inherit responsive-tabs width */
+  margin: 0 auto;
 }
