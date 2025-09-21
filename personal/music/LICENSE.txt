@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) 2025 Aybüke Ceylan Öncül (https://codepen.io/aybukeceylan/pen/RwrRPoO)
+Copyright (c) 2025 Ecem Gokdogan (https://codepen.io/ecemgo/pen/vYPadZz)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
