@@ -31,7 +31,7 @@ class TagCloud extends React.Component {
       React.createElement("div", { style: {display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", width: "100%", flexDirection: "column", }, }, /*#__PURE__*/
       React.createElement("h1", { class: "header" }, ""), /*#__PURE__*/
       React.createElement("div", { id: "myCanvasContainer" }, /*#__PURE__*/
-      React.createElement("canvas", { width: "1000", height: "1000", id: "myCanvas" }, /*#__PURE__*/
+      React.createElement("canvas", { width: "800", height: "800", id: "myCanvas" }, /*#__PURE__*/
       React.createElement("p", null, "Anything in here will be replaced on browsers that do not support the canvas element"))), /*#__PURE__*/
 
 
