@@ -1,0 +1,101 @@
+html, body {
+  position: relative;
+  height: 100%;
+}
+
+body {      
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper-container {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  display: flex;            
+  align-items: center;      
+  justify-content: center;   
+  background-size: cover;    
+  text-align: center;      
+}
+
+.gallery-top {
+  min-height: calc(100vh - 120px);
+}
+
+.gallery-thumbs {
+  height: auto;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.gallery-thumbs .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  text-align: center;
+  color: white;
+}
+
+.gallery-thumbs .swiper-slide-thumb-active {    
+background: black;
+background-repeat: no-repeat;
+border: none;
+outline: none;
+color:white;   
+}
+
+
+/* ====== Body Background ====== */
+body {
+  background: linear-gradient(-45deg, white, lightgreen, green, darkgreen);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+  margin: 0;
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(0,0,0,0.7);
+  font-family: 'Roboto', sans-serif;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Make each slide fill the container height */
+.gallery-top .swiper-slide {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Allow inner container to grow */
+.gallery-top .container {
+  max-width: 1200px;    /* optional, for large screens */
+  width: 90%;
+  padding: 30px;
+}
+
+/* Make iframe responsive and taller */
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio. Change if needed */
+}
+.responsive-iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}

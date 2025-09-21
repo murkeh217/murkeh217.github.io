@@ -1,9 +1,7 @@
-# CSS Staircase Hover Effect Using :has() 
+# CSS vertical carousel animation
 
 A Pen created on CodePen.
 
-Original URL: [https://codepen.io/ZoranJambor/pen/vYpzGwV](https://codepen.io/ZoranJambor/pen/vYpzGwV).
+Original URL: [https://codepen.io/aija/pen/xvXWoK](https://codepen.io/aija/pen/xvXWoK).
 
-A pure-CSS staircase effect on hover that demonstrates a practical utility of :has().
-
-Link to tutorial: https://youtu.be/OqLquBs-bEg
+Infinitely rotating vertical carousel animation. CSS only.

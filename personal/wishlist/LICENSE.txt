@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) 2025 Zoran Jambor (https://codepen.io/ZoranJambor/pen/vYpzGwV)
+Copyright (c) 2025 Aija (https://codepen.io/aija/pen/xvXWoK)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
