@@ -17,3 +17,9 @@ var galleryTop = new Swiper('.gallery-top', {
   loop: true,
   thumbs: { swiper: galleryThumbs }
 });
+
+// Wait for full page including iframes
+window.addEventListener("load", function() {
+  const loader = document.getElementById("global-loader");
+  loader.classList.add("hidden");
+});

@@ -50,10 +50,10 @@ span {
   background-image: url("darkknight.jpg");
   transform: rotateY(120deg) translateZ(430px); }
 .carousel__face:nth-child(5) { 
-  background-image: url("");
+  background-image: url("moonknight.jpg");
  transform: rotateY(160deg) translateZ(430px); }
 .carousel__face:nth-child(6) { 
-  background-image: url("https://images.pexels.com/photos/1834400/pexels-photo-1834400.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-image: url("johnwick.jpg");
  transform: rotateY(200deg) translateZ(430px); }
 .carousel__face:nth-child(7) { 
   background-image: url("https://images.pexels.com/photos/1415268/pexels-photo-1415268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");

@@ -4,7 +4,7 @@ html, body {
 }
 
 body {      
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #000;
   margin: 0;
@@ -30,31 +30,46 @@ body {
   min-height: calc(100vh - 120px);
 }
 
+/* ===== Tabs Container ===== */
 .gallery-thumbs {
   height: auto;
   box-sizing: border-box;
   padding: 10px 0;
+  background: rgba(0, 0, 0, 0.5);   /* light transparent white */
+  backdrop-filter: blur(6px);             /* glassy effect */
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;     /* clean modern font */
 }
 
+/* ===== Tabs Text ===== */
 .gallery-thumbs .swiper-slide {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50px;
+  height: 60px;
   text-align: center;
-  color: white;
+  color: white;                         /* deep green for contrast */
+  font-size: 18px;                         /* bigger text */
+  font-weight: 700;                        /* bold text */
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7); /* subtle highlight for clarity */
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* ===== Active Tab ===== */
 .gallery-thumbs .swiper-slide-thumb-active {    
-background: black;
-background-repeat: no-repeat;
-border: none;
-outline: none;
-color:white;   
+  background: rgba(255, 255, 255, 0.7);   /* brighter when active */
+  color: darkgreen;                         /* darker green when active */
+  border: none;
+  outline: none;  
+  border-radius: 8px;
+  font-size: 19px;                         /* slight size bump */
+  font-weight: 800;                         /* extra bold when active */
 }
 
-
-/* ====== Body Background ====== */
+/* ===== Body Background ===== */
 body {
   background: linear-gradient(-45deg, white, lightgreen, green, darkgreen);
   background-size: 400% 400%;
@@ -62,7 +77,6 @@ body {
   height: 100vh;
   margin: 0;
   color: #ffffff;
-  text-shadow: 0 0 6px rgba(0,0,0,0.7);
   font-family: 'Roboto', sans-serif;
 }
 
@@ -87,15 +101,60 @@ body {
   padding: 30px;
 }
 
-/* Make iframe responsive and taller */
+/* ===== Iframe Container ===== */
 .iframe-container {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 aspect ratio. Change if needed */
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
+
 .responsive-iframe {
   position: absolute;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
 }
+
+/* ===== Global Loader Overlay ===== */
+#global-loader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);   /* dark greenish overlay */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9999;                     /* stays on top of all content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+/* Hide when done */
+#global-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Spinner style */
+.loader-spinner {
+  width: 70px;
+  height: 70px;
+  border: 6px solid rgba(0, 0, 0, 0.3);
+  border-top: 6px solid #00c853;     /* bright green accent */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
