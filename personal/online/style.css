@@ -1,0 +1,43 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;           /* dark background for contrast */
+  font-family: sans-serif;
+}
+
+/* ===== GRID ===== */
+section {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);  /* ✅ 7 columns */
+  grid-template-rows: repeat(3, auto);    /* ✅ 3 rows */
+  gap: 10px;                              /* space between tiles */
+  padding: 10px;
+}
+
+/* ===== TILE ===== */
+a {
+  width: 140px;
+  height: 140px;
+  background: #333;           /* tile background */
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+a i {
+  color: #fff;                /* white icons */
+}
+
+.tile img {
+  width: 100px;   /* adjust as needed */
+  height: 100px;  /* keeps it square */
+  object-fit: contain; /* ensures the whole SVG fits */
+}
