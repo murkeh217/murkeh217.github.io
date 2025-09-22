@@ -193,7 +193,7 @@ button {
   aspect-ratio: 1;
   border-radius: 50%;
   background: RGB(from var(--c) r g b/0.2);
-  color: darkgreen;
+  color: lightgreen;
   font: 900 2em/1.5 sans-serif;
   transition: 0.3s ease-out;
   transition-property: background-color, color;

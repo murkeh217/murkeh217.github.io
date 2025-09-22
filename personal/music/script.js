@@ -105,13 +105,13 @@ const songs = [
       "",
   },
   {
-    title: "Insane",
+    title: "Becoming Insane",
     name: "Infected Mushroom",
     source:
       "",
   },
   {
-    title: "",
+    title: "Undead",
     name: "Hollywood Undead",
     source:
       "",
@@ -123,14 +123,14 @@ const songs = [
       "",
   },
   {
-    title: "",
+    title: "Nxde",
     name: "G-I-DLE",
     source:
       "",
   },
 ];
 
-let currentSongIndex = 3;
+let currentSongIndex = 1;
 
 function updateSongInfo() {
   songName.textContent = songs[currentSongIndex].title;
@@ -205,7 +205,7 @@ updateSongInfo();
 var swiper = new Swiper(".swiper", {
   effect: "coverflow",
   centeredSlides: true,
-  initialSlide: 3,
+  initialSlide: 1,
   slidesPerView: "auto",
   grabCursor: true,
   spaceBetween: 40,
