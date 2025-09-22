@@ -1,6 +1,6 @@
 var galleryThumbs = new Swiper('.gallery-thumbs', {
   spaceBetween: 10,
-  slidesPerView: 7,
+  slidesPerView: 10,
   loop: true,
   freeMode: true,
   watchSlidesVisibility: true,
