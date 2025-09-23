@@ -2,24 +2,98 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>A gallery of squiggle images!</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>Animated Photo Gallery (Also Frustrating)</title>
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://public.codepenassets.com/css/reset-2.0.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css'><link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<div class="container">
-  <img src="beach1.jpg">
-  <img src="beach2.jpg">
-  <img src="mountain1.jpg">
-  <img src="mountain2.jpg">
-  <img src="forest1.jpg">
-  <img src="forest2.jpg">
-  <img src="flight1.jpg">
-  <img src="flight2.jpg">
-  <img src="car.jpg">
+<div class="gallery">
+  <div class="gallery__strip__wrapper">
+    <div class="gallery__strip one">
+      <div class="photo">
+        <div class="photo__image"><img src="beach1.jpg"/></div>
+        <div class="photo__name">Dapoli</div>
+      </div>
+      <div class="photo">
+        <div class="photo__image"><img src="mountain1.jpg"/></div>
+        <div class="photo__name">Sinhagad</div>
+      </div>
+      <div class="photo">
+        <div class="photo__image"><img src="flight1.jpg"/></div>
+        <div class="photo__name">North
+        </div>
+      </div>
+      <div class="photo">
+        <div class="photo__image"><img src="forest1.jpg"/></div>
+        <div class="photo__name">Ooty</div>
+      </div>
+    </div>
+  </div>
+  <div class="gallery__strip__wrapper">
+    <div class="gallery__strip two">
+      <div class="photo">
+        <div class="photo__image"><img src="beach2.jpg"/></div>
+        <div class="photo__name">Goa</div>
+      </div>
+      <div class="photo">
+        <div class="photo__image"><img src="forest2.jpg"/></div>
+        <div class="photo__name">Mudumalai</div>
+      </div>
+      <div class="photo">
+        <div class="photo__image"><img src="car.jpg"/></div>
+        <div class="photo__name">Lonavala</div>
+      </div>
+      <div class="photo">
+        <div class="photo__image"><img src="flight2.jpg"/></div>
+        <div class="photo__name">West</div>
+      </div>
+    </div>
+  </div>
+  <div class="gallery__strip__wrapper">
+    <div class="gallery__strip three">
+      <div class="photo">
+        <div class="photo__image"><img src="mountain2.jpg"/></div>
+        <div class="photo__name">Dehradhun</div>
+      </div>
+      <div class="photo">
+        <div class="photo__image"><img src="boat.jpg"/></div>
+        <div class="photo__name">Kerala</div>
+      </div>
+      <div class="photo">
+        <div class="photo__image"><img src="palace.jpg"/></div>
+        <div class="photo__name">Ranthambore</div>
+      </div>
+      <div class="photo">
+        <div class="photo__image"><img src="tiger.JPG"/></div>
+        <div class="photo__name">Melghat</div>
+      </div>
+    </div>
+  </div>
+  <div class="gallery__strip__wrapper">
+    <div class="gallery__strip four">
+      <div class="photo">
+        <div class="photo__image"><img src="waterfall.jpg"/></div>
+        <div class="photo__name">Chikaldhara</div>
+      </div>
+      <div class="photo">
+        <div class="photo__image"><img src="indiagate.jpg"/></div>
+        <div class="photo__name">Mumbai</div>
+      </div>
+      <div class="photo">
+        <div class="photo__image"><img src="house.jpg"/></div>
+        <div class="photo__name">Pune</div>
+      </div>
+      <div class="photo">
+        <div class="photo__image"><img src="mausoleum.jpg"/></div>
+        <div class="photo__name">Ujjain</div>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- partial -->
-  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 </body>
 </html>

@@ -1,7 +1,11 @@
-# A gallery of squiggle images!
+# Animated Photo Gallery (Also Frustrating)
 
 A Pen created on CodePen.
 
-Original URL: [https://codepen.io/t_afif/pen/BabwVLx](https://codepen.io/t_afif/pen/BabwVLx).
+Original URL: [https://codepen.io/oliviale/pen/RwNOPvx](https://codepen.io/oliviale/pen/RwNOPvx).
 
-Based on: https://codepen.io/t_afif/pen/qBvXXBe
+Me: Hm look at this
+
+Friend: Wow so frustrating
+
+Me: I guess that's the title
