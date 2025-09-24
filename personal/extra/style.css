@@ -9,7 +9,7 @@ body {
   display: grid;
   place-items: center;
   min-height: 100vh;
-  background: var(--gradient-9);
+  background: transparent;
 }
 
 :root {
@@ -20,7 +20,7 @@ body {
   
 .container {
   width: 80vw;
-  height: 50vmin;
+  height: 80vmin;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,8 +33,8 @@ img {
   transition: flex var(--transition), filter var(--transition);
   height: 100%;
   filter: grayscale(var(--grayscale)) brightness(var(--brightness));
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
+  object-position: top; /* 👈 Focus on the top of the image */
   overflow: hidden;
   flex: 1;
 }
