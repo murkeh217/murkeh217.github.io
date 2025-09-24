@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-  <meta charset="UTF-8">
-  <title>Know MK</title>
-  <link rel='stylesheet' href='https://famousfolks.ca/pacifica/wp-content/themes/pacifica/assets/css/bootstrap.min.css?ver=5.6.2'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css'><link rel="stylesheet" href="./style.css">
+   <meta charset="UTF-8">
+   <title>Know MK</title>
 
-<!-- Roboto font family -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<!-- Standard favicon -->
-<link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
-<!-- PNG versions -->
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<!-- For Apple devices -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<!-- For Android/Chrome -->
-<link rel="manifest" href="/site.webmanifest">
+   <meta http-equiv="Content-Security-Policy"
+      content="
+      default-src 'self';
+      img-src 'self' data: https:;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+      font-src 'self' https://fonts.gstatic.com;
+      script-src 'self' https://cdnjs.cloudflare.com;
+      connect-src 'self';
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      ">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-489Z6TPN92"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-489Z6TPN92');
-</script>
+   <link rel='stylesheet' href='https://famousfolks.ca/pacifica/wp-content/themes/pacifica/assets/css/bootstrap.min.css?ver=5.6.2'>
+   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css'><link rel="stylesheet" href="./style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
+   <!-- Roboto font family -->
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+   <!-- Standard favicon -->
+   <link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
+   <!-- PNG versions -->
+   <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+   <!-- For Apple devices -->
+   <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+   <!-- For Android/Chrome -->
+   <link rel="manifest" href="/site.webmanifest">
+
+   <!-- Google tag (gtag.js) -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-489Z6TPN92"></script>
+   
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-489Z6TPN92');
+   </script>
+
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -169,7 +184,7 @@
                   <div class="pf-program-details">
                      <!-- Floating -->
                      <div class="iframe-container">
-                        <iframe src="swimming/index.html" class="responsive-iframe" style="transform: scale(1.75); transform-origin: center; border:0;" onload="this.previousElementSibling.style.display='none';"></iframe>
+                        <iframe src="swimming/index.html" class="responsive-iframe" style="transform: scale(1.75); transform-origin: center; border:0;" ></iframe>
                      </div>
                   </div>
                </div>
@@ -184,7 +199,7 @@
                <div class="col-lg-5 col-xs-12 col-md-6 order-md-1">
                   <div class="pf-program-details">
                      <div class="iframe-container">
-                        <iframe src="riding/index.html" class="responsive-iframe" style="transform: scale(2); transform-origin: center; border:0;" onload="this.previousElementSibling.style.display='none';"></iframe>
+                        <iframe src="riding/index.html" class="responsive-iframe" style="transform: scale(2); transform-origin: center; border:0;" ></iframe>
                      </div>
                   </div>
                </div>
@@ -199,7 +214,7 @@
                <div class="col-lg-5 col-xs-12 col-md-6 order-md-1">
                   <div class="pf-program-details">
                      <div class="iframe-container">
-                        <iframe src="anime/index.html" class="responsive-iframe" style="transform: scale(1.25); transform-origin: center; border:0;" onload="this.previousElementSibling.style.display='none';"></iframe>
+                        <iframe src="anime/index.html" class="responsive-iframe" style="transform: scale(1.25); transform-origin: center; border:0;" ></iframe>
                      </div>
                   </div>
                </div>
@@ -220,7 +235,7 @@
                      <p>Eat 5 times a day</p>
                      -->
                      <div class="iframe-container">
-                        <iframe src="diet/index.html" class="responsive-iframe" style="transform: scale(1); transform-origin: center; border:0;" onload="this.previousElementSibling.style.display='none';"></iframe>
+                        <iframe src="diet/index.html" class="responsive-iframe" style="transform: scale(1); transform-origin: center; border:0;" ></iframe>
                      </div>
                   </div>
                </div>
@@ -238,7 +253,7 @@
                      <p>Erotica</p>
                      -->
                      <div class="iframe-container">
-                        <iframe src="nsfw/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+                        <iframe src="nsfw/index.html" class="responsive-iframe" ></iframe>
                      </div>
                   </div>
                </div>
@@ -253,7 +268,7 @@
                <div class="col-lg-5 col-xs-12 col-md-6 order-md-1">
                   <div class="pf-program-details">
                      <div class="iframe-container">
-                        <iframe src="online/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+                        <iframe src="online/index.html" class="responsive-iframe" ></iframe>
                      </div>
                   </div>
                </div>
@@ -268,7 +283,7 @@
                <div class="col-lg-5 col-xs-12 col-md-6 order-md-1">
                   <div class="pf-program-details">
                      <div class="iframe-container">
-                        <iframe src="games/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+                        <iframe src="games/index.html" class="responsive-iframe" ></iframe>
                      </div>
                   </div>
                </div>
@@ -283,7 +298,7 @@
                <div class="col-lg-5 col-xs-12 col-md-6 order-md-1">
                   <div class="pf-program-details">
                      <div class="iframe-container">
-                        <iframe src="philosophy/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+                        <iframe src="philosophy/index.html" class="responsive-iframe" ></iframe>
                      </div>
                   </div>
                </div>
@@ -298,7 +313,7 @@
                <div class="col-lg-5 col-xs-12 col-md-6 order-md-1">
                   <div class="pf-program-details">
                      <div class="iframe-container">
-                        <iframe src="languages/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+                        <iframe src="languages/index.html" class="responsive-iframe" ></iframe>
                      </div>
                   </div>
                </div>
@@ -316,7 +331,7 @@
                      <p>Long Curly Hair, Goatee + Full Beard</p>
                      <p>White Frame Glasses, Green Ring</p>-->
                      <div class="iframe-container">
-                        <iframe src="avatar/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+                        <iframe src="avatar/index.html" class="responsive-iframe" ></iframe>
                      </div>
                   </div>
                </div>
@@ -332,7 +347,7 @@
                   <div class="pf-program-details">
                      <!--<p>Train, Car</p>-->
                      <div class="iframe-container">
-                        <iframe src="travel/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+                        <iframe src="travel/index.html" class="responsive-iframe" ></iframe>
                      </div>
                   </div>
                </div>
@@ -347,7 +362,7 @@
                <div class="col-lg-5 col-xs-12 col-md-6 order-md-1">
                   <div class="pf-program-details">
                      <div class="iframe-container">
-                        <iframe src="personality/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+                        <iframe src="personality/index.html" class="responsive-iframe" ></iframe>
                      </div>
                   </div>
                </div>
@@ -362,7 +377,7 @@
                <div class="col-lg-5 col-xs-12 col-md-6 order-md-1">
                   <div class="pf-program-details">
                      <div class="iframe-container">
-                        <iframe src="tv/index.html" style="transform: scale(1); transform-origin: center; border:0;"class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+                        <iframe src="tv/index.html" style="transform: scale(1); transform-origin: center; border:0;"class="responsive-iframe" ></iframe>
                      </div>
                   </div>
                </div>
@@ -378,7 +393,7 @@
                   <div class="pf-program-details">
                      <!--snail noodles, pork knuckles, chicken feet, blood jelly, -->
                      <div class="iframe-container">
-                        <iframe src="wishlist/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+                        <iframe src="wishlist/index.html" class="responsive-iframe" ></iframe>
                      </div>
                   </div>
                </div>
@@ -394,7 +409,7 @@
                   <div class="pf-program-details">
                      <!-- Dan Brown, Erotica -->
                      <div class="iframe-container">
-                        <iframe src="extra/index.html" class="responsive-iframe" onload="this.previousElementSibling.style.display='none';"></iframe>
+                        <iframe src="extra/index.html" class="responsive-iframe" ></iframe>
                      </div>
                   </div>
                </div>
