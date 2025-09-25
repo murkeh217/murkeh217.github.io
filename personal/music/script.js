@@ -12,85 +12,85 @@ const songs = [
     title: "Indestructible",
     name: "Disturbed",
     source:
-      "",
+      "./indestructible.mp3",
   },
   {
     title: "Smart",
     name: "Le Sserafim",
     source:
-      "",
+      "./smart.mp3",
   },
   {
     title: "She-Wolf",
     name: "Shakira",
     source:
-      "",
+      "./shewolf.mp3",
   },
   {
     title: "Burn It Down",
     name: "Linkin Park",
     source:
-      "",
+      "./burnitdown.mp3",
   },
   {
     title: "We Made You",
     name: "Eminem",
     source:
-      "",
+      "./wemadeyou.mp3",
   },
   {
     title: "Monster",
     name: "Skillet",
     source:
-      "",
+      "./monster.mp3",
   },
   {
     title: "Make It Bun Dem",
     name: "Skrillex & Damian 'Jr Gong' Marley",
     source:
-      "",
+      "./makeitbundem.mp3",
   },
   {
     title: "Dim Sum Paradise",
     name: "OCT",
     source:
-      "",
+      "./dimsumparadise.mp3",
   },
   {
     title: "What I Anticipate Is Not Snow",
     name: "张秒格",
     source:
-      "",
+      "./notsnow.mp3",
   },
   {
     title: "Flight Mode",
     name: "Hua Chenyu",
     source:
-      "",
+      "./flightmode.mp3",
   },
   {
     title: "RTRT",
     name: "Mili",
     source:
-      "",
+      "./rtrt.mp3",
   },
   {
     title: "Rush Of Life",
     name: "Tony Ann",
     source:
-      "",
+      "./rush.mp3",
   },
   {
     title: "Crystallize",
     name: "Lindsey Stirling",
     source:
-      "",
+      "./crystallize.mp3",
   },
   {
     title: "I Can't Stop Me",
     name: "TWICE",
     source:
-      "",
+      "./cantstop.mp3",
   },
   {
     title: "",
@@ -108,25 +108,25 @@ const songs = [
     title: "Becoming Insane",
     name: "Infected Mushroom",
     source:
-      "",
+      "./insane.mp3",
   },
   {
     title: "Undead",
     name: "Hollywood Undead",
     source:
-      "",
+      "./undead.mp3",
   },
   {
     title: "Bat Country",
     name: "Avenged Sevenfold",
     source:
-      "",
+      "./batcountry.mp3",
   },
   {
     title: "Nxde",
     name: "G-I-DLE",
     source:
-      "",
+      "./nxde.mp3",
   },
 ];
 
