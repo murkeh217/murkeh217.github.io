@@ -130,7 +130,7 @@ const songs = [
   },
 ];
 
-let currentSongIndex = 0;
+let currentSongIndex = 9;
 
 function updateSongInfo() {
   songName.textContent = songs[currentSongIndex].title;
@@ -205,7 +205,7 @@ updateSongInfo();
 var swiper = new Swiper(".swiper", {
   effect: "coverflow",
   centeredSlides: true,
-  initialSlide: 0,
+  initialSlide: 9,
   slidesPerView: "auto",
   grabCursor: true,
   spaceBetween: 40,

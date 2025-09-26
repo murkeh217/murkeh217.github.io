@@ -157,3 +157,65 @@ body {
   to { transform: rotate(360deg); }
 }
 
+/* BG */
+
+body {
+  /* soft mint sky fading to pale teal “water horizon” */
+  background: radial-gradient(ellipse at center,
+    #f4fff4 0%,     /* near white mint */
+    #e4f7e4 35%,    /* pale green */
+    #9ccfae 100%    /* cool medium green */
+  );
+  overflow: hidden;
+}
+
+.ocean {
+  height: 5%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #2a6b4f; /* dark sea-green strip */
+}
+
+.wave {
+  -webkit-mask: url('./wave.svg') repeat-x;
+          mask: url('./wave.svg') repeat-x;
+  -webkit-mask-repeat: repeat-x;
+          mask-repeat: repeat-x;
+  background-color: #368a66;
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  -webkit-animation: wave 7s cubic-bezier(0.36,0.45,0.63,0.53) infinite;
+          animation: wave 7s cubic-bezier(0.36,0.45,0.63,0.53) infinite;
+  transform: translate3d(0,0,0);
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  -webkit-animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+                     swell 7s ease -1.25s infinite;
+          animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+                     swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+/* Animations remain unchanged */
+@-webkit-keyframes wave {
+  0% { margin-left: 0; }
+  100% { margin-left: -1600px; }
+}
+@keyframes wave {
+  0% { margin-left: 0; }
+  100% { margin-left: -1600px; }
+}
+@-webkit-keyframes swell {
+  0%, 100% { transform: translate3d(0, -25px, 0); }
+  50%     { transform: translate3d(0, 5px, 0); }
+}
+@keyframes swell {
+  0%, 100% { transform: translate3d(0, -25px, 0); }
+  50%     { transform: translate3d(0, 5px, 0); }
+}
