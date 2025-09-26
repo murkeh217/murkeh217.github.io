@@ -128,6 +128,12 @@ const songs = [
     source:
       "./nxde.mp3",
   },
+  {
+    title: "Summertime Sadness",
+    name: "Lana Del Ray",
+    source:
+      "./summertime.mp3",
+  }
 ];
 
 let currentSongIndex = 9;
