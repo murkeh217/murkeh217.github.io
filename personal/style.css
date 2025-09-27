@@ -170,8 +170,8 @@ body {
   background-color: #368a66;
   position: absolute;
   top: -198px;
-  width: 400%;
-  min-width: 2000px;
+  width: 200%;
+  min-width: 1000px;
   height: 20vw;
   max-height: 198px;
   -webkit-animation: wave 7s cubic-bezier(0.36,0.45,0.63,0.53) infinite;
