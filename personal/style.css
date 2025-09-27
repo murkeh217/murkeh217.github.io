@@ -53,7 +53,7 @@ html, body {
 /* ===== Active Tab ===== */
 .gallery-thumbs .swiper-slide-thumb-active {    
   background: rgba(255, 255, 255, 0.7);   /* brighter when active */
-  color: darkgreen;                         /* darker green when active */
+  color: #2a6b4f;                         /* darker green when active */
   border: none;
   outline: none;  
   border-radius: 8px;

@@ -31,7 +31,7 @@ main {
 	place-items: center;
 	height: 80svh;
 	box-sizing: border-box;
-	transform: translate(5vw) rotateY(20deg);
+	transform: rotateX(15deg);
 
 	&::before {
 		content: "";
