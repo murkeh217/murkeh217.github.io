@@ -1,6 +1,7 @@
 html, body {
   position: relative;
   height: 100%;
+  overflow-x: hidden;   /* ✅ stop horizontal repeat */
 }
 
 .swiper-container {
@@ -170,8 +171,9 @@ body {
   background-color: #368a66;
   position: absolute;
   top: -198px;
-  width: 200%;
-  min-width: 1000px;
+  width: 100vw;         /* ✅ match screen width exactly */
+  min-width: auto;      /* ✅ no forced 1000px */
+  background-size: contain; /* ensures proper scaling */
   height: 20vw;
   max-height: 198px;
   -webkit-animation: wave 7s cubic-bezier(0.36,0.45,0.63,0.53) infinite;
@@ -194,8 +196,8 @@ body {
   100% { margin-left: -1600px; }
 }
 @keyframes wave {
-  0% { margin-left: 0; }
-  100% { margin-left: -1600px; }
+  0%   { margin-left: 0; }
+  100% { margin-left: -100vw; } /* ✅ only slide one screen width */
 }
 @-webkit-keyframes swell {
   0%, 100% { transform: translate3d(0, -25px, 0); }
@@ -219,5 +221,14 @@ body {
     -webkit-backdrop-filter: none;
     background: rgba(0, 0, 0, 0.7); /* slightly darker for contrast */
   }
+  .wave {
+    width: 100vw;
+    min-width: auto;
+  }
+  @keyframes wave {
+    0%   { margin-left: 0; }
+    100% { margin-left: -100vw; }
+  }
 }
+
 
