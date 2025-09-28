@@ -317,13 +317,13 @@ class TagCloud extends React.Component {
       React.createElement("a", { href: "/" }, "Lonely Mood")), /*#__PURE__*/
 
       React.createElement("li", null, /*#__PURE__*/
-      React.createElement("a", { href: "/" }, "ESFJ - Ambassador")), /*#__PURE__*/
+      React.createElement("a", { href: "/" }, "ESFJ - Ambassador - MBTI")), /*#__PURE__*/
 
       React.createElement("li", null, /*#__PURE__*/
-      React.createElement("a", { href: "/" }, "Type 8 Wing 7 - Challenger")), /*#__PURE__*/
+      React.createElement("a", { href: "/" }, "Type 8 Wing 7 - Challenger - Enneagram")), /*#__PURE__*/
 
       React.createElement("li", null, /*#__PURE__*/
-      React.createElement("a", { href: "/" }, "Cancer Star Zodiac")), /*#__PURE__*/
+      React.createElement("a", { href: "/" }, "Cancer Solar Zodiac")), /*#__PURE__*/
 
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Monkey Lunar Zodiac")), /*#__PURE__*/
