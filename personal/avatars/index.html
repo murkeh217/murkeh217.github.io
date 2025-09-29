@@ -1,23 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MK Avatar Drag Animation</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MK VRM – White Grid Floor</title>
 <style>
-  body { margin:0; overflow:hidden; background:#b5e3ff; }
+  body { margin:0; overflow:hidden; background:#000; }
   canvas { display:block; }
-  #dropzone {
-    position: fixed; top:0; left:0; width:100%; height:100%;
-    display:flex; align-items:center; justify-content:center;
-    border:3px dashed rgba(0,0,0,0.2);
-    background: rgba(255,255,255,0.3);
-    font: 20px sans-serif;
-    color:#333;
-    opacity:0; pointer-events:none;
-    transition: opacity 0.3s;
-  }
-  #dropzone.active { opacity:1; pointer-events:auto; }
 </style>
 
 <script type="importmap">
@@ -31,21 +20,22 @@
 </script>
 </head>
 <body>
-<div id="dropzone">Drop animation .glb file here</div>
-
 <script type="module">
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { VRMLoaderPlugin, VRMUtils } from '@pixiv/three-vrm';
 
-// ----- Renderer, Scene, Camera -----
-const renderer = new THREE.WebGLRenderer({antialias:true});
+// ----- Renderer -----
+const renderer = new THREE.WebGLRenderer({ antialias:true });
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
+// ----- Scene & Camera -----
 const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x000000);
+
 const camera = new THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight, 0.1, 100);
 camera.position.set(0, 2, 6);
 
@@ -53,48 +43,25 @@ const controls = new OrbitControls(camera, renderer.domElement);
 controls.target.set(0, 1, 0);
 controls.update();
 
-// ----- Bright Daytime Sky -----
-scene.background = new THREE.Color(0xb5e3ff);
-
-// Moving clouds
-const cloudTex = new THREE.TextureLoader().load("./cloud.jpg");
-cloudTex.wrapS = cloudTex.wrapT = THREE.RepeatWrapping;
-cloudTex.repeat.set(4,4);
-const cloudMat = new THREE.MeshLambertMaterial({
-  map: cloudTex, transparent: true, opacity: 0.55, depthWrite:false, side: THREE.BackSide
-});
-const cloudGeo = new THREE.SphereGeometry(60, 32, 32);
-const clouds = new THREE.Mesh(cloudGeo, cloudMat);
-scene.add(clouds);
-
 // ----- Lighting -----
-const camLight = new THREE.DirectionalLight(0xffffff, 2.4);
-camLight.position.copy(camera.position);
-scene.add(camLight);
-scene.add(new THREE.AmbientLight(0xffffff, 0.9));
+const keyLight = new THREE.DirectionalLight(0xffffff, 1.8);
+keyLight.position.set(3, 6, 5);
+scene.add(keyLight);
+scene.add(new THREE.AmbientLight(0xffffff, 0.6));
 
-// ----- Desert Floor -----
-const sandTex = new THREE.TextureLoader().load("./sand.jpg");
-sandTex.wrapS = sandTex.wrapT = THREE.RepeatWrapping;
-sandTex.repeat.set(12,12);
-sandTex.anisotropy = renderer.capabilities.getMaxAnisotropy();
+// ----- White Grid Floor -----
+const grid = new THREE.GridHelper(60, 60, 0xffffff, 0xffffff);
+grid.material.opacity = 0.25;     // faint lines
+grid.material.transparent = true;
+scene.add(grid);
 
-const floor = new THREE.Mesh(
-  new THREE.CircleGeometry(25, 64),
-  new THREE.MeshStandardMaterial({ map: sandTex, roughness: 1.0, metalness: 0.0 })
-);
-floor.rotation.x = -Math.PI/2;
-scene.add(floor);
-
-// ----- Models -----
+// ----- Loaders -----
 const loader = new GLTFLoader();
 loader.register(parser => new VRMLoaderPlugin(parser));
 
 let vrmModel, glbModel;
-let vrmMixer, glbMixer;
-let currentClip;
-const models = []; // store all model roots for convenience
 
+// Load VRM model
 loader.load('./MK.vrm', (gltf)=>{
   const vrm = gltf.userData.vrm;
   VRMUtils.removeUnnecessaryVertices(gltf.scene);
@@ -102,73 +69,35 @@ loader.load('./MK.vrm', (gltf)=>{
   vrm.scene.traverse(o => o.frustumCulled = false);
   scene.add(vrm.scene);
   vrmModel = vrm;
-  models.push(vrm.scene);
 });
 
+// Load GLB model
 const glbLoader = new GLTFLoader();
 glbLoader.load('./MK.glb', (gltf)=>{
   glbModel = gltf.scene;
   glbModel.position.set(1.5, 0, 0);
   scene.add(glbModel);
-  models.push(glbModel);
 });
-
-// ----- Drag & Drop Animation -----
-const dropZone = document.getElementById('dropzone');
-window.addEventListener('dragover', (e)=>{
-  e.preventDefault();
-  dropZone.classList.add('active');
-});
-window.addEventListener('dragleave', ()=> dropZone.classList.remove('active'));
-window.addEventListener('drop', (e)=>{
-  e.preventDefault();
-  dropZone.classList.remove('active');
-  const file = e.dataTransfer.files[0];
-  if (!file || !file.name.toLowerCase().endsWith('.glb')) return;
-  const url = URL.createObjectURL(file);
-  loadAnimation(url);
-});
-
-function loadAnimation(url){
-  const animLoader = new GLTFLoader();
-  animLoader.load(url, (gltf)=>{
-    if (!gltf.animations.length) return;
-    currentClip = gltf.animations[0];
-
-    // stop old actions
-    if (vrmMixer) vrmMixer.stopAllAction();
-    if (glbMixer) glbMixer.stopAllAction();
-
-    // create mixers
-    vrmMixer = new THREE.AnimationMixer(vrmModel?.scene || null);
-    glbMixer = new THREE.AnimationMixer(glbModel || null);
-
-    if (vrmMixer && vrmModel) vrmMixer.clipAction(currentClip).play();
-    if (glbMixer && glbModel) glbMixer.clipAction(currentClip).play();
-  });
-}
 
 // ----- Resize -----
 window.addEventListener('resize', ()=>{
-  camera.aspect = window.innerWidth/window.innerHeight;
+  camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-// ----- Animate -----
+// ----- Animation Loop -----
 const clock = new THREE.Clock();
 function animate(){
   requestAnimationFrame(animate);
   const delta = clock.getDelta();
 
-  cloudTex.offset.x += 0.0005;
-  cloudTex.offset.y += 0.0003;
-
-  if (vrmMixer) vrmMixer.update(delta);
-  if (glbMixer) glbMixer.update(delta);
-  if (vrmModel) vrmModel.update(delta);
-
-  camLight.position.copy(camera.position);
+  // Slow rotation
+  if (vrmModel) {
+    vrmModel.scene.rotation.y += delta * 0.5;
+    vrmModel.update(delta);
+  }
+  if (glbModel) glbModel.rotation.y -= delta * 0.5;
 
   renderer.render(scene, camera);
 }
