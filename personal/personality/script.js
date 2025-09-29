@@ -331,6 +331,12 @@ class TagCloud extends React.Component {
       React.createElement("li", null, /*#__PURE__*/
       React.createElement("a", { href: "/" }, "Reliable")), /*#__PURE__*/
 
+      React.createElement("li", null, /*#__PURE__*/
+      React.createElement("a", { href: "/" }, "Patient")), /*#__PURE__*/
+
+      React.createElement("li", null, /*#__PURE__*/
+      React.createElement("a", { href: "/" }, "Diplomatic")), /*#__PURE__*/
+
     ))));
   }}
 
