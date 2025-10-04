@@ -46,10 +46,13 @@ body {
   background: url("socrates.jpg") no-repeat 50%/cover;
 }
 .container > div:nth-of-type(5) {
-  background: url("danbrown.avif") no-repeat 50%/cover;   /* NEW */
+  background: url("danbrown.avif") no-repeat 50%/cover;
 }
 .container > div:nth-of-type(6) {
-  background: url("tate.jpg") no-repeat 50%/cover; /* NEW */
+  background: url("tate.jpg") no-repeat 50%/cover;
+}
+.container > div:nth-of-type(7) {
+  background: url("lao.jpg") no-repeat 50%/cover; /* NEW */
 }
 
 /* === Content Overlay === */

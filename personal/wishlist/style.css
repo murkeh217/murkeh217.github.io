@@ -113,66 +113,79 @@ body {
 
 @-webkit-keyframes carousel-animate-vertical {
   0% {
-    transform: translateY(100%) scale(0.5);
+    transform: translateY(300%) scale(0.5);
     opacity: 0;
-    visibility: hidden;
   }
-  3%, 11.1111111111% {
+  10% {
+    transform: translateY(200%) scale(0.6);
+    opacity: 0.3;
+  }
+  20% {
     transform: translateY(100%) scale(0.7);
-    opacity: 0.4;
-    visibility: visible;
+    opacity: 0.5;
   }
-  14.1111111111%, 22.2222222222% {
+  30% {
     transform: translateY(0) scale(1);
     opacity: 1;
-    visibility: visible;
   }
-  25.2222222222%, 33.3333333333% {
+  40% {
     transform: translateY(-100%) scale(0.7);
-    opacity: 0.4;
-    visibility: visible;
+    opacity: 0.5;
   }
-  36.3333333333% {
-    transform: translateY(-100%) scale(0.5);
+  50% {
+    transform: translateY(-200%) scale(0.6);
+    opacity: 0.3;
+  }
+  60% {
+    transform: translateY(-300%) scale(0.5);
     opacity: 0;
-    visibility: visible;
   }
   100% {
-    transform: translateY(-100%) scale(0.5);
+    transform: translateY(-300%) scale(0.5);
     opacity: 0;
-    visibility: hidden;
   }
 }
 
+
 @keyframes carousel-animate-vertical {
   0% {
-    transform: translateY(100%) scale(0.5);
+    transform: translateY(300%) scale(0.5);
     opacity: 0;
-    visibility: hidden;
   }
-  3%, 11.1111111111% {
+  10% {
+    transform: translateY(200%) scale(0.6);
+    opacity: 0.3;
+  }
+  20% {
     transform: translateY(100%) scale(0.7);
-    opacity: 0.4;
-    visibility: visible;
+    opacity: 0.5;
   }
-  14.1111111111%, 22.2222222222% {
+  30% {
     transform: translateY(0) scale(1);
     opacity: 1;
-    visibility: visible;
   }
-  25.2222222222%, 33.3333333333% {
+  40% {
     transform: translateY(-100%) scale(0.7);
-    opacity: 0.4;
-    visibility: visible;
+    opacity: 0.5;
   }
-  36.3333333333% {
-    transform: translateY(-100%) scale(0.5);
+  50% {
+    transform: translateY(-200%) scale(0.6);
+    opacity: 0.3;
+  }
+  60% {
+    transform: translateY(-300%) scale(0.5);
     opacity: 0;
-    visibility: visible;
   }
   100% {
-    transform: translateY(-100%) scale(0.5);
+    transform: translateY(-300%) scale(0.5);
     opacity: 0;
-    visibility: hidden;
   }
+}
+
+
+.carousel__item-head img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
