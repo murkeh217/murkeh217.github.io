@@ -233,3 +233,42 @@ body {
     background: rgba(0, 0, 0, 0.7); /* slightly darker for contrast */
   }
 }
+
+/* Navigation thumbs */
+
+/* Arrows inside the thumbs row */
+.thumbs-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 10;
+  animation: flash 1s infinite;
+  user-select: none;
+}
+
+/* Place them at the edges INSIDE the row */
+.gallery-thumbs {
+  position: relative; /* so arrows stay inside this container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbs-prev {
+  left: 5px;
+}
+.thumbs-next {
+  right: 5px;
+}
+
+/* Flash animation */
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
