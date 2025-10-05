@@ -235,7 +235,6 @@ body {
 }
 
 /* Navigation thumbs */
-
 /* Arrows inside the thumbs row */
 .thumbs-nav {
   position: absolute;
@@ -270,5 +269,5 @@ body {
 /* Flash animation */
 @keyframes flash {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+  50% { opacity: 0.8; }
 }
