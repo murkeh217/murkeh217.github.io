@@ -3191,3 +3191,8 @@ a:hover {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-300%); } 
 }
+
+ul > li > b {
+	font-weight: 700;
+	color: #b1ddab;
+}
