@@ -3192,7 +3192,7 @@ a:hover {
   100% { transform: translateX(-300%); } 
 }
 
-ul > li > b {
+b {
 	font-weight: 700;
 	color: #b1ddab;
 }
