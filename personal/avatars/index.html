@@ -4,8 +4,58 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>MK Avatar</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="avatar.png" height="30%" width="30%">
+
+  <div class="columns">
+    <!-- Column 1 -->
+    <div class="column">
+      <h2>Image</h2>
+      <img src="avatar.png" alt="MK Avatar">
+    </div>
+
+    <!-- Column 2 -->
+    <div class="column">
+        <h2>Voice</h2>
+        <!--<p>
+            This is not a site — it’s a whisper of self, a constellation of words orbiting one name. 
+            Each link a thought, each glow a memory, drawn from late nights, playlists, and pixels. 
+            Zodiac and code, muscle and melody, sketches and silence, all folded neatly into one digital breath. 
+            There are no walls here, only reflections. No bio, only being. 
+            Every click a step deeper into the quiet gravity of MK. 
+            So wander. Not to learn — but to feel. 
+            Because this isn’t a website... it’s a mirror written in light.
+        </p>-->
+
+      <div class="player" id="player">
+        <div class="meta">
+          <div class="cover" id="cover"></div>
+          <div class="info">
+            <div class="title" id="title">Poem</div>
+            <div class="subtitle" id="artist">Know MK • 320 kbps</div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button class="big-btn" id="play" title="Play/Pause">▶</button>
+          <input id="seek" type="range" value="0" min="0" max="100" step="0.1" style="flex:1">
+          <input id="vol" type="range" min="0" max="1" step="0.01" value="1" style="width:90px">
+        </div>
+
+        <audio id="audio" preload="metadata"></audio>
+      </div>
+
+    </div>
+
+    <!-- Column 3 -->
+    <div class="column">
+      <!-- Empty for now -->
+       <h2>Video</h2>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
