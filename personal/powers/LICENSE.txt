@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) 2025 Temani Afif (https://codepen.io/t_afif/pen/KKowpYz)
+Copyright (c) 2025 ycw (https://codepen.io/ycw/pen/QVeYMP)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
