@@ -62,7 +62,7 @@
 
 				const msg = document.createElement('div');
 				msg.id = 'fallback-msg';
-				msg.textContent = "WIP";
+				msg.textContent = "🚧WIP🚧";
 				msg.style = "position:fixed;bottom:10px;left:10px;background:#ffeb3b;padding:8px 12px;border-radius:6px;font-family:sans-serif;color:#000;z-index:9999;";
 				document.body.appendChild(msg);
 			}
@@ -435,7 +435,7 @@
 												const doc = iframe.contentDocument || iframe.contentWindow.document;
 												if (iframe.src === "about:blank") {
 													doc.open();
-													doc.write("<h3 style='text-align:center; color:green;'>Please choose a game to play from below.</h3>");
+													doc.write("<h3 style='text-align:center; color:lightgreen;'>Please choose a game to play from below.</h3>");
 													doc.close();
 												}
 											});
