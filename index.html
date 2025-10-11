@@ -62,7 +62,7 @@
 
 				const msg = document.createElement('div');
 				msg.id = 'fallback-msg';
-				msg.textContent = "🔌 MK's server is down...";
+				msg.textContent = "WIP";
 				msg.style = "position:fixed;bottom:10px;left:10px;background:#ffeb3b;padding:8px 12px;border-radius:6px;font-family:sans-serif;color:#000;z-index:9999;";
 				document.body.appendChild(msg);
 			}
@@ -435,7 +435,7 @@
 												const doc = iframe.contentDocument || iframe.contentWindow.document;
 												if (iframe.src === "about:blank") {
 													doc.open();
-													doc.write("<h3 style='text-align:center; color:gray;'>Please choose a game to load from below.</h3>");
+													doc.write("<h3 style='text-align:center; color:green;'>Please choose a game to play from below.</h3>");
 													doc.close();
 												}
 											});
@@ -493,6 +493,16 @@
 										<p>A collection of my work notes from various <strong>projects, collaborations & experiments</strong> — showcasing both my technical and creative development journey.</p>
 
 										<h3>Client & Freelance Projects</h3>
+
+										<div class="row">
+											<div class="col-6 col-6-medium">
+												<img src="images/eye.png" width="108%" height="108%">
+											</div>
+											<div class="col-6 col-6-medium">
+												<img src="images/hotel.png" width="98%" height="98%">
+											</div>
+										</div>
+										<br><br>
 										<ul>
 											<li><b>Casino Game & 2D Multiplayer Chess:</b> Modified <strong>Russian Roulette spin logic</strong>, integrated <strong>custom UI</strong> and <strong>SFX</strong>; implemented an <strong>8x8 chessboard</strong> with <strong>Photon/Mirror multiplayer</strong> support for mobile platforms.</li>
 											<li><b>Low-Poly Zombie FPS:</b> Added <strong>shooting mechanics</strong>, <strong>crosshair system</strong>, <strong>enemy spawn & wave logic</strong>, and <strong>level barriers</strong> for controlled gameplay flow.</li>
@@ -503,6 +513,16 @@
 										</ul>
 
 										<h3>Personal & Game Jam Experiments</h3>
+
+										<div class="row">
+											<div class="col-6 col-6-medium">
+												<img src="images/tps.png" width="108%" height="108%">
+											</div>
+											<div class="col-6 col-6-medium">
+												<img src="">
+											</div>
+										</div>
+										<br><br>
 										<ul>
 											<li><b>Rock Paper Scissors Lizard Spock:</b> Experimented with <strong>hallucination-inspired mechanics</strong> and visual feedback.</li>
 											<li><b>JOJO Fight:</b> Created a <strong>cel-shaded anime fighter</strong> featuring <strong>FSM combos</strong> and <strong>hit-stop effects</strong> for dramatic impact.</li>
@@ -529,26 +549,26 @@
 
 									<section id="research">
 										<h2 class="major"><span>Research</span></h2>
- 										
-										<h2>Terrain Digger</h2>
-										<p>An interesting project that uses <strong>math</strong> & <strong>logic</strong></p>
-        								<img src="images/terraindigger.png" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;"><br>
-										<a href="https://gist.github.com/murkeh217/053b21cab9e8731c7e20f1d160571e29">Github Gist</a>
-										<br>
-										<br>
-										<h2><p>RPSLS</p></h2>
-										<p>Concept behind my version of <strong>Rock Paper Scissors Lizard Spock</strong> game</p>
-										<div style="max-width: 480px; margin: auto;">
-											<div style="position: relative; width: 100%; height: 0; padding-top: 177.7778%; box-shadow: 0 2px 8px rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px;">
-												<iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;" 
-												src="https://www.canva.com/design/DAGOHchJWM4/SAr7Oi987pqxrA8inU8jNA/view?embed" allowfullscreen>
-												</iframe>
+ 										<div class="row">
+											<div class="col-6 col-6-medium">
+												<h2>Terrain Digger</h2>
+												<p>An interesting project that uses <strong>math</strong> & <strong>logic</strong></p>
+												<img src="images/terraindigger.png" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;"><br>
+												<a href="https://gist.github.com/murkeh217/053b21cab9e8731c7e20f1d160571e29">Github Gist</a>
 											</div>
-											<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGOHchJWM4&#x2F;SAr7Oi987pqxrA8inU8jNA&#x2F;view?utm_content=DAGOHchJWM4&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">cinema of ghosts</a> by Murtaza Kanorwala
+											<div class="col-6 col-6-medium">
+												<h2>RPSLS</h2>
+												<p>Concept behind my version of <strong>Rock Paper Scissors Lizard Spock</strong> game</p>
+												<div style="max-width: 290px; margin: auto;">
+													<div style="position: relative; width: 100%; height: 0; padding-top: 177.7778%; box-shadow: 0 2px 8px rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px;">
+														<iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;" 
+														src="https://www.canva.com/design/DAGOHchJWM4/SAr7Oi987pqxrA8inU8jNA/view?embed" allowfullscreen>
+														</iframe>
+													</div>
+													<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGOHchJWM4&#x2F;SAr7Oi987pqxrA8inU8jNA&#x2F;view?utm_content=DAGOHchJWM4&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">cinema of ghosts</a> by Murtaza Kanorwala
+												</div>
+											</div>
 										</div>
-											<!-- <img src="images/cinema-of-ghosts.jpg" style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto;"><br>-->
-										<br>
-  
 									</section>
 
 									<section id="3dmodel">
