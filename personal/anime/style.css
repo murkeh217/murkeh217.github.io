@@ -32,7 +32,7 @@ body {
 	flex-direction: column;
 	font-family: system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
 		"Segoe UI Symbol";
-	gap: 20px;
+	gap: 30px;
 	min-block-size: 100dvb;
 	place-content: center;
 	place-items: center;
