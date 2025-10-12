@@ -133,6 +133,18 @@ const songs = [
     name: "Lana Del Ray",
     source:
       "./summertime.mp3",
+  },
+  {
+    title: "Drunken Master II Theme",
+    name: "Jackie Chan",
+    source:
+      "./jc.mp3",
+  },
+  {
+    title: "Won Fei Hong",
+    name: "George Lam",
+    source:
+      "./wonfeihong.mp3",
   }
 ];
 
@@ -233,3 +245,20 @@ swiper.on("slideChange", () => {
   updateSongInfo(); 
   playPause(); 
 });
+
+song.addEventListener("timeupdate", () => {
+  if (!song.paused) {
+    progress.value = song.currentTime;
+    updateProgressColor();
+  }
+});
+
+progress.addEventListener("input", () => {
+  song.currentTime = progress.value;
+  updateProgressColor();
+});
+
+function updateProgressColor() {
+  const value = (progress.value / progress.max) * 100;
+  progress.style.background = `linear-gradient(to right, lightgreen ${value}%, #ccc ${value}%)`;
+}
