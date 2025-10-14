@@ -1,8 +1,6 @@
-# Honeycomb image gallery
+# Rhomb gallery on grids + clip-path
 
 A Pen created on CodePen.
 
-Original URL: [https://codepen.io/t_afif/pen/XWEWoYW](https://codepen.io/t_afif/pen/XWEWoYW).
+Original URL: [https://codepen.io/yoksel/pen/PooVvwZ](https://codepen.io/yoksel/pen/PooVvwZ).
 
-CSS Tip!
-https://twitter.com/ChallengesCss/status/1542107735902371846
