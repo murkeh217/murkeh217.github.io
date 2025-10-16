@@ -5,4 +5,5 @@ body, h2{
   place-content: center;
   background: transparent;
   color: lightgreen;
+  padding: 5%;
 }

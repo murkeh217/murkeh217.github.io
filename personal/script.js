@@ -91,17 +91,19 @@ document.addEventListener("DOMContentLoaded", () => {
       spaceBetween: 10,
       slidesPerView: 8,
       loop: true,
-      freeMode: true,
-      watchSlidesVisibility: true,
+      centeredSlides: true,
+      slideToClickedSlide: true,
       watchSlidesProgress: true,
+      watchSlidesVisibility: true,
+      speed: 1500, // ✅ slow transition (1 second)
       navigation: {
         nextEl: ".thumbs-next",
         prevEl: ".thumbs-prev",
       },
       breakpoints: {
-        640: { slidesPerView: 2, spaceBetween: 20 },
-        768: { slidesPerView: 4, spaceBetween: 40 },
-        1024: { slidesPerView: 6, spaceBetween: 50 },
+        640: { slidesPerView: 3, spaceBetween: 10 },
+        768: { slidesPerView: 5, spaceBetween: 15 },
+        1024: { slidesPerView: 7, spaceBetween: 20 },
       },
       on: {
         imagesReady: () => finishLoading(),
@@ -111,6 +113,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const galleryTopSwiper = new Swiper(".gallery-top", {
       spaceBetween: 10,
       loop: true,
+      effect: "fade",           // ✅ fade effect
+      fadeEffect: { crossFade: true }, // smooth crossfade
+      speed: 500, // 0.6s fade transition
       thumbs: { swiper: galleryThumbsSwiper },
       on: {
         init: () => finishLoading(),
@@ -120,6 +125,19 @@ document.addEventListener("DOMContentLoaded", () => {
     // Reveal shuffled galleries only after init
     galleryTop.style.visibility = "visible";
     galleryThumbs.style.visibility = "visible";
+
+    galleryTopSwiper.on("slideChange", () => {
+      const realIndex = galleryTopSwiper.realIndex;
+      galleryThumbsSwiper.slideToLoop(realIndex, 500, true); // smooth 0.5s centering
+    });
+
+    galleryThumbsSwiper.on("click", (swiper) => {
+      const clickedIndex = swiper.clickedIndex;
+      if (typeof clickedIndex !== "undefined") {
+        galleryTopSwiper.slideToLoop(clickedIndex, 500, true);
+      }
+    });
+
   }
 
   // ✨ Hide loader once everything is ready
