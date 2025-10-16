@@ -13,84 +13,98 @@ const songs = [
     name: "Disturbed",
     source:
       "./indestructible.mp3",
+    background: "./",
   },
   {
     title: "Smart",
     name: "Le Sserafim",
     source:
       "./smart.mp3",
+    background: "./",
   },
   {
     title: "She-Wolf",
     name: "Shakira",
     source:
       "./shewolf.mp3",
+    background: "./shakira.gif",
   },
   {
     title: "Burn It Down",
     name: "Linkin Park",
     source:
       "./burnitdown.mp3",
+    background: "./",
   },
   {
     title: "We Made You",
     name: "Eminem",
     source:
       "./wemadeyou.mp3",
+    
   },
   {
     title: "Monster",
     name: "Skillet",
     source:
       "./monster.mp3",
+    background: "./",
   },
   {
     title: "Make It Bun Dem",
     name: "Skrillex & Damian 'Jr Gong' Marley",
     source:
       "./makeitbundem.mp3",
+    background: "./",
   },
   {
     title: "Dim Sum Paradise",
     name: "OCT",
     source:
       "./dimsumparadise.mp3",
+    background: "./",
   },
   {
     title: "What I Anticipate Is Not Snow",
     name: "张秒格",
     source:
       "./notsnow.mp3",
+    background: "./",
   },
   {
     title: "Flight Mode",
     name: "Hua Chenyu",
     source:
       "./flightmode.mp3",
+    background: "./",
   },
   {
     title: "RTRT",
     name: "Mili",
     source:
       "./rtrt.mp3",
+    background: "./",
   },
   {
     title: "Rush Of Life",
     name: "Tony Ann",
     source:
       "./rush.mp3",
+    background: "./",
   },
   {
     title: "Crystallize",
     name: "Lindsey Stirling",
     source:
       "./crystallize.mp3",
+    background: "./",
   },
   {
     title: "I Can't Stop Me",
     name: "TWICE",
     source:
       "./cantstop.mp3",
+    background: "./",
   },
   {
     title: "",
@@ -109,54 +123,107 @@ const songs = [
     name: "Infected Mushroom",
     source:
       "./insane.mp3",
+    background: "./",
   },
   {
     title: "Undead",
     name: "Hollywood Undead",
     source:
       "./undead.mp3",
+    background: "./",
   },
   {
     title: "Bat Country",
     name: "Avenged Sevenfold",
     source:
       "./batcountry.mp3",
+    background: "./",
   },
   {
     title: "Nxde",
     name: "G-I-DLE",
     source:
       "./nxde.mp3",
+    background: "./",
   },
   {
     title: "Summertime Sadness",
     name: "Lana Del Ray",
     source:
       "./summertime.mp3",
+    background: "./",
   },
   {
     title: "Drunken Master II Theme",
     name: "Jackie Chan",
     source:
       "./jc.mp3",
+    background: "./",
   },
   {
     title: "Won Fei Hong",
     name: "George Lam",
     source:
       "./wonfeihong.mp3",
+    background: "./",
+  },
+  {
+    title: "Likhe Jo Khat Tujhe",
+    name: "Mohammed Rafi",
+    source:
+      "./khat.mp3",
+    background: "./",
+  },
+  {
+    title: "O Mere Dil Ke Chain",
+    name: "R.D. Burman, Kishore Kumar",
+    source:
+      "./chain.mp3",
+    background: "./",
+  },
+  {
+    title: "295",
+    name: "Siddhu Moosewala",
+    source:
+      "./295.mp3",
+    background: "./",
+  },
+  {
+    title: "Aayi Nai",
+    name: "Stree 2",
+    source:
+      "./aayinai.mp3",
   }
+
 ];
 
-let currentSongIndex = 9;
+let currentSongIndex = 12;
 
 function updateSongInfo() {
-  songName.textContent = songs[currentSongIndex].title;
-  artistName.textContent = songs[currentSongIndex].name;
-  song.src = songs[currentSongIndex].source;
+  const current = songs[currentSongIndex];
+  songName.textContent = current.title;
+  artistName.textContent = current.name;
+  song.src = current.source;
+
+  // Smooth fade between GIFs
+  const bg = document.querySelector(".bg");
+  bg.style.opacity = 0;
+  setTimeout(() => {
+    bg.style.backgroundImage = `url(${current.background})`;
+    bg.style.opacity = 1;
+  }, 300);
 
   song.addEventListener("loadeddata", () => {});
 }
+
+song.addEventListener("play", () => {
+  document.querySelector(".bg").style.filter = "blur(8px) brightness(0.9)";
+});
+
+song.addEventListener("pause", () => {
+  document.querySelector(".bg").style.filter = "blur(10px) brightness(0.5)";
+});
+
 
 song.addEventListener("timeupdate", () => {
   if (!song.paused) {
@@ -223,7 +290,7 @@ updateSongInfo();
 var swiper = new Swiper(".swiper", {
   effect: "coverflow",
   centeredSlides: true,
-  initialSlide: 9,
+  initialSlide: 12,
   slidesPerView: "auto",
   grabCursor: true,
   spaceBetween: 40,
