@@ -13,98 +13,98 @@ const songs = [
     name: "Disturbed",
     source:
       "./indestructible.mp3",
-    background: "./",
+    video: "./disturbed.mp4",
   },
   {
     title: "Smart",
     name: "Le Sserafim",
     source:
       "./smart.mp3",
-    background: "./",
+    video: "./lesserafim.mp4",
   },
   {
     title: "She-Wolf",
     name: "Shakira",
     source:
       "./shewolf.mp3",
-    background: "./shakira.gif",
+    video: "./shakira.webm",  
   },
   {
     title: "Burn It Down",
     name: "Linkin Park",
     source:
       "./burnitdown.mp3",
-    background: "./",
+    video: "./lp.mp4",
   },
   {
     title: "We Made You",
     name: "Eminem",
     source:
       "./wemadeyou.mp3",
-    
+    video: "./eminem.mp4",
   },
   {
     title: "Monster",
     name: "Skillet",
     source:
       "./monster.mp3",
-    background: "./",
+    video: "./skillet.mp4",
   },
   {
     title: "Make It Bun Dem",
     name: "Skrillex & Damian 'Jr Gong' Marley",
     source:
       "./makeitbundem.mp3",
-    background: "./",
+    video: "./skrillex.mp4",
   },
   {
     title: "Dim Sum Paradise",
     name: "OCT",
     source:
       "./dimsumparadise.mp3",
-    background: "./",
+    video: "./oct.mp4",
   },
   {
     title: "What I Anticipate Is Not Snow",
     name: "张秒格",
     source:
       "./notsnow.mp3",
-    background: "./",
+    video: "./",
   },
   {
     title: "Flight Mode",
     name: "Hua Chenyu",
     source:
       "./flightmode.mp3",
-    background: "./",
+    video: "./hua.mp4",
   },
   {
     title: "RTRT",
     name: "Mili",
     source:
       "./rtrt.mp3",
-    background: "./",
+    video: "./",
   },
   {
     title: "Rush Of Life",
     name: "Tony Ann",
     source:
       "./rush.mp3",
-    background: "./",
+    video: "./tony.mp4",
   },
   {
     title: "Crystallize",
     name: "Lindsey Stirling",
     source:
       "./crystallize.mp3",
-    background: "./",
+    video: "./lindsey.mp4",
   },
   {
     title: "I Can't Stop Me",
     name: "TWICE",
     source:
       "./cantstop.mp3",
-    background: "./",
+    video: "./",
   },
   {
     title: "",
@@ -123,76 +123,77 @@ const songs = [
     name: "Infected Mushroom",
     source:
       "./insane.mp3",
-    background: "./",
+    video: "./mushroom.mp4",
   },
   {
     title: "Undead",
     name: "Hollywood Undead",
     source:
       "./undead.mp3",
-    background: "./",
+    video: "./hu.mp4",
   },
   {
     title: "Bat Country",
     name: "Avenged Sevenfold",
     source:
       "./batcountry.mp3",
-    background: "./",
+    video: "./a7x.mp4",
   },
   {
     title: "Nxde",
     name: "G-I-DLE",
     source:
       "./nxde.mp3",
-    background: "./",
+    video: "./gidle.mp4",
   },
   {
     title: "Summertime Sadness",
     name: "Lana Del Ray",
     source:
       "./summertime.mp3",
-    background: "./",
+    video: "./",
   },
   {
     title: "Drunken Master II Theme",
     name: "Jackie Chan",
     source:
       "./jc.mp3",
-    background: "./",
+    video: "./",
   },
   {
     title: "Won Fei Hong",
     name: "George Lam",
     source:
       "./wonfeihong.mp3",
-    background: "./",
+    video: "./",
   },
   {
     title: "Likhe Jo Khat Tujhe",
     name: "Mohammed Rafi",
     source:
       "./khat.mp3",
-    background: "./",
+    video: "./",
   },
   {
     title: "O Mere Dil Ke Chain",
     name: "R.D. Burman, Kishore Kumar",
     source:
       "./chain.mp3",
-    background: "./",
+    video: "./",
   },
   {
     title: "295",
     name: "Siddhu Moosewala",
     source:
       "./295.mp3",
-    background: "./",
+    video: "./",
   },
   {
     title: "Aayi Nai",
     name: "Stree 2",
     source:
       "./aayinai.mp3",
+    video: "./stree.mp4",
   }
 
 ];
@@ -201,29 +202,32 @@ let currentSongIndex = 12;
 
 function updateSongInfo() {
   const current = songs[currentSongIndex];
-  songName.textContent = current.title;
-  artistName.textContent = current.name;
-  song.src = current.source;
+  songName.textContent = current.title || "Unknown Title";
+  artistName.textContent = current.name || "Unknown Artist";
+  song.src = current.source || "";
 
-  // Smooth fade between GIFs
-  const bg = document.querySelector(".bg");
-  bg.style.opacity = 0;
-  setTimeout(() => {
-    bg.style.backgroundImage = `url(${current.background})`;
-    bg.style.opacity = 1;
-  }, 300);
+  const bgVideo = document.querySelector(".bg-video");
 
-  song.addEventListener("loadeddata", () => {});
+  if (current.video) {
+    bgVideo.style.opacity = 0;
+    setTimeout(() => {
+      bgVideo.src = current.video;
+      bgVideo.load();
+      bgVideo.play().catch(() => {}); // avoid autoplay errors
+      bgVideo.style.opacity = 1;
+    }, 300);
+  }
 }
 
+const bgVideo = document.querySelector(".bg-video");
+
 song.addEventListener("play", () => {
-  document.querySelector(".bg").style.filter = "blur(8px) brightness(0.9)";
+  bgVideo.style.filter = "blur(3px) brightness(0.8)";
 });
 
 song.addEventListener("pause", () => {
-  document.querySelector(".bg").style.filter = "blur(10px) brightness(0.5)";
+  bgVideo.style.filter = "blur(5px) brightness(0.5)";
 });
-
 
 song.addEventListener("timeupdate", () => {
   if (!song.paused) {
