@@ -158,7 +158,7 @@ const songs = [
     name: "Jackie Chan",
     source:
       "./jc.mp3",
-    video: "./",
+    video: "./jc.mp4",
   },
   {
     title: "Won Fei Hong",
@@ -172,21 +172,21 @@ const songs = [
     name: "Mohammed Rafi",
     source:
       "./khat.mp3",
-    video: "./",
+    video: "./rafi.mp4",
   },
   {
     title: "O Mere Dil Ke Chain",
     name: "R.D. Burman, Kishore Kumar",
     source:
       "./chain.mp3",
-    video: "./",
+    video: "./rdkishore.mp4",
   },
   {
     title: "295",
     name: "Siddhu Moosewala",
     source:
       "./295.mp3",
-    video: "./",
+    video: "./moosewala.mp4",
   },
   {
     title: "Aayi Nai",
