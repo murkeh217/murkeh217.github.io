@@ -66,10 +66,10 @@ const songs = [
   },
   {
     title: "What I Anticipate Is Not Snow",
-    name: "张秒格",
+    name: "张秒格 Zhang Miaige",
     source:
       "./notsnow.mp3",
-    video: "./",
+    video: "./snow.mp4",
   },
   {
     title: "Flight Mode",
@@ -83,7 +83,7 @@ const songs = [
     name: "Mili",
     source:
       "./rtrt.mp3",
-    video: "./",
+    video: "./mili.mp4",
   },
   {
     title: "Rush Of Life",
@@ -104,19 +104,21 @@ const songs = [
     name: "TWICE",
     source:
       "./cantstop.mp3",
-    video: "./",
+    video: "./twice.mp4",
   },
   {
-    title: "",
-    name: "Mozart",
+    title: "Assassin's Creed: Chase Theme",
+    name: "Jesper Kyd",
     source:
-      "",
+      "chase.mp3",
+    video: "./jesper.mp3",
   },
   {
-    title: "",
-    name: "Beethoven",
+    title: "Interstellar: No Time For Caution",
+    name: "Hans Zimmer",
     source:
-      "",
+      "notime.mp3",
+    video: "./hans.mp3",
   },
   {
     title: "Becoming Insane",
@@ -151,7 +153,7 @@ const songs = [
     name: "Lana Del Ray",
     source:
       "./summertime.mp3",
-    video: "./",
+    video: "./lana.mp4",
   },
   {
     title: "Drunken Master II Theme",
@@ -194,11 +196,68 @@ const songs = [
     source:
       "./aayinai.mp3",
     video: "./stree.mp4",
-  }
-
+  },
+  {
+    title: "Teri Deewani",
+    name: "Kailash Kher",
+    source:
+      "./terideewani.mp3",
+    video: "./kailash.mp4",
+  },
+  {
+    title: "Tu Hi Meri Shab Hai",
+    name: "K.K.",
+    source:
+      "./kk.mp3",
+    video: "./kk.mp4",
+  },
+  {
+    title: "Ya Ali",
+    name: "Zubeen Garg",
+    source:
+      "./yaali.mp3",
+    video: "./zubeen.mp4",
+  },
+  {
+    title: "Lift Karadey",
+    name: "Adnan Sami",
+    source:
+      "./lift.mp3",
+    video: "./sami.mp4",
+  },
 ];
 
-let currentSongIndex = 12;
+// Fisher–Yates shuffle
+function shuffleSongsAndSlides() {
+  const slides = Array.from(document.querySelectorAll(".swiper-slide"));
+  const wrapper = document.querySelector(".swiper-wrapper");
+
+  // Create array of indices to shuffle
+  const indices = songs.map((_, i) => i);
+
+  for (let i = indices.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [indices[i], indices[j]] = [indices[j], indices[i]];
+  }
+
+  // Reorder songs and slides using shuffled indices
+  const shuffledSongs = indices.map(i => songs[i]);
+  const shuffledSlides = indices.map(i => slides[i]);
+
+  // Clear wrapper and re-append shuffled slides
+  wrapper.innerHTML = "";
+  shuffledSlides.forEach(slide => wrapper.appendChild(slide));
+
+  // Replace songs array with shuffled version
+  songs.length = 0;
+  songs.push(...shuffledSongs);
+}
+
+// Shuffle once on page load
+shuffleSongsAndSlides();
+
+// Start with first song in shuffled list
+let currentSongIndex = 15;
 
 function updateSongInfo() {
   const current = songs[currentSongIndex];
@@ -294,7 +353,7 @@ updateSongInfo();
 var swiper = new Swiper(".swiper", {
   effect: "coverflow",
   centeredSlides: true,
-  initialSlide: 12,
+  initialSlide: 15,
   slidesPerView: "auto",
   grabCursor: true,
   spaceBetween: 40,
