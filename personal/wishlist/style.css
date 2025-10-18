@@ -29,8 +29,11 @@ body {
 .carousel {
   display: flex;
   flex-direction: column;
-  gap: .5vh; /* responsive spacing between items */
+  gap: .5vh;
+  overflow-y: hidden; /* hide scrollbar */
+  scroll-behavior: smooth;
 }
+
 
 .carousel__item {
   display: flex;
@@ -69,8 +72,7 @@ body {
 }
 
 .title {
-  font-size: 2vw;
-  max-font-size: 8px;
+  font-size: clamp(8px, 1vw, 20px);
   text-transform: uppercase;
   margin: 0;
   color: darkgreen;
