@@ -1,0 +1,41 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background: transparent;
+  color: white;
+}
+
+/* Container for all 3 columns */
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Individual columns */
+.column {
+  background: transparent;
+  border-radius: 10px;
+  padding: 20px;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.column img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Responsive: stack vertically on small screens */
+@media (max-width: 900px) {
+  .columns {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
