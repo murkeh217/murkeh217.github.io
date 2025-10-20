@@ -44,10 +44,9 @@ body {
   color: #27ae60;
 }
 
-/* Carousel container — exactly 3 items visible */
 .carousel {
   width: 100%;
-  height: calc((120px + 8px*2 + 30px) * 3); /* adjust based on item height + margin + padding */
+  height: calc(205px * 2); /* 2 items visible */
   overflow-y: auto;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -59,6 +58,7 @@ body {
   scrollbar-width: none; 
   -ms-overflow-style: none;
 }
+
 .carousel::-webkit-scrollbar {
   display: none;
 }
