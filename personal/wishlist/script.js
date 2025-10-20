@@ -1,36 +1,51 @@
 document.querySelectorAll('.carousel').forEach(carousel => {
-  // Shuffle items on refresh
   const items = Array.from(carousel.children);
-  for (let i = items.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [items[i], items[j]] = [items[j], items[i]];
-  }
-  items.forEach(item => carousel.appendChild(item));
+  const itemHeight = items[0].offsetHeight + 24; // item height + margin
+  const totalItems = items.length;
 
-  // Enable vertical mouse scroll
-  let scrollPos = 0;
-  const scrollStep = 200;
-  carousel.addEventListener('wheel', (e) => {
+  // Duplicate items twice for seamless loop
+  items.forEach(item => carousel.appendChild(item.cloneNode(true)));
+  items.forEach(item => carousel.appendChild(item.cloneNode(true)));
+
+  // Start scroll
+  carousel.scrollTop = 0;
+
+  // Wheel scrolling
+  carousel.addEventListener('wheel', e => {
     e.preventDefault();
-    scrollPos += e.deltaY > 0 ? scrollStep : -scrollStep;
-    scrollPos = Math.max(0, Math.min(scrollPos, carousel.scrollHeight - carousel.clientHeight));
-    carousel.scrollTo({ top: scrollPos, behavior: 'smooth' });
+    const direction = e.deltaY > 0 ? 1 : -1;
+    carousel.scrollBy({ top: direction * itemHeight, behavior: 'smooth' });
+  });
+
+  // Infinite adjustment on scroll
+  carousel.addEventListener('scroll', () => {
+    const scrollHeightHalf = itemHeight * totalItems;
+    if (carousel.scrollTop >= scrollHeightHalf) {
+      carousel.scrollTop -= scrollHeightHalf;
+    } else if (carousel.scrollTop < 0) {
+      carousel.scrollTop += scrollHeightHalf;
+    }
   });
 });
 
-// Scroll button behavior
+// Scroll button behavior (1 item per click)
 document.querySelectorAll('.carousel-column').forEach(column => {
   const carousel = column.querySelector('.carousel');
   const upBtn = column.querySelector('.scroll-btn.up');
   const downBtn = column.querySelector('.scroll-btn.down');
 
-  const scrollAmount = 200;
+  const items = Array.from(carousel.children);
+  const itemHeight = items[0].offsetHeight + 24;
 
-  upBtn.addEventListener('click', () => {
-    carousel.scrollBy({ top: -scrollAmount, behavior: 'smooth' });
-  });
+  if (upBtn) {
+    upBtn.addEventListener('click', () => {
+      carousel.scrollBy({ top: -itemHeight, behavior: 'smooth' });
+    });
+  }
 
-  downBtn.addEventListener('click', () => {
-    carousel.scrollBy({ top: scrollAmount, behavior: 'smooth' });
-  });
+  if (downBtn) {
+    downBtn.addEventListener('click', () => {
+      carousel.scrollBy({ top: itemHeight, behavior: 'smooth' });
+    });
+  }
 });

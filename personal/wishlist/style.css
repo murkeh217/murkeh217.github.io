@@ -27,7 +27,7 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 10px;
-  color: #1b7943; /* dark emerald highlight */
+  color: #1b7943;
   text-align: center;
 }
 
@@ -41,53 +41,87 @@ body {
   transition: color 0.3s ease;
 }
 .scroll-btn:hover {
-  color: #27ae60; /* slightly brighter emerald on hover */
+  color: #27ae60;
 }
 
+/* Carousel container — exactly 3 items visible */
 .carousel {
   width: 100%;
-  height: 70vh;
+  height: calc((120px + 8px*2 + 30px) * 3); /* adjust based on item height + margin + padding */
   overflow-y: auto;
   overflow-x: hidden;
   scroll-behavior: smooth;
   background: transparent;
-}
+  padding: 10px 0;
+  scroll-snap-type: y mandatory;
 
+  /* hide scrollbar */
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+}
 .carousel::-webkit-scrollbar {
-  width: 6px;
-}
-.carousel::-webkit-scrollbar-thumb {
-  background-color: rgba(27, 121, 67, 0.4); /* dark emerald thumb */
+  display: none;
 }
 
+/* Emerald rectangular items */
 .carousel__item {
-  background: #145a32; /* deep emerald green */
+  background: #0f3d26;
   color: white;
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+  align-items: center;
+  margin: 12px 0;
   border-radius: 0;
   overflow: hidden;
-  transition: none;
+  transition: transform 0.25s ease;
+  padding: 8px;
+  scroll-snap-align: start;
 }
-.carousel__item:hover {
-  box-shadow: none;
-  transform: none;
+
+/* Hover zoom for image + text */
+.carousel__item:hover .carousel__item-head img,
+.carousel__item:hover .title {
+  transform: scale(1.3);
+}
+
+.carousel__item-head {
+  overflow: hidden;
+  width: 100%;
 }
 
 .carousel__item-head img {
   width: 100%;
-  height: 180px;
+  height: 120px;
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .carousel__item-body {
-  padding: 10px;
-  background: #0e4025; /* darker shade */
+  padding: 8px 8px 6px; /* bottom padding reduced */
+  width: 100%;
   text-align: center;
+  background: #0f3d26;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+input[type="checkbox"] {
+  accent-color: #27ae60;
+  width: 18px;
+  height: 18px;
 }
 
 .title {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
+  line-height: 1.2;
+  transition: transform 0.3s ease;
 }
