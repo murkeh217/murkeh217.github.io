@@ -10,18 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
   let swipersInitialized = false;
   let finished = false;
 
-  // Hide galleries until shuffle completes
   const galleryTop = document.querySelector(".gallery-top");
   const galleryThumbs = document.querySelector(".gallery-thumbs");
+
   if (galleryTop) galleryTop.style.visibility = "hidden";
   if (galleryThumbs) galleryThumbs.style.visibility = "hidden";
 
-  // 🔀 Defer shuffle slightly so loader renders first
-  requestAnimationFrame(() => {
-    shuffleSlidesTogether();
-  });
+  // 🔀 Shuffle slides slightly after page starts rendering
+  requestAnimationFrame(() => shuffleSlidesTogether());
 
-  // Update progress visually
+  // Track loaded media
   function updateProgress() {
     const progress = totalMedia === 0
       ? 100
@@ -35,28 +33,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Track all images
   images.forEach(img => {
-    if (img.complete && img.naturalHeight !== 0) {
-      loadedMedia++;
-      updateProgress();
-    } else {
+    if (img.complete && img.naturalHeight !== 0) loadedMedia++;
+    else {
       img.addEventListener("load", () => { loadedMedia++; updateProgress(); });
       img.addEventListener("error", () => { loadedMedia++; updateProgress(); });
     }
+    updateProgress();
   });
 
-  // Track all iframes
   iframes.forEach(frame => {
-    const handleFrameLoaded = () => { loadedMedia++; updateProgress(); };
-    if (frame.contentDocument?.readyState === "complete") handleFrameLoaded();
+    const handle = () => { loadedMedia++; updateProgress(); };
+    if (frame.contentDocument?.readyState === "complete") handle();
     else {
-      frame.addEventListener("load", handleFrameLoaded, { once: true });
-      frame.addEventListener("error", handleFrameLoaded, { once: true });
+      frame.addEventListener("load", handle, { once: true });
+      frame.addEventListener("error", handle, { once: true });
     }
   });
 
-  // 🔀 Shuffle both thumb + main slides in the SAME order
+  // 🔀 Shuffle thumbs and top slides together
   function shuffleSlidesTogether() {
     const thumbWrapper = document.querySelector(".gallery-thumbs .swiper-wrapper");
     const mainWrapper = document.querySelector(".gallery-top .swiper-wrapper");
@@ -64,15 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const thumbSlides = Array.from(thumbWrapper.children);
     const mainSlides = Array.from(mainWrapper.children);
-    if (thumbSlides.length !== mainSlides.length) {
-      console.warn("Slide count mismatch between thumbs and main gallery!");
-      return;
-    }
+    if (thumbSlides.length !== mainSlides.length) return;
 
-    const paired = thumbSlides.map((slide, i) => ({
-      thumb: slide,
-      main: mainSlides[i]
-    }));
+    const paired = thumbSlides.map((slide, i) => ({ thumb: slide, main: mainSlides[i] }));
 
     for (let i = paired.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -85,37 +74,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 🚀 Initialize Swipers
   function initSwipers() {
+    // 👍 Thumbs: looped, centered, clicked slide goes to top gallery
     const galleryThumbsSwiper = new Swiper(".gallery-thumbs", {
       spaceBetween: 10,
-      slidesPerView: 8,
+      slidesPerView: 10,
+      loop: true,
       centeredSlides: true,
       slideToClickedSlide: true,
       watchSlidesProgress: true,
       watchSlidesVisibility: true,
-      speed: 800,
-
-      // 🚫 No loop duplication
-      loop: false,
-
-      // 🧲 Smooth snap scrolling (sticky)
-      freeMode: {
-        enabled: true,
-        sticky: true,
-        momentum: true,
-      },
-
-      // 🌀 Infinite feel — autoplay slowly scrolls through slides
-      autoplay: {
-        delay: 0, // continuous
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
-
-      // Smooth continuous movement
-      speed: 6000,
-
+      speed: 600,
       breakpoints: {
         640: { slidesPerView: 3, spaceBetween: 10 },
         768: { slidesPerView: 5, spaceBetween: 15 },
@@ -123,30 +92,31 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
 
+    // Top gallery: fade effect synced with thumbs
     const galleryTopSwiper = new Swiper(".gallery-top", {
       spaceBetween: 10,
       effect: "fade",
       fadeEffect: { crossFade: true },
-      speed: 600,
-      loop: false, // prevent jumps
+      loop: false, // optional
       thumbs: { swiper: galleryThumbsSwiper },
     });
 
-    // Reveal after init
+    // Reveal galleries
     galleryTop.style.visibility = "visible";
     galleryThumbs.style.visibility = "visible";
 
-    // Keep thumbs synced with top
-    galleryTopSwiper.on("slideChange", () => {
-      const realIndex = galleryTopSwiper.activeIndex;
-      galleryThumbsSwiper.slideTo(realIndex, 500, true);
-    });
+    // 🔹 Center first active thumb on load
+    setTimeout(() => {
+      const activeIndex = galleryTopSwiper.activeIndex;
+      galleryThumbsSwiper.slideToLoop(activeIndex, 0, false); // loop-safe centering
+      galleryThumbsSwiper.slides.forEach(slide => slide.classList.remove('swiper-slide-thumb-active'));
+      galleryThumbsSwiper.slides[galleryThumbsSwiper.realIndex].classList.add('swiper-slide-thumb-active');
+    }, 50);
 
-    galleryThumbsSwiper.on("click", (swiper) => {
-      const clickedIndex = swiper.clickedIndex;
-      if (typeof clickedIndex !== "undefined") {
-        galleryTopSwiper.slideTo(clickedIndex, 500, true);
-      }
+    // Sync top slide with thumb click
+    galleryTopSwiper.on("slideChange", () => {
+      const activeIndex = galleryTopSwiper.activeIndex;
+      galleryThumbsSwiper.slideToLoop(activeIndex, 500, true);
     });
   }
 
@@ -154,7 +124,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function finishLoading() {
     if (finished) return;
     finished = true;
-
     loader.style.transition = "opacity 0.6s ease";
     loader.style.opacity = "0";
     setTimeout(() => {
@@ -163,10 +132,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 600);
   }
 
-  // ⏱️ Timeout fallback
+  // ⏱️ Fallback
   setTimeout(() => {
     if (!finished) {
-      console.warn("Timeout reached, forcing finish...");
       finishLoading();
       if (galleryTop) galleryTop.style.visibility = "visible";
       if (galleryThumbs) galleryThumbs.style.visibility = "visible";

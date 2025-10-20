@@ -1,10 +1,174 @@
 body {
+  background: transparent;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 40px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #10b981; /* Emerald Green */
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ===== Grid Layout as horizontal scroll ===== */
+.grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px; /* optional space for scrollbar */
+}
+
+.grid > .card {
+  flex: 1 1 0;
+  max-width: 18%; 
+  scroll-snap-align: center;
+}
+
+/* ===== Cards ===== */
+.card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 40px rgba(16, 185, 129, 0.35);
+}
+
+/* ===== Card Image (Portrait) ===== */
+.card img {
+  width: 100%;
+  height: 320px; /* slightly reduced */
+  object-fit: cover;
+  object-position: center;
+  border-radius: 14px;
+  margin-bottom: 15px;
+  filter: brightness(0.9) drop-shadow(0 0 10px #10b981);
+  transition: 0.3s ease;
+}
+
+.card:hover img {
+  filter: brightness(1) drop-shadow(0 0 15px #10b981);
+  transform: scale(1.03);
+}
+
+/* ===== Text Elements ===== */
+.card h2 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  margin: 0 auto 10px;
+  text-align: center;
+  display: block;
+  width: fit-content;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 10px 0;
+}
+
+.info {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.info span {
+  color: #10b981; /* Emerald green */
+  font-weight: 700;
+}
+
+/* Categories inside info */
+.category {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Highlight span inside info */
+.highlight {
+  color: #10b981;
+}
+
+/* ===== Animated Aura ===== */
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 180deg, transparent, rgba(16, 185, 129, 0.15), transparent 30%);
+  animation: spin 6s linear infinite;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(16, 185, 129, 0.05), transparent 70%);
+  z-index: 0;
+}
+
+.card * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1200px) { .grid > .card { max-width: 18%; } }
+@media (max-width: 992px)  { .grid > .card { max-width: 20%; } }
+@media (max-width: 768px)  { 
+  h1 { font-size: 2rem; }
+  .grid > .card { max-width: 22%; }
+}
+@media (max-width: 480px)  { .grid > .card { max-width: 24%; } }
+
+/* Optional: scrollbar styling */
+.grid::-webkit-scrollbar { height: 8px; }
+.grid::-webkit-scrollbar-thumb {
+  background-color: rgba(16, 185, 129, 0.5);
+  border-radius: 4px;
+}
+
+/* 
+body {
   display:grid;
   place-content:center;
   min-height:100vh;
   overflow:hidden;
-  transform: scale(1.2);    /* 0.8 = 80% of original size */
-  transform-origin: center; /* adjust where it scales from */
+  transform: scale(1.2);    
+  transform-origin: center;
 }
 
 .w {
@@ -15,7 +179,7 @@ body {
 .ts {
   width:100%; height:100%;
   position:relative;
-  --barH:10%;/*active zone height = 100% - barH*/
+  --barH:10%;
 }
 
 .t {
@@ -46,18 +210,14 @@ body {
      object-fit:contain;
 }
 
-/* 
-optional
-*/
-
-.ts {/*thumbnails bar*/
+.ts {
   perspective:100px;
   perspective-origin:center center;
   transform-style:preserve-3d;
   pointer-events:none;
 }
 
-.ts:after {/*the plate*/
+.ts:after {
   content:"";
   display:block; width:100%; height:15px;
   position:absolute; bottom:0;
@@ -66,7 +226,7 @@ optional
   transform-origin:bottom center;
 }
 
-:not(:checked) + .t {/*inactive labels*/
+:not(:checked) + .t {
   transform:translate3d(0, 0, -5px);
   pointer-events:auto;
 }
@@ -78,10 +238,10 @@ optional
 }
 
 :not(:checked) + .t img {
-  transform:scale(0.9);/*create gaps*/
+  transform:scale(0.9);
 }
 
-:checked + .t {/*active label*/
+:checked + .t {
   box-shadow:0 0 0 transparent;
   -webkit-animation:anim 2s 1;
           animation:anim 2s 1;
@@ -91,12 +251,10 @@ optional
   from { transform:rotateY(6deg)rotateX(3deg) }
 }
 
-/* 
-transitions
-*/
-.t {/*active->inactive & hover->rest*/
+.t {
   transition:transform 0.5s, bottom 0.6s, left 0.6s, width 0.3s, box-shadow 1s;
 }
 .t:hover, :checked + .t {
   transition:transform 0.5s, bottom 0.6s, left 0.6s, width 0.3s, box-shadow 0s;
 }
+*/
