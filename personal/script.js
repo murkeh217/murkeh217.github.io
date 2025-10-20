@@ -90,54 +90,64 @@ document.addEventListener("DOMContentLoaded", () => {
     const galleryThumbsSwiper = new Swiper(".gallery-thumbs", {
       spaceBetween: 10,
       slidesPerView: 8,
-      loop: true,
       centeredSlides: true,
       slideToClickedSlide: true,
       watchSlidesProgress: true,
       watchSlidesVisibility: true,
-      speed: 1500, // ✅ slow transition (1 second)
-      navigation: {
-        nextEl: ".thumbs-next",
-        prevEl: ".thumbs-prev",
+      speed: 800,
+
+      // 🚫 No loop duplication
+      loop: false,
+
+      // 🧲 Smooth snap scrolling (sticky)
+      freeMode: {
+        enabled: true,
+        sticky: true,
+        momentum: true,
       },
+
+      // 🌀 Infinite feel — autoplay slowly scrolls through slides
+      autoplay: {
+        delay: 0, // continuous
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+
+      // Smooth continuous movement
+      speed: 6000,
+
       breakpoints: {
         640: { slidesPerView: 3, spaceBetween: 10 },
         768: { slidesPerView: 5, spaceBetween: 15 },
         1024: { slidesPerView: 7, spaceBetween: 20 },
       },
-      on: {
-        imagesReady: () => finishLoading(),
-      },
     });
 
     const galleryTopSwiper = new Swiper(".gallery-top", {
       spaceBetween: 10,
-      loop: true,
-      effect: "fade",           // ✅ fade effect
-      fadeEffect: { crossFade: true }, // smooth crossfade
-      speed: 500, // 0.6s fade transition
+      effect: "fade",
+      fadeEffect: { crossFade: true },
+      speed: 600,
+      loop: false, // prevent jumps
       thumbs: { swiper: galleryThumbsSwiper },
-      on: {
-        init: () => finishLoading(),
-      },
     });
 
-    // Reveal shuffled galleries only after init
+    // Reveal after init
     galleryTop.style.visibility = "visible";
     galleryThumbs.style.visibility = "visible";
 
+    // Keep thumbs synced with top
     galleryTopSwiper.on("slideChange", () => {
-      const realIndex = galleryTopSwiper.realIndex;
-      galleryThumbsSwiper.slideToLoop(realIndex, 500, true); // smooth 0.5s centering
+      const realIndex = galleryTopSwiper.activeIndex;
+      galleryThumbsSwiper.slideTo(realIndex, 500, true);
     });
 
     galleryThumbsSwiper.on("click", (swiper) => {
       const clickedIndex = swiper.clickedIndex;
       if (typeof clickedIndex !== "undefined") {
-        galleryTopSwiper.slideToLoop(clickedIndex, 500, true);
+        galleryTopSwiper.slideTo(clickedIndex, 500, true);
       }
     });
-
   }
 
   // ✨ Hide loader once everything is ready
