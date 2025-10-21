@@ -1,4 +1,4 @@
-#Murtaza (MK) Kanorwala – Portfolio
+# Murtaza (MK) Kanorwala – Portfolio
 
 This site reflects my journey as a game creator, tester, web designer, and communicator. It’s both a showcase and a live portfolio of where my skills meet creativity and execution.
 
