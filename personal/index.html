@@ -1,382 +1,196 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-   <link rel='stylesheet' href='https://famousfolks.ca/pacifica/wp-content/themes/pacifica/assets/css/bootstrap.min.css?ver=5.6.2'>
-   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css'>
-   <link rel="stylesheet" href="./style.css">
+<html lang="en">
 
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-   <meta charset="UTF-8">
+  <head>
+  <meta charset="UTF-8">
+  <title>Know MK</title>
 
-   <title>Know MK</title>
-   
-   <meta http-equiv="Content-Security-Policy"
-      content="
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <meta name="viewport" content="width=device-width"><link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+
+  <link rel="stylesheet" href="./style.css" />
+
+  <meta http-equiv="Content-Security-Policy"
+    content="
       default-src 'self';
       img-src 'self' data: https:;
-      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
       font-src 'self' https://fonts.gstatic.com;
-      script-src 'self' https://cdnjs.cloudflare.com;
+      script-src 'self';
       connect-src 'self';
       object-src 'none';
       base-uri 'self';
       form-action 'self';
-      ">
+    ">
 
-   <!-- Standard favicon -->
-   <link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
-   <!-- PNG versions -->
-   <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
-   <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
-   <!-- For Apple devices -->
-   <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
-   <!-- For Android/Chrome -->
-   <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-   <!-- Google tag (gtag.js) -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-489Z6TPN92"></script>
-   
-   <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-489Z6TPN92');
-   </script>
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-489Z6TPN92"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-489Z6TPN92');
+  </script>
 
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
+  </head>
+    
+  <body>
 
-</head>
-<body>
+  <div class="ocean">
+    <div class="wave"></div>
+    <div class="wave"></div>
+  </div>
 
-   <div id="global-loader">
-      <div class="loader-spinner"></div>
-      <div class="loader-percentage">0%</div>
-   </div>
+  <nav class="nav nav--active">
+  <ul class="nav__list">
+    <li class="nav__item">
+      <a href="" class="nav__link">
+        <div class="nav__thumb color1" data-letter="cognitivity"></div>
+        <p class="nav__label">Cognitivty</p>
+      </a>
+    </li>
+    <li class="nav__item">
+      <a href="" class="nav__link">
+        <div class="nav__thumb color2" data-letter="vitality"></div>
+        <p class="nav__label">Vitality</p>
+      </a>
+    </li>
+    <li class="nav__item">
+      <a href="" class="nav__link">
+        <div class="nav__thumb color3" data-letter="collectivity"></div>
+        <p class="nav__label">Collectivity</p>
+      </a>
+    </li>
+    <li class="nav__item">
+      <a href="" class="nav__link">
+        <div class="nav__thumb color4" data-letter="spontaneity"></div>
+        <p class="nav__label">Spontaneity</p>
+      </a>
+    </li>
+    <li class="nav__item">
+      <a href="" class="nav__link">
+        <div class="nav__thumb color5" data-letter="continuity"></div>
+        <p class="nav__label">Continuity</p>
+      </a>
+    </li>
+    <li class="nav__item">
+      <a href="" class="nav__link">
+        <div class="nav__thumb color6" data-letter="creativity"></div>
+        <p class="nav__label">Creativity</p>
+      </a>
+    </li>
+  </ul>
+  <div class="burger burger--close">
+    <div class="burger__patty"></div>
+  </div>
+</nav>
 
-   <div class="ocean">
-      <div class="wave"></div>
-      <div class="wave"></div>
-   </div>
-   
-<!-- partial:index.partial.html -->
-
-<div class="swiper-container gallery-thumbs">
-   <div class="swiper-wrapper sub-header">
-      <div class="swiper-slide">Cognitivity</div>
-      <div class="swiper-slide">Vitality</div>
-      <div class="swiper-slide">Collectivity</div>
-      <div class="swiper-slide">Spontaneity</div>
-      <div class="swiper-slide">Continuity</div>
-      <div class="swiper-slide">Creativity</div>
-   </div>
-   <!-- Flashing nav arrows for gallery thumbs -->
-   <div class="thumbs-nav thumbs-prev">&#10094;</div>
-   <div class="thumbs-nav thumbs-next">&#10095;</div>
+<div class="page">
+  <section class="section section--active color1" data-letter="cognitivity">
+    <article class="section__wrapper">
+      <h1 class="section__title">Cognitivity</h1>
+      <div class="container">
+        <div class="row">
+          <div class="iframe-container"><iframe src="cognitivity/zodiac/index.html" class="responsive-iframe"></iframe></div>
+          <div class="iframe-container"><iframe src="cognitivity/personality/index.html" class="responsive-iframe"></iframe></div>
+        </div>
+        <div class="row">
+          <div class="iframe-container"><iframe src="cognitivity/philosophy/index.html" class="responsive-iframe"></iframe></div>
+          <div class="iframe-container"><iframe src="cognitivity/languages/index.html" class="responsive-iframe"></iframe></div>
+        </div>
+      </div>
+    </article>
+  </section>
+  <section class="section color2" data-letter="vitality">
+    <article class="section__wrapper">
+      <h1 class="section__title">Vitality</h1>
+      <div class="container">
+        <div class="row">
+          <div class="iframe-container"><iframe src="vitality/workout/index.html" class="responsive-iframe"></iframe></div>
+          <div class="iframe-container"><iframe src="vitality/diet/index.html" class="responsive-iframe"></iframe></div>
+        </div>
+        <div class="row">
+          <div class="iframe-container"><iframe src="vitality/swimming/index.html" class="responsive-iframe"></iframe></div>
+          <div class="iframe-container"><iframe src="vitality/riding/index.html" class="responsive-iframe"></iframe></div>
+        </div>
+        <div class="row">
+          <div class="iframe-container"><iframe src="vitality/football/index.html" class="responsive-iframe"></iframe></div>
+        </div>
+      </div>
+    </article>
+  </section>
+  <section class="section color3" data-letter="collectivity">
+    <article class="section__wrapper">
+      <h1 class="section__title">Collectivity</h1>
+      <div class="container">
+        <div class="row">
+          <div class="iframe-container"><iframe src="collectivity/os/index.html" class="responsive-iframe"></iframe></div>
+          <div class="iframe-container"><iframe src="collectivity/internet/index.html" class="responsive-iframe"></iframe></div>
+        </div>
+        <div class="row">
+          <div class="iframe-container"><iframe src="collectivity/travel/index.html" class="responsive-iframe"></iframe></div>
+          <div class="iframe-container"><iframe src="collectivity/collection/index.html" class="responsive-iframe"></iframe></div>
+        </div>
+      </div>
+    </article>
+  </section>
+  <section class="section color4" data-letter="spontaneity">
+    <article class="section__wrapper">
+      <h1 class="section__title">Spontaneity</h1>
+      <div class="container">
+        <div class="row">
+          <div class="iframe-container"><iframe src="spontaneity/powers/index.html" class="responsive-iframe"></iframe></div>
+          <div class="iframe-container"><iframe src="spontaneity/games/index.html" class="responsive-iframe"></iframe></div>
+        </div>
+        <div class="row">
+          <div class="iframe-container"><iframe src="spontaneity/idols/index.html" class="responsive-iframe"></iframe></div>
+          <div class="iframe-container"><iframe src="spontaneity/spicy/index.html" class="responsive-iframe"></iframe></div>
+        </div>
+        <div class="row">
+          <div class="iframe-container"><iframe src="spontaneity/comedy/index.html" class="responsive-iframe"></iframe></div>
+        </div>
+      </div>
+    </article>
+  </section>
+  <section class="section color5" data-letter="continuity">
+    <article class="section__wrapper">
+      <h1 class="section__title">Continuity</h1>
+      <div class="container">
+        <div class="row">
+          <div class="iframe-container"><iframe src="continuity/avatar/index.html" class="responsive-iframe"></iframe></div>
+          <div class="iframe-container"><iframe src="continuity/ghosts/index.html" class="responsive-iframe"></iframe></div>
+        </div>
+        <div class="row">
+          <div class="iframe-container"><iframe src="continuity/wishlist/index.html" class="responsive-iframe"></iframe></div>
+          <div class="iframe-container"><iframe src="continuity/extra/index.html" class="responsive-iframe"></iframe></div>
+        </div>
+      </div>
+    </article>
+  </section>
+  <section class="section color6" data-letter="creativity">
+    <article class="section__wrapper">
+      <h1 class="section__title">Creativity</h1>
+      <div class="container">
+        <div class="row">
+          <div class="iframe-container"><iframe src="creativity/art/index.html" class="responsive-iframe"></iframe></div>
+          <div class="iframe-container"><iframe src="creativity/anime/index.html" class="responsive-iframe"></iframe></div>
+        </div>
+        <div class="row">
+          <div class="iframe-container"><iframe src="creativity/tv/index.html" class="responsive-iframe"></iframe></div>
+          <div class="iframe-container"><iframe src="creativity/music/index.html" class="responsive-iframe"></iframe></div>
+        </div>
+      </div>
+    </article>
+  </section>
 </div>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
 
-
-<div class="swiper-container gallery-top">
-   <div class="swiper-wrapper">
-
-<!-- Cognitivity -->
-      <div class="swiper-slide">
-         <div class="container">
-            <div class="row align-items-center justify-content-between">
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <div class="iframe-container">
-                        <iframe src="cognitivity/zodiac/index.html" class="responsive-iframe" style="transform: scale(1.5); transform-origin: center; border:0;"></iframe>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <div class="iframe-container">
-                        <iframe src="cognitivity/personality/index.html" class="responsive-iframe" ></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row align-items-center justify-content-between">
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <div class="iframe-container">
-                        <iframe src="cognitivity/philosophy/index.html" class="responsive-iframe" ></iframe>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <div class="iframe-container">
-                        <iframe src="cognitivity/languages/index.html" class="responsive-iframe" ></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-
-<!-- Vitality -->
-      <div class="swiper-slide">
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <!--<p>Calistenics - Pushups | Squats | Core | Pullups | Dips</p>-->
-                     <div class="iframe-container">
-                        <iframe src="vitality/workout/index.html" class="responsive-iframe" ></iframe>
-                     </div>
-                  </div>
-               </div>
-                <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <!--
-                     <p>Grilled, Smoked</p>
-                     <p>Eggs, Apples, Corns, Chicken, Cucumber, Sweet Potato, Milk</p>
-                     <p>Protein, Fruit, Fibre, Protein, Veg, Fibre, Milk/Yoghurt</p>
-                     <p>Eat 5 times a day</p>
-                     -->
-                     <div class="iframe-container">
-                        <iframe src="vitality/diet/index.html" class="responsive-iframe" style="transform: scale(1); transform-origin: center; border:0;" ></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row align-items-center justify-content-between">
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <div class="iframe-container">
-                        <iframe src="vitality/swimming/index.html" class="responsive-iframe" style="transform: scale(1.75); transform-origin: center; border:0;" ></iframe>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <div class="iframe-container">
-                        <iframe src="vitality/riding/index.html" class="responsive-iframe" style="transform: scale(2); transform-origin: center; border:0;" ></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row align-items-center justify-content-between">
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <div class="iframe-container">
-                        <iframe src="vitality/football/index.html" class="responsive-iframe" ></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-
-
-
-<!-- Collectivity -->
-      <div class="swiper-slide">
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <div class="iframe-container">
-                        <iframe src="collectivity/os/index.html" class="responsive-iframe" style="transform: scale(1.25); transform-origin: center; border:0;" ></iframe>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <div class="iframe-container">
-                        <iframe src="collectivity/online/index.html" class="responsive-iframe" ></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row align-items-center justify-content-between">
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <!--<p>Train, Car</p>-->
-                     <div class="iframe-container">
-                        <iframe src="collectivity/travel/index.html" class="responsive-iframe" ></iframe>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <div class="iframe-container">
-                        <iframe src="collectivity/collection/index.html" class="responsive-iframe" style="transform: scale(1.1); transform-origin: center; border:0;" ></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-
-
-<!-- Spontaneity -->
-      <div class="swiper-slide">
-         <div class="container">
-             <div class="row align-items-center justify-content-between">
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <div class="iframe-container">
-                        <iframe src="spontaneity/powers/index.html" class="responsive-iframe" ></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row align-items-center justify-content-between">
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <!--
-                     <p>Erotica</p>
-                     -->
-                     <div class="iframe-container">
-                        <iframe src="spontaneity/spicy/index.html" class="responsive-iframe" ></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row align-items-center justify-content-between">
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <div class="iframe-container">
-                        <iframe src="spontaneity/games/index.html" class="responsive-iframe" ></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-             <div class="row align-items-center justify-content-between">
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <div class="iframe-container">
-                        <iframe src="spontaneity/idols/index.html" class="responsive-iframe" ></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row align-items-center justify-content-between">
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <div class="iframe-container">
-                        <iframe src="spontaneity/comedy/index.html" class="responsive-iframe" ></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-
-
-<!-- Continuity -->
-      <div class="swiper-slide">
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <!--<p>Casual, Light, Comfy, Standout</p>
-                     <p>Long Curly Hair, Goatee + Full Beard</p>
-                     <p>White Frame Glasses, Green Ring</p>-->
-                     <div class="iframe-container">
-                        <iframe src="continuity/avatar/index.html" class="responsive-iframe" ></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row align-items-center justify-content-between">
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <!--snail noodles, pork knuckles, chicken feet, blood jelly, -->
-                     <div class="iframe-container">
-                        <iframe src="continuity/wishlist/index.html" class="responsive-iframe" ></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row align-items-center justify-content-between">
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <div class="iframe-container">
-                        <iframe src="continuity/extra/index.html" class="responsive-iframe" ></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row align-items-center justify-content-between">
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <div class="iframe-container">
-                        <iframe src="continuity/ghosts/index.html" class="responsive-iframe" ></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-
-
-<!-- Creativity -->
-      <div class="swiper-slide">
-       <div class="container">
-            <div class="row align-items-center justify-content-between">
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <div class="iframe-container">
-                        <iframe src="creativity/art/index.html" class="responsive-iframe" style="transform: scale(1.1); transform-origin: center; border:0;" ></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row align-items-center justify-content-between">
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <div class="iframe-container">
-                        <iframe src="creativity/anime/index.html" class="responsive-iframe" style="transform: scale(1.25); transform-origin: center; border:0;" ></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row align-items-center justify-content-between">
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <div class="iframe-container">
-                        <iframe src="creativity/tv/index.html" style="transform: scale(1); transform-origin: center; border:0;"class="responsive-iframe" ></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row align-items-center justify-content-between">
-               <div class="col-lg-6 col-md-6 col-12 order-md-1">
-                  <div class="pf-program-details">
-                     <div class="iframe-container">
-                        <iframe src="creativity/music/index.html" class="responsive-iframe" ></iframe>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-
-
-   </div>
-   <!-- Add Arrows -->    
-</div>
-<!-- partial -->
-<script src='https://famousfolks.ca/pacifica/wp-includes/js/jquery/jquery.min.js'></script>
-<script src='https://famousfolks.ca/pacifica/wp-content/themes/pacifica/assets/js/bootstrap.bundle.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.js'></script>
-<script src="./script.js"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const loader = document.getElementById("global-loader");
-
-  // ✅ Always remove loader when DOM is ready (faster)
-  loader.classList.add("hidden");
-
-  // ✅ Fallback: Hard timeout in case of very slow iframes
-  setTimeout(() => loader.classList.add("hidden"), 8000); // 8s max wait
-});
-</script>
-
-</body>
+  </body>
+  
 </html>
