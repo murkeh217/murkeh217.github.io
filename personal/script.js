@@ -1,139 +1,38 @@
-var Nav = (function() {
-  
-  var
-  	nav 		= $('.nav'),
-  	burger	= $('.burger'),
-    page 		= $('.page'),
-    section = $('.section'),
-    link		= nav.find('.nav__link'),
-    navH		= nav.innerHeight(),
-    isOpen 	= true,
-    hasT 		= false;
-  
-  var toggleNav = function() {
-    nav.toggleClass('nav--active');
-    burger.toggleClass('burger--close');
-    shiftPage();
-  };
-  
-  var shiftPage = function() {
-    if (!isOpen) {
-      page.css({
-        'transform': 'translateY(' + navH + 'px)',
-        '-webkit-transform': 'translateY(' + navH + 'px)'
-      });
-      isOpen = true;
-    } else {
-      page.css({
-        'transform': 'none',
-        '-webkit-transform': 'none'
-      });
-      isOpen = false;
-    }
-  };
-  
-  var switchPage = function(e) {
-    var self = $(this);
-    var i = self.parents('.nav__item').index();
-    var s = section.eq(i);
-    var a = $('section.section--active');
-    var t = $(e.target);
-    
-    if (!hasT) {
-      if (i == a.index()) {
-        return false;
-      }
-      a
-      .addClass('section--hidden')
-      .removeClass('section--active');
+// tabbed content
+    // http://www.entheosweb.com/tutorials/css/tabs.asp
+    $(".tab_content").hide();
+    $(".tab_content:first").show();
 
-      s.addClass('section--active');
+  /* if in tab mode */
+    $("ul.tabs li").click(function() {
+		
+      $(".tab_content").hide();
+      var activeTab = $(this).attr("rel"); 
+      $("#"+activeTab).fadeIn();		
+		
+      $("ul.tabs li").removeClass("active");
+      $(this).addClass("active");
 
-      hasT = true;
-
-      a.on('transitionend webkitTransitionend', function() {
-        $(this).removeClass('section--hidden');
-        hasT = false;
-        a.off('transitionend webkitTransitionend');
-      });
-    }
-
-    return false;
-  };
-  
-  var keyNav = function(e) {
-    var a = $('section.section--active');
-    var aNext = a.next();
-    var aPrev = a.prev();
-    var i = a.index();
-    
-    
-    if (!hasT) {
-      if (e.keyCode === 37) {
-      
-        if (aPrev.length === 0) {
-          aPrev = section.last();
-        }
-
-        hasT = true;
-
-        aPrev.addClass('section--active');
-        a
-          .addClass('section--hidden')
-          .removeClass('section--active');
-
-        a.on('transitionend webkitTransitionend', function() {
-          a.removeClass('section--hidden');
-          hasT = false;
-          a.off('transitionend webkitTransitionend');
-        });
-
-      } else if (e.keyCode === 39) {
-
-        if (aNext.length === 0) {
-          aNext = section.eq(0)
-        } 
-
-
-        aNext.addClass('section--active');
-        a
-          .addClass('section--hidden')
-          .removeClass('section--active');
-
-        hasT = true;
-
-        aNext.on('transitionend webkitTransitionend', function() {
-          a.removeClass('section--hidden');
-          hasT = false;
-          aNext.off('transitionend webkitTransitionend');
-        });
-
-      } else {
-        return
-      }
-    }  
-  };
-    
-  var bindActions = function() {
-    burger.on('click', toggleNav);
-    link.on('click', switchPage);
-    $(document).on('ready', function() {
-       page.css({
-        'transform': 'translateY(' + navH + 'px)',
-         '-webkit-transform': 'translateY(' + navH + 'px)'
-      });
+	  $(".tab_drawer_heading").removeClass("d_active");
+	  $(".tab_drawer_heading[rel^='"+activeTab+"']").addClass("d_active");
+	  
     });
-    $('body').on('keydown', keyNav);
-  };
-  
-  var init = function() {
-    bindActions();
-  };
-  
-  return {
-    init: init
-  };
-  
-}());
-
-Nav.init();
+	/* if in drawer mode */
+	$(".tab_drawer_heading").click(function() {
+      
+      $(".tab_content").hide();
+      var d_activeTab = $(this).attr("rel"); 
+      $("#"+d_activeTab).fadeIn();
+	  
+	  $(".tab_drawer_heading").removeClass("d_active");
+      $(this).addClass("d_active");
+	  
+	  $("ul.tabs li").removeClass("active");
+	  $("ul.tabs li[rel^='"+d_activeTab+"']").addClass("active");
+    });
+	
+	
+	/* Extra class "tab_last" 
+	   to add border to right side
+	   of last tab */
+	$('ul.tabs li').last().addClass("tab_last");

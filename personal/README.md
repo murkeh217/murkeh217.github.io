@@ -1,5 +1,7 @@
-# Murtaza (MK) Kanorwala – Portfolio
+# Responsive: tabs to accordion
 
-This site reflects my journey as a game creator, tester, web designer, and communicator. It’s both a showcase and a live portfolio of where my skills meet creativity and execution.
+A Pen created on CodePen.
 
-The website is built using HTML, CSS, and JavaScript, combining custom code and design templates with guidance and refinements made through ChatGPT. It serves as a blend of human creativity and AI assistance — demonstrating how ideas can evolve from concept to a clean, functional web experience.
+Original URL: [https://codepen.io/kazmeyer/pen/DJdore](https://codepen.io/kazmeyer/pen/DJdore).
+
+I was looking for a responsive way to go from tabs to accordion. Couldn't find anything, so here's my attempt. When wide tabs, when narrow accordion. 
