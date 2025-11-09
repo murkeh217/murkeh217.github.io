@@ -1,120 +1,106 @@
-/* ====== TAB STYLES ====== */
-ul.tabs {
-	margin: 0;
-	padding: 0;
-	float: left;
-	list-style: none;
-	height: 32px;
-	border-bottom: 1px solid #333;
-	width: 100%;
+/*
+ CSS for the main interaction
+*/
+.tabset > input[type="radio"] {
+  position: absolute;
+  left: -200vw;
 }
 
-ul.tabs li {
-	float: left;
-	margin: 0;
-	cursor: pointer;
-	padding: 0px 21px;
-	height: 31px;
-	line-height: 31px;
-	border-top: 1px solid #333;
-	border-left: 1px solid #333;
-	border-bottom: 1px solid #333;
-	background-color: #666;
-	color: #ccc;
-	overflow: hidden;
-	position: relative;
+.tabset .tab-panel {
+  display: none;
 }
 
-.tab_last { border-right: 1px solid #333; }
-
-ul.tabs li:hover {
-	background-color: #ccc;
-	color: #333;
+.tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+.tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+.tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+.tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+.tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+.tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+  display: block;
 }
 
-ul.tabs li.active {
-	background-color: #fff;
-	color: #333;
-	border-bottom: 1px solid #fff;
-	display: block;
+/*
+ Styling
+*/
+body {
+  font: 16px/1.5em "Overpass", "Open Sans", Helvetica, sans-serif;
+  color: #333;
+  font-weight: 300;
 }
 
-.tab_container {
-	border: 1px solid #333;
-	border-top: none;
-	clear: both;
-	float: left;
-	width: 100%;
-	background: #fff;
-	overflow: auto;
+.tabset > label {
+  position: relative;
+  display: inline-block;
+  padding: 15px 15px 25px;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  cursor: pointer;
+  font-weight: 600;
 }
 
-.tab_content {
-	padding: 20px;
-	display: none;
+.tabset > label::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  width: 22px;
+  height: 4px;
+  background: #8d8d8d;
 }
 
-.tab_drawer_heading { display: none; }
-
-@media screen and (max-width: 480px) {
-	.tabs {
-		display: none;
-	}
-	.tab_drawer_heading {
-		background-color: #ccc;
-		color: #fff;
-		border-top: 1px solid #333;
-		margin: 0;
-		padding: 5px 20px;
-		display: block;
-		cursor: pointer;
-		user-select: none;
-	}
-	.d_active {
-		background-color: #666;
-		color: #fff;
-	}
+input:focus-visible + label {
+  outline: 2px solid rgba(0,102,204,1);
+  border-radius: 3px;
 }
 
-/* ====== IFRAME GRID + SNAP LAYOUT ====== */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+.tabset > label:hover,
+.tabset > input:focus + label,
+.tabset > input:checked + label {
+  color: #06c;
+}
+
+.tabset > label:hover::after,
+.tabset > input:focus + label::after,
+.tabset > input:checked + label::after {
+  background: #06c;
+}
+
+.tabset > input:checked + label {
+  border-color: #ccc;
+  border-bottom: 1px solid #fff;
+  margin-bottom: -1px;
+}
+
+.tab-panel {
+  padding: 30px 0;
+  border-top: 1px solid #ccc;
+}
+
+/*
+ Demo purposes only
+*/
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
-.row {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  gap: 25px;
-  padding: 25px;
-  margin: 0 auto 30px;
-  box-sizing: border-box;
+body {
+  padding: 30px;
+}
+
+.tabset {
+  max-width: 65em;
 }
 
 .iframe-container {
   position: relative;
-  flex: 0 0 calc(50% - 10px); /* Show 2 iframes at a time */
-  aspect-ratio: 16 / 9; /* Maintain 16:9 ratio */
-  scroll-snap-align: start;
-  border-radius: 12px;
-  background: rgba(30, 30, 30, 0.6); /* dark transparent gray */
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  padding-bottom: 60%;
+  height: 0;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.iframe-container:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-}
-
-/* Maintain iframe to fill its parent */
 .responsive-iframe {
   position: absolute;
   top: 0;
@@ -122,114 +108,4 @@ ul.tabs li.active {
   width: 100%;
   height: 100%;
   border: none;
-  display: block;
-}
-
-/* Hide scrollbar on WebKit */
-.row::-webkit-scrollbar {
-  display: none;
-}
-
-/* Subtle scrollbar for accessibility */
-.row {
-  -ms-overflow-style: none;
-  scrollbar-width: thin;
-  scrollbar-color: #999 transparent;
-}
-
-/* ===== Responsive Adjustments ===== */
-@media (max-width: 768px) {
-  .iframe-container {
-    flex: 0 0 90%;
-    aspect-ratio: 16 / 9;
-  }
-}
-
-@media (max-width: 480px) {
-  .iframe-container {
-    flex: 0 0 100%;
-    aspect-ratio: 16 / 9;
-  }
-}
-
-
-/* ===== BODY BACKGROUND ===== */
-body {
-  background: radial-gradient(ellipse at center,
-    #f4fff4 0%,     /* near white mint */
-    #e4f7e4 35%,    /* pale green */
-    #9ccfae 100%    /* cool medium green */
-  );
-  min-height: 100dvh;
-  background-size: cover;
-  overflow-x: hidden;
-  color: #ffffff;
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  z-index: 2;
-}
-
-/* ===== OCEAN WAVE FIXED TO PAGE BOTTOM ===== */
-.ocean {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 180px; /* Adjust height as needed */
-  overflow: hidden;
-  background: transparent;
-  z-index: 0; /* Behind everything */
-  pointer-events: none; /* Don’t block clicks */
-}
-
-.wave {
-  -webkit-mask: url('./wave.svg') repeat-x;
-          mask: url('./wave.svg') repeat-x;
-  background-color: #368a66;
-  position: absolute;
-  bottom: 0;
-  width: 400%;
-  min-width: 1000px;
-  height: 180px;
-  animation: wave 7s cubic-bezier(0.36,0.45,0.63,0.53) infinite;
-  transform: translate3d(0,0,0);
-}
-
-.wave:nth-of-type(2) {
-  bottom: 10px; /* second wave slightly offset */
-  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
-             swell 7s ease -1.25s infinite;
-  opacity: 0.9;
-}
-
-
-/* ===== Animations ===== */
-@keyframes wave {
-  0% { margin-left: 0; }
-  100% { margin-left: -1600px; }
-}
-
-@keyframes swell {
-  0%, 100% { transform: translate3d(0, -25px, 0); }
-  50%     { transform: translate3d(0, 5px, 0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .wave {
-    animation: none !important;
-    transform: none !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .gallery-thumbs,
-  .iframe-container,
-  #global-loader {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    background: rgba(0, 0, 0, 0.7);
-  }
 }

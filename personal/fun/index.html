@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pure CSS Tabs With Indicator</title>
+  <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <h1>Fun</h1>
+
+  <div class="tabs">
+    <input type="radio" id="tab1" name="tab-control" checked>
+    <input type="radio" id="tab2" name="tab-control">
+    <input type="radio" id="tab3" name="tab-control">
+    <input type="radio" id="tab4" name="tab-control">
+    <input type="radio" id="tab5" name="tab-control">
+
+    <ul>
+      <li title="comedy">
+        <label for="tab1" role="button"><span>Comedy</span></label>
+      </li>
+      <li title="games">
+        <label for="tab2" role="button"><span>Games</span></label>
+      </li>
+      <li title="idols">
+        <label for="tab3" role="button"><span>Idols</span></label>
+      </li>
+      <li title="powers">
+        <label for="tab4" role="button"><span>Powers</span></label>
+      </li>
+      <li title="spicy">
+        <label for="tab5" role="button"><span>Spicy</span></label>
+      </li>
+    </ul>
+
+    <div class="slider"><div class="indicator"></div></div>
+
+    <div class="content">
+      <section>
+        <div class="iframe-container"><iframe src="comedy/index.html" class="responsive-iframe"></iframe></div>
+      </section>
+      <section>
+        <div class="iframe-container"><iframe src="games/index.html" class="responsive-iframe"></iframe></div>
+      </section>
+      <section>
+        <div class="iframe-container"><iframe src="idols/index.html" class="responsive-iframe"></iframe></div>
+      </section>
+      <section>
+        <div class="iframe-container"><iframe src="powers/index.html" class="responsive-iframe"></iframe></div>
+      </section>
+       <section>
+        <div class="iframe-container"><iframe src="spicy/index.html" class="responsive-iframe"></iframe></div>
+      </section>
+    </div>
+  </div>
+</body>
+
+</html>

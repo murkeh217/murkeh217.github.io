@@ -1,7 +1,6 @@
-# Responsive: tabs to accordion
+# Pure CSS Tabs
 
 A Pen created on CodePen.
 
-Original URL: [https://codepen.io/kazmeyer/pen/DJdore](https://codepen.io/kazmeyer/pen/DJdore).
+Original URL: [https://codepen.io/markcaron/pen/MvGRYV](https://codepen.io/markcaron/pen/MvGRYV).
 
-I was looking for a responsive way to go from tabs to accordion. Couldn't find anything, so here's my attempt. When wide tabs, when narrow accordion. 
