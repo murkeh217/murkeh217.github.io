@@ -93,19 +93,21 @@ body {
   max-width: 65em;
 }
 
-.iframe-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 60%;
-  height: 0;
-  overflow: hidden;
+.tab-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
-.responsive-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* Maintain 16:9 aspect ratio */
+.tab-panel iframe {
+  aspect-ratio: 16 / 9;
   width: 100%;
-  height: 100%;
+  max-width: 960px; /* Optional: limit max width */
   border: none;
+  display: block;
+  background: #000; /* Optional: black background for loading look */
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
