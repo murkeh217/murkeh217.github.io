@@ -59,3 +59,23 @@ $(window).load(function() {
 
   });
 });
+
+function adjustFancyTabHeights() {
+  $('.fancyTabs').each(function() {
+    var highestBox = 0;
+    var $links = $('.fancyTab a', this);
+
+    $links.css('height', 'auto');
+
+    $links.each(function() {
+      var h = $(this).outerHeight();
+      if (h > highestBox) highestBox = h;
+    });
+
+    // Apply equal height but enforce minimum
+    var minHeight = 40; // change as needed
+    $links.height(Math.max(highestBox, minHeight));
+  });
+}
+
+$(window).on('load resize', adjustFancyTabHeights);
