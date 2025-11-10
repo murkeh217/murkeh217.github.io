@@ -1,113 +1,232 @@
-/*
- CSS for the main interaction
-*/
-.tabset > input[type="radio"] {
+.container {
+  margin-top:30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans Pro';
+  font-weight:700;
+}
+
+.fancyTab {
+	text-align: center;
+  padding:15px 0;
+  background-color: #eee;
+	box-shadow: 0 0 0 1px #ddd;
+	top:15px;	
+  transition: top .2s;
+}
+
+.fancyTab.active {
+  top:0;
+  transition:top .2s;
+}
+
+.whiteBlock {
+  display:none;
+}
+
+.fancyTab.active .whiteBlock {
+  display:block;
+  height:2px;
+  bottom:-2px;
+  background-color:#fff;
+  width:99%;
+  position:absolute;
+  z-index:1;
+}
+
+.fancyTab a {
+	font-family: 'Source Sans Pro';
+	font-size:1.65em;
+	font-weight:300;
+  transition:.2s;
+  color:#333;
+}
+
+/*.fancyTab .hidden-xs {
+  white-space:nowrap;
+}*/
+
+.fancyTabs {
+	border-bottom:2px solid #ddd;
+  margin: 15px 0 0;
+}
+
+li.fancyTab a {
+  padding-top: 15px;
+  top:-15px;
+  padding-bottom:0;
+}
+
+li.fancyTab.active a {
+  padding-top: inherit;
+}
+
+.fancyTab .fa {
+  font-size: 40px;
+	width:100%;
+	padding: 15px 0 5px;
+  color:#666;
+}
+
+.fancyTab.active .fa {
+  color: #cfb87c;
+}
+
+.fancyTab a:focus {
+	outline:none;
+}
+
+.fancyTabContent {
+  border-color: transparent;
+  box-shadow: 0 -2px 0 -1px #fff, 0 0 0 1px #ddd;
+  padding: 30px 15px 15px;
+  position:relative;
+  background-color:#fff;
+}
+
+.nav-tabs > li.fancyTab.active > a, 
+.nav-tabs > li.fancyTab.active > a:focus,
+.nav-tabs > li.fancyTab.active > a:hover {
+	border-width:0;
+}
+
+.nav-tabs > li.fancyTab:hover {
+	background-color:#f9f9f9;
+	box-shadow: 0 0 0 1px #ddd;
+}
+
+.nav-tabs > li.fancyTab.active:hover {
+  background-color:#fff;
+  box-shadow: 1px 1px 0 1px #fff, 0 0px 0 1px #ddd, -1px 1px 0 0px #ddd inset;
+}
+
+.nav-tabs > li.fancyTab:hover a {
+	border-color:transparent;
+}
+
+.nav.nav-tabs .fancyTab a[data-toggle="tab"] {
+  background-color:transparent;
+  border-bottom:0;
+}
+
+.nav-tabs > li.fancyTab:hover a {
+  border-right: 1px solid transparent;
+}
+
+.nav-tabs > li.fancyTab > a {
+	margin-right:0;
+	border-top:0;
+  padding-bottom: 30px;
+  margin-bottom: -30px;
+}
+
+.nav-tabs > li.fancyTab {
+	margin-right:0;
+	margin-bottom:0;
+}
+
+.nav-tabs > li.fancyTab:last-child a {
+  border-right: 1px solid transparent;
+}
+
+.nav-tabs > li.fancyTab.active:last-child {
+  border-right: 0px solid #ddd;
+	box-shadow: 0px 2px 0 0px #fff, 0px 0px 0 1px #ddd;
+}
+
+.fancyTab:last-child {
+  box-shadow: 0 0 0 1px #ddd;
+}
+
+.tabs .nav-tabs li.fancyTab.active a {
+	box-shadow:none;
+  top:0;
+}
+
+
+.fancyTab.active {
+  background: #fff;
+	box-shadow: 1px 1px 0 1px #fff, 0 0px 0 1px #ddd, -1px 1px 0 0px #ddd inset;
+  padding-bottom:30px;
+}
+
+.arrow-down {
+	display:none;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 22px solid #ddd;
   position: absolute;
-  left: -200vw;
+  top: -1px;
+  left: calc(50% - 20px);
 }
 
-.tabset .tab-panel {
-  display: none;
+.arrow-down-inner {
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-top: 12px solid #fff;
+  position: absolute;
+  top: -22px;
+  left: -18px;
 }
 
-.tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
-.tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
-.tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
-.tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
-.tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
-.tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+.fancyTab.active .arrow-down {
   display: block;
 }
 
-/*
- Styling
-*/
-body {
-  font: 16px/1.5em "Overpass", "Open Sans", Helvetica, sans-serif;
-  color: #333;
-  font-weight: 300;
+@media (max-width: 1200px) {
+  
+  .fancyTab .fa {
+  	font-size: 36px;
+  }
+  
+  .fancyTab .hidden-xs {
+    font-size:22px;
+	}
+		
 }
-
-.tabset > label {
-  position: relative;
-  display: inline-block;
-  padding: 15px 15px 25px;
-  border: 1px solid transparent;
-  border-bottom: 0;
-  cursor: pointer;
-  font-weight: 600;
+	
+	
+@media (max-width: 992px) {
+    
+  .fancyTab .fa {
+  	font-size: 33px;
+  }
+    
+  .fancyTab .hidden-xs {
+  	font-size:18px;
+    font-weight:normal;
+  }
+		
 }
-
-.tabset > label::after {
-  content: "";
-  position: absolute;
-  left: 15px;
-  bottom: 10px;
-  width: 22px;
-  height: 4px;
-  background: #8d8d8d;
-}
-
-input:focus-visible + label {
-  outline: 2px solid rgba(0,102,204,1);
-  border-radius: 3px;
-}
-
-.tabset > label:hover,
-.tabset > input:focus + label,
-.tabset > input:checked + label {
-  color: #06c;
-}
-
-.tabset > label:hover::after,
-.tabset > input:focus + label::after,
-.tabset > input:checked + label::after {
-  background: #06c;
-}
-
-.tabset > input:checked + label {
-  border-color: #ccc;
-  border-bottom: 1px solid #fff;
-  margin-bottom: -1px;
-}
-
-.tab-panel {
-  padding: 30px 0;
-  border-top: 1px solid #ccc;
-}
-
-/*
- Demo purposes only
-*/
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-body {
-  padding: 30px;
-}
-
-.tabset {
-  max-width: 65em;
-}
-
-.tab-panel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-}
-
-/* Maintain 16:9 aspect ratio */
-.tab-panel iframe {
-  aspect-ratio: 16 / 9;
-  width: 100%;
-  max-width: 960px; /* Optional: limit max width */
-  border: none;
-  display: block;
-  background: #000; /* Optional: black background for loading look */
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+	
+	
+@media (max-width: 768px) {
+    
+  .fancyTab > a {
+    font-size:18px;
+  }
+    
+  .nav > li.fancyTab > a {
+    padding:15px 0;
+    margin-bottom:inherit;
+  }
+    
+  .fancyTab .fa {
+    font-size:30px;
+  }
+    
+  .nav-tabs > li.fancyTab > a {
+    border-right:1px solid transparent;
+    padding-bottom:0;
+  }
+    
+  .fancyTab.active .fa {
+    color: #333;
+	}
+		
 }
