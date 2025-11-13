@@ -4,6 +4,9 @@ body {
   text-align: center;
   font-family: sans-serif;
   color: #fefefe;
+
+  transform: scale(0.8);    /* 0.8 = 80% of original size */
+  transform-origin: center; /* adjust where it scales from */
 }
 .container {
   position: relative;

@@ -236,3 +236,21 @@ body {
   filter: blur(4px) brightness(0.6); /* reduced blur, darker tone */
   pointer-events: none;
 }
+
+/* Reduce distance between album cover and music player */
+.album-cover {
+  margin-bottom: 10px; /* previously might have been larger or implicit */
+}
+
+.swiper {
+  padding: 20px 0 40px; /* was 40px top and 100px bottom */
+}
+
+/* Tighten spacing inside the player */
+#progress {
+  margin: 16px 0 12px; /* was 32px 0 24px */
+}
+
+.controls button {
+  margin: 10px; /* was 20px */
+}

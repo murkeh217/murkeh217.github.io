@@ -1,6 +1,6 @@
 /* ====== GENERAL LAYOUT ====== */
 .container {
-  margin-top: 30px;
+  margin-top: 10px;
   max-width: 1600px;
   width: 95%;
 }
@@ -103,9 +103,10 @@ li.fancyTab.active a {
 .fancyTabContent {
   border-color: transparent;
   box-shadow: 0 -2px 0 -1px #ffffff, 0 0 0 1px #1e5a43;
-  padding: 30px 15px 15px;
+/*  padding: 30px 15px 15px;*/
   position: relative;
-  background-color: black; /* content stays white */
+background-color: rgba(50, 50, 50, 0.6);
+backdrop-filter: blur(6px);
   color: #0b3d2e;
 }
 
@@ -207,3 +208,13 @@ li.fancyTab.active a {
     color: #0b3d2e;
   }
 }
+
+/* Fixed tab height */
+.fancyTab a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70px; /* adjust as needed */
+  overflow: hidden;
+}
+

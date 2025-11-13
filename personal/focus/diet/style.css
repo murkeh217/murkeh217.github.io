@@ -19,7 +19,8 @@ body {
   background: transparent;
   font: .75rem satisfy, cursive;
 
-  /* 🔴 Removed page scaling to keep crisp edges */
+  transform: scale(0.8);    /* 0.8 = 80% of original size */
+  transform-origin: center; /* adjust where it scales from */
 }
 
 @media (min-width: 23rem) and (min-height: 23em) {

@@ -30,6 +30,8 @@ html {
 
 body {
   background: transparent;
+  transform: scale(1.4);    /* 0.8 = 80% of original size */
+  transform-origin: center; /* adjust where it scales from */
 }
 
 section {
