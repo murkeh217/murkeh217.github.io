@@ -218,3 +218,6 @@ backdrop-filter: blur(6px);
   overflow: hidden;
 }
 
+.container, body {
+  background: black;
+}
