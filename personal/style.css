@@ -159,7 +159,7 @@ backdrop-filter: blur(6px);
   height: 0;
   border-left: 18px solid transparent;
   border-right: 18px solid transparent;
-  border-top: 12px solid #ffffff;
+  border-top: 12px solid #1e5a43;
   position: absolute;
   top: -22px;
   left: -18px;
@@ -216,6 +216,8 @@ backdrop-filter: blur(6px);
   justify-content: center;
   height: 70px; /* adjust as needed */
   overflow: hidden;
+  text-transform: uppercase;
+  font-weight: 700 !important; /* bold */
 }
 
 .container, body {
