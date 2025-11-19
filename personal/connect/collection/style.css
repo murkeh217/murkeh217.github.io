@@ -76,6 +76,8 @@
 		place-items: center;
 		justify-content: center;
 		flex-direction: column;
+		transform: scale(0.8);    /* 0.8 = 80% of original size */
+  		transform-origin: center; /* adjust where it scales from */
 		gap: 2rem;
 		& > * {
 			/*outline: 1px dashed red;*/
