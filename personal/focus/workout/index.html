@@ -5,6 +5,116 @@
   <title>CPC Challenge - Slide In / Slide Out - Slide Inwards(?)</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,400i,700"><link rel="stylesheet" href="./style.css">
 
+    <style>
+    :root {
+      --bg: #252525;
+      --card: #242424;
+      --accent: #10b981;
+      --muted: #94a3b8;
+      --white: #eef2ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin: 0;
+      background: linear-gradient(180deg,#2b2b2b 0%, #1b1b1b 100%);
+      color: var(--white);
+      padding: 24px;
+    }
+
+    h1 {
+      font-size: 22px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    p.lead {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .container {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .section {
+      background: var(--card);
+      border-radius: 10px;
+      flex: 1;
+      min-width: 420px;
+      max-width: 600px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    thead th {
+      background: rgba(255,255,255,0.04);
+      text-align: left;
+      padding: 14px 16px;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--white);
+    }
+
+    tbody tr { border-bottom: 1px solid rgba(255,255,255,0.03); }
+
+    td {
+      padding: 12px 16px;
+      vertical-align: top;
+      font-size: 14px;
+      color: var(--white);
+    }
+
+    .pill {
+      display: inline-block;
+      background: rgba(255,255,255,0.06);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    .day-title { font-weight: 700; margin-bottom: 6px; }
+
+    .muted { color: var(--muted); font-size: 13px; }
+
+    .ex-list { margin: 6px 0 0; padding-left: 18px; }
+    .ex-list li { margin-bottom: 6px; }
+
+    .meal-type { color: var(--accent); font-weight: 600; }
+
+    @media (max-width: 1100px) {
+      .container { flex-direction: column; align-items: stretch; }
+      .section { min-width: 100%; }
+    }
+
+    @media (max-width: 800px){
+      table, thead, tbody, th, td, tr { display: block; }
+      thead { display: none; }
+      tbody tr {
+        margin-bottom: 12px;
+        border-radius: 8px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+        padding: 12px;
+      }
+      td { padding: 8px; }
+    }
+  </style>
+  
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -61,6 +171,312 @@
 		</li>
 	</ul>
 </main>
+
+
+  <div class="container">
+     
+    <!-- Workout Section -->
+    <div class="section">
+      <h1>Bodyweight Workout Schedule</h1>
+      <p class="lead">Equipment-free program focusing on stamina, speed, strength, endurance, mobility, and control.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Focus</th>
+            <th>Workout (Warm-up • Main • Cooldown)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="day-title">Day 1 — Power & Strength</div><div class="muted">Explosive full-body</div></td>
+            <td><span class="pill">Burst / Strength</span></td>
+            <td>
+              <div class="muted"><strong>Warm-up:</strong> Arm circles, hip swings, jog 5 min</div>
+              <ul class="ex-list">
+                <li>Explosive Pushups (clap/fast) 4×10</li>
+                <li>Dive Bomber Pushups 3×10 • Pike Pushups 3×8</li>
+                <li>Jump Squats 4×12 • Forward Lunges 3×12/leg</li>
+                <li>Plank→Pushup 3×10 • Wall Sit 3×45s</li>
+              </ul>
+              <div class="muted">Cooldown: Hamstring stretch + 3 min deep breathing</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><div class="day-title">Day 2 — Endurance & Core</div><div class="muted">High volume & breath work</div></td>
+            <td><span class="pill">Stamina / Recovery</span></td>
+            <td>
+              <div class="muted"><strong>Warm-up:</strong> Jumping jacks or skipping 3–5 min</div>
+              <ul class="ex-list">
+                <li>(4 rounds) Pushups 20 • Wide Pushups 15</li>
+                <li>Bodyweight Squats 30 • Lunges 20 • Mountain Climbers 30s</li>
+                <li>Flutter Kicks 30s • Plank 1:00</li>
+              </ul>
+              <div class="muted">Finisher: 2 min paced breathing (4s inhale, 6s exhale)</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><div class="day-title">Day 3 — Mobility & Control</div><div class="muted">Isometrics, balance & flow</div></td>
+            <td><span class="pill">Flexibility / Control</span></td>
+            <td>
+              <div class="muted"><strong>Warm-up:</strong> Slow dynamic stretches</div>
+              <ul class="ex-list">
+                <li>Isometric Pushup Hold (bottom) 30s×3</li>
+                <li>Wall Sit 60s×3 • Hollow Hold 30s×3</li>
+                <li>Horse Stance 45s×3 • Slow 5s-down squats ×10</li>
+                <li>Controlled kicks & shadowboxing (technique + breath)</li>
+              </ul>
+              <div class="muted">Cooldown: Static stretches / yoga 8–10 min</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><div class="day-title">Day 4 — Speed & Reflex</div><div class="muted">Plyo + reaction</div></td>
+            <td><span class="pill">Speed / Agility</span></td>
+            <td>
+              <div class="muted"><strong>Warm-up:</strong> High knees & arm swings 3 min</div>
+              <ul class="ex-list">
+                <li>Plyo Pushups 4×8 • Quick Burpees 4×10</li>
+                <li>Jump Lunges 3×12 • Squat Jumps 3×10</li>
+                <li>Sprint-in-place 20s ×4 • Fast shadowboxing rounds (1 min)</li>
+                <li>Side plank punch 30s/side ×3</li>
+              </ul>
+              <div class="muted">Cooldown: Gentle mobility + breath work</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><div class="day-title">Day 5 — Strength + Stamina Circuit</div><div class="muted">Combine intensity & volume</div></td>
+            <td><span class="pill">Hybrid / Conditioning</span></td>
+            <td>
+              <div class="muted"><strong>Warm-up:</strong> Joint mobility + 3 min light jog</div>
+              <ul class="ex-list">
+                <li>3 rounds — 1 min rest between rounds:</li>
+                <li>• Pushups 15 • Narrow Pushups 10 • Jump Squats 15</li>
+                <li>• Reverse Lunges 10/leg • Burpees 10 • Plank Shoulder Taps 20</li>
+                <li>• Horse Stance 30s</li>
+              </ul>
+              <div class="muted">Finisher: Deep squat hold 1min + plank 1min</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><div class="day-title">Day 6 — Flexibility, Martial Flow & Core</div><div class="muted">Active recovery & technique</div></td>
+            <td><span class="pill">Mobility / Skill</span></td>
+            <td>
+              <div class="muted"><strong>Warm-up:</strong> 5-min slow movement flow</div>
+              <ul class="ex-list">
+                <li>Cat–Cow ×10 • Downward Dog→Cobra ×10</li>
+                <li>Lunges with twist 10/side • Deep squat stretch 1min</li>
+                <li>Slow kicks (balance) 10/leg • Shadowboxing slow flow 5×2min</li>
+                <li>Hollow hold 30s×3 • Side plank 30s/side×3</li>
+              </ul>
+              <div class="muted">Cooldown: Yoga poses (pigeon, butterfly, child) 5–8 min</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td><div class="day-title">Day 7 — Rest / Active Recovery</div><div class="muted">Light movement</div></td>
+            <td><span class="pill">Recovery</span></td>
+            <td><div class="muted">Optional: Light walk, gentle yoga, 5 min breath meditation, or slow shadowboxing for mobility and flow.</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Diet Section -->
+    <div class="section">
+      <h1>Diet Plan Overview</h1>
+      <p class="lead">All meals listed in order — Breakfast, Lunch, Dinner — from your complete diet plan.</p>
+
+      <table>
+  <thead>
+    <tr>
+      <th>Meal</th>
+      <th>Food</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Day 1 -->
+    <tr><td class="meal-type">Day 1 — Breakfast</td><td>1 Boiled Egg</td></tr>
+    <tr><td class="meal-type">Day 1 — Lunch</td><td>Steamed Corn</td></tr>
+    <tr><td class="meal-type">Day 1 — Dinner</td><td>1 Tomato</td></tr>
+
+    <!-- Day 2 -->
+    <tr><td class="meal-type">Day 2 — Breakfast</td><td>1 Boiled Egg, Green Tea</td></tr>
+    <tr><td class="meal-type">Day 2 — Lunch</td><td>10 Boiled Chicken Drumsticks</td></tr>
+    <tr><td class="meal-type">Day 2 — Dinner</td><td>Boiled Vegetables</td></tr>
+
+    <!-- Day 3 -->
+    <tr><td class="meal-type">Day 3 — Breakfast</td><td>1 cup Milk, 2 Boiled Eggs</td></tr>
+    <tr><td class="meal-type">Day 3 — Lunch</td><td>Steamed Chicken Drumsticks</td></tr>
+    <tr><td class="meal-type">Day 3 — Dinner</td><td>1 Banana</td></tr>
+
+    <!-- Day 4 -->
+    <tr><td class="meal-type">Day 4 — Breakfast</td><td>Milk and Eggs</td></tr>
+    <tr><td class="meal-type">Day 4 — Lunch</td><td>Steamed Chicken</td></tr>
+    <tr><td class="meal-type">Day 4 — Dinner</td><td>1 Banana</td></tr>
+
+    <!-- Day 5 -->
+    <tr><td class="meal-type">Day 5 — Breakfast</td><td>Green Tea, Handmade Pancake</td></tr>
+    <tr><td class="meal-type">Day 5 — Lunch</td><td>Boiled Mixed Grain Rice</td></tr>
+    <tr><td class="meal-type">Day 5 — Dinner</td><td>Fruit Salad</td></tr>
+
+    <!-- Day 6 -->
+    <tr><td class="meal-type">Day 6 — Breakfast</td><td>Green Tea, 1 Boiled Egg</td></tr>
+    <tr><td class="meal-type">Day 6 — Lunch</td><td>Mixed Vegetables and Shrimp</td></tr>
+    <tr><td class="meal-type">Day 6 — Dinner</td><td>None</td></tr>
+
+    <!-- Day 7 -->
+    <tr><td class="meal-type">Day 7 — Breakfast</td><td>Green Tea, 1 Boiled Egg</td></tr>
+    <tr><td class="meal-type">Day 7 — Lunch</td><td>1 bowl of Tofu Soup, Lettuce Salad</td></tr>
+    <tr><td class="meal-type">Day 7 — Dinner</td><td>Half a piece of Steamed Chicken Breast</td></tr>
+
+    <!-- Day 8 -->
+    <tr><td class="meal-type">Day 8 — Breakfast</td><td>Green Tea</td></tr>
+    <tr><td class="meal-type">Day 8 — Lunch</td><td>1 bowl of Oatmeal, Lettuce Salad</td></tr>
+    <tr><td class="meal-type">Day 8 — Dinner</td><td>Green Tea</td></tr>
+
+    <!-- Day 9 -->
+    <tr><td class="meal-type">Day 9 — Breakfast</td><td>Green Tea</td></tr>
+    <tr><td class="meal-type">Day 9 — Lunch</td><td>Goat Ribs</td></tr>
+    <tr><td class="meal-type">Day 9 — Dinner</td><td>Liuzhou River Snails Rice Noodles</td></tr>
+
+    <!-- Day 10 -->
+    <tr><td class="meal-type">Day 10 — Breakfast</td><td>Green Tea</td></tr>
+    <tr><td class="meal-type">Day 10 — Lunch</td><td>Spicy Hot Pot</td></tr>
+    <tr><td class="meal-type">Day 10 — Dinner</td><td>Scrambled Eggs with Tomatoes</td></tr>
+
+    <!-- Day 11 -->
+    <tr><td class="meal-type">Day 11 — Breakfast</td><td>Green Tea</td></tr>
+    <tr><td class="meal-type">Day 11 — Lunch</td><td>Goat Ribs and Corn Soup</td></tr>
+    <tr><td class="meal-type">Day 11 — Dinner</td><td>Brown Rice, Stir-fried Spinach</td></tr>
+
+    <!-- Day 12 -->
+    <tr><td class="meal-type">Day 12 — Breakfast</td><td>Green Tea, Tea Egg</td></tr>
+    <tr><td class="meal-type">Day 12 — Lunch</td><td>Chicken Breast, Vegetables</td></tr>
+    <tr><td class="meal-type">Day 12 — Dinner</td><td>Vegetable Salad, 1 Chicken Leg</td></tr>
+
+    <!-- Day 13 -->
+    <tr><td class="meal-type">Day 13 — Breakfast</td><td>Green Tea, Sandwich</td></tr>
+    <tr><td class="meal-type">Day 13 — Lunch</td><td>Steamed Fish</td></tr>
+    <tr><td class="meal-type">Day 13 — Dinner</td><td>Luosifen (Snail Rice Noodles)</td></tr>
+
+    <!-- Day 14 -->
+    <tr><td class="meal-type">Day 14 — Breakfast</td><td>Green Tea</td></tr>
+    <tr><td class="meal-type">Day 14 — Lunch</td><td>Spicy Hot Pot (Mala Tang)</td></tr>
+    <tr><td class="meal-type">Day 14 — Dinner</td><td>4 Shrimp, Salad</td></tr>
+
+    <!-- Day 15 -->
+    <tr><td class="meal-type">Day 15 — Breakfast</td><td>Green Tea, Boiled Eggs</td></tr>
+    <tr><td class="meal-type">Day 15 — Lunch</td><td>Meat Dish (unspecified)</td></tr>
+    <tr><td class="meal-type">Day 15 — Dinner</td><td>Green Tea, Chicken Drumsticks</td></tr>
+
+    <!-- Day 16 -->
+    <tr><td class="meal-type">Day 16 — Breakfast</td><td>Green Tea</td></tr>
+    <tr><td class="meal-type">Day 16 — Lunch</td><td>Broccoli, White Rice</td></tr>
+    <tr><td class="meal-type">Day 16 — Dinner</td><td>Mushroom and Shredded Chicken Soup</td></tr>
+
+    <!-- Day 17 -->
+    <tr><td class="meal-type">Day 17 — Breakfast</td><td>Green Tea, Corn</td></tr>
+    <tr><td class="meal-type">Day 17 — Lunch</td><td>Rice, Celery, Stir-fried Meat</td></tr>
+    <tr><td class="meal-type">Day 17 — Dinner</td><td>Corn, Chicken Legs</td></tr>
+
+    <!-- Day 18 -->
+    <tr><td class="meal-type">Day 18 — Breakfast</td><td>Green Tea, 1 Boiled Egg</td></tr>
+    <tr><td class="meal-type">Day 18 — Lunch</td><td>Lamb Soup (small bowl)</td></tr>
+    <tr><td class="meal-type">Day 18 — Dinner</td><td>Grilled Fish</td></tr>
+
+    <!-- Day 19 -->
+    <tr><td class="meal-type">Day 19 — Breakfast</td><td>Green Tea, Whole Wheat Bread</td></tr>
+    <tr><td class="meal-type">Day 19 — Lunch</td><td>Duck, Small bowl of Rice</td></tr>
+    <tr><td class="meal-type">Day 19 — Dinner</td><td>Tomato, Cucumber</td></tr>
+
+    <!-- Day 20 -->
+    <tr><td class="meal-type">Day 20 — Breakfast</td><td>2 Tea Eggs</td></tr>
+    <tr><td class="meal-type">Day 20 — Lunch</td><td>Cabbage, Mapo Tofu, Hanamaki (Rice Roll)</td></tr>
+    <tr><td class="meal-type">Day 20 — Dinner</td><td>3 Steamed Eggs</td></tr>
+
+    <!-- Day 21 -->
+    <tr><td class="meal-type">Day 21 — Breakfast</td><td>Green Tea, Handmade Pancake</td></tr>
+    <tr><td class="meal-type">Day 21 — Lunch</td><td>Chicken Drumsticks, Shrimp, Steamed Rice</td></tr>
+    <tr><td class="meal-type">Day 21 — Dinner</td><td>Barbecue</td></tr>
+
+    <!-- Day 22 -->
+    <tr><td class="meal-type">Day 22 — Breakfast</td><td>Panini Sandwich</td></tr>
+    <tr><td class="meal-type">Day 22 — Lunch</td><td>Spicy Chicken Breast, Rice</td></tr>
+    <tr><td class="meal-type">Day 22 — Dinner</td><td>Scrambled Eggs with Tomatoes, Hanamaki (Rice Roll)</td></tr>
+
+    <!-- Day 23 -->
+    <tr><td class="meal-type">Day 23 — Breakfast</td><td>Green Tea, 1 Boiled Egg</td></tr>
+    <tr><td class="meal-type">Day 23 — Lunch</td><td>Shredded Potatoes, Small bowl of Rice</td></tr>
+    <tr><td class="meal-type">Day 23 — Dinner</td><td>Green Tea</td></tr>
+
+    <!-- Day 24 -->
+    <tr><td class="meal-type">Day 24 — Breakfast</td><td>Green Tea, 1 Boiled Egg</td></tr>
+    <tr><td class="meal-type">Day 24 — Lunch</td><td>Steamed Sweet Potato, Boiled Chicken Drumsticks</td></tr>
+    <tr><td class="meal-type">Day 24 — Dinner</td><td>Spicy Hot Pot (Malaxiangguo), Small bowl of Rice</td></tr>
+
+    <!-- Day 25 -->
+    <tr><td class="meal-type">Day 25 — Breakfast</td><td>Xiaolongbao (Soup Dumplings)</td></tr>
+    <tr><td class="meal-type">Day 25 — Lunch</td><td>Stir-fried Cabbage with Goat, Corn</td></tr>
+    <tr><td class="meal-type">Day 25 — Dinner</td><td>Xinjiang Laghman Noodles</td></tr>
+
+    <!-- Day 26 -->
+    <tr><td class="meal-type">Day 26 — Breakfast</td><td>Purple Sweet Potato</td></tr>
+    <tr><td class="meal-type">Day 26 — Lunch</td><td>Sauerkraut Fish</td></tr>
+    <tr><td class="meal-type">Day 26 — Dinner</td><td>Fruit Salad</td></tr>
+
+    <!-- Day 27 -->
+    <tr><td class="meal-type">Day 27 — Breakfast</td><td>1 Boiled Egg</td></tr>
+    <tr><td class="meal-type">Day 27 — Lunch</td><td>Beef with Sauce, Green Beans</td></tr>
+    <tr><td class="meal-type">Day 27 — Dinner</td><td>Pancake with Egg and Apple</td></tr>
+
+    <!-- Day 28 -->
+    <tr><td class="meal-type">Day 28 — Breakfast</td><td>Sandwich</td></tr>
+    <tr><td class="meal-type">Day 28 — Lunch</td><td>Sauerkraut Fish</td></tr>
+    <tr><td class="meal-type">Day 28 — Dinner</td><td>Vegetable Salad</td></tr>
+
+    <!-- Day 29 -->
+    <tr><td class="meal-type">Day 29 — Breakfast</td><td>Green Tea</td></tr>
+    <tr><td class="meal-type">Day 29 — Lunch</td><td>Chicken Drumsticks, Broccoli</td></tr>
+    <tr><td class="meal-type">Day 29 — Dinner</td><td>Beef, Lettuce</td></tr>
+
+    <!-- Day 30 -->
+    <tr><td class="meal-type">Day 30 — Breakfast</td><td>Green Tea, Boiled Egg</td></tr>
+    <tr><td class="meal-type">Day 30 — Lunch</td><td>Steamed Chicken, Vegetables</td></tr>
+    <tr><td class="meal-type">Day 30 — Dinner</td><td>Brown Rice, Stir-fried Spinach</td></tr>
+
+    <!-- Day 31 -->
+    <tr><td class="meal-type">Day 31 — Breakfast</td><td>Green Tea, Pancake</td></tr>
+    <tr><td class="meal-type">Day 31 — Lunch</td><td>Chicken Drumsticks, Rice</td></tr>
+    <tr><td class="meal-type">Day 31 — Dinner</td><td>Vegetable Salad</td></tr>
+
+    <!-- Day 32 -->
+    <tr><td class="meal-type">Day 32 — Breakfast</td><td>Green Tea, 1 Boiled Egg</td></tr>
+    <tr><td class="meal-type">Day 32 — Lunch</td><td>Steamed Sweet Potato, Chicken</td></tr>
+    <tr><td class="meal-type">Day 32 — Dinner</td><td>Hot Pot Small Bowl</td></tr>
+
+    <!-- Day 33 -->
+    <tr><td class="meal-type">Day 33 — Breakfast</td><td>Green Tea, Tea Egg</td></tr>
+    <tr><td class="meal-type">Day 33 — Lunch</td><td>Stir-fried Vegetables with Meat</td></tr>
+    <tr><td class="meal-type">Day 33 — Dinner</td><td>Noodles</td></tr>
+
+    <!-- Day 34 -->
+    <tr><td class="meal-type">Day 34 — Breakfast</td><td>Purple Sweet Potato</td></tr>
+    <tr><td class="meal-type">Day 34 — Lunch</td><td>Fish with Vegetables</td></tr>
+    <tr><td class="meal-type">Day 34 — Dinner</td><td>Fruit Salad</td></tr>
+
+    <!-- Day 35 -->
+    <tr><td class="meal-type">Day 35 — Breakfast</td><td>1 Boiled Egg</td></tr>
+    <tr><td class="meal-type">Day 35 — Lunch</td><td>Beef, Green Beans</td></tr>
+    <tr><td class="meal-type">Day 35 — Dinner</td><td>Pancake with Egg</td></tr>
+
+  </tbody>
+</table>
 <!-- partial -->
   
 </body>
