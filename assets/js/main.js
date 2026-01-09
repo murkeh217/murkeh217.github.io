@@ -72,3 +72,9 @@
 				});
 
 })(jQuery);
+
+const iframe = document.getElementById("myIframe");
+
+iframe.addEventListener("load", () => {
+  iframe.classList.add("loaded");
+});

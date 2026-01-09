@@ -349,7 +349,16 @@
 											Selected projects I have worked on.
 										</p>
 
-										<iframe src="about:blank" name="gameplay" width="100%" height="100%" id="myIframe"></iframe>
+										<!--<iframe src="about:blank" name="gameplay" width="100%" height="800px" id="myIframe"></iframe>-->
+
+										<iframe
+											id="myIframe"
+											name="gameplay"
+											width="100%"
+											height="600"
+											srcdoc="<h3 style='text-align:center;color:lightgreen;'>Please choose a game to play from below.</h3>"
+										></iframe>
+
 
 										<script>
 										document.addEventListener("DOMContentLoaded", () => {
@@ -480,7 +489,7 @@
 
 
 
-											document.querySelectorAll("a[target='gameplay']").forEach(link => {
+											/*document.querySelectorAll("a[target='gameplay']").forEach(link => {
 												link.addEventListener("click", function (e) {
 													let path = link.href.replace(/\/+$/, ''); // remove trailing slash
 													const folderName = path.split("/").pop(); // extract last segment
@@ -491,16 +500,30 @@
 														descriptionBox.innerHTML = "<p>No description available.</p>";
 													}
 												});
+											});*/
+
+											document.querySelectorAll("a[target='gameplay']").forEach(link => {
+												link.addEventListener("click", e => {
+													e.preventDefault();
+													const url = link.href;
+
+													if (iframe.src !== url) {
+													iframe.classList.remove("loaded");
+													iframe.src = url;
+													}
+												});
 											});
 
-											iframe.addEventListener("load", () => {
+											/*iframe.addEventListener("load", () => {
 												const doc = iframe.contentDocument || iframe.contentWindow.document;
 												if (iframe.src === "about:blank") {
 													doc.open();
 													doc.write("<h3 style='text-align:center; color:lightgreen;'>Please choose a game to play from below.</h3>");
 													doc.close();
 												}
-											});
+											});*/
+
+
 										});
 										</script>
 
