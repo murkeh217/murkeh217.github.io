@@ -225,6 +225,13 @@ const songs = [
       "./lift.mp3",
     video: "./sami.mp4",
   },
+  {
+    title: "The Phoenix",
+    name: "Fall Out Boy",
+    source:
+      "./fob.mp3",
+    video: "./fob.mp4",
+  },
 ];
 
 // Fisher–Yates shuffle

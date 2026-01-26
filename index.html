@@ -82,6 +82,8 @@
 		<link rel="manifest" href="/site.webmanifest">
 		<link rel="manifest" href="/site.webmanifest">
 
+		<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 	</head>
 
 	<body class="is-preload">
@@ -228,7 +230,8 @@
 
 									<!-- Something -->
 									<section id="contact">
-										<span class="image featured"><img src="images/intro-bg.jpg" alt="" /></span>
+										<span class="image featured"><img src="images/intro-bg.jpg" alt="" /></span>										
+										<div id="google_translate_element"></div>
 										<h2 class="major"><span>&nbsp;&nbsp;Contact</span></h2>
 										<a class="icon brands fa-discord" href="https://discord.com/users/404565785105924097">Discord</a><br>
 										<a class="icon brands fa-github" href="https://github.com/murkeh217">Github</a><br>
@@ -715,5 +718,17 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<script type="text/javascript">
+				function googleTranslateElementInit() {
+					new google.translate.TranslateElement(
+						{
+						pageLanguage: 'en',
+						includedLanguages: 'en,hi,fr,es',
+						layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+						},
+						'google_translate_element'
+					);
+				}
+			</script>
 	</body>
 </html>
