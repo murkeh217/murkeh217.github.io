@@ -82,11 +82,45 @@
 		<link rel="manifest" href="/site.webmanifest">
 		<link rel="manifest" href="/site.webmanifest">
 
-		<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		<script>
+		function googleTranslateElementInit() {
+		window.googleTranslateElement = new google.translate.TranslateElement(
+			{
+			pageLanguage: 'en',
+			includedLanguages: 'en,hi,zh-CN',
+			autoDisplay: false
+			},
+			'google_translate_element'
+		);
+		}
+		</script>
+
+		<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+		<style>
+				/* Hide Google Translate top bar */
+		.goog-te-banner-frame.skiptranslate,
+		.goog-te-gadget-icon {
+			display: none !important;
+		}
+
+		body {
+			top: 0 !important;
+		}
+		</style>
 
 	</head>
 
 	<body class="is-preload">
+
+		<div id="google_translate_element" style="display:none;"></div>
+		
+		<div id="lang-switcher">
+			<button onclick="setLang('en')">EN</button>
+			<button onclick="setLang('hi')">हिंदी</button>
+			<button onclick="setLang('zh-CN')">中文</button>
+		</div>
+
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -129,7 +163,6 @@
 						<li><a href="#skills">Skills</a></li>
 						<li><a href="#projects">Projects</a></li>
 						<li><a href="#contact">Contact</a></li>
-						<li><div id="google_translate_element" style="display:none;"></div><button onclick="setLang('zh-CN')">中文</button></li>
 					</ul>
 				</nav>
 			<!-- Main -->
@@ -719,11 +752,19 @@
 
 			<script>
 			function setLang(lang) {
-				const select = document.querySelector('.goog-te-combo');
-				if (!select) return;
+			const maxAttempts = 20;
+			let attempts = 0;
 
+			const interval = setInterval(() => {
+				const select = document.querySelector('.goog-te-combo');
+				if (select) {
 				select.value = lang;
 				select.dispatchEvent(new Event('change'));
+				clearInterval(interval);
+				}
+				attempts++;
+				if (attempts > maxAttempts) clearInterval(interval);
+			}, 250);
 			}
 			</script>
 

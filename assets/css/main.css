@@ -3272,18 +3272,25 @@ line-height: 1.4;
   opacity: 1;
 }
 
-#nav button {
-  background: transparent;
-  border: 1px solid #444;
-  color: #fff;
-  padding: 4px 8px;
-  margin-left: 6px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.85em;
+#lang-switcher {
+    position: fixed;
+    top: 12px;
+    right: 16px;
+    z-index: 10000;
+    display: flex;
+    gap: 8px;
 }
 
-#nav button:hover {
-  background: #444;
+#lang-switcher button {
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
+#lang-switcher button:hover {
+    background: #6c976c;
+    color: #000;
+}
