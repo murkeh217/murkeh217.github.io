@@ -78,12 +78,3 @@ const iframe = document.getElementById("myIframe");
 iframe.addEventListener("load", () => {
   iframe.classList.add("loaded");
 });
-
-function setLang(lang) {
-  const select = document.querySelector(".goog-te-combo");
-  if (!select) return;
-
-  select.value = lang;
-  select.dispatchEvent(new Event("change"));
-}
-

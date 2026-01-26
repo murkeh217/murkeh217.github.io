@@ -717,17 +717,15 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-			<script type="text/javascript">
-				function googleTranslateElementInit() {
-					new google.translate.TranslateElement(
-						{
-						pageLanguage: 'en',
-      					includedLanguages: 'hi,zh-CN',
-						layout: google.translate.TranslateElement.InlineLayout.SIMPLE	
-						},
-						'google_translate_element'
-					);
-				}
+			<script>
+			function setLang(lang) {
+				const select = document.querySelector('.goog-te-combo');
+				if (!select) return;
+
+				select.value = lang;
+				select.dispatchEvent(new Event('change'));
+			}
 			</script>
+
 	</body>
 </html>
