@@ -3272,3 +3272,16 @@ line-height: 1.4;
   opacity: 1;
 }
 
+button {
+  background: #111;
+  color: white;
+  border: 1px solid #333;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #222;
+}
+

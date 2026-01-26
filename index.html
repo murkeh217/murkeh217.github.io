@@ -129,6 +129,7 @@
 						<li><a href="#skills">Skills</a></li>
 						<li><a href="#projects">Projects</a></li>
 						<li><a href="#contact">Contact</a></li>
+						<li><div id="google_translate_element" style="display:none;"></div><button onclick="setLang('zh-CN')">中文</button></li>
 					</ul>
 				</nav>
 			<!-- Main -->
@@ -231,7 +232,6 @@
 									<!-- Something -->
 									<section id="contact">
 										<span class="image featured"><img src="images/intro-bg.jpg" alt="" /></span>										
-										<div id="google_translate_element"></div>
 										<h2 class="major"><span>&nbsp;&nbsp;Contact</span></h2>
 										<a class="icon brands fa-discord" href="https://discord.com/users/404565785105924097">Discord</a><br>
 										<a class="icon brands fa-github" href="https://github.com/murkeh217">Github</a><br>
@@ -242,7 +242,6 @@
 										<a class="icon solid fa-mobile-alt" href="tel:+919307565891">+91 9307565891</a><br>
 										<a class="icon solid fa-file-pdf" href="files/Murtaza_Kanorwala_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a><br>
 									</section>
-									<header><p><b>Additional Information</b></p></header>
 									<section id="additional-info">
 										<p>Outside of game designing, I enjoy <strong>image editing</strong>, creating <strong>interactive and conversational content</strong> such as chat-based videos, reflecting my interest in storytelling, communication, and human connection.</p>
 										<p>Personally, I value <b>honesty, empathy, and respect</b>. I’m known for being a <strong>clear communicator</strong> and a <strong>good listener</strong>, which helps during playtesting, feedback discussions, and cross-disciplinary collaboration. My background in <strong>motivational speaking</strong> supports structured communication and constructive iteration within teams.</p>
@@ -723,8 +722,8 @@
 					new google.translate.TranslateElement(
 						{
 						pageLanguage: 'en',
-						includedLanguages: 'en,hi,fr,es',
-						layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      					includedLanguages: 'hi,zh-CN',
+						layout: google.translate.TranslateElement.InlineLayout.SIMPLE	
 						},
 						'google_translate_element'
 					);
