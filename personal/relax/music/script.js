@@ -233,87 +233,87 @@ const songs = [
     video: "./fob.mp4",
   },
   {
-    title: "",
-    name: "",
+    title: "Thank You!!",
+    name: "Home Made Kazoku",
     source:
-      "",
+      "./arigato.mp3",
     video: "",
   },
   {
-    title: "",
-    name: "",
+    title: "Syoujo S",
+    name: "SCANDAL",
     source:
-      "",
+      "./syojou.mp3",
     video: "",
   },
   {
-    title: "",
-    name: "",
+    title: "Hitohira No Hanabira",
+    name: "Stereopony",
     source:
-      "",
+      "./hanabira.mp3",
     video: "",
   },
   {
-    title: "",
-    name: "",
+    title: "Shunkan Sentimental",
+    name: "SCANDAL",
     source:
-      "",
+      "./shunkan.mp3",
     video: "",
   },
   {
-    title: "",
-    name: "",
+    title: "Golden Time Rubber",
+    name: "SUKIMASWITCH",
     source:
-      "",
+      "./sukima.mp3",
     video: "",
   },
   {
-    title: "",
-    name: "",
+    title: "Glass",
+    name: "Kevin Penkin",
     source:
-      "",
+      "./glass.mp3",
     video: "",
   },
   {
-    title: "",
-    name: "",
+    title: "Bling-Bang-Bang-Born",
+    name: "Creepy Nuts",
     source:
-      "",
+      "./bling.mp3",
     video: "",
   },
   {
-    title: "",
-    name: "",
+    title: "Abyss",
+    name: "YUNGBLUD",
     source:
-      "",
+      "./abyss.mp3",
     video: "",
   },
   {
-    title: "",
-    name: "",
+    title: "Black Catcher",
+    name: "Vickeblanka",
     source:
-      "",
+      "./blackcatcher.mp3",
     video: "",
   },
   {
-    title: "",
-    name: "",
+    title: "Kaikaikitan",
+    name: "Eve",
     source:
-      "",
+      "./eve.mp3",
     video: "",
   },
   {
-    title: "",
-    name: "",
+    title: "Vivid Vice",
+    name: "Who-ya Extended",
     source:
-      "",
+      "./whoya.mp3",
     video: "",
   },
   {
-    title: "",
-    name: "",
+    title: "Special Z",
+    name: "King Gnu",
     source:
-      "",
+      "./specialz.mp3",
     video: "",
   },
 ];
