@@ -237,28 +237,28 @@ const songs = [
     name: "Home Made Kazoku",
     source:
       "./arigato.mp3",
-    video: "",
+    video: "./thankyou.mp4",
   },
   {
     title: "Syoujo S",
     name: "SCANDAL",
     source:
       "./syojou.mp3",
-    video: "",
+    video: "./shojou.mp4",
   },
   {
     title: "Hitohira No Hanabira",
     name: "Stereopony",
     source:
       "./hanabira.mp3",
-    video: "",
+    video: "./hanabira.mp4",
   },
   {
     title: "Shunkan Sentimental",
     name: "SCANDAL",
     source:
       "./shunkan.mp3",
-    video: "",
+    video: "shunkan.mp4",
   },
   {
     title: "Golden Time Rubber",
@@ -279,21 +279,21 @@ const songs = [
     name: "Creepy Nuts",
     source:
       "./bling.mp3",
-    video: "",
+    video: "./bling.mp4",
   },
   {
     title: "Abyss",
     name: "YUNGBLUD",
     source:
       "./abyss.mp3",
-    video: "",
+    video: "./abyss.mp4",
   },
   {
     title: "Black Catcher",
     name: "Vickeblanka",
     source:
       "./blackcatcher.mp3",
-    video: "",
+    video: "./black.mp4",
   },
   {
     title: "Kaikaikitan",
@@ -314,7 +314,7 @@ const songs = [
     name: "King Gnu",
     source:
       "./specialz.mp3",
-    video: "",
+    video: "./specialz.mp4",
   },
 ];
 
