@@ -4,7 +4,10 @@
 	display: grid;
 	gap: 4px;
 	grid-auto-flow: row dense;
-	grid-template-columns: repeat(auto-fill, 30px);
+	/* Changed to auto-fit and larger container */
+	/* grid-template-columns: repeat(auto-fit, 34px); */
+	/* Or use auto-fill with more columns */
+	grid-template-columns: repeat(auto-fill, minmax(30px, 1fr)); */
 
 	a {
 		&.gold {
@@ -32,11 +35,11 @@ body {
 	flex-direction: column;
 	font-family: system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
 		"Segoe UI Symbol";
-	gap: 30px;
+	gap: 40px;
 	min-block-size: 100dvb;
 	place-content: center;
 	place-items: center;
-	transform: scale(1.4);    /* 0.8 = 80% of original size */
+	transform: scale(2);    /* 0.8 = 80% of original size */
   	transform-origin: center; /* adjust where it scales from */
 }
 
@@ -49,9 +52,17 @@ a {
 }
 
 .supporter-list {
+	/* Changed to use more of the available width */
 	inline-size: 100%;
 	justify-content: start;
-	max-inline-size: 480px;
+	/* Increased max width significantly */
+	max-inline-size: 600px; /* Changed from 480px to 960px */
+	/* Or remove max-inline-size entirely to use all available space */
+	/* max-inline-size: none; */
+	
+	/* Added to ensure grid takes full width */
+	width: 100%;
+	padding: 0 20px; /* Optional: add some padding on sides */
 
 	a {
 		position: relative;
@@ -76,7 +87,7 @@ a {
 		}
 
 		&:hover img {
-			transform: scale(1.8);
+			transform: scale(3.2);
 		}
 
 		&::after {
@@ -95,4 +106,3 @@ a {
 		}
 	}
 }
-
