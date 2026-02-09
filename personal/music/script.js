@@ -265,14 +265,14 @@ const songs = [
     name: "SUKIMASWITCH",
     source:
       "./sukima.mp3",
-    video: "",
+    video: "./rubber.mp4",
   },
   {
     title: "Glass",
     name: "Kevin Penkin",
     source:
       "./glass.mp3",
-    video: "",
+    video: "./glass.webm",
   },
   {
     title: "Bling-Bang-Bang-Born",
@@ -300,14 +300,14 @@ const songs = [
     name: "Eve",
     source:
       "./eve.mp3",
-    video: "",
+    video: "./eve.mp4",
   },
   {
     title: "Vivid Vice",
     name: "Who-ya Extended",
     source:
       "./whoya.mp3",
-    video: "",
+    video: "./whoya.mp4",
   },
   {
     title: "Special Z",
