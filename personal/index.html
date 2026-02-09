@@ -2,159 +2,666 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Know MK</title>
-
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,700">
+  <title>
+  Know MK
+  </title>
   <link rel="stylesheet" href="./style.css">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- ✅ Fixed Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy"
-    content="
-      default-src 'self';
-      img-src 'self' data: https:;
-      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-      font-src 'self' https://fonts.gstatic.com;
-      script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://maxcdn.bootstrapcdn.com https://www.googletagmanager.com https://www.google-analytics.com;
-      connect-src 'self' https://www.google-analytics.com;
-      object-src 'none';
-      base-uri 'self';
-      form-action 'self';
-    ">
-
-  <!-- Favicons -->
-  <link rel="icon" type="image/x-icon" href=".favicons/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href=".favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href=".favicons/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href=".favicons/apple-touch-icon.png">
-  <link rel="manifest" href=".favicons/site.webmanifest">
-
-  <!-- Google Tag -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-489Z6TPN92"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-489Z6TPN92');
-  </script>
 </head>
 
 <body>
-  <div class="container">
-    <section id="fancyTabWidget" class="tabs t-tabs">
-      <ul class="nav nav-tabs fancyTabs" role="tablist">
+  <div class="page">
+    <header>
+      <div class="title" id="id_website_title">Know MK</div>
+      <div class="tagline">Documentation</div>
+    </header>
 
-        <li class="tab fancyTab active">
-          <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-          <a id="tab0" href="#tabBody0" role="tab" aria-controls="tabBody0" aria-selected="true" data-toggle="tab" tabindex="0">
-            <span class="hidden-xs">About</span>
-          </a>
-          <div class="whiteBlock"></div>
-        </li>
+    <main>
+      <div class="body">
+        <nav aria-label="MK">
+          <ul class="treeview-navigation" role="tree" aria-label="MK">
+            <!--<li role="none">
+              <a role="treeitem" href="#home" aria-current="page">
+                <span class="label">Home</span>
+              </a>
+            </li>-->
 
-        <li class="tab fancyTab">
-          <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-          <a id="tab1" href="#tabBody1" role="tab" aria-controls="tabBody1" data-toggle="tab" tabindex="0">
-            <span class="hidden-xs">Connect</span>
-          </a>
-          <div class="whiteBlock"></div>
-        </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-admissions-subtree" href="./anime/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Anime
+                </span>
+              </a>
 
-        <li class="tab fancyTab">
-          <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-          <a id="tab2" href="#tabBody2" role="tab" aria-controls="tabBody2" data-toggle="tab" tabindex="0">
-            <span class="hidden-xs">Diary</span>
-          </a>
-          <div class="whiteBlock"></div>
-        </li>
+              <!--<ul id="id-admissions-subtree" role="group" aria-label="Admissions">
+              <li role="none">
+              <a role="treeitem" href="#apply">
+              <span class="label">Apply</span>
+              </a>
+              </li>
+              <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-tuition-subtree" href="#tuition">
+              <span class="label">
+              <span class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+              <polygon points="2 1, 12 1, 7 9"></polygon>
+              </svg>
+              </span>
+              Tuition
+              </span>
+              </a>
+              <ul id="id-tuition-subtree" role="group" aria-label="Tuition">
+              <li role="none">
+              <a role="treeitem" href="#undergraduate">
+              <span class="label">Undergraduate</span>
+              </a>
+              </li>
+              <li role="none">
+              <a role="treeitem" href="#graduate">
+              <span class="label">Graduate</span>
+              </a>
+              </li>
+              <li role="none">
+              <a role="treeitem" href="#professional-schools">
+              <span class="label">Professional Schools</span>
+              </a>
+              </li>
+              </ul>
+              </li>
+              <li role="none">
+              <a role="treeitem" href="#signup">
+              <span class="label">Sign Up</span>
+              </a>
+              </li>
+              <li role="none">
+              <a role="treeitem" href="#visit">
+              <span class="label">Visit</span>
+              </a>
+              </li>
+              <li role="none">
+              <a role="treeitem" href="#photo-tour">
+              <span class="label">Photo Tour</span>
+              </a>
+              </li>
+              <li role="none">
+              <a role="treeitem" href="#connect">
+              <span class="label">Connect</span>
+              </a>
+              </li>
+              </ul>-->
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./art/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Art
+                </span>
+              </a>
 
-        <li class="tab fancyTab">
-          <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-          <a id="tab3" href="#tabBody3" role="tab" aria-controls="tabBody3" data-toggle="tab" tabindex="0">
-            <span class="hidden-xs">Enjoy</span>
-          </a>
-          <div class="whiteBlock"></div>
-        </li>
+                              <!--<ul id="id-academics-subtree" role="group" aria-label="Academics">
+              <li role="none">
+              <a role="treeitem" href="#colleges-and-schools">
+              <span class="label">Colleges &amp; Schools</span>
+              </a>
+              </li>
+              <li role="none">
+              <a role="treeitem" href="#programs-of-study">
+              <span class="label">Programs of Study</span>
+              </a>
+              </li>
+              <li role="none">
+              <a role="treeitem" href="#honors-programs">
+              <span class="label">Honors Programs</span>
+              </a>
+              </li>
+              <li role="none">
+              <a role="treeitem" href="#online-courses">
+              <span class="label">Online Courses</span>
+              </a>
+              </li>
+              <li role="none">
+              <a role="treeitem" href="#course-explorer">
+              <span class="label">Course Explorer</span>
+              </a>
+              </li>
+              <li role="none">
+              <a role="treeitem" href="#register-for-classes">
+              <span class="label">Register for Classes</span>
+              </a>
+              </li>
+              <li role="none">
+              <a role="treeitem" href="#academic-calendar">
+              <span class="label">Academic Calendar</span>
+              </a>
+              </li>
+              <li role="none">
+              <a role="treeitem" href="#tanscripts">
+              <span class="label">Transcripts</span>
+              </a>
+              </li>
+              </ul>-->
 
-        <li class="tab fancyTab">
-          <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-          <a id="tab4" href="#tabBody4" role="tab" aria-controls="tabBody4" data-toggle="tab" tabindex="0">
-            <span class="hidden-xs">Fun</span>
-          </a>
-          <div class="whiteBlock"></div>
-        </li>
 
-        <li class="tab fancyTab">
-          <div class="arrow-down"><div class="arrow-down-inner"></div></div>
-          <a id="tab5" href="#tabBody5" role="tab" aria-controls="tabBody5" data-toggle="tab" tabindex="0">
-            <span class="hidden-xs">Likes</span>
-          </a>
-          <div class="whiteBlock"></div>
-        </li>
-      </ul>
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./climbing/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Climbing
+                </span>
+              </a>
 
-      <div id="myTabContent" class="tab-content fancyTabContent" aria-live="polite">
 
-        <div class="tab-pane fade active in" id="tabBody0" role="tabpanel" aria-labelledby="tab0" tabindex="0">
-          <div class="row">
-            <div class="col-md-12">
-              <iframe src="about/index.html" width="100%" height="700" scrolling="no" style="border:0; overflow:hidden;"></iframe>
-            </div>
-          </div>
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./collection/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Collection
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./comedy/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Comedy
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./dance/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Dance
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./diet/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Diet
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./extra/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Extra
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./football/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Football
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./games/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Video Games
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./ghosts/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Ghosts
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./gym/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Gym
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./idols/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Idols
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./internet/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Internet
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./languages/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Languages
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./martial arts/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Martial Arts
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./music/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Music
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./notes/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Notes
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./os/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                OS
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./parkour/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Parkour
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./personality/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Personality
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./philosophy/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Philosophy
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./powers/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Powers
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./riding/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Riding
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./spicy/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Spicy
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./swimming/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Swimming
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./timetwin/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Timetwin
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./travel/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Travel
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./tv/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                TV
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./wishlist/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Wishlist
+                </span>
+              </a>
+
+
+            </li>
+            <li role="none">
+              <a role="treeitem" aria-expanded="false" aria-owns="id-academics-subtree" href="./workout/index.html">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Workout
+                </span>
+              </a>
+            </li> 
+
+                          <li role="none">
+                <a role="treeitem" aria-expanded="false" aria-owns="id-about-subtree" href="./zodiac/index.html">
+                  <span class="label">
+                  <span class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                  <polygon points="2 1, 12 1, 7 9"></polygon>
+                  </svg>
+                  </span>
+                  Zodiac
+                  </span>
+                </a>
+
+                <!--<ul id="id-about-subtree" role="group" aria-label="About">
+                <li role="none">
+                <a role="treeitem" href="#overview">
+                <span class="label">Overview</span>
+                </a>
+                </li>
+                <li role="none">
+                <a role="treeitem" href="#adminstration">
+                <span class="label">Administration</span>
+                </a>
+                </li>
+                <li role="none">
+                <a role="treeitem" aria-expanded="false" aria-owns="id-facts-subtree" href="#facts">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Facts
+                </span>
+                </a>
+                <ul id="id-facts-subtree" role="group" aria-label="Facts">
+                <li role="none">
+                <a role="treeitem" href="#history">
+                <span class="label">History</span>
+                </a>
+                </li>
+                <li role="none">
+                <a role="treeitem" href="#current-statistics">
+                <span class="label">
+                Current Statistics
+                </span>
+                </a>
+                </li>
+                <li role="none">
+                <a role="treeitem" href="#awards">
+                <span class="label">Awards</span>
+                </a>
+                </li>
+                </ul>
+                </li>
+                <li role="none">
+                <a role="treeitem" aria-expanded="false" aria-owns="id-campus-tours-subtree" href="#campus-tours">
+                <span class="label">
+                <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10">
+                <polygon points="2 1, 12 1, 7 9"></polygon>
+                </svg>
+                </span>
+                Campus Tours
+                </span>
+                </a>
+                <ul id="id-campus-tours-subtree" role="group" aria-label="Campus Tours">
+                <li role="none">
+                <a role="treeitem" href="#for-prospective-students">
+                <span class="label">
+                For Prospective Students
+                </span>
+                </a>
+                </li>
+                <li role="none">
+                <a role="treeitem" href="#for-alumni">
+                <span class="label">For Alumni</span>
+                </a>
+                </li>
+                <li role="none">
+                <a role="treeitem" href="#for-visitors">
+                <span class="label">For Visitors</span>
+                </a>
+                </li>
+                </ul>
+                </li>
+                </ul>-->
+            </li>
+
+          </ul>
+        </nav>
+
+      <section class="main" aria-labelledby="id_website_title id_page_title">
+        <h1 class="page_title" id="id_page_title"></h1>
+        <div class="content">
+        <p>
+        </p>
         </div>
-
-        <div class="tab-pane fade" id="tabBody1" role="tabpanel" aria-labelledby="tab1" tabindex="0">
-          <div class="row">
-            <div class="col-md-12">
-              <iframe src="connect/index.html" width="100%" height="700" scrolling="no" style="border:0; overflow:hidden;"></iframe>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-pane fade" id="tabBody2" role="tabpanel" aria-labelledby="tab2" tabindex="0">
-          <div class="row">
-            <div class="col-md-12">
-              <iframe src="diary/index.html" width="100%" height="700" scrolling="no" style="border:0; overflow:hidden;"></iframe>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-pane fade" id="tabBody3" role="tabpanel" aria-labelledby="tab3" tabindex="0">
-          <div class="row">
-            <div class="col-md-12">
-              <iframe src="enjoy/index.html" width="100%" height="700" scrolling="no" style="border:0; overflow:hidden;"></iframe>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-pane fade" id="tabBody4" role="tabpanel" aria-labelledby="tab4" tabindex="0">
-          <div class="row">
-            <div class="col-md-12">
-              <iframe src="exercise/index.html" width="100%" height="700" scrolling="no" style="border:0; overflow:hidden;"></iframe>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-pane fade" id="tabBody5" role="tabpanel" aria-labelledby="tab5" tabindex="0">
-          <div class="row">
-            <div class="col-md-12">
-              <iframe src="likes/index.html" width="100%" height="700" scrolling="no" style="border:0; overflow:hidden;"></iframe>
-            </div>
-          </div>
-        </div>
-
+      </section>
       </div>
-    </section>
-  </div>
+    </main>
 
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="./script.js"></script>
+  <footer>
+    MK &#169;2026
+  </footer>
+</div>
+
+<script src="./script.js"></script>
 </body>
 </html>

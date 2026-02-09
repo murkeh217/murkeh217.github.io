@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About</title>
+  <title>Know MK</title>
 
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -34,6 +34,14 @@
   <link rel="apple-touch-icon" sizes="180x180" href=".favicons/apple-touch-icon.png">
   <link rel="manifest" href=".favicons/site.webmanifest">
 
+  <!-- Google Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-489Z6TPN92"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-489Z6TPN92');
+  </script>
 </head>
 
 <body>
@@ -44,7 +52,7 @@
         <li class="tab fancyTab active">
           <div class="arrow-down"><div class="arrow-down-inner"></div></div>
           <a id="tab0" href="#tabBody0" role="tab" aria-controls="tabBody0" aria-selected="true" data-toggle="tab" tabindex="0">
-            <span class="hidden-xs">Zodiac</span>
+            <span class="hidden-xs">About</span>
           </a>
           <div class="whiteBlock"></div>
         </li>
@@ -52,7 +60,7 @@
         <li class="tab fancyTab">
           <div class="arrow-down"><div class="arrow-down-inner"></div></div>
           <a id="tab1" href="#tabBody1" role="tab" aria-controls="tabBody1" data-toggle="tab" tabindex="0">
-            <span class="hidden-xs">Personality</span>
+            <span class="hidden-xs">Connect</span>
           </a>
           <div class="whiteBlock"></div>
         </li>
@@ -60,7 +68,7 @@
         <li class="tab fancyTab">
           <div class="arrow-down"><div class="arrow-down-inner"></div></div>
           <a id="tab2" href="#tabBody2" role="tab" aria-controls="tabBody2" data-toggle="tab" tabindex="0">
-            <span class="hidden-xs">Languages</span>
+            <span class="hidden-xs">Diary</span>
           </a>
           <div class="whiteBlock"></div>
         </li>
@@ -68,15 +76,15 @@
         <li class="tab fancyTab">
           <div class="arrow-down"><div class="arrow-down-inner"></div></div>
           <a id="tab3" href="#tabBody3" role="tab" aria-controls="tabBody3" data-toggle="tab" tabindex="0">
-            <span class="hidden-xs">Philosophy</span>
+            <span class="hidden-xs">Enjoy</span>
           </a>
           <div class="whiteBlock"></div>
         </li>
 
-        <!--<li class="tab fancyTab">
+        <li class="tab fancyTab">
           <div class="arrow-down"><div class="arrow-down-inner"></div></div>
           <a id="tab4" href="#tabBody4" role="tab" aria-controls="tabBody4" data-toggle="tab" tabindex="0">
-            <span class="hidden-xs">Relax</span>
+            <span class="hidden-xs">Fun</span>
           </a>
           <div class="whiteBlock"></div>
         </li>
@@ -84,10 +92,10 @@
         <li class="tab fancyTab">
           <div class="arrow-down"><div class="arrow-down-inner"></div></div>
           <a id="tab5" href="#tabBody5" role="tab" aria-controls="tabBody5" data-toggle="tab" tabindex="0">
-            <span class="hidden-xs">Growth</span>
+            <span class="hidden-xs">Likes</span>
           </a>
           <div class="whiteBlock"></div>
-        </li>-->
+        </li>
       </ul>
 
       <div id="myTabContent" class="tab-content fancyTabContent" aria-live="polite">
@@ -95,7 +103,7 @@
         <div class="tab-pane fade active in" id="tabBody0" role="tabpanel" aria-labelledby="tab0" tabindex="0">
           <div class="row">
             <div class="col-md-12">
-              <iframe src="zodiac/index.html" width="100%" height="700" style="border:0;"></iframe>
+              <iframe src="about/index.html" width="100%" height="700" scrolling="no" style="border:0; overflow:hidden;"></iframe>
             </div>
           </div>
         </div>
@@ -103,7 +111,7 @@
         <div class="tab-pane fade" id="tabBody1" role="tabpanel" aria-labelledby="tab1" tabindex="0">
           <div class="row">
             <div class="col-md-12">
-              <iframe src="personality/index.html" width="100%" height="700" style="border:0;"></iframe>
+              <iframe src="connect/index.html" width="100%" height="700" scrolling="no" style="border:0; overflow:hidden;"></iframe>
             </div>
           </div>
         </div>
@@ -111,7 +119,7 @@
         <div class="tab-pane fade" id="tabBody2" role="tabpanel" aria-labelledby="tab2" tabindex="0">
           <div class="row">
             <div class="col-md-12">
-              <iframe src="languages/index.html" width="100%" height="700" style="border:0;"></iframe>
+              <iframe src="diary/index.html" width="100%" height="700" scrolling="no" style="border:0; overflow:hidden;"></iframe>
             </div>
           </div>
         </div>
@@ -119,15 +127,15 @@
         <div class="tab-pane fade" id="tabBody3" role="tabpanel" aria-labelledby="tab3" tabindex="0">
           <div class="row">
             <div class="col-md-12">
-              <iframe src="philosophy/index.html" width="100%" height="700" style="border:0;"></iframe>
+              <iframe src="enjoy/index.html" width="100%" height="700" scrolling="no" style="border:0; overflow:hidden;"></iframe>
             </div>
           </div>
         </div>
 
-        <!--<div class="tab-pane fade" id="tabBody4" role="tabpanel" aria-labelledby="tab4" tabindex="0">
+        <div class="tab-pane fade" id="tabBody4" role="tabpanel" aria-labelledby="tab4" tabindex="0">
           <div class="row">
             <div class="col-md-12">
-              <iframe src="relax/index.html" width="100%" height="700" style="border:0;"></iframe>
+              <iframe src="exercise/index.html" width="100%" height="700" scrolling="no" style="border:0; overflow:hidden;"></iframe>
             </div>
           </div>
         </div>
@@ -135,10 +143,10 @@
         <div class="tab-pane fade" id="tabBody5" role="tabpanel" aria-labelledby="tab5" tabindex="0">
           <div class="row">
             <div class="col-md-12">
-              <iframe src="growth/index.html" width="100%" height="700" style="border:0;"></iframe>
+              <iframe src="likes/index.html" width="100%" height="700" scrolling="no" style="border:0; overflow:hidden;"></iframe>
             </div>
           </div>
-        </div>-->
+        </div>
 
       </div>
     </section>
