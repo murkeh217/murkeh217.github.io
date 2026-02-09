@@ -1,6 +1,6 @@
 .page header {
-border: #005a9c solid 2px;
-background: #013249;
+border: #006308 solid 2px;
+background: #014913;
 color: white;
 text-align: center;
 }
@@ -16,8 +16,8 @@ font-style: italic;
 }
 
 .page footer {
-border: #005a9c solid 2px;
-background: #005a9c;
+border: #006308 solid 2px;
+background: #006308;
 font-family: serif;
 color: white;
 font-style: italic;
@@ -40,7 +40,7 @@ background: #eee;
 
 .page .body nav.focus {
 padding: 4px;
-border: 2px solid #005a9c;
+border: 2px solid #006308;
 }
 
 .page .body .page {
@@ -112,13 +112,13 @@ margin: 0;
 padding: 4px;
 padding-left: 9px;
 text-decoration: none;
-color: #005a9c;
+color: #006308;
 border: none;
 display: block;
 }
 
 .treeview-navigation a[role="treeitem"][aria-current] {
-border-left: 5px solid #005a9c;
+border-left: 5px solid #006308;
 padding-left: 4px;
 background-color: #ddd;
 }
@@ -136,7 +136,7 @@ Keyboard focus is styled with the following CSS */
 outline: 0;
 padding: 2px;
 padding-left: 7px;
-border: 2px #005a9c solid;
+border: 2px #006308 solid;
 }
 
 .treeview-navigation a[role="treeitem"][aria-current]:focus {
@@ -145,7 +145,7 @@ border-left-width: 5px;
 }
 
 .treeview-navigation a[role="treeitem"]:hover {
-background-color: #adddff;
+background-color: #6cb16c;
 text-decoration: underline;
 padding-left: 4px;
 border-left: 5px solid #333;

@@ -4,63 +4,36 @@ class TreeViewNavigation {
   constructor(node) {
     if (typeof node !== 'object') return;
 
-    this.treeNode = node;
-    this.navNode = node.parentElement;
-    this.contentNode = document.querySelector('#content'); // where pages load
-
-    this.treeitems = this.treeNode.querySelectorAll('[role="treeitem"]');
+    this.keyCode = { SPACE: 32, RETURN: 13 };
 
     document.body.addEventListener('focusin', this.onBodyFocusin.bind(this));
+    document.body.addEventListener('mousedown', this.onBodyFocusin.bind(this));
+
+    this.treeNode = node;
+    this.navNode = node.parentElement;
+
+    this.treeitems = this.treeNode.querySelectorAll('[role="treeitem"]');
 
     for (let i = 0; i < this.treeitems.length; i++) {
       let ti = this.treeitems[i];
 
-      ti.tabIndex = i === 0 ? 0 : -1;
-
-      ti.addEventListener('click', this.onLinkClick.bind(this));
       ti.addEventListener('keydown', this.onKeydown.bind(this));
+      ti.addEventListener('click', this.onLinkClick.bind(this));
+
+      ti.tabIndex = i === 0 ? 0 : -1;
 
       const groupNode = this.getGroupNode(ti);
       if (groupNode) {
-        const icon = ti.querySelector('.icon');
+        const icon = ti.querySelector('span.icon');
         if (icon) icon.addEventListener('click', this.onIconClick.bind(this));
       }
     }
 
-    // load page based on URL
-    this.loadPage(window.location.href);
+    // highlight current page
     this.updateAriaCurrent(window.location.href);
-
-    window.addEventListener('popstate', () => {
-      this.loadPage(window.location.href, false);
-      this.updateAriaCurrent(window.location.href);
-    });
   }
 
-  /* ---------- PAGE LOADING ---------- */
-
-  async loadPage(url, push = false) {
-    if (!this.contentNode) return;
-
-    try {
-      const res = await fetch(url);
-      const html = await res.text();
-
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-
-      const newContent =
-        doc.querySelector('#content') || doc.querySelector('main') || doc.body;
-
-      this.contentNode.innerHTML = newContent.innerHTML;
-
-      if (push) history.pushState({}, '', url);
-    } catch (e) {
-      this.contentNode.innerHTML = '<h2>Page not found</h2>';
-    }
-  }
-
-  /* ---------- TREE ---------- */
+  /* ---------- CORE ---------- */
 
   getGroupNode(treeitem) {
     const id = treeitem.getAttribute('aria-owns');
@@ -82,6 +55,8 @@ class TreeViewNavigation {
   collapseTreeitem(treeitem) {
     treeitem.setAttribute('aria-expanded', 'false');
   }
+
+  /* ---------- CURRENT PAGE ---------- */
 
   updateAriaCurrent(url) {
     this.treeitems.forEach((item) => {
@@ -115,6 +90,8 @@ class TreeViewNavigation {
     if (node && node.getAttribute('role') === 'treeitem') return node;
     return false;
   }
+
+  /* ---------- VISIBILITY ---------- */
 
   isInSubtree(treeitem) {
     return (
@@ -166,11 +143,14 @@ class TreeViewNavigation {
   /* ---------- EVENTS ---------- */
 
   onBodyFocusin(event) {
-    if (this.treeNode.contains(event.target))
+    if (this.treeNode.contains(event.target)) {
       this.navNode.classList.add('focus');
-    else this.navNode.classList.remove('focus');
+    } else {
+      this.navNode.classList.remove('focus');
+    }
   }
 
+  // icon expands only
   onIconClick(event) {
     const treeitem = event.currentTarget.closest('[role="treeitem"]');
 
@@ -181,12 +161,9 @@ class TreeViewNavigation {
     event.stopPropagation();
   }
 
+  // allow normal navigation
   onLinkClick(event) {
-    const tgt = event.currentTarget;
-    event.preventDefault();
-
-    this.loadPage(tgt.href, true);
-    this.updateAriaCurrent(tgt.href);
+    // DO NOT preventDefault → page will open
   }
 
   onKeydown(event) {
@@ -194,13 +171,6 @@ class TreeViewNavigation {
     let handled = false;
 
     switch (event.key) {
-      case 'Enter':
-      case ' ':
-        this.loadPage(tgt.href, true);
-        this.updateAriaCurrent(tgt.href);
-        handled = true;
-        break;
-
       case 'ArrowUp':
         this.setFocusToPreviousTreeitem(tgt);
         handled = true;
@@ -220,9 +190,22 @@ class TreeViewNavigation {
         break;
 
       case 'ArrowLeft':
-        if (this.isExpandable(tgt) && this.isExpanded(tgt))
+        if (this.isExpandable(tgt) && this.isExpanded(tgt)) {
           this.collapseTreeitem(tgt);
-        else this.setFocusToParentTreeitem(tgt);
+        } else {
+          this.setFocusToParentTreeitem(tgt);
+        }
+        handled = true;
+        break;
+
+      case 'Home':
+        this.setFocusToTreeitem(this.treeitems[0]);
+        handled = true;
+        break;
+
+      case 'End':
+        const list = this.getVisibleTreeitems();
+        this.setFocusToTreeitem(list[list.length - 1]);
         handled = true;
         break;
     }
