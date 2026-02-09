@@ -13,6 +13,7 @@ class TreeViewNavigation {
     this.navNode = node.parentElement;
 
     this.treeitems = this.treeNode.querySelectorAll('[role="treeitem"]');
+    this.iframe = document.getElementById('contentFrame');
 
     for (let i = 0; i < this.treeitems.length; i++) {
       let ti = this.treeitems[i];
@@ -29,8 +30,11 @@ class TreeViewNavigation {
       }
     }
 
-    // highlight current page
-    this.updateAriaCurrent(window.location.href);
+    /* load first page automatically */
+    if (this.treeitems.length && this.iframe && !this.iframe.src) {
+      this.iframe.src = this.treeitems[0].href;
+      this.updateAriaCurrent(this.treeitems[0].href);
+    }
   }
 
   /* ---------- CORE ---------- */
@@ -62,7 +66,6 @@ class TreeViewNavigation {
     this.treeitems.forEach((item) => {
       if (item.href === url) {
         item.setAttribute('aria-current', 'page');
-        this.showTreeitem(item);
         this.setTabIndex(item);
       } else {
         item.removeAttribute('aria-current');
@@ -70,74 +73,9 @@ class TreeViewNavigation {
     });
   }
 
-  showTreeitem(treeitem) {
-    let parent = this.getParentTreeitem(treeitem);
-    while (parent) {
-      parent.setAttribute('aria-expanded', 'true');
-      parent = this.getParentTreeitem(parent);
-    }
-  }
-
   setTabIndex(treeitem) {
     this.treeitems.forEach((item) => (item.tabIndex = -1));
     treeitem.tabIndex = 0;
-  }
-
-  getParentTreeitem(treeitem) {
-    let node = treeitem.parentNode;
-    if (node) node = node.parentNode;
-    if (node) node = node.previousElementSibling;
-    if (node && node.getAttribute('role') === 'treeitem') return node;
-    return false;
-  }
-
-  /* ---------- VISIBILITY ---------- */
-
-  isInSubtree(treeitem) {
-    return (
-      treeitem.parentNode &&
-      treeitem.parentNode.parentNode &&
-      treeitem.parentNode.parentNode.getAttribute('role') === 'group'
-    );
-  }
-
-  isVisible(treeitem) {
-    if (this.isInSubtree(treeitem)) {
-      const parent = this.getParentTreeitem(treeitem);
-      if (!parent || parent.getAttribute('aria-expanded') === 'false') {
-        return false;
-      }
-    }
-    return true;
-  }
-
-  getVisibleTreeitems() {
-    return Array.from(this.treeitems).filter((ti) => this.isVisible(ti));
-  }
-
-  /* ---------- FOCUS ---------- */
-
-  setFocusToTreeitem(item) {
-    item.focus();
-  }
-
-  setFocusToNextTreeitem(item) {
-    const list = this.getVisibleTreeitems();
-    const index = list.indexOf(item);
-    if (index < list.length - 1) this.setFocusToTreeitem(list[index + 1]);
-  }
-
-  setFocusToPreviousTreeitem(item) {
-    const list = this.getVisibleTreeitems();
-    const index = list.indexOf(item);
-    if (index > 0) this.setFocusToTreeitem(list[index - 1]);
-  }
-
-  setFocusToParentTreeitem(item) {
-    if (this.isInSubtree(item)) {
-      const parent = item.parentNode.parentNode.previousElementSibling;
-      if (parent) this.setFocusToTreeitem(parent);
-    }
   }
 
   /* ---------- EVENTS ---------- */
@@ -150,7 +88,6 @@ class TreeViewNavigation {
     }
   }
 
-  // icon expands only
   onIconClick(event) {
     const treeitem = event.currentTarget.closest('[role="treeitem"]');
 
@@ -161,9 +98,15 @@ class TreeViewNavigation {
     event.stopPropagation();
   }
 
-  // allow normal navigation
   onLinkClick(event) {
-    // DO NOT preventDefault → page will open
+    const link = event.currentTarget;
+
+    /* load in iframe */
+    if (this.iframe) {
+      this.iframe.src = link.href;
+      this.updateAriaCurrent(link.href);
+      event.preventDefault();
+    }
   }
 
   onKeydown(event) {
@@ -192,8 +135,6 @@ class TreeViewNavigation {
       case 'ArrowLeft':
         if (this.isExpandable(tgt) && this.isExpanded(tgt)) {
           this.collapseTreeitem(tgt);
-        } else {
-          this.setFocusToParentTreeitem(tgt);
         }
         handled = true;
         break;
@@ -204,8 +145,7 @@ class TreeViewNavigation {
         break;
 
       case 'End':
-        const list = this.getVisibleTreeitems();
-        this.setFocusToTreeitem(list[list.length - 1]);
+        this.setFocusToTreeitem(this.treeitems[this.treeitems.length - 1]);
         handled = true;
         break;
     }
@@ -214,6 +154,22 @@ class TreeViewNavigation {
       event.preventDefault();
       event.stopPropagation();
     }
+  }
+
+  setFocusToTreeitem(item) {
+    item.focus();
+  }
+
+  setFocusToNextTreeitem(item) {
+    const list = Array.from(this.treeitems);
+    const index = list.indexOf(item);
+    if (index < list.length - 1) list[index + 1].focus();
+  }
+
+  setFocusToPreviousTreeitem(item) {
+    const list = Array.from(this.treeitems);
+    const index = list.indexOf(item);
+    if (index > 0) list[index - 1].focus();
   }
 }
 

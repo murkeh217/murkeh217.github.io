@@ -1,12 +1,34 @@
+/* ========================
+RESET
+======================== */
+html, body {
+margin: 0;
+height: 100%;
+font-family: sans-serif;
+}
+
+/* ========================
+PAGE LAYOUT
+======================== */
+.page {
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}
+
+/* ========================
+HEADER
+======================== */
 .page header {
 border: #006308 solid 2px;
 background: #014913;
-color: white;
+color: #fff;
 text-align: center;
+padding: 10px;
 }
 
 .page header .title {
-font-size: 2.5em;
+font-size: 2.2em;
 font-weight: bold;
 font-family: serif;
 }
@@ -15,146 +37,142 @@ font-family: serif;
 font-style: italic;
 }
 
-.page footer {
-border: #006308 solid 2px;
-background: #006308;
-font-family: serif;
-color: white;
-font-style: italic;
-padding-left: 1em;
-}
-
+/* ========================
+BODY LAYOUT
+TREE LEFT + CONTENT RIGHT
+======================== */
 .page .body {
+flex: 1;
 display: grid;
-grid-template-columns: auto auto;
-border: #eee solid 2px;
+grid-template-columns: 240px 1fr; /* tree left, content right */
+overflow: hidden;
 }
 
+/* ========================
+TREE PANEL (LEFT)
+======================== */
 .page .body nav {
-margin: 0;
-padding: 6px;
-width: 17em;
-height: 60em;
-background: #eee;
+background: #111;
+border-right: 2px solid #333;
+overflow-y: auto;
+padding: 8px 6px;
+box-sizing: border-box;
 }
 
-.page .body nav.focus {
-padding: 4px;
-border: 2px solid #006308;
-}
-
-.page .body .page {
-margin: 0.25em;
-padding: 0.25em;
-height: 30em;
-}
-
-.page .body .page h1 {
-margin: 0;
-padding: 0;
-}
-
+/* ========================
+CONTENT AREA (RIGHT)
+======================== */
 .page .main {
-padding: 1em;
+background: rgb(21, 21, 21);
+overflow: hidden;
+min-width: 0; /* prevents iframe pushing layout */
 }
 
-.treeview-navigation ul,
-.treeview-navigation li {
-margin: 0;
-padding: 0;
-}
-
-.treeview-navigation li li span.label {
-padding-left: 1em;
-}
-
-.treeview-navigation li li li span.label {
-padding-left: 2em;
-}
-
-.treeview-navigation[role="tree"] {
-margin: 0;
-padding: 0;
-list-style: none;
-}
-
-.treeview-navigation[role="tree"] li {
-margin: 0;
-padding: 0;
-list-style: none;
-}
-
-.treeview-navigation a[role="treeitem"] ul {
-margin: 0;
-padding: 0;
-}
-
-.treeview-navigation
-a[role="treeitem"][aria-expanded="false"]
-+ [role="group"] {
-display: none;
-}
-
-.treeview-navigation a[role="treeitem"][aria-expanded="true"] + [role="group"] {
-display: block;
-}
-
-.treeview-navigation a[role="treeitem"] > span svg {
-transform: translate(0, 0);
-}
-
-.treeview-navigation a[role="treeitem"][aria-expanded="false"] > span svg {
-transform: rotate(270deg) translate(2px, 2px);
-}
-
-.treeview-navigation a[role="treeitem"] {
-margin: 0;
-padding: 4px;
-padding-left: 9px;
-text-decoration: none;
-color: #006308;
+.page .main iframe {
+width: 100%;
+height: 100%;
 border: none;
 display: block;
 }
 
-.treeview-navigation a[role="treeitem"][aria-current] {
-border-left: 5px solid #006308;
-padding-left: 4px;
-background-color: #ddd;
+/* ========================
+FOOTER
+======================== */
+.page footer {
+border: #006308 solid 2px;
+background: #006308;
+color: #fff;
+font-family: serif;
+font-style: italic;
+padding: 8px 12px;
 }
 
-.treeview-navigation a[role="treeitem"] span.icon svg polygon {
-stroke-width: 2px;
-fill: currentcolor;
-stroke: transparent;
+/* ========================
+TREE BASE
+======================== */
+.treeview-navigation {
+list-style: none;
+margin: 0;
+padding: 0;
 }
 
-/* disable default keyboard focus styling for treeitems
-Keyboard focus is styled with the following CSS */
-
-.treeview-navigation a[role="treeitem"]:focus {
-outline: 0;
-padding: 2px;
-padding-left: 7px;
-border: 2px #006308 solid;
+.treeview-navigation li {
+list-style: none;
 }
 
-.treeview-navigation a[role="treeitem"][aria-current]:focus {
-padding-left: 4px;
-border-left-width: 5px;
+/* ========================
+INDENT LEVELS
+======================== */
+.treeview-navigation li li span.label {
+padding-left: 14px;
 }
 
-.treeview-navigation a[role="treeitem"]:hover {
-background-color: #6cb16c;
-text-decoration: underline;
-padding-left: 4px;
+.treeview-navigation li li li span.label {
+padding-left: 28px;
+}
+
+/* ========================
+TREE LINKS
+======================== */
+.treeview-navigation a[role="treeitem"] {
+display: block;
+padding: 6px 10px;
+text-decoration: none;
+color: #ffffff;
+border-left: 5px solid transparent;
+white-space: nowrap;
+}
+
+.treeview-navigation a:hover {
+background: #6cb16c;
+color: #fff;
 border-left: 5px solid #333;
 }
 
-.treeview-navigation a[role="treeitem"] span.icon:hover {
-color: #333;
+.treeview-navigation a[aria-current] {
+background: #575757;
+border-left: 5px solid #ffffff;
 }
 
-.treeview-navigation a[role="treeitem"] span.icon svg polygon:hover {
-stroke: currentcolor;
+/* ========================
+EXPAND ICON ROTATION
+======================== */
+.treeview-navigation a > span svg {
+transition: transform 0.2s ease;
+}
+
+.treeview-navigation a[aria-expanded="false"] > span svg {
+transform: rotate(-90deg);
+}
+
+/* ========================
+SUBTREE SHOW/HIDE
+======================== */
+.treeview-navigation a[aria-expanded="false"] + [role="group"] {
+display: none;
+}
+
+.treeview-navigation a[aria-expanded="true"] + [role="group"] {
+display: block;
+}
+
+/* ========================
+MOBILE
+======================== */
+@media (max-width: 768px) {
+
+.page .body {
+grid-template-columns: 1fr;
+grid-template-rows: auto 1fr;
+}
+
+.page .body nav {
+border-right: none;
+border-bottom: 2px solid #ddd;
+max-height: 230px;
+}
+
+.page .main {
+height: 65vh;
+}
 }
