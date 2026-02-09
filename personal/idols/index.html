@@ -2,21 +2,64 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Expanding Gallery View ( jus&#39; flex it )</title>
-  <link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
-<link rel="stylesheet" href="./style.css">
-
+  <title>CPC Challenge - Slide In / Slide Out - Slide Inwards(?)</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,400i,700"><link rel="stylesheet" href="./style.css">
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<div class="container">
-  <img src="poisonivy.jpg"/>
-  <img src="polaris.webp"/>
-  <img src="silk.webp"/>
-  <img src="sakurako.webp"/>
-  <img src="jolyne.jpg"/>
-</div>
+<svg aria-hidden="true" width="0" height="0">
+	<filter id="pixelate" x="0" y="0">
+		<feFlood x="4" y="4" height="2" width="2" />
+		<feComposite width="10" height="10" />
+		<feTile result="a" />
+		<feComposite in="SourceGraphic" in2="a" operator="in" />
+		<feMorphology operator="dilate" radius="5" />
+	</filter>
+</svg>
+<main>
+	<ul class="gallery">
+		<li>
+			<figure>
+				<div class="image__container">
+					<img src="tonyhorton.jpg" alt="P90X"/>
+				</div>
+				<figcaption>
+					Tony Horton
+				</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<div class="image__container">
+					<img src="shaunt.jpg" alt="Insanity"/>
+				</div>
+				<figcaption>
+					Shaun T
+				</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<div class="image__container">
+					<img src="markcheng.png" alt="Tai Cheng"/>
+				</div>
+				<figcaption>
+					Dr. Mark Cheng
+				</figcaption>
+			</figure>
+		</li>
+		<li>
+			<figure>
+				<div class="image__container">
+					<img src='davidbelle.png' alt="Parkour"/>
+				</div>
+				<figcaption>
+					David Belle
+				</figcaption>
+			</figure>
+		</li>
+	</ul>
+</main>
 <!-- partial -->
-  
 </body>
 </html>
