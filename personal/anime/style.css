@@ -1,109 +1,67 @@
-/* THE GRID STUFF */
+/* GRID */
 
 .supporter-list {
 	display: grid;
 	gap: 4px;
 	grid-auto-flow: row dense;
-	/* Changed to auto-fit and larger container */
-	/* grid-template-columns: repeat(auto-fit, 34px); */
-	/* Or use auto-fill with more columns */
-	grid-template-columns: repeat(auto-fill, minmax(30px, 1fr)); */
-	width: max-content;
-	a {
-		&.gold {
-			grid-column: span 2;
-			grid-row: span 2;
-		}
-
-		img {
-			display: block;
-		}
-	}
-}
-
-/* OTHER STYLE STUFF */
-
-:root {
-	--bg: #18151f;
-	--text-muted: #79777e;
-}
-
-body {
-    background: transparent;
-	color: var(--text-muted);
-	display: flex;
-	flex-direction: column;
-	font-family: system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-		"Segoe UI Symbol";
-	gap: 40px;
-	min-block-size: 100dvb;
-	place-content: center;
-	place-items: center;
-	transform: scale(2.2);    /* 0.8 = 80% of original size */
-  	transform-origin: center; /* adjust where it scales from */
-	overflow-x: auto;
-}
-
-p {
-	margin: 0;
-}
-
-a {
-	color: inherit;
-}
-
-.supporter-list {
-	/* Changed to use more of the available width */
+	grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
 	inline-size: 100%;
-	justify-content: start;
-	/* Increased max width significantly */
-	max-inline-size: 600px; /* Changed from 480px to 960px */
-	/* Or remove max-inline-size entirely to use all available space */
-	/* max-inline-size: none; */
-	
-	/* Added to ensure grid takes full width */
+	max-inline-size: 1200px;
+	padding: 40px 40px;
+}
+
+/* GOLD BIG TILES */
+.supporter-list a.gold {
+	grid-column: span 2;
+	grid-row: span 2;
+}
+
+/* BASE TILE */
+.supporter-list a {
+	position: relative;
+	border-radius: 3px;
+	opacity: 0.85;
+	outline: 1px solid transparent;
+	transition: outline-color 150ms linear, opacity 150ms linear;
+	overflow: visible;
+	aspect-ratio: 2 / 3;
+}
+
+/* IMAGE */
+.supporter-list a img {
+	display: block;
 	width: 100%;
-	padding: 0 20px; /* Optional: add some padding on sides */
+	height: 100%;
+	object-fit: cover;
+	border-radius: 3px;
+	transition: transform 0.25s ease-in-out;
+	position: relative;
+	z-index: 2;
+}
 
-	a {
-		position: relative;
-		border-radius: 3px;
-		opacity: 0.85;
-		outline: 1px solid transparent;
-		transition: outline-color 150ms linear, opacity 150ms linear;
-		overflow: visible; 
+/* HOVER */
+.supporter-list a:hover {
+	opacity: 1;
+	box-shadow: 0 0 0 1px #79777e;
+	z-index: 3;
+}
 
-		&:has(:hover, :active, :focus) {
-			opacity: 1;
-			outline: 1px solid var(--text-muted);
-			z-index: 3; 
-		}
+.supporter-list a.gold:hover img {
+	transform: scale(2.2);
+}
 
-		img {
-			border-radius: 3px;
-			transition: transform 0.25s ease-in-out;
-			display: block;
-			position: relative;
-			z-index: 2; 
-		}
+/* DARK OVERLAY */
+.supporter-list a::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: rgba(0,0,0,0.6);
+	opacity: 0;
+	transition: opacity 0.25s ease-in-out;
+	border-radius: 3px;
+	z-index: 1;
+}
 
-		&:hover img {
-			transform: scale(2);
-		}
-
-		&::after {
-			content: "";
-			position: absolute;
-			inset: 0;
-			background: rgba(0, 0, 0, 0.6);
-			opacity: 0;
-			transition: opacity 0.25s ease-in-out;
-			border-radius: 3px;
-			z-index: 1;
-		}
-
-		&:hover::after {
-			opacity: 1;
-		}
-	}
+.supporter-list a:hover::after {
+	opacity: 1;
 }
