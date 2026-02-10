@@ -8,7 +8,7 @@
 	/* grid-template-columns: repeat(auto-fit, 34px); */
 	/* Or use auto-fill with more columns */
 	grid-template-columns: repeat(auto-fill, minmax(30px, 1fr)); */
-
+	width: max-content;
 	a {
 		&.gold {
 			grid-column: span 2;
@@ -39,8 +39,9 @@ body {
 	min-block-size: 100dvb;
 	place-content: center;
 	place-items: center;
-	transform: scale(2);    /* 0.8 = 80% of original size */
+	transform: scale(2.2);    /* 0.8 = 80% of original size */
   	transform-origin: center; /* adjust where it scales from */
+	overflow-x: auto;
 }
 
 p {
@@ -87,7 +88,7 @@ a {
 		}
 
 		&:hover img {
-			transform: scale(3.2);
+			transform: scale(2);
 		}
 
 		&::after {
