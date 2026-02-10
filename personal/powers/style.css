@@ -93,7 +93,14 @@ h1 {
 .card h2 {
   font-size: 1.3rem;
   margin: 2px 0;
-  text-align: center;
+  text-align: center;body, h2 {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background: transparent;
+  color: lightgreen;
+}
   color: #10b981;
   text-shadow:
     0 0 10px rgba(16, 185, 129, 0.6),

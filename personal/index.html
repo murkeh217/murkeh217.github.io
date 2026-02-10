@@ -11,17 +11,18 @@
 
   <!-- Fixed Content Security Policy -->
   <meta http-equiv="Content-Security-Policy"
-    content="
-      default-src 'self';
-      img-src 'self' data: https:;
-      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-      font-src 'self' https://fonts.gstatic.com;
-      script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://maxcdn.bootstrapcdn.com https://www.googletagmanager.com https://www.google-analytics.com;
-      connect-src 'self' https://www.google-analytics.com;
-      object-src 'none';
-      base-uri 'self';
-      form-action 'self';
-    ">
+  content="
+    default-src 'self';
+    img-src 'self' data: https:;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://maxcdn.bootstrapcdn.com https://www.googletagmanager.com https://www.google-analytics.com;
+    connect-src 'self' https://www.google-analytics.com;
+    frame-src 'self';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+  ">
 
   <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href=".favicons/favicon.ico">
@@ -51,11 +52,11 @@
       <div class="body">
         <nav aria-label="MK">
           <ul class="treeview-navigation" role="tree" aria-label="MK">
-            <!--<li role="none">
-              <a role="treeitem" href="#home" aria-current="page">
+            <li role="none">
+              <a role="treeitem" href="./index.html" aria-current="page">
                 <span class="label">Home</span>
               </a>
-            </li>-->
+            </li>
 
             <li role="none">
               <a role="treeitem" aria-expanded="false" aria-owns="id-admissions-subtree" target="contentFrame" href="./anime/index.html">
@@ -596,7 +597,7 @@
 
       <section class="main" aria-labelledby="id_website_title id_page_title">
         <h1 class="page_title" id="id_page_title"></h1>
-        <iframe id="contentFrame" name="contentFrame" src="" frameborder="0"></iframe>
+        <iframe id="contentFrame" name="contentFrame" src="./welcome.html" frameborder="0"></iframe>
       </section>
       </div>
     </main>
