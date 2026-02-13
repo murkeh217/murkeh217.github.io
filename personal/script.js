@@ -4,8 +4,6 @@ class TreeViewNavigation {
   constructor(node) {
     if (typeof node !== 'object') return;
 
-    this.keyCode = { SPACE: 32, RETURN: 13 };
-
     document.body.addEventListener('focusin', this.onBodyFocusin.bind(this));
     document.body.addEventListener('mousedown', this.onBodyFocusin.bind(this));
 
@@ -37,7 +35,27 @@ class TreeViewNavigation {
     }
   }
 
-  /* ---------- CORE ---------- */
+  /* ---------- HELPERS ---------- */
+
+  getVisibleTreeitems() {
+    return Array.from(this.treeitems).filter((item) => {
+      let parent = item.parentElement;
+
+      while (parent && parent !== this.treeNode) {
+        if (parent.getAttribute('role') === 'group') {
+          const owner = this.treeNode.querySelector(
+            '[aria-owns="' + parent.id + '"]'
+          );
+
+          if (owner && owner.getAttribute('aria-expanded') !== 'true') {
+            return false;
+          }
+        }
+        parent = parent.parentElement;
+      }
+      return true;
+    });
+  }
 
   getGroupNode(treeitem) {
     const id = treeitem.getAttribute('aria-owns');
@@ -59,8 +77,6 @@ class TreeViewNavigation {
   collapseTreeitem(treeitem) {
     treeitem.setAttribute('aria-expanded', 'false');
   }
-
-  /* ---------- CURRENT PAGE ---------- */
 
   updateAriaCurrent(url) {
     this.treeitems.forEach((item) => {
@@ -101,7 +117,6 @@ class TreeViewNavigation {
   onLinkClick(event) {
     const link = event.currentTarget;
 
-    /* load in iframe */
     if (this.iframe) {
       this.iframe.src = link.href;
       this.updateAriaCurrent(link.href);
@@ -140,12 +155,13 @@ class TreeViewNavigation {
         break;
 
       case 'Home':
-        this.setFocusToTreeitem(this.treeitems[0]);
+        this.setFocusToTreeitem(this.getVisibleTreeitems()[0]);
         handled = true;
         break;
 
       case 'End':
-        this.setFocusToTreeitem(this.treeitems[this.treeitems.length - 1]);
+        const vis = this.getVisibleTreeitems();
+        this.setFocusToTreeitem(vis[vis.length - 1]);
         handled = true;
         break;
     }
@@ -157,17 +173,17 @@ class TreeViewNavigation {
   }
 
   setFocusToTreeitem(item) {
-    item.focus();
+    if (item) item.focus();
   }
 
   setFocusToNextTreeitem(item) {
-    const list = Array.from(this.treeitems);
+    const list = this.getVisibleTreeitems();
     const index = list.indexOf(item);
     if (index < list.length - 1) list[index + 1].focus();
   }
 
   setFocusToPreviousTreeitem(item) {
-    const list = Array.from(this.treeitems);
+    const list = this.getVisibleTreeitems();
     const index = list.indexOf(item);
     if (index > 0) list[index - 1].focus();
   }

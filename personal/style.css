@@ -13,7 +13,9 @@ PAGE LAYOUT
 .page {
 display: flex;
 flex-direction: column;
-min-height: 100vh;
+height: 100vh;
+margin: 0;
+padding: 0;
 }
 
 /* ========================
@@ -25,6 +27,7 @@ background: #014913;
 color: #fff;
 text-align: center;
 padding: 10px;
+flex-shrink: 0;
 }
 
 .page header .title {
@@ -38,66 +41,59 @@ font-style: italic;
 }
 
 /* ========================
-BODY LAYOUT
-TREE LEFT + CONTENT RIGHT
+BODY LAYOUT - TREE LEFT + CONTENT RIGHT
 ======================== */
 .page .body {
-flex: 1;
+flex: 1 1 auto;
+min-height: 0;
+height: 100%;
 display: grid;
-grid-template-columns: 240px 1fr; /* tree left, content right */
+grid-template-columns: 240px 1fr;
 overflow: hidden;
 }
 
 /* ========================
-TREE PANEL (LEFT)
+TREE PANEL (LEFT) - FIXED TO STRETCH EVEN WITH NO CONTENT
 ======================== */
 .page .body nav {
 background: #111;
 border-right: 2px solid #333;
-overflow-y: auto;
 padding: 8px 6px;
 box-sizing: border-box;
-}
 
-/* ========================
-CONTENT AREA (RIGHT)
-======================== */
-.page .main {
-background: rgb(21, 21, 21);
-overflow: hidden;
-min-width: 0; /* prevents iframe pushing layout */
-}
+/* CRITICAL: Make nav a flex container so children can stretch */
+display: flex;
+flex-direction: column;
 
-.page .main iframe {
-width: 100%;
+/* Ensure it fills the grid cell */
 height: 100%;
-border: none;
-display: block;
+min-height: 0;
+max-height: 100%;
+width: 100%;
+
+/* Allow scrolling if content overflows */
+overflow-y: auto;
 }
 
-/* ========================
-FOOTER
-======================== */
-.page footer {
-border: #006308 solid 2px;
-background: #006308;
-color: #fff;
-font-family: serif;
-font-style: italic;
-padding: 8px 12px;
-}
-
-/* ========================
-TREE BASE
-======================== */
+/* Tree navigation - make it flexible */
 .treeview-navigation {
 list-style: none;
 margin: 0;
 padding: 0;
+width: 100%;
+
+/* This makes the tree expand to fill available space */
+flex: 1 1 auto;
+min-height: 0;
+
+/* Add a minimum height to ensure visibility */
+min-height: 50px;
 }
 
+/* Ensure list items also fill width */
 .treeview-navigation li {
 list-style: none;
+width: 100%;
 }
 
 /* ========================
@@ -121,6 +117,8 @@ text-decoration: none;
 color: #ffffff;
 border-left: 5px solid transparent;
 white-space: nowrap;
+width: 100%;
+box-sizing: border-box;
 }
 
 .treeview-navigation a:hover {
@@ -157,10 +155,71 @@ display: block;
 }
 
 /* ========================
+SPECIAL TREE ITEM STYLES
+======================== */
+/* LI that has a subtree */
+.treeview-navigation li > a[aria-owns] {
+background: #1f2a1f;
+border-left: 5px solid #4caf50;
+font-weight: bold;
+}
+
+.treeview-navigation li > a[aria-owns]:hover {
+background: #2e4a2e;
+}
+
+.treeview-navigation li > a[aria-owns][aria-expanded="true"] {
+background: #355f35;
+border-left: 5px solid #a8ffb0;
+}
+
+.treeview-navigation li:has(> a[aria-owns]) {
+border-top: 1px solid #222;
+border-bottom: 1px solid #222;
+}
+
+/* HOME special highlight */
+.treeview-navigation a[aria-current="page"] {
+background: linear-gradient(90deg, #2f6f2f, #4caf50);
+color: #fff;
+border-left: 5px solid #c8ffcf;
+font-weight: bold;
+}
+
+/* ========================
+CONTENT AREA (RIGHT)
+======================== */
+.page .main {
+background: rgb(21, 21, 21);
+min-height: 0;
+height: 100%;
+overflow: hidden;
+}
+
+.page .main iframe {
+width: 100%;
+height: 100%;
+border: none;
+display: block;
+}
+
+/* ========================
+FOOTER
+======================== */
+.page footer {
+border: #006308 solid 2px;
+background: #006308;
+color: #fff;
+font-family: serif;
+font-style: italic;
+padding: 8px 12px;
+flex-shrink: 0;
+}
+
+/* ========================
 MOBILE
 ======================== */
 @media (max-width: 768px) {
-
 .page .body {
 grid-template-columns: 1fr;
 grid-template-rows: auto 1fr;
@@ -170,9 +229,17 @@ grid-template-rows: auto 1fr;
 border-right: none;
 border-bottom: 2px solid #ddd;
 max-height: 230px;
+height: auto;
+width: 100%;
+display: block; /* Reset flex on mobile */
 }
 
 .page .main {
-height: 65vh;
+height: auto;
+min-height: 65vh;
+}
+
+.treeview-navigation {
+flex: none; /* Reset flex on mobile */
 }
 }
