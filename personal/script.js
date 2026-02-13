@@ -2,43 +2,55 @@
 
 class TreeViewNavigation {
   constructor(node) {
-    if (typeof node !== 'object') return;
+    if (!node) return;
+
+    this.treeNode = node;
+    this.navNode = node.parentElement;
+    this.iframe = document.getElementById('contentFrame');
 
     document.body.addEventListener('focusin', this.onBodyFocusin.bind(this));
     document.body.addEventListener('mousedown', this.onBodyFocusin.bind(this));
 
-    this.treeNode = node;
-    this.navNode = node.parentElement;
+    this.initTreeitems();
 
-    this.treeitems = this.treeNode.querySelectorAll('[role="treeitem"]');
-    this.iframe = document.getElementById('contentFrame');
+    /* auto-load first page */
+    const first = this.getAllTreeitems()[0];
+    if (first && this.iframe && !this.iframe.src) {
+      this.loadPage(first);
+    }
+  }
 
-    for (let i = 0; i < this.treeitems.length; i++) {
-      let ti = this.treeitems[i];
+  /* ---------- INIT ---------- */
 
-      ti.addEventListener('keydown', this.onKeydown.bind(this));
-      ti.addEventListener('click', this.onLinkClick.bind(this));
+  initTreeitems() {
+    this.getAllTreeitems().forEach((ti, i) => {
+      ti.removeEventListener('keydown', this.onKeydownBound);
+      ti.removeEventListener('click', this.onLinkClickBound);
+
+      this.onKeydownBound = this.onKeydown.bind(this);
+      this.onLinkClickBound = this.onLinkClick.bind(this);
+
+      ti.addEventListener('keydown', this.onKeydownBound);
+      ti.addEventListener('click', this.onLinkClickBound);
 
       ti.tabIndex = i === 0 ? 0 : -1;
 
       const groupNode = this.getGroupNode(ti);
       if (groupNode) {
-        const icon = ti.querySelector('span.icon');
+        const icon = ti.querySelector('.icon');
         if (icon) icon.addEventListener('click', this.onIconClick.bind(this));
       }
-    }
-
-    /* load first page automatically */
-    if (this.treeitems.length && this.iframe && !this.iframe.src) {
-      this.iframe.src = this.treeitems[0].href;
-      this.updateAriaCurrent(this.treeitems[0].href);
-    }
+    });
   }
 
   /* ---------- HELPERS ---------- */
 
+  getAllTreeitems() {
+    return Array.from(this.treeNode.querySelectorAll('[role="treeitem"]'));
+  }
+
   getVisibleTreeitems() {
-    return Array.from(this.treeitems).filter((item) => {
+    return this.getAllTreeitems().filter((item) => {
       let parent = item.parentElement;
 
       while (parent && parent !== this.treeNode) {
@@ -59,7 +71,7 @@ class TreeViewNavigation {
 
   getGroupNode(treeitem) {
     const id = treeitem.getAttribute('aria-owns');
-    return id ? document.getElementById(id) : false;
+    return id ? document.getElementById(id) : null;
   }
 
   isExpandable(treeitem) {
@@ -79,7 +91,7 @@ class TreeViewNavigation {
   }
 
   updateAriaCurrent(url) {
-    this.treeitems.forEach((item) => {
+    this.getAllTreeitems().forEach((item) => {
       if (item.href === url) {
         item.setAttribute('aria-current', 'page');
         this.setTabIndex(item);
@@ -90,8 +102,18 @@ class TreeViewNavigation {
   }
 
   setTabIndex(treeitem) {
-    this.treeitems.forEach((item) => (item.tabIndex = -1));
+    this.getAllTreeitems().forEach((item) => (item.tabIndex = -1));
     treeitem.tabIndex = 0;
+  }
+
+  loadPage(treeitem) {
+    if (!this.iframe) return;
+
+    this.iframe.src = treeitem.href;
+    this.updateAriaCurrent(treeitem.href);
+
+    this.setTabIndex(treeitem);
+    treeitem.focus();
   }
 
   /* ---------- EVENTS ---------- */
@@ -110,6 +132,9 @@ class TreeViewNavigation {
     if (this.isExpanded(treeitem)) this.collapseTreeitem(treeitem);
     else this.expandTreeitem(treeitem);
 
+    this.setTabIndex(treeitem);
+    treeitem.focus();
+
     event.preventDefault();
     event.stopPropagation();
   }
@@ -118,8 +143,7 @@ class TreeViewNavigation {
     const link = event.currentTarget;
 
     if (this.iframe) {
-      this.iframe.src = link.href;
-      this.updateAriaCurrent(link.href);
+      this.loadPage(link);
       event.preventDefault();
     }
   }
@@ -128,21 +152,31 @@ class TreeViewNavigation {
     const tgt = event.currentTarget;
     let handled = false;
 
+    const visible = this.getVisibleTreeitems();
+    const index = visible.indexOf(tgt);
+
     switch (event.key) {
       case 'ArrowUp':
-        this.setFocusToPreviousTreeitem(tgt);
+        if (index > 0) this.setFocusToTreeitem(visible[index - 1]);
         handled = true;
         break;
 
       case 'ArrowDown':
-        this.setFocusToNextTreeitem(tgt);
+        if (index !== -1 && index < visible.length - 1) {
+          this.setFocusToTreeitem(visible[index + 1]);
+        }
         handled = true;
         break;
 
       case 'ArrowRight':
         if (this.isExpandable(tgt)) {
-          if (!this.isExpanded(tgt)) this.expandTreeitem(tgt);
-          else this.setFocusToNextTreeitem(tgt);
+          if (!this.isExpanded(tgt)) {
+            this.expandTreeitem(tgt);
+            this.setTabIndex(tgt);
+            tgt.focus();
+          } else if (index < visible.length - 1) {
+            this.setFocusToTreeitem(visible[index + 1]);
+          }
         }
         handled = true;
         break;
@@ -150,18 +184,25 @@ class TreeViewNavigation {
       case 'ArrowLeft':
         if (this.isExpandable(tgt) && this.isExpanded(tgt)) {
           this.collapseTreeitem(tgt);
+          this.setTabIndex(tgt);
+          tgt.focus();
         }
         handled = true;
         break;
 
       case 'Home':
-        this.setFocusToTreeitem(this.getVisibleTreeitems()[0]);
+        this.setFocusToTreeitem(visible[0]);
         handled = true;
         break;
 
       case 'End':
-        const vis = this.getVisibleTreeitems();
-        this.setFocusToTreeitem(vis[vis.length - 1]);
+        this.setFocusToTreeitem(visible[visible.length - 1]);
+        handled = true;
+        break;
+
+      case 'Enter':
+      case ' ':
+        this.loadPage(tgt);
         handled = true;
         break;
     }
@@ -173,24 +214,15 @@ class TreeViewNavigation {
   }
 
   setFocusToTreeitem(item) {
-    if (item) item.focus();
-  }
-
-  setFocusToNextTreeitem(item) {
-    const list = this.getVisibleTreeitems();
-    const index = list.indexOf(item);
-    if (index < list.length - 1) list[index + 1].focus();
-  }
-
-  setFocusToPreviousTreeitem(item) {
-    const list = this.getVisibleTreeitems();
-    const index = list.indexOf(item);
-    if (index > 0) list[index - 1].focus();
+    if (!item) return;
+    this.setTabIndex(item);
+    item.focus();
   }
 }
 
 /* INIT */
 window.addEventListener('load', () => {
-  const trees = document.querySelectorAll('nav [role="tree"]');
-  trees.forEach((t) => new TreeViewNavigation(t));
+  document.querySelectorAll('nav [role="tree"]').forEach((tree) => {
+    new TreeViewNavigation(tree);
+  });
 });

@@ -243,3 +243,44 @@ min-height: 65vh;
 flex: none; /* Reset flex on mobile */
 }
 }
+
+/* =========================
+TREE ICON SYSTEM
+========================= */
+
+[role="treeitem"] {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: inherit;
+  padding: 2px 4px;
+}
+
+/* icon container */
+[role="treeitem"]::before {
+  width: 14px;
+  display: inline-block;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* ▶ collapsed */
+[role="treeitem"][aria-expanded="false"]::before {
+  content: "▶";
+}
+
+/* ▼ expanded */
+[role="treeitem"][aria-expanded="true"]::before {
+  content: "▼";
+}
+
+/* 📄 leaf icon */
+[role="treeitem"].leaf::before {
+  content: "•";   /* change to any icon you want */
+}
+
+/* remove arrow spacing from leaf */
+[role="treeitem"].leaf {
+  padding-left: 2px;
+}
