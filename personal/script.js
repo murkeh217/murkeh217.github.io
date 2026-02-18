@@ -8,12 +8,18 @@ class TreeViewNavigation {
     this.navNode = node.parentElement;
     this.iframe = document.getElementById('contentFrame');
 
-    document.body.addEventListener('focusin', this.onBodyFocusin.bind(this));
-    document.body.addEventListener('mousedown', this.onBodyFocusin.bind(this));
+    // bind once
+    this.onKeydownBound = this.onKeydown.bind(this);
+    this.onLinkClickBound = this.onLinkClick.bind(this);
+    this.onIconClickBound = this.onIconClick.bind(this);
+    this.onBodyFocusinBound = this.onBodyFocusin.bind(this);
+
+    document.body.addEventListener('focusin', this.onBodyFocusinBound);
+    document.body.addEventListener('mousedown', this.onBodyFocusinBound);
 
     this.initTreeitems();
 
-    /* auto-load first page */
+    /* auto load first page */
     const first = this.getAllTreeitems()[0];
     if (first && this.iframe && !this.iframe.src) {
       this.loadPage(first);
@@ -27,9 +33,6 @@ class TreeViewNavigation {
       ti.removeEventListener('keydown', this.onKeydownBound);
       ti.removeEventListener('click', this.onLinkClickBound);
 
-      this.onKeydownBound = this.onKeydown.bind(this);
-      this.onLinkClickBound = this.onLinkClick.bind(this);
-
       ti.addEventListener('keydown', this.onKeydownBound);
       ti.addEventListener('click', this.onLinkClickBound);
 
@@ -38,7 +41,10 @@ class TreeViewNavigation {
       const groupNode = this.getGroupNode(ti);
       if (groupNode) {
         const icon = ti.querySelector('.icon');
-        if (icon) icon.addEventListener('click', this.onIconClick.bind(this));
+        if (icon) {
+          icon.removeEventListener('click', this.onIconClickBound);
+          icon.addEventListener('click', this.onIconClickBound);
+        }
       }
     });
   }
@@ -140,10 +146,25 @@ class TreeViewNavigation {
   }
 
   onLinkClick(event) {
-    const link = event.currentTarget;
+    const item = event.currentTarget;
 
+    // if expandable → toggle
+    if (this.isExpandable(item)) {
+      if (this.isExpanded(item)) {
+        this.collapseTreeitem(item);
+      } else {
+        this.expandTreeitem(item);
+      }
+
+      this.setTabIndex(item);
+      item.focus();
+      event.preventDefault();
+      return;
+    }
+
+    // normal leaf → load page
     if (this.iframe) {
-      this.loadPage(link);
+      this.loadPage(item);
       event.preventDefault();
     }
   }
@@ -172,8 +193,6 @@ class TreeViewNavigation {
         if (this.isExpandable(tgt)) {
           if (!this.isExpanded(tgt)) {
             this.expandTreeitem(tgt);
-            this.setTabIndex(tgt);
-            tgt.focus();
           } else if (index < visible.length - 1) {
             this.setFocusToTreeitem(visible[index + 1]);
           }
@@ -184,8 +203,6 @@ class TreeViewNavigation {
       case 'ArrowLeft':
         if (this.isExpandable(tgt) && this.isExpanded(tgt)) {
           this.collapseTreeitem(tgt);
-          this.setTabIndex(tgt);
-          tgt.focus();
         }
         handled = true;
         break;
