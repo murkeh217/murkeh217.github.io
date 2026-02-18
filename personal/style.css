@@ -127,6 +127,7 @@ color: #fff;
 
 .treeview-navigation a[aria-current] {
 background: #355f35;
+font-weight: bold;
 }
 
 /* ========================
