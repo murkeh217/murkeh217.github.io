@@ -115,7 +115,6 @@ display: block;
 padding: 6px 10px;
 text-decoration: none;
 color: #ffffff;
-border-left: 5px solid transparent;
 white-space: nowrap;
 width: 100%;
 box-sizing: border-box;
@@ -124,12 +123,10 @@ box-sizing: border-box;
 .treeview-navigation a:hover {
 background: #6cb16c;
 color: #fff;
-border-left: 5px solid #333;
 }
 
 .treeview-navigation a[aria-current] {
-background: #575757;
-border-left: 5px solid #ffffff;
+background: #355f35;
 }
 
 /* ========================
@@ -159,30 +156,17 @@ SPECIAL TREE ITEM STYLES
 ======================== */
 /* LI that has a subtree */
 .treeview-navigation li > a[aria-owns] {
-background: #1f2a1f;
-border-left: 5px solid #4caf50;
 font-weight: bold;
-}
-
-.treeview-navigation li > a[aria-owns]:hover {
-background: #2e4a2e;
 }
 
 .treeview-navigation li > a[aria-owns][aria-expanded="true"] {
 background: #355f35;
-border-left: 5px solid #a8ffb0;
-}
-
-.treeview-navigation li:has(> a[aria-owns]) {
-border-top: 1px solid #222;
-border-bottom: 1px solid #222;
 }
 
 /* HOME special highlight */
 .treeview-navigation a[aria-current="page"] {
 background: linear-gradient(90deg, #2f6f2f, #4caf50);
 color: #fff;
-border-left: 5px solid #c8ffcf;
 font-weight: bold;
 }
 
