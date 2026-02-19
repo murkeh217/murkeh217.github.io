@@ -1,27 +1,41 @@
-body{
-    font-family: serif;
-    background: #0e1a12;
-    color: #e6ffe6;
-    display:flex;
-    align-items:top;    
-    justify-content:top;
-    height:100%;
-    margin:0;
-    text-align:top;
-    padding: 5%;
-    min-height: 100%;
-  }
+body {
+  font-family: serif;
+  background: #0e1a12;
+  color: #e6ffe6;
+  margin: 0;
+  padding: 5%;
+  min-height: 100%;
+  display: block; /* normal flow */
+}
 
-  .box{
-    max-width:700px;
-  }
+/* Stack content vertically and center it */
+h3, table, .graph-wrapper {
+  margin: 1em auto; /* vertical spacing + horizontal centering */
+  max-width: 800px; /* optional max width */
+}
 
-  h1{
-    font-size:2.2em;
-    margin-bottom:10px;
-  }
+/* Let tables fit content naturally */
+table {
+  border-collapse: collapse;
+  width: auto; /* only as wide as content */
+}
 
-  p{
-    opacity:0.8;
-    line-height:1.6;
-  }
+table th, table td {
+  padding: 8px;
+  border: 1px solid #e6ffe6;
+  text-align: left;
+  white-space: nowrap; /* prevents cells from stretching */
+}
+
+/* iframe wrapper */
+.graph-wrapper {
+  width: 100%;
+  max-width: 800px;
+}
+
+.graph-wrapper iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  display: block;
+}
