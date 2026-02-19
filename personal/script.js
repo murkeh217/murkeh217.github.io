@@ -243,3 +243,23 @@ window.addEventListener('load', () => {
     new TreeViewNavigation(tree);
   });
 });
+
+function autoResizeIframe() {
+  const iframe = document.getElementById("contentFrame");
+  if (!iframe) return;
+
+  iframe.addEventListener("load", () => {
+    try {
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+
+      const contentHeight = Math.max(
+        doc.body.scrollHeight,
+        doc.documentElement.scrollHeight
+      );
+
+      iframe.style.height = contentHeight + "px";
+    } catch (e) {}
+  });
+}
+
+window.addEventListener("load", autoResizeIframe);

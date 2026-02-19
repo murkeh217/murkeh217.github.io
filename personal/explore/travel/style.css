@@ -19,7 +19,7 @@ body {
   margin: auto;
 }
 .gallery__strip {
-  min-height: 100vh;
+  min-height: 100%;
 }
 .gallery__strip__wrapper {
   flex: 0 0 70%;
