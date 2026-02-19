@@ -9,6 +9,7 @@ body {
   align-items: center;
   background: transparent;   /* dark background for contrast */
   font-family: sans-serif;
+  transform: scale(.8);
 }
 
 /* ===== GRID ===== */
