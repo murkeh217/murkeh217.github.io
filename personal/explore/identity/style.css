@@ -4,7 +4,7 @@ body {
 	place-items: center;
 	height: 100svh;
 	height: 100vh;
-	background: #000814;
+	background: transparent;
 }
 
 .gallery_wrapper {
@@ -12,7 +12,7 @@ body {
 	display: grid;
 	gap: 0.5rem;
 	grid-template-columns: repeat(6, var(--img-size));
-	grid-template-rows: repeat(4, var(--img-size));
+	grid-template-rows: repeat(5, var(--img-size)); /* changed from 4 to 5 */
 }
 
 img {
@@ -28,7 +28,8 @@ img {
 }
 
 img:nth-of-type(4),
-img:nth-of-type(9) {
+img:nth-of-type(9),
+img:nth-of-type(13) { /* optional: align the 13th like 4 & 9 */
 	grid-column: 2 / span 2;
 }
 
