@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS infinite scroll gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Saira:ital@0;1&family=Sour+Gummy:wdth,wght@125,300&display=swap" rel="stylesheet"><link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <html style="--n: 18">
+  <body>
+    <svg width="0" height="0" aria-hidden="true">
+      <filter id="grain">
+        <feTurbulence type="fractalNoise" baseFrequency="7.13"></feTurbulence>
+        <feColorMatrix type="saturate" values="0"></feColorMatrix>
+        <feComponentTransfer>
+          <feFuncA type="linear" slope=".02"></feFuncA>
+        </feComponentTransfer>
+        <feBlend in2="SourceGraphic"></feBlend>
+      </filter>
+    </svg>
+    <!--<header>
+      <h1>Infinite scroll circular gallery</h1><strong>scroll up & down/ use up & down arrow keys</strong><em>mostly CSS scroll-driven animations (for rotating gallery on scroll) + tiniest bit of JS (for infinite cycling part, ~200 bytes minified)</em>
+    </header>-->
+    <main class="scene">
+      <section class="assembly">
+        <article style="--i: 0; --url: url(2b.jpg); --pos: 47% 35%">
+          <header>
+            <h2>2B</h2><em>Nier Automata</em>
+          </header>
+          <figure><img src="2b.jpg"/>
+          </figure>
+        </article>
+        <article style="--i: 1; --url: url(angiemiller.jpg); --pos: 75% 65%">
+          <header>
+            <h2>Angie Miller</h2><em>Latina</em>
+          </header>
+          <figure><img src="angiemiller.jpg"/>
+          </figure>
+        </article>
+        <article style="--i: 2; --url: url(dishapatani.jpg); --pos: 53% 43%">
+          <header>
+            <h2>Disha Patani</h2><em>Bollywood</em>
+          </header>
+          <figure><img src="dishapatani.jpg"/>
+          </figure>
+        </article>
+        <article style="--i: 3; --url: url(eve.webp); --pos: 65% 65%">
+          <header>
+            <h2>Eve</h2><em>Stellar Blade</em>
+          </header>
+          <figure><img src="eve.webp"/>
+          </figure>
+        </article>
+        <article style="--i: 4; --url: url(mojito.jpg); --pos: 50% 25%">
+          <header>
+            <h2>Mojito</h2><em></em>
+          </header>
+          <figure><img src="mojito.jpg"/>
+          </figure>
+        </article>
+        <article style="--i: 5; --url: url(psylocke.png); --pos: 47%">
+          <header>
+            <h2>Psylocke</h2><em>Marvel</em>
+          </header>
+          <figure><img src="psylocke.png"/>
+          </figure>
+        </article>
+        <article style="--i: 6; --url: url(rumcola.webp); --pos: 47%">
+          <header>
+            <h2>Rum Cola</h2><em></em>
+          </header>
+          <figure><img src="rumcola.webp"/>
+          </figure>
+        </article>
+        <article style="--i: 7; --url: url(shenqiao.jpg); --pos: 65% 35%">
+          <header>
+            <h2>Shen Qiao</h2><em>Chinese</em>
+          </header>
+          <figure><img src="shenqiao.jpg"/>
+          </figure>
+        </article>
+        <article style="--i: 8; --url: url(weed.webp)">
+          <header>
+            <h2>Weed</h2><em></em>
+          </header>
+          <figure><img src="weed.webp"/>
+          </figure>
+        </article>
+        <article style="--i: 9; --url: url(whiskey.webp); --pos: 35%">
+          <header>
+            <h2>Whiskey</h2><em></em>
+          </header>
+          <figure><img src="whiskey.webp"/>
+          </figure>
+        </article>
+        <article style="--i: 10; --url: url(wine.jpg)">
+          <header>
+            <h2>Wine</h2><em></em>
+          </header>
+          <figure><img src="wine.jpg"/>
+          </figure>
+        </article>
+        <article style="--i: 11; --url: url(yuushinoda.jpg); --pos: 43% 47%">
+          <header>
+            <h2>Yuu Shinoda</h2><em>Japanese</em>
+          </header>
+          <figure><img src="yuushinoda.jpg"/>
+          </figure>
+        </article>
+        <article style="--i: 12; --url: url(swfx.webp); --pos: 65% 35%">
+          <header>
+            <h2>Sweetie Fox</h2><em>Russian</em>
+          </header>
+          <figure><img src="swfx.webp"/>
+          </figure>
+        </article>
+        <!--<article style="--i: 13; --url: url(https://images.unsplash.com/photo-1567600868213-60eb570ae39f?h=900)">
+          <header>
+            <h2>Red kangaroo</h2><em>Osphranter rufus</em>
+          </header>
+          <figure><img src="https://images.unsplash.com/photo-1567600868213-60eb570ae39f?h=900" alt="kangaroo in the grass"/>
+          </figure>
+        </article>
+        <article style="--i: 14; --url: url(https://images.unsplash.com/photo-1639231554431-ebce02bdeacc?h=900); --pos: 50% 25%">
+          <header>
+            <h2>Snow leopard</h2><em>Panthera uncia</em>
+          </header>
+          <figure><img src="https://images.unsplash.com/photo-1639231554431-ebce02bdeacc?h=900" alt="snow leopard sitting on top of a rock, its big fluffy tail hanging down"/>
+          </figure>
+        </article>
+        <article style="--i: 15; --url: url(https://images.unsplash.com/photo-1723979757235-73c4767ced1d?h=900)">
+          <header>
+            <h2>Sumatran orangutan</h2><em>Pongo abelii</em>
+          </header>
+          <figure><img src="https://images.unsplash.com/photo-1723979757235-73c4767ced1d?h=900" alt="close-up of a pensive male orangutan"/>
+          </figure>
+        </article>
+        <article style="--i: 16; --url: url(https://images.unsplash.com/photo-1500467525088-aafe28c0a95e?h=900); --pos: 57%">
+          <header>
+            <h2>Tiger</h2><em>Panthera tigris</em>
+          </header>
+          <figure><img src="https://images.unsplash.com/photo-1500467525088-aafe28c0a95e?h=900" alt="close-up of a pensive tiger lying on the ground"/>
+          </figure>
+        </article>
+        <article style="--i: 17; --url: url(https://images.unsplash.com/photo-1692373202439-4b13694c8a68?h=900); --pos: 43% 35%">
+          <header>
+            <h2>Brown bear</h2><em>Ursus arctos</em>
+          </header>
+          <figure><img src="https://images.unsplash.com/photo-1692373202439-4b13694c8a68?h=900" alt="brown bear in the forest, sticking tongue out"/>
+          </figure>
+        </article>-->
+      </section>
+    </main>
+    <footer></footer>
+    <!-- just support info-->
+    <aside>
+      <p class="box-info-scrollani">Sorry, your browser does not appear to support scroll-driven animation. As of January 2025, this is supported in Firefox if the <kbd>layout.css.scroll-driven-animations.enabled</kbd> flag is set to true in <kbd>about:config</kbd> and in Chromium browsers. Safari support is coming, but it hasn't arrived yet.</p>
+    </aside>
+  </body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
