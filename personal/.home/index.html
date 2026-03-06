@@ -5,73 +5,84 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>MK Avatar</title>
 <link rel="stylesheet" href="style.css">
+
 <style>
-body{
-    font-family: serif;
-    background: #0e1a12;
-    color: #e6ffe6;
-    display:flex;
-    align-items:top;    
-    justify-content:top;
-    height:100vh;
-    margin:0;
-    text-align:top;
-    padding: 5%;
-  }
 
-  .box{
-    max-width:700px;
-  }
+html, body{
+  margin:0;
+  padding:0;
+  min-height:100vh;
+  font-family: serif;
+  background:#0e1a12;
+  color:#e6ffe6;
+}
 
-  h1{
-    font-size:2.2em;
-    margin-bottom:10px;
-  }
+/* grid container */
+.columns{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:40px;
+  padding:5%;
+  max-width:1200px;
+  margin:auto;
+}
 
-  p{
-    opacity:0.8;
-    line-height:1.6;
+/* each column */
+.column{
+  text-align:center;
+}
+
+/* media */
+.column img,
+.column video{
+  width:100%;
+  height:auto;
+  border-radius:10px;
+}
+
+p{
+  opacity:0.8;
+  line-height:1.6;
+}
+
+/* mobile */
+@media (max-width:900px){
+  .columns{
+    grid-template-columns:1fr;
   }
+}
+
 </style>
 </head>
+
 <body>
 
-  <div class="columns">
-    <!-- Column 1 -->
-    <div class="column">
-      <!--<p>“To master energy through discipline, 
-        to turn emotion into creation, 
-        and to protect life through understanding.” 
-        I am an emotional warrior-artist — meant to bring intensity into balance, chaos into rhythm, and pain into power. 
-        My destiny isn’t peace through avoidance — it’s peace through mastery.</p>
-      -->
-      <img src="fight.png" title="MK" width="50%" height="50%">
-    </div>
+<div class="columns">
 
-    <div class="column">
-      <video width="100%" height="100%" controls>
-        <source src="poem.mp4" type="video/mp4">
+  <!-- Column 1 -->
+  <div class="column">
+
+    <video controls>
+      <source src="poem.mp4" type="video/mp4">
       Your browser does not support the video tag.
-      </video> <br><br><br><br>
-        <p> <!-- This isn’t a site — it’s a whisper of self.
-            Words orbit one name: MK.
-            Each link a memory, each glow a thought.
-            Zodiac, code, melody, and silence — all folded into one breath.
-            No walls, only reflections.
-            Wander not to learn, but to feel — a mirror written in light. -->
-        </p>
-    </div>
+    </video>
 
-    <!-- Column 3 
-    <div class="column">
-      <audio controls>
-        <source src="horse.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-      </audio> 
-    </div> -->
+    <br><br><br>
+
+    <p>
+      <!-- poetic text here -->
+    </p>
 
   </div>
 
-  <script src="script.js"></script>
+  <!-- Column 2 -->
+  <div class="column">
+    <img src="fight.png" title="MK">
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>

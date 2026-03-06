@@ -5,20 +5,19 @@ html, body {
   font-family: "Poppins", sans-serif;
   background: transparent;
   color: white;
-  min-height: 100%;
 }
 
-/* Container for all 3 columns */
+/* Container for columns */
 .columns {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
- height: 100%;
+  min-height: 100vh;
   padding: 20px;
   box-sizing: border-box;
 }
 
-/* Individual columns */
+/* Individual column */
 .column {
   background: transparent;
   border-radius: 10px;
@@ -27,16 +26,19 @@ html, body {
   text-align: center;
 }
 
+/* Images */
 .column img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 500px;
   height: auto;
   border-radius: 8px;
+  display: block;
+  margin: 0 auto 15px;
 }
 
-/* Responsive: stack vertically on small screens */
+/* Mobile */
 @media (max-width: 900px) {
   .columns {
     grid-template-columns: 1fr;
-    height: auto;
   }
 }
