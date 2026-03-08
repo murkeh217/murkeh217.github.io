@@ -35,6 +35,8 @@ body {
 
   animation: k 1s linear;
   animation-timeline: scroll();
+
+  touch-action: none;
 }
 
 body::before {
