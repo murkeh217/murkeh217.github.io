@@ -1,13 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Wait for layout to finish so offsetHeight is accurate
-  requestAnimationFrame(() => {
-    initCarousels();
-  });
+window.addEventListener("load", () => {
+  initCarousels();
 });
 
 function initCarousels() {
 
-  // --- Detect if parent iframe/page is scrollable ---
   function iframeIsScrollable() {
     try {
       const html = document.documentElement;
@@ -27,7 +23,9 @@ function initCarousels() {
 
   const parentScrollable = iframeIsScrollable();
 
-  // --- Setup all carousels ---
+  // -------------------------
+  // CAROUSEL SETUP
+  // -------------------------
   document.querySelectorAll('.carousel').forEach(carousel => {
 
     if (!carousel.hasAttribute('tabindex')) {
@@ -40,27 +38,22 @@ function initCarousels() {
     const originalItems = Array.from(carousel.children);
     const totalItems = originalItems.length;
 
-    // Clone twice for infinite loop
     originalItems.forEach(item => carousel.appendChild(item.cloneNode(true)));
     originalItems.forEach(item => carousel.appendChild(item.cloneNode(true)));
 
     const firstItem = carousel.querySelector(':scope > *');
 
-    // Safe item height
     const rawHeight = firstItem ? firstItem.offsetHeight : 0;
     const itemHeight = (rawHeight > 5 ? rawHeight : 60) + 24;
 
-    // Start at top
     carousel.scrollTop = 0;
 
-    // ---- WHEEL SCROLL HANDLER ----
     carousel.addEventListener(
       'wheel',
       e => {
         const rect = carousel.getBoundingClientRect();
         const isHover = e.clientY >= rect.top && e.clientY <= rect.bottom;
 
-        // If iframe cannot scroll → don't trap the wheel
         if (!parentScrollable) return;
 
         if (isHover) {
@@ -78,23 +71,26 @@ function initCarousels() {
       { passive: false, capture: true }
     );
 
-  carousel.addEventListener('scroll', () => {
-    const loopHeight = itemHeight * totalItems;
+    carousel.addEventListener('scroll', () => {
 
-    // User scrolled below 2nd block → wrap to middle block smoothly
-    if (carousel.scrollTop >= loopHeight * 2) {
-      carousel.scrollTop -= loopHeight;
-    }
+      const loopHeight = itemHeight * totalItems;
 
-    // User scrolled above 1st block → wrap to middle block smoothly
-    else if (carousel.scrollTop <= 0) {
-      carousel.scrollTop += loopHeight;
-    }
+      if (carousel.scrollTop >= loopHeight * 2) {
+        carousel.scrollTop -= loopHeight;
+      }
+      else if (carousel.scrollTop <= 0) {
+        carousel.scrollTop += loopHeight;
+      }
+
+    });
+
   });
 
-
-  // ---- SCROLL BUTTONS ----
+  // -------------------------
+  // BUTTON CONTROLS
+  // -------------------------
   document.querySelectorAll('.carousel-column').forEach(column => {
+
     const carousel = column.querySelector('.carousel');
     if (!carousel) return;
 
@@ -107,17 +103,24 @@ function initCarousels() {
 
     if (upBtn) {
       upBtn.addEventListener('click', () => {
-        carousel.scrollBy({ top: -itemHeight, behavior: 'smooth' });
+        carousel.scrollBy({
+          top: -itemHeight,
+          behavior: 'smooth'
+        });
         carousel.focus();
       });
     }
 
     if (downBtn) {
       downBtn.addEventListener('click', () => {
-        carousel.scrollBy({ top: itemHeight, behavior: 'smooth' });
+        carousel.scrollBy({
+          top: itemHeight,
+          behavior: 'smooth'
+        });
         carousel.focus();
       });
     }
+
   });
 
 }
