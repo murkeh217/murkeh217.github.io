@@ -168,20 +168,16 @@ BUTTON ROW
 ============================= */
 
 .controls{
-
-  display:flex;
-  flex-direction:row;
-  align-items:center;
-
-  gap:2em;
-
   grid-area:4/2;
 
-  z-index:
-  calc(
-  (1 - min(1,var(--abs-p)))
-  * var(--n)
-  );
+  display:flex;
+  align-items:center;
+  gap:1rem;
+
+  flex-wrap:nowrap;
+
+  z-index:999;      /* important */
+  position:relative;
 }
 
 /* =============================
@@ -193,15 +189,16 @@ button{
   --sgn:-1;
   --c:darkgreen;
 
-  display:grid;
-  place-items:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
   border:none;
 
   width:2.6rem;
   height:2.6rem;
 
-  flex-shrink:0;
+  flex:0 0 auto;
 
   border-radius:50%;
 
@@ -222,7 +219,6 @@ button::before{
   display:block;
 
   border:solid 2px;
-
   border-width:2px 2px 0 0;
 
   width:40%;
