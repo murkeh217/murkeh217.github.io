@@ -3,11 +3,13 @@
 /* =============================
 REGISTER ANIMATED VARIABLES
 ============================= */
+
 @property --p {
   syntax: "<number>";
   initial-value: 0;
   inherits: true;
 }
+
 @property --v {
   syntax: "<number>";
   initial-value: 0;
@@ -17,166 +19,226 @@ REGISTER ANIMATED VARIABLES
 /* =============================
 RESET
 ============================= */
-* {
-  margin: 0;
-  box-sizing: border-box;
+
+*{
+  margin:0;
+  box-sizing:border-box;
 }
 
-/* IMPORTANT: allow normal scrolling */
-html, body {
-  display: block;
-  min-height: 100%;
-  height: auto;
-  overflow-y: auto;
-  font-family: poppins, sans-serif;
-  background: transparent;
-  color: #f1f5f9;
+/* allow normal scrolling */
+
+html,body{
+  display:block;
+  min-height:100%;
+  height:auto;
+  overflow-y:auto;
+  font-family:poppins,sans-serif;
+  background:transparent;
+  color:#f1f5f9;
 }
 
 /* =============================
-PAGE WRAPPER (optional scale)
-If you want zoom, wrap content in .wrapper
+OPTIONAL PAGE SCALE
 ============================= */
-.wrapper {
-  transform: scale(1.2);
-  transform-origin: top center;
+
+.wrapper{
+  transform:scale(1.2);
+  transform-origin:top center;
 }
 
 /* =============================
 STACK SECTION LAYOUT
 ============================= */
-section {
-  /* animation math */
-  --p: var(--k);
-  --abs-p: abs(var(--k) - var(--p));
-  --end: clamp(0, var(--abs-p) - 1, 1);
-  --dir: calc((1 - 2*var(--end))*sign(var(--k) - var(--p)));
-  --fwd: calc(.5*(1 + var(--dir)));
-  --v: var(--k);
-  --abs-v: abs(var(--v) - var(--p));
-  --prg: calc(var(--abs-v)/(1 - var(--end) + var(--end)*(var(--n) - 1)));
 
-  display: grid;
-  gap: 0.5em 4em;
-  grid-template: repeat(2, max-content) 1fr max-content / max-content 1fr;
+section{
 
-  width: min(1100px, 92%);
-  margin: 3rem auto;      /* allow page growth */
-  padding-bottom: 4rem;   /* prevent bottom cut-off */
+  --p:var(--k);
+  --abs-p:abs(var(--k) - var(--p));
+  --end:clamp(0,var(--abs-p) - 1,1);
 
-  counter-reset: k calc(1 + var(--k)) n var(--n);
-  transition: --p 0s 0.8s, --v 0.8s;
+  --dir:calc((1 - 2*var(--end))*sign(var(--k) - var(--p)));
+  --fwd:calc(.5*(1 + var(--dir)));
+
+  --v:var(--k);
+  --abs-v:abs(var(--v) - var(--p));
+  --prg:calc(var(--abs-v)/(1 - var(--end) + var(--end)*(var(--n) - 1)));
+
+  display:grid;
+  gap:.5em 4em;
+
+  grid-template:
+  repeat(2,max-content)
+  1fr
+  max-content
+  / max-content 1fr;
+
+  width:min(1100px,92%);
+  margin:3rem auto;
+
+  padding-bottom:4rem;
+
+  counter-reset:
+  k calc(1 + var(--k))
+  n var(--n);
+
+  transition:
+  --p 0s .8s,
+  --v .8s;
 }
 
 /* =============================
-COUNTER TEXT
+COUNTER
 ============================= */
+
 section::before,
-section em {
-  color: rgb(from currentColor r g b / 0.6);
+section em{
+  color:rgb(from currentColor r g b / .6);
 }
 
-section::before {
-  grid-area: 1/2;
-  width: 3ch;
-  text-align: right;
-  content: counter(k) "/" counter(n);
+section::before{
+  grid-area:1/2;
+  width:3ch;
+  text-align:right;
+  content:counter(k) "/" counter(n);
 }
 
 /* =============================
-ARTICLES (STACK ITEMS)
+STACK ITEMS
 ============================= */
-article {
-  --abs-top: abs(var(--k) - var(--i));
-  --not-top: min(1, var(--abs-top));
-  --top: calc(1 - var(--not-top));
 
-  --val-mov: ((1 - var(--fwd))*var(--p) + var(--fwd)*var(--k) - var(--i));
-  --abs-mov: abs(var(--val-mov));
-  --not-mov: min(1, var(--abs-mov));
-  --mov: calc(1 - var(--not-mov));
+article{
 
-  grid-area: 1/1/-1/-1;
-  display: grid;
-  grid-template: subgrid/subgrid;
+  --abs-top:abs(var(--k) - var(--i));
+  --not-top:min(1,var(--abs-top));
+  --top:calc(1 - var(--not-top));
 
-  z-index: mod(calc(var(--n) - 1 + var(--i) - var(--k)), var(--n));
-  transition: z-index 0.8s cubic-bezier(1, -0.9, 0, 1.9);
+  --val-mov:((1 - var(--fwd))*var(--p) + var(--fwd)*var(--k) - var(--i));
+  --abs-mov:abs(var(--val-mov));
+  --not-mov:min(1,var(--abs-mov));
+  --mov:calc(1 - var(--not-mov));
+
+  grid-area:1/1/-1/-1;
+
+  display:grid;
+  grid-template:subgrid/subgrid;
+
+  z-index:mod(calc(var(--n) - 1 + var(--i) - var(--k)),var(--n));
+
+  transition:
+  z-index .8s cubic-bezier(1,-0.9,0,1.9);
 }
 
 /* =============================
 TEXT
 ============================= */
-h2, em {
-  translate: 0 calc(var(--not-top)*1lh);
-  opacity: var(--top);
-  transition: 0.4s calc(var(--top)*.5*0.8s);
+
+h2,
+em{
+  translate:0 calc(var(--not-top)*1lh);
+  opacity:var(--top);
+  transition:.4s calc(var(--top)*.5*.8s);
 }
 
-h2 { grid-area: 2/2; }
-em { grid-area: 3/2; }
+h2{grid-area:2/2;}
+em{grid-area:3/2;}
 
 /* =============================
 IMAGES
 ============================= */
-img {
-  --sin: sin(var(--prg)*.5turn);
 
-  grid-area: 1/1/-1;
-  height: 13em;
-  aspect-ratio: 1;
-  object-fit: cover;
+img{
 
-  border: solid 2px darkgreen;
-  border-radius: 0.75em;
+  --sin:sin(var(--prg)*.5turn);
 
-  translate: calc(-150%*var(--mov)*sqrt(var(--sin)));
-  rotate: calc((1 - var(--sin))*var(--a));
+  grid-area:1/1/-1;
+
+  height:13em;
+  aspect-ratio:1;
+  object-fit:cover;
+
+  border:solid 2px darkgreen;
+  border-radius:.75em;
+
+  translate:calc(-150%*var(--mov)*sqrt(var(--sin)));
+  rotate:calc((1 - var(--sin))*var(--a));
 }
 
 /* =============================
 BUTTON ROW
 ============================= */
-.controls {
-  display: flex;
-  gap: 2em;
-  grid-area: 4/2;
-  z-index: calc((1 - min(1, var(--abs-p)))*var(--n));
+
+.controls{
+
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+
+  gap:2em;
+
+  grid-area:4/2;
+
+  z-index:
+  calc(
+  (1 - min(1,var(--abs-p)))
+  * var(--n)
+  );
 }
 
-button {
-  --sgn: -1;
-  --c: darkgreen;
+/* =============================
+BUTTON STYLE
+============================= */
 
-  border: none;
-  width: 1lh;
-  aspect-ratio: 1;
-  border-radius: 50%;
+button{
 
-  background: rgb(from var(--c) r g b / 0.2);
-  color: lightgreen;
-  font: 900 2em/1.5 sans-serif;
+  --sgn:-1;
+  --c:darkgreen;
 
-  transition: 0.3s ease-out;
+  display:grid;
+  place-items:center;
+
+  border:none;
+
+  width:2.6rem;
+  height:2.6rem;
+
+  flex-shrink:0;
+
+  border-radius:50%;
+
+  background:rgb(from var(--c) r g b / .2);
+  color:lightgreen;
+
+  font:900 1.4rem/1 sans-serif;
+
+  cursor:pointer;
+
+  transition:.3s ease-out;
 }
 
-button::before {
-  place-self: center;
-  border: solid 2px;
-  border-width: 2px 2px 0 0;
-  width: 35%;
-  aspect-ratio: 1;
-  translate: calc(var(--sgn)*-15%);
-  rotate: 45deg;
-  scale: var(--sgn);
-  content: "";
+button::before{
+
+  content:"";
+
+  display:block;
+
+  border:solid 2px;
+
+  border-width:2px 2px 0 0;
+
+  width:40%;
+  aspect-ratio:1;
+
+  transform:
+  translateX(calc(var(--sgn) * -15%))
+  rotate(45deg)
+  scale(var(--sgn));
 }
 
-button[data-inc="1"] {
-  --sgn: 1;
+button[data-inc="1"]{
+  --sgn:1;
 }
 
 button:hover,
-button:focus {
-  background: darkgreen;
+button:focus{
+  background:darkgreen;
 }
