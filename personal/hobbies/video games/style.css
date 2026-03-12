@@ -438,8 +438,8 @@
       img {
         background: var(--surface-2);
         block-size: 70cqb;
-        inline-size: auto;
         aspect-ratio: 1;
+        inline-size: auto;
         object-fit: cover;
       }
     }
