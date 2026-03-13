@@ -226,3 +226,7 @@ figcaption {
 }
 
 figcaption a { color: #370617 }
+
+body{
+  touch-action: pan-y;
+}
