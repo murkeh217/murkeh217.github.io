@@ -1,8 +1,45 @@
-function f(k) {
-	if(Math.abs(k) > .5)
-		scrollTo(0, .5*(k - Math.sign(k) + 1)*(document.documentElement.offsetHeight - window.innerHeight))
-}
+let isDragging = false;
+let startX = 0;
 
-f(-1);
+// --- MOUSE ---
+document.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  startX = e.clientX;
+});
 
-addEventListener('scroll', e => f(+getComputedStyle(document.body).getPropertyValue('--k')))
+document.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+
+  const dx = e.clientX - startX;
+  startX = e.clientX;
+
+  // simulate vertical scroll
+  window.dispatchEvent(new WheelEvent("wheel", {
+    deltaY: -dx * 2
+  }));
+});
+
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+});
+
+// --- TOUCH ---
+document.addEventListener("touchstart", (e) => {
+  isDragging = true;
+  startX = e.touches[0].clientX;
+});
+
+document.addEventListener("touchmove", (e) => {
+  if (!isDragging) return;
+
+  const dx = e.touches[0].clientX - startX;
+  startX = e.touches[0].clientX;
+
+  window.dispatchEvent(new WheelEvent("wheel", {
+    deltaY: -dx * 2
+  }));
+});
+
+document.addEventListener("touchend", () => {
+  isDragging = false;
+});

@@ -226,3 +226,12 @@ figcaption {
 }
 
 figcaption a { color: #370617 }
+
+body {
+  touch-action: none; /* allows custom swipe */
+  cursor: grab;
+}
+
+body:active {
+  cursor: grabbing;
+}
