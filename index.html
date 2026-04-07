@@ -751,5 +751,24 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<script>
+			function setLang(lang) {
+			const maxAttempts = 20;
+			let attempts = 0;
+
+			const interval = setInterval(() => {
+				const select = document.querySelector('.goog-te-combo');
+				if (select) {
+				select.value = lang;
+				select.dispatchEvent(new Event('change'));
+				clearInterval(interval);
+				}
+				attempts++;
+				if (attempts > maxAttempts) clearInterval(interval);
+			}, 250);
+			}
+			</script>
+
+
 	</body>
 </html>
