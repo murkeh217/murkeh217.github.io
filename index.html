@@ -391,12 +391,12 @@
 											Selected projects I have worked on.
 										</p>
 
-										<iframe src="about:blank" name="gameplay" width="100%" height="800px" id="myIframe"></iframe>
+										<!--<iframe src="about:blank" name="gameplay" width="100%" height="800px" id="myIframe"></iframe>-->
 
 										<script>
 										document.addEventListener("DOMContentLoaded", () => {
-											const iframe = document.getElementById("myIframe");
-											const descriptionBox = document.querySelector(".project_info");
+											//const iframe = document.getElementById("myIframe");
+											//const descriptionBox = document.querySelector(".project_info");
 
 											const descriptions = {
 												"fingers_crossed": `
@@ -518,9 +518,17 @@
 												`
 											};
 
+											document.querySelectorAll(".game-link").forEach(link => { link.addEventListener("click", 
+											
+												function () { 
+													const gameKey = this.dataset.game; 
+													if (descriptions[gameKey]) { descriptionBox.innerHTML = descriptions[gameKey]; 
 
+														} else { descriptionBox.innerHTML = "<p>No description available.</p>"; 
 
-											document.querySelectorAll("a[target='gameplay']").forEach(link => {
+													} // NO preventDefault → allows new tab to open }); }); });
+
+											/*document.querySelectorAll("a[target='gameplay']").forEach(link => {
 												link.addEventListener("click", function (e) {
 													let path = link.href.replace(/\/+$/, ''); // remove trailing slash
 													const folderName = path.split("/").pop(); // extract last segment
@@ -541,7 +549,7 @@
 													doc.close();
 												}
 											});
-										});
+										});*/
 										</script>
 
 
@@ -550,21 +558,21 @@
 
 										<div class="game-links">
 										<ul>
-											<a href="https://murkeh217.github.io/fingers_crossed" target="gameplay">Fingers Crossed</a> |
-											<a href="https://murkeh217.github.io/hurdle-race" target="gameplay">Hurdle Runner</a> |
-											<a href="https://murkeh217.github.io/jojo_arrow" target="gameplay">JOJO Arrow</a> |
-											<!--<a href="https://murkeh217.github.io/sisiphus" target="gameplay">Sisiphus</a> | -->
-											<a href="https://murkeh217.github.io/rpsls" target="gameplay">RPSLS(v1)</a> |
-											<a href="https://murkeh217.github.io/RockPaperScissor" target="gameplay">RockPaperScissor(v2)</a> |
-											<!--<a href="https://murkeh217.github.io/rhythm_tiles" target="gameplay">Rhythm Tiles</a> | -->
-											<a href="https://murkeh217.github.io/bass_rhythm" target="gameplay">Bass Rhythm</a> |
-											<a href="https://murkeh217.github.io/Killer-Wave" target="gameplay">Killer Wave</a> |
-											<!--<a href="https://murkeh217.github.io/battle-tank-game" target="gameplay">Battle Tanks</a> | -->
-											<a href="https://murkeh217.github.io/2.5D-Fighting-Game" target="gameplay">JOJO Fight</a><!-- |
-											<a href="https://murkeh217.github.io/Doodle-Jump-Clone" target="gameplay">Doodle Jump Clone</a> | -->
-											<!--<a href="https://murkeh217.github.io/LineBall" target="gameplay">Line Ball Clone</a> | -->
-											<!--<a href="https://murkeh217.github.io/3D-game" target="gameplay">3D Game</a> | -->
-											<!--<a href="https://murkeh217.github.io/2D-platformer-game" target="gameplay">2D Platformer Game</a>-->
+											<a href="https://murkeh217.github.io/fingers_crossed" target="_blank" rel="noopener noreferrer" class="game-link"  data-game="fingers_crossed">Fingers Crossed</a> |
+											<a href="https://murkeh217.github.io/hurdle-race" target="_blank" rel="noopener noreferrer" class="game-link" data-game="hurdle-race">Hurdle Runner</a> |
+											<a href="https://murkeh217.github.io/jojo_arrow" target="_blank" rel="noopener noreferrer" class="game-link" data-game="jojo_arrow">JOJO Arrow</a> |
+											<!--<a href="https://murkeh217.github.io/sisiphus" target="_blank" class="game-link" data-game="sisiphus">Sisiphus</a> | -->
+											<a href="https://murkeh217.github.io/rpsls" target="_blank" rel="noopener noreferrer" class="game-link" data-game="rpsls">RPSLS(v1)</a> |
+											<a href="https://murkeh217.github.io/RockPaperScissor" target="_blank" rel="noopener noreferrer" class="game-link" data-game="RockPaperScissor">RockPaperScissor(v2)</a> |
+											<!--<a href="https://murkeh217.github.io/rhythm_tiles" target="_blank" class="game-link" data-game="rhythm_tiles">Rhythm Tiles</a> | -->
+											<a href="https://murkeh217.github.io/bass_rhythm" target="_blank" rel="noopener noreferrer" class="game-link" data-game="bass_rhythm">Bass Rhythm</a> |
+											<a href="https://murkeh217.github.io/Killer-Wave" target="_blank" rel="noopener noreferrer" class="game-link" data-game="Killer-Wave">Killer Wave</a> |
+											<!--<a href="https://murkeh217.github.io/battle-tank-game" target="_blank" class="game-link" data-game="battle-tank-game">Battle Tanks</a> | -->
+											<a href="https://murkeh217.github.io/2.5D-Fighting-Game" target="_blank" rel="noopener noreferrer" class="game-link" data-game="2.5D-Fighting-Game">JOJO Fight</a><!-- |
+											<a href="https://murkeh217.github.io/Doodle-Jump-Clone" target="_blank" class="game-link" data-game="Doodle-Jump-Clone">Doodle Jump Clone</a> | -->
+											<!--<a href="https://murkeh217.github.io/LineBall" target="_blank" class="game-link" data-game="LineBall">Line Ball Clone</a> | -->
+											<!--<a href="https://murkeh217.github.io/3D-game" target="_blank" class="game-link" data-game="3D-game">3D Game</a> | -->
+											<!--<a href="https://murkeh217.github.io/2D-platformer-game" target="_blank" class="game-link" data-game="2D-platformer-game">2D Platformer Game</a>-->
 										</ul><br><br> <!-- end project info -->
 										
 										<p>Some games are being converted to <strong>WebGL</strong> build and will be uploaded soon...</p>
