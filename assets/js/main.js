@@ -141,4 +141,18 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	});
 
+	document.querySelectorAll(".game-link").forEach(link => {
+		link.addEventListener("click", function () {
+		localStorage.setItem(this.href, "visited");
+		});
+	});
+
+	// Apply on load
+	document.querySelectorAll(".game-link").forEach(link => {
+		if (localStorage.getItem(link.href)) {
+			link.classList.add("visited-link");
+		}
+	});
+
 });
+

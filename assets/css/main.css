@@ -3294,3 +3294,21 @@ line-height: 1.4;
     background: #6c976c;
     color: #000;
 }
+
+.game-link {
+    color: #0f770f;          /* default */
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.game-link:hover {
+    color: #1abc9c;          /* hover */
+}
+
+.game-link:visited {
+    color: #ffffff;          /* visited */
+}
+
+.game-link:active {
+    color: #47e73c;          /* when clicking */
+}

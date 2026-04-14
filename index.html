@@ -391,171 +391,7 @@
 											Selected projects I have worked on.
 										</p>
 
-										<!--<iframe src="about:blank" name="gameplay" width="100%" height="800px" id="myIframe"></iframe>-->
-
-										<script>
-										document.addEventListener("DOMContentLoaded", () => {
-											//const iframe = document.getElementById("myIframe");
-											//const descriptionBox = document.querySelector(".project_info");
-
-											const descriptions = {
-												"fingers_crossed": `
-													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
-														<li>Implemented a branching dialogue system using ScriptableObjects for modular story paths</li>
-														<li>Persistent decision tracking via custom game state manager (saved across sessions)</li>
-														<li>Designed custom UI dialogue system with typewriter effect and speaker tagging</li>
-														<li>Utilized Unity’s AudioMixer for layered ambient tension and SFX triggers</li>
-														<li>Multiple endings triggered via flag-based condition trees and state evaluation</li>
-													</ul>
-												`,
-												"hurdle-race": `
-													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
-														<li>Developed a fast-paced 3D runner using Rigidbody2D physics and timed animation cycles</li>
-														<li>Precision-based jump timing with frame-perfect input windows for increased difficulty</li>
-														<li>Obstacle collision detection and hit feedback using custom collision boxes</li>
-														<li>Optimized for mobile with minimal draw calls and sprite batching</li>
-													</ul>
-												`,
-												"jojo_arrow": `
-													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
-														<li>Integrated Unity Timeline and Animator for synchronized feedback animations</li>
-														<li>Dynamic difficulty scaling based on player performance tracking</li>
-													</ul>
-												`,
-
-												"sisiphus": `
-													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
-														<li>Physics-based challenge loop using Unity’s Rigidbody2D and configurable slopes</li>
-														<li>Endless uphill push mechanic simulating "Sisyphean" struggle via friction and drag tuning</li>
-														<li>Minimalist environment built with tilemaps and scrolling parallax backgrounds</li>
-														<li>Procedural difficulty through increasing incline and randomized rock weight</li>
-													</ul>
-												`,
-												"rpsls(v1)": `
-													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
-														<li>Implemented Rock-Paper-Scissors-Lizard-Spock logic using extensible rule sets</li>
-														<li>UI built with Unity UI Toolkit for scalable and themeable components</li>
-														<li>AI opponent uses weighted randomness and past-pattern tracking</li>
-														<li>State machine driven interface for fast user feedback and result transitions</li>
-													</ul>
-												`,
-												"RockPaperScissor(v2)": `
-													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
-														<li>Version 2</li>
-													</ul>
-												`,
-												"rhythm_tiles": `
-													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
-														<li>Grid-based rhythm puzzle with timing-sensitive inputs mapped to beat events</li>
-														<li>Used ScriptableObjects to define tile types, beat patterns, and visual behavior</li>
-														<li>Visual metronome synced with BPM using Unity’s audio analysis tools</li>
-														<li>Supports dynamic level generation based on imported music data</li>
-													</ul>
-												`,
-												"bass_rhythm": `
-													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
-														<li>Core gameplay loop built around BPM-based audio event triggers</li>
-														<li>Custom timing input system for real-time beat synchronization</li>
-														<li>Level generation based on beat data parsed from audio waveform</li>
-														<li>Used AudioSource.GetSpectrumData for real-time bass pulse visualization</li>
-													</ul>
-												`,
-												"Killer-Wave": `
-													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
-														<li>Procedural wave terrain generation using Perlin noise curves in 2.5D space</li>
-														<li>Implemented tight jump control using variable gravity and physics damping</li>
-														<li>Single-tap control with increasing wave difficulty curve over time</li>
-														<li>Post-processing effects for neon synthwave aesthetic using URP</li>
-													</ul>
-												`,
-												"battle-tank-game": `
-													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
-														<li>Top-down twin-stick tank combat with modular tank parts and armor logic</li>
-														<li>Projectile physics using raycasting and rigidbody-based shell simulation</li>
-														<li>Implemented health, damage, and explosion systems with object pooling for performance</li>
-														<li>NavMesh integration for AI-controlled enemy tanks with pathfinding and obstacle avoidance</li>
-													</ul>
-												`,
-												"2.5D-Fighting-Game": `
-													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
-														<li>2.5D fighting engine with directional hitboxes and buffered combo inputs</li>
-														<li>Used Mecanim Animator layers and blend trees for responsive combat transitions</li>
-														<li>Implemented super meter system with charge buildup and cinematic camera triggers</li>
-														<li>Frame-based hit detection and reactive visual/audio feedback systems</li>
-													</ul>
-												`,
-												"Doodle-Jump-Clone": `
-													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
-														<li>Vertical platformer using infinite procedural level generation and jump boosting platforms</li>
-														<li>Custom collision system to support one-way platform interactions</li>
-														<li>Camera follows player vertically with dynamic bounds and parallax layers</li>
-														<li>Built jump logic using Unity physics and tweaked for arcade responsiveness</li>
-													</ul>
-												`,
-												"LineBall": `
-													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
-														<li>Precision ball bouncing game with hand-drawn line interactions using mouse/touch input</li>
-														<li>Implemented custom bezier curve renderer and collision detection against drawn lines</li>
-														<li>Real-time trajectory prediction and feedback using LineRenderer and Raycast</li>
-														<li>Progressive difficulty and adaptive physics responses for skill-based gameplay</li>
-													</ul>
-												`,
-												"3D-game": `
-													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
-														<li>Third-person exploration prototype using Unity's CharacterController and Cinemachine</li>
-														<li>Scene built using modular 3D kits with baked lighting and occlusion culling</li>
-														<li>Basic interaction system with raycast-based object detection and prompt feedback</li>
-														<li>Shader Graph used for stylized effects like water, outlines, and fog</li>
-													</ul>
-												`,
-												"2D-platformer-game": `
-													<br><br><ul style="list-style-position: inside; text-align: center; padding-left: 0;">
-														<li>Classic side-scrolling platformer with tight controls and coyote-time jump logic</li>
-														<li>Built modular level system with Unity tilemaps and custom hazard components</li>
-														<li>Checkpoint, coin collection, and enemy patrol AI systems implemented</li>
-														<li>Polished animation system with blend transitions using Animator State Machine</li>
-													</ul>
-												`
-											};
-
-											document.querySelectorAll(".game-link").forEach(link => { link.addEventListener("click", 
-											
-												function () { 
-													const gameKey = this.dataset.game; 
-													if (descriptions[gameKey]) { descriptionBox.innerHTML = descriptions[gameKey]; 
-
-														} else { descriptionBox.innerHTML = "<p>No description available.</p>"; 
-
-													} // NO preventDefault → allows new tab to open }); }); });
-
-											/*document.querySelectorAll("a[target='gameplay']").forEach(link => {
-												link.addEventListener("click", function (e) {
-													let path = link.href.replace(/\/+$/, ''); // remove trailing slash
-													const folderName = path.split("/").pop(); // extract last segment
-
-													if (descriptions[folderName]) {
-														descriptionBox.innerHTML = descriptions[folderName];
-													} else {
-														descriptionBox.innerHTML = "<p>No description available.</p>";
-													}
-												});
-											});
-
-											iframe.addEventListener("load", () => {
-												const doc = iframe.contentDocument || iframe.contentWindow.document;
-												if (iframe.src === "about:blank") {
-													doc.open();
-													doc.write("<h3 style='text-align:center; color:lightgreen;'>Please choose a game to play from below. Note: Some games may needed to be opened in new tab.</h3>");
-													doc.close();
-												}
-											});
-										});*/
-										</script>
-
-
-
-									<div class="project_info"></div>
-
+										
 										<div class="game-links">
 										<ul>
 											<a href="https://murkeh217.github.io/fingers_crossed" target="_blank" rel="noopener noreferrer" class="game-link"  data-game="fingers_crossed">Fingers Crossed</a> |
@@ -573,10 +409,157 @@
 											<!--<a href="https://murkeh217.github.io/LineBall" target="_blank" class="game-link" data-game="LineBall">Line Ball Clone</a> | -->
 											<!--<a href="https://murkeh217.github.io/3D-game" target="_blank" class="game-link" data-game="3D-game">3D Game</a> | -->
 											<!--<a href="https://murkeh217.github.io/2D-platformer-game" target="_blank" class="game-link" data-game="2D-platformer-game">2D Platformer Game</a>-->
-										</ul><br><br> <!-- end project info -->
-										
+										</ul><!-- end project info -->
+
+										<!--<iframe src="about:blank" name="gameplay" width="100%" height="800px" id="myIframe"></iframe>-->
+
+										<script>
+										document.addEventListener("DOMContentLoaded", () => {
+											//const iframe = document.getElementById("myIframe");
+											const descriptionBox = document.querySelector(".project_info");
+
+											const descriptions = {
+												"fingers_crossed": `
+													<ul style="list-style-position: inside; text-align: center; padding-left: 0;">
+														<li>Implemented a branching dialogue system using ScriptableObjects for modular story paths</li>
+														<li>Persistent decision tracking via custom game state manager (saved across sessions)</li>
+														<li>Designed custom UI dialogue system with typewriter effect and speaker tagging</li>
+														<li>Utilized Unity’s AudioMixer for layered ambient tension and SFX triggers</li>
+														<li>Multiple endings triggered via flag-based condition trees and state evaluation</li>
+													</ul>
+												`,
+												"hurdle-race": `
+													<ul style="list-style-position: inside; text-align: center; padding-left: 0;">
+														<li>Developed a fast-paced 3D runner using Rigidbody2D physics and timed animation cycles</li>
+														<li>Precision-based jump timing with frame-perfect input windows for increased difficulty</li>
+														<li>Obstacle collision detection and hit feedback using custom collision boxes</li>
+														<li>Optimized for mobile with minimal draw calls and sprite batching</li>
+													</ul>
+												`,
+												"jojo_arrow": `
+													<ul style="list-style-position: inside; text-align: center; padding-left: 0;">
+														<li>Integrated Unity Timeline and Animator for synchronized feedback animations</li>
+														<li>Dynamic difficulty scaling based on player performance tracking</li>
+													</ul>
+												`,
+
+												"sisiphus": `
+													<ul style="list-style-position: inside; text-align: center; padding-left: 0;">
+														<li>Physics-based challenge loop using Unity’s Rigidbody2D and configurable slopes</li>
+														<li>Endless uphill push mechanic simulating "Sisyphean" struggle via friction and drag tuning</li>
+														<li>Minimalist environment built with tilemaps and scrolling parallax backgrounds</li>
+														<li>Procedural difficulty through increasing incline and randomized rock weight</li>
+													</ul>
+												`,
+												"rpsls(v1)": `
+													<ul style="list-style-position: inside; text-align: center; padding-left: 0;">
+														<li>Implemented Rock-Paper-Scissors-Lizard-Spock logic using extensible rule sets</li>
+														<li>UI built with Unity UI Toolkit for scalable and themeable components</li>
+														<li>AI opponent uses weighted randomness and past-pattern tracking</li>
+														<li>State machine driven interface for fast user feedback and result transitions</li>
+													</ul>
+												`,
+												"RockPaperScissor(v2)": `
+													<ul style="list-style-position: inside; text-align: center; padding-left: 0;">
+														<li>Version 2</li>
+													</ul>
+												`,
+												"rhythm_tiles": `
+													<ul style="list-style-position: inside; text-align: center; padding-left: 0;">
+														<li>Grid-based rhythm puzzle with timing-sensitive inputs mapped to beat events</li>
+														<li>Used ScriptableObjects to define tile types, beat patterns, and visual behavior</li>
+														<li>Visual metronome synced with BPM using Unity’s audio analysis tools</li>
+														<li>Supports dynamic level generation based on imported music data</li>
+													</ul>
+												`,
+												"bass_rhythm": `
+													<ul style="list-style-position: inside; text-align: center; padding-left: 0;">
+														<li>Core gameplay loop built around BPM-based audio event triggers</li>
+														<li>Custom timing input system for real-time beat synchronization</li>
+														<li>Level generation based on beat data parsed from audio waveform</li>
+														<li>Used AudioSource.GetSpectrumData for real-time bass pulse visualization</li>
+													</ul>
+												`,
+												"Killer-Wave": `
+													<ul style="list-style-position: inside; text-align: center; padding-left: 0;">
+														<li>Procedural wave terrain generation using Perlin noise curves in 2.5D space</li>
+														<li>Implemented tight jump control using variable gravity and physics damping</li>
+														<li>Single-tap control with increasing wave difficulty curve over time</li>
+														<li>Post-processing effects for neon synthwave aesthetic using URP</li>
+													</ul>
+												`,
+												"battle-tank-game": `
+													<ul style="list-style-position: inside; text-align: center; padding-left: 0;">
+														<li>Top-down twin-stick tank combat with modular tank parts and armor logic</li>
+														<li>Projectile physics using raycasting and rigidbody-based shell simulation</li>
+														<li>Implemented health, damage, and explosion systems with object pooling for performance</li>
+														<li>NavMesh integration for AI-controlled enemy tanks with pathfinding and obstacle avoidance</li>
+													</ul>
+												`,
+												"2.5D-Fighting-Game": `
+													<ul style="list-style-position: inside; text-align: center; padding-left: 0;">
+														<li>2.5D fighting engine with directional hitboxes and buffered combo inputs</li>
+														<li>Used Mecanim Animator layers and blend trees for responsive combat transitions</li>
+														<li>Implemented super meter system with charge buildup and cinematic camera triggers</li>
+														<li>Frame-based hit detection and reactive visual/audio feedback systems</li>
+													</ul>
+												`,
+												"Doodle-Jump-Clone": `
+													<ul style="list-style-position: inside; text-align: center; padding-left: 0;">
+														<li>Vertical platformer using infinite procedural level generation and jump boosting platforms</li>
+														<li>Custom collision system to support one-way platform interactions</li>
+														<li>Camera follows player vertically with dynamic bounds and parallax layers</li>
+														<li>Built jump logic using Unity physics and tweaked for arcade responsiveness</li>
+													</ul>
+												`,
+												"LineBall": `
+													<ul style="list-style-position: inside; text-align: center; padding-left: 0;">
+														<li>Precision ball bouncing game with hand-drawn line interactions using mouse/touch input</li>
+														<li>Implemented custom bezier curve renderer and collision detection against drawn lines</li>
+														<li>Real-time trajectory prediction and feedback using LineRenderer and Raycast</li>
+														<li>Progressive difficulty and adaptive physics responses for skill-based gameplay</li>
+													</ul>
+												`,
+												"3D-game": `
+													<ul style="list-style-position: inside; text-align: center; padding-left: 0;">
+														<li>Third-person exploration prototype using Unity's CharacterController and Cinemachine</li>
+														<li>Scene built using modular 3D kits with baked lighting and occlusion culling</li>
+														<li>Basic interaction system with raycast-based object detection and prompt feedback</li>
+														<li>Shader Graph used for stylized effects like water, outlines, and fog</li>
+													</ul>
+												`,
+												"2D-platformer-game": `
+													<ul style="list-style-position: inside; text-align: center; padding-left: 0;">
+														<li>Classic side-scrolling platformer with tight controls and coyote-time jump logic</li>
+														<li>Built modular level system with Unity tilemaps and custom hazard components</li>
+														<li>Checkpoint, coin collection, and enemy patrol AI systems implemented</li>
+														<li>Polished animation system with blend transitions using Animator State Machine</li>
+													</ul>
+												`
+											};
+
+											document.querySelectorAll(".game-link").forEach(link => {
+												link.addEventListener("click", function () {
+													const gameKey = this.dataset.game;
+
+													console.log("Clicked:", gameKey); // DEBUG
+
+													if (descriptions[gameKey]) {
+														descriptionBox.innerHTML = descriptions[gameKey];
+													} else {
+														descriptionBox.innerHTML = "<p>No description available.</p>";
+													}
+												});
+											});
+
+										});
+										</script>
+
+
+
+									<div class="project_info"></div>										
 										<p>Some games are being converted to <strong>WebGL</strong> build and will be uploaded soon...</p>
-										</div>
+									</div>
 									</section>
 
 									<section id="upcoming-projects" class="upcoming-section">
