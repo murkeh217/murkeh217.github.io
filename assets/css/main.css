@@ -3312,3 +3312,34 @@ line-height: 1.4;
 .game-link:active {
     color: #47e73c;          /* when clicking */
 }
+
+.project-group {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.project-group span {
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 14px;
+	background: #f5f5f5;
+}
+
+.project-group h3 {
+	color: #4CAF50; /* light green */
+	font-weight: 500;
+	text-align: center;
+	line-height: 1.8;
+}
+
+.project-group {
+	text-align: center;
+}
+
+.project-group h3 {
+	color: #90EE90 !important; /* light green */
+	font-weight: 500;
+	line-height: 1.8;
+}
