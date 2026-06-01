@@ -52,6 +52,6 @@ body {
   min-height: 100%;
   display: grid;
   place-content: center;
-  padding-top: 300px;
+  padding-top: 250px;
   background: transparent;
 }
