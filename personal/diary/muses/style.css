@@ -1,10 +1,8 @@
 @import url("https://fonts.cdnfonts.com/css/thegoodmonolith");
 
-@font-face {
-  src: url("https://fonts.cdnfonts.com/css/pp-neue-montreal") format("woff2");
-  font-family: "PP Neue Montreal", sans-serif;
-  font-weight: 400;
-}
+/* Note: removed an invalid @font-face that referenced a CSS endpoint
+   instead of a direct .woff/.woff2 asset. If you have a direct font
+   file URL, re-add a proper @font-face here. */
 
 :root {
   --spacing-base: 1rem;
@@ -14,16 +12,18 @@
   --color-text-dim: 0.6;
   --transition-medium: 0.3s ease;
   --font-size-base: 14px;
+  /* Centralized stacking order */
+  --z-base: 100;
+  --z-vignette: 9998;
+  --z-overlay: 9999;
+  --z-expanded: 10000;
+  --z-top: 10002;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 
 body {
@@ -43,13 +43,13 @@ body::before {
   width: 200%;
   height: 200%;
   background: transparent
-    url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
+    url("https://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
   background-size: 300px 300px;
   -webkit-animation: noise-animation 0.3s steps(5) infinite;
           animation: noise-animation 0.3s steps(5) infinite;
   opacity: 0.9;
   will-change: transform;
-  z-index: 100;
+  z-index: var(--z-base);
   pointer-events: none;
 }
 
@@ -145,10 +145,7 @@ body::before {
   }
 }
 
-.coordinates-section {
-  grid-column: 1 / span 3;
-  font-family: "TheGoodMonolith", monospace;
-}
+/* coordinates-section: moved to "Bottom bar" block for consolidation */
 
 /* Key hint styling */
 .key-hint {
@@ -235,7 +232,7 @@ h3 {
   left: 0;
   width: 100vw;
   padding: 1.5rem;
-  z-index: 10000;
+  z-index: var(--z-expanded, 10000);
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   -moz-column-gap: var(--spacing-base);
@@ -275,6 +272,7 @@ h3 {
 /* Bottom bar */
 .coordinates-section {
   grid-column: 1 / span 3;
+  font-family: "TheGoodMonolith", monospace;
 }
 
 .links-section {
@@ -407,7 +405,7 @@ h3 {
   width: 100%;
   text-align: center;
   pointer-events: none;
-  z-index: 10002;
+  z-index: var(--z-top);
   /* Increased to be above expanded-item */
 }
 
@@ -469,7 +467,7 @@ h3 {
 /* Expanded item should be above overlay but below titles and captions */
 .expanded-item {
   position: fixed;
-  z-index: 10000;
+  z-index: var(--z-expanded);
   /* Lower than project-title and caption-clone */
   top: 50%;
   left: 50%;
@@ -497,7 +495,7 @@ h3 {
   background-color: #000000;
   pointer-events: none;
   opacity: 0;
-  z-index: 9999;
+  z-index: var(--z-overlay);
   /* Below expanded-item but above other content */
 }
 
@@ -513,7 +511,7 @@ h3 {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 9998;
+  z-index: var(--z-vignette);
   /* Below overlay */
 }
 
@@ -549,7 +547,7 @@ h3 {
 
 /* Tweakpane styles */
 .tp-dfwv {
-  z-index: 10000 !important;
+  z-index: var(--z-expanded) !important;
 }
 
 /* Make sure the Tweakpane tab is visible when collapsed */
@@ -568,14 +566,7 @@ h3 {
 /* Caption clone needs to be above expanded item */
 .caption-clone {
   position: fixed;
-  z-index: 10002;
-  /* Same as project-title to be above expanded-item */
-}
-
-/* Clone styles for animation */
-.caption-clone {
-  position: fixed;
-  z-index: 10001;
+  z-index: var(--z-top);
 }
 
 .caption-clone .item-name,

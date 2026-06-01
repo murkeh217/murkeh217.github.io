@@ -1,18 +1,25 @@
+.container {
+  position: relative;
+  width: 320px;
+  margin: auto;
+  perspective: 700px;
+}
+
+/* ensure full-height centering inside iframe */
+html, body {
+  height: 100%;
+}
 body {
   margin: 0;
   background: transparent;
   text-align: center;
   font-family: sans-serif;
   color: #fefefe;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transform: scale(0.8);    /* 0.8 = 80% of original size */
   transform-origin: center; /* adjust where it scales from */
-}
-.container {
-  position: relative;
-  width: 320px;
-  margin: 100px auto 0 auto;
-  perspective: 700px;
 }
 
 .carousel {

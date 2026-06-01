@@ -40,9 +40,16 @@
   height: 100%;
 }
 
+/* ensure full-height centering inside iframe */
+html, body { height: 100%; }
 body {
   background: transparent;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transform: scale(0.8);    /* 0.8 = 80% of original size */
   transform-origin: center; /* adjust where it scales from */
 }
+
+.container { min-height: 0; }

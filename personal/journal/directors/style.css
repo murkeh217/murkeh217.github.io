@@ -41,7 +41,7 @@ main {
 		opacity: 0.2;*/
 		mix-blend-mode: overlay;
 		pointer-events: none;
-		z-index: 999;
+		z-index: var(--z-expanded, 999);
 	}
 }
 

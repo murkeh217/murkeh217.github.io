@@ -63,7 +63,7 @@ h1 {
 .card:hover,
 .card.active {
   transform: translateY(-40px) scale(1.05) translateX(calc(var(--i) * 10px));
-  z-index: 200;
+  z-index: var(--z-expanded, 200);
   box-shadow: 0 0 60px rgba(16, 185, 129, 0.6);
   opacity: 1;
 }

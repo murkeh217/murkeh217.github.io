@@ -176,7 +176,7 @@ BUTTON ROW
 
   flex-wrap:nowrap;
 
-  z-index:999;      /* important */
+  z-index: var(--z-expanded, 999);      /* important */
   position:relative;
 }
 

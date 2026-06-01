@@ -1,7 +1,12 @@
+/* ensure full-height centering inside iframe */
+html, body { height: 100%; }
 body {
   background: transparent;
   font-family: "Fira Sans", sans-serif;
   padding-right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transform: scale(1);    /* 0.8 = 80% of original size */
   transform-origin: center; /* adjust where it scales from */
 }

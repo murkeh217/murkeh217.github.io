@@ -66,9 +66,13 @@ display: flex;
 flex-direction: column;
 
 /* Ensure it fills the grid cell */
-height: 100%;
-min-height: 0;
-max-height: 100%;
+  /* fill the available height of the .body grid cell */
+  height: 100%;
+  min-height: 0;
+  max-height: 100%;
+  align-self: stretch;
+  /* ensure internal flex children can shrink/grow */
+  min-height: 0;
 width: 100%;
 
 /* Allow scrolling if content overflows */
@@ -189,6 +193,12 @@ CONTENT AREA (RIGHT)
   overflow: auto;
 }
 
+/* Ensure main area grows to fill the body grid cell so the nav
+   (sidebar) can stretch to the bottom even when it has little content. */
+.page .main {
+  flex: 1 1 auto;
+}
+
 /* iframe grows with content */
 .page .main iframe {
   width: 100%;
@@ -196,8 +206,10 @@ CONTENT AREA (RIGHT)
   display: block;
 
   /* critical */
-  height: auto;
-  min-height: 100%;
+  /* Allow iframe to grow inside flex container. */
+  height: 100%;
+  min-height: 0;
+  flex: 1 1 auto;
 }
 
 /* ========================
