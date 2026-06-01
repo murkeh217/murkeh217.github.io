@@ -42,3 +42,12 @@ body {
   -webkit-clip-path: var(--clip-end);
           clip-path: var(--clip-end);
 }
+.clip-ellipse-top-left { --clip-start: ellipse(0 0 at 0 0); --clip-end: ellipse(150% 150% at 0 0);; }
+.clip-inset-top { --clip-start: inset(100% 0 0 0); --clip-end: inset(0 0 0 0);; }
+.clip-ellipse-top-right { --clip-start: ellipse(0 0 at 100% 0); --clip-end: ellipse(150% 150% at 100% 0);; }
+.clip-polygon-center { --clip-start: polygon(50% 50%,  50% 50%,  50% 50%, 50% 50%); --clip-end: polygon(-50% 50%, 50% -50%, 150% 50%, 50% 150%);; }
+.clip-circle { --clip-start: circle(0); --clip-end: circle(125%);; }
+.clip-inset-full { --clip-start: inset(100% 100% 100% 100%); --clip-end: inset(0 0 0 0);; }
+.clip-ellipse-bottom-left { --clip-start: ellipse(0 0 at 0 100%); --clip-end: ellipse(150% 150% at 0 100%);; }
+.clip-inset-bottom { --clip-start: inset(0 0 100% 0); --clip-end: inset(0 0 0 0);; }
+.clip-ellipse-bottom-right { --clip-start: ellipse(0 0 at 100% 100%); --clip-end: ellipse(150% 150% at 100% 100%);; }

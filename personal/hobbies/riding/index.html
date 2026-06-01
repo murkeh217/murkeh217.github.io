@@ -2,6 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS image stack cycle (infinitely cycling)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,26 +11,26 @@
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<section style="--n: 2; --k: 0">
-  <article style="--i: 0; --a: 1.92deg">
+<section class="stack-layout">
+  <article>
     <h2>Motorbike</h2><em>Hero Impulse 2011</em><img src="heroimpulse.avif"/>
   </article>
-  <article style="--i: 1; --a: -3.77deg">
+  <article>
     <h2>Bicycle</h2><em>BMX</em><img src="bmx.jpg"/>
   </article>
-  <!--<article style="--i: 2; --a: -11.7deg">
+  <!--<article>
     <h2>Leopard</h2><em>Panthera pardus</em><img src="https://images.unsplash.com/photo-1566489564594-f2163930c034?w=400" alt="blue-eyed leopard resting high up with its head on its front paws"/>
   </article>
-  <article style="--i: 3; --a: 3.34deg">
+  <article>
     <h2>Jaguar</h2><em>Panthera onca</em><img src="https://images.unsplash.com/photo-1601544359642-c76c4f7c3221?w=400" alt="jaguar closeup"/>
   </article>
-  <article style="--i: 4; --a: 1.35deg">
+  <article>
     <h2>Snow leopard</h2><em>Panthera uncia</em><img src="https://images.unsplash.com/photo-1689847190291-f8e0823f13ab?w=400" alt="snow leopard lying low on some rocks, its fur blending in perfecty"/>
   </article>
-  <article style="--i: 5; --a: -0.09deg">
+  <article>
     <h2>Cheetah</h2><em>Acinonyx jubatus</em><img src="https://images.unsplash.com/photo-1693702366986-cbfbd1cf0450?w=400" alt="cheetah in the grass at dusk"/>
   </article>
-  <article style="--i: 6; --a: 12.78deg">
+  <article>
     <h2>Cougar</h2><em>Puma concolor</em><img src="https://images.unsplash.com/photo-1661004527094-07d861089aed?w=400" alt="cougar walking through the snow"/>
   </article>-->
   <div class="controls">

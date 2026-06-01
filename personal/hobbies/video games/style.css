@@ -509,3 +509,16 @@
     }
   }
 }
+.scroll--content li.i-1 { --i: 1; }
+.scroll--content li.i-2 { --i: 2; }
+.scroll--content li.i-3 { --i: 3; }
+.scroll--content li.i-4 { --i: 4; }
+.scroll--content li.i-5 { --i: 5; }
+.scroll--content li.i-6 { --i: 6; }
+.scroll--content li.i-7 { --i: 7; }
+.scroll--content li.i-8 { --i: 8; }
+.scroll--content li.i-9 { --i: 9; }
+.scroll--content li.i-10 { --i: 10; }
+.scroll--content li.i-11 { --i: 11; }
+.scroll--content li.i-12 { --i: 12; }
+button.avatar-kirby { --img: url(https://assets.codepen.io/2585/gui-skull.png); }

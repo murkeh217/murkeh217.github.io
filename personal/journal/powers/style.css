@@ -189,3 +189,9 @@ h1 {
     height: 200px;
   }
 }
+
+.deck; .card:nth-child(1) { --i: -2; }
+.deck .card:nth-child(2) { --i: -1; }
+.deck .card:nth-child(3) { --i: 0; }
+.deck .card:nth-child(4) { --i: 1; }
+.deck .card:nth-child(5) { --i: 2; }

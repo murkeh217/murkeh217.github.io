@@ -238,3 +238,6 @@ button:hover,
 button:focus{
   background:darkgreen;
 }
+.stack-layout { --n: 2; --k: 0; }
+.stack-layout article:nth-child(1) { --i: 0; --a: 1.92deg; }
+.stack-layout article:nth-child(2) { --i: 1; --a: -3.77deg; }
