@@ -90,7 +90,8 @@ ul {
 				z-index: 1;
 				grid-column: var(--col-start, 1) / var(--col-end, 1);
 				grid-row: var(--row-start, 1) / var(--row-end, 1);
-				backdrop-filter: contrast(1.1) url(#pixelate);
+				-webkit-backdrop-filter: contrast(1.1) url(#pixelate);
+					backdrop-filter: contrast(1.1) url(#pixelate);
 			}
 
 			&::before {
@@ -114,12 +115,13 @@ ul {
 		figcaption {
 			position: absolute;
 			bottom: 1em;
-			backdrop-filter: blur(10px);
+			-webkit-backdrop-filter: blur(10px);
+				backdrop-filter: blur(10px);
 			color: #fff;
 			clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%);
 			padding: 0.5em;
 			font-size: 9cqw;
-			text-wrap: pretty;
+			overflow-wrap: anywhere;
 			translate: 0.5em;
 			transform: translateY(1em);
 			transition: all 240ms ease;
@@ -131,6 +133,7 @@ ul {
 			display: block;
 			position: absolute;
 			inset: 0;
+			-webkit-backdrop-filter: url(#chroma);
 			backdrop-filter: url(#chroma);
 			transition: all 140ms ease;
 			opacity: 0;
