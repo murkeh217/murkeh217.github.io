@@ -1,4 +1,7 @@
-import { Pane } from "https://cdn.skypack.dev/tweakpane@4.0.4";
+const Pane = window.Pane;
+if (!Pane) {
+  console.warn("Tweakpane is not loaded; settings panel is unavailable.");
+}
 window.Pane = Pane;
 
 // Register GSAP plugins
