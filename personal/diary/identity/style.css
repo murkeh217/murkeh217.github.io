@@ -35,9 +35,7 @@ img:nth-of-type(13) { /* optional: align the 13th like 4 & 9 */
 
 img:hover {
 	z-index: 100;
-	clip-path: path(
-		"M 0 0 C 100 0 100 0 200 0 C 200 50 200 50 200 80 C 200 100 200 100 200 120 C 200 150 200 150 200 200 C 100 200 100 200 0 200 C 0 150 0 150 0 120 C 0 100 0 100 0 80 Z"
-	);
+	clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
 img:not(:hover) {

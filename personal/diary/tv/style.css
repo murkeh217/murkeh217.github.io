@@ -20,7 +20,7 @@ body {
   justify-content: center;
   transform: scale(0.8);    /* 0.8 = 80% of original size */
   transform-origin: center; /* adjust where it scales from */
-}
+  }
 
 .carousel {
   position: absolute;
