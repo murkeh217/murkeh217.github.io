@@ -103,12 +103,12 @@ width: 100%;
 /* ========================
 INDENT LEVELS
 ======================== */
-.treeview-navigation li li span.label {
-padding-left: 14px;
+.treeview-navigation li li > a[role="treeitem"] {
+padding-left: 18px;
 }
 
-.treeview-navigation li li li span.label {
-padding-left: 28px;
+.treeview-navigation li li li > a[role="treeitem"] {
+padding-left: 30px;
 }
 
 /* ========================
