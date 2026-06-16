@@ -26,7 +26,7 @@ const imageUrls = [
   "2bsexy.jpg",
   "psylocke.png",
   "weed.webp",
-  "dishasexy.avif",
+  "disha.png",
   "angiemiller.jpg",
   "yuushinoda.jpg",
   "whiskey.webp",
