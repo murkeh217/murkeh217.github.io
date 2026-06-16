@@ -18,7 +18,6 @@ const items = [
   "Whiskey",
   "Rum & Cola",
   "Eve",
-  "Sweetie Fox",
   "Shen Qiao",
   "Wine",
   "Mojito"];
@@ -33,9 +32,8 @@ const imageUrls = [
   "whiskey.webp",
   "rumcola.webp",
   "eve.webp",
-  "swfx.webp",
   "shenqiao.jpg",
-  "wine.webp",
+  "wine.jpg",
   "mojito.jpg"
 ];
 const container = document.querySelector(".container");
