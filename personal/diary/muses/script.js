@@ -25,7 +25,7 @@ const items = [
 // Image URLs - replace with your actual image URLs
 const imageUrls = [
   "2bsexy.jpg",
-  "psylockesexy.webp",
+  "psylocke.png",
   "weed.webp",
   "dishasexy.avif",
   "angiemiller.jpg",
