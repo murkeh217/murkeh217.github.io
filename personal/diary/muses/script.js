@@ -15,12 +15,10 @@ const items = [
   "Disha Patani",
   "Angie Miller",
   "Yuu Shinoda",
-  "Whiskey",
   "Rum & Cola",
   "Eve",
   "Shen Qiao",
-  "Wine",
-  "Mojito"];
+  ];
 // Image URLs - replace with your actual image URLs
 const imageUrls = [
   "2bsexy.jpg",
@@ -29,12 +27,9 @@ const imageUrls = [
   "disha.png",
   "angiemiller.jpg",
   "yuushinoda.jpg",
-  "whiskey.webp",
   "rumcola.webp",
   "eve.webp",
-  "shenqiao.jpg",
-  "wine.jpg",
-  "mojito.jpg"
+  "shenqiao.jpg"
 ];
 const container = document.querySelector(".container");
 const canvas = document.getElementById("canvas");
