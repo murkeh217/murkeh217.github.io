@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CSS Grid for Multi-Sized Avatars</title>
-<link href="./style.css" rel="stylesheet"/>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>CSS Grid for Multi-Sized Avatars</title>
+	<link href="./style.css" rel="stylesheet" />
 </head>
+
 <body>
-<!-- partial:index.partial.html -->
-<!--
+	<!-- partial:index.partial.html -->
+	<!--
 	The markup here is a copy-paste from generated output that includes a lot of extra bits that aren't strictly required.
 
 	Here's the minimal markup required for this to work:
@@ -30,286 +32,422 @@
 		...
 	</div>
 -->
-<div class="supporter-list">
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Beheneko" src="beheneko.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Bleach" src="bleach.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Boruto" src="boruto.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Bungo Stray Dogs" src="bungostraydogs.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Chainsaw Man" src="chainsawman.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Chiikawa" src="chiikawa.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Chuhai Lips" src="chuhailips.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Dan Da Dan" src="dandadan.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Deathnote" src="deathnote.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Demon Slayer" src="demonslayer.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Doraemon" src="doraemon.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Dragon Ball Super" src="dragonball.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Dragon Ball Daima" src="dragonballdaima.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Dragon Goes House Hunting" src="dragongoeshousehunting.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Dr. Stone" src="drstone.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Fireforce" src="fireforce.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Fullmetal Alchemist: Brotherhood" src="fullmetalalchemistbrotherhood.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Go Go Loser Ranger" src="gogoloserranger.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Grand Blue Dreaming" src="grandblue.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Hell's Paradise" src="hellsparadise.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Hi Score Girl" src="hiscoregirl.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Isekai Quartet" src="isekaiquartet.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Jujutsu Kaisen" src="jujutsukaisen.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Kaiju No.8" src="kaiju8.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Konosuba" src="konosuba.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Lazarus" src="lazarus.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Love Flops" src="loveflops.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Kaguya-Sama: Love Is War" src="loveiswar.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Mars Red" src="marsred.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Mashle" src="mashle.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Mono" src="mono.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Mushoku Tensei" src="mushokutensei.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="My Hero Academia" src="myheroacademia.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="My Hero Academia: Vigilantes" src="myheroacademiavigilantes.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Naruto" src="naruto.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Ninja Kamui" src="ninjakamui.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="One Piece" src="onepiece.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Parasyte" src="parasyte.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Please Put Them On Takamine-san" src="pleaseputthemontakaminesan.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Promised Neverland" src="promisedneverland.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Ranma 1/2" src="ranma.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Re:Zero: Starting Life In Another World" src="rezero.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Saga of Tanya the Evil" src="sagaoftanya.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Shangri-La Frontier" src="shangrilafrontier.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Shinchan" src="shinchan.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Solo Leveling" src="sololeveling.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Spy X Family" src="spyxfamily.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="The Rising of Shield Hero" src="therisingofshieldhero.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="To Be Hero X" src="tobeherox.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Tokyo Revengers" src="tokyorevengers.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Urusei Yatsura" src="uruseiyatsura.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Vinland Saga" src="vinlandsaga.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Windbreaker" src="windbreaker.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Gleipnir" src="gleipnir.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Exorcist" src="exorcist.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Chillin' in the 30s" src="chillinin30s.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Reincarnated as a Slime" src="rimuru.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Black Clover" src="blackclover.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Yu Yu Hakushou" src="yuyuhakushu.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Stein's Gate" src="steinsgate.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Kochikame" src="kochikame.jpg"/>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Jojo's Bizzare Adventures" src="jojo.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="The Disastrous Life of Saiki K" src="saikik.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="One Punch Man" src="onepunchman.jpg"/></a><a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Mob Psycho 100" src="mobpsycho100.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Get Backers" src="getbackers.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Super Fishing Grander Musashi" src="grandermusashi.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="The Law of Ueki" src="lawofueki.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Flame of Recca" src="flameofrecca.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Dead Mount Death Play" src="deadmountdeathplay.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Beyblade" src="beyblade.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Digimon" src="digimon.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Pokemon" src="pokemon.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Galaxy Angel" src="galaxyangel.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Cardcaptor Sakura" src="pokemon.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Ghost in the Shell" src="ghostinshell.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Great Teacher Onizuka" src="onizuka.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="InuYasha" src="inuyasha.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Duel Masters Charge" src="duelmasters.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Yu-Gi-Oh!" src="yugioh.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Komi can't communicate" src="komi.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="No Game, No Life!" src="nogamenolife.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Cherry Magic! Thirty Years of Virginity can make you a Wizard" src="cherrymagic.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Sailor Moon" src="sailormoon.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Gintama" src="gintama.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Hunter X Hunter" src="hunterxhunter.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Plunderer" src="plunderer.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Apparently, Disillusioned Adventurers Will Save The World" src="apparently.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="The Aristocrat's Otherworldly Adventure: Serving Gods Who Go Too Far" src="aristocrat.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Kamikatsu: Working For God In A Godless World" src="kamikatsu.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Prison School" src="prisonschool.jpg"/> </a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Captain Tsubasa" src="tsubasa.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Vivy: Fluorite Eye’s Song" src="vivy.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Beelzebub" src="beelzebub.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="The Weakest Tamer Began A Journey To Pickup Trash" src="weakesttamer.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Gamers!" src="gamers.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Listeners" src="listeners.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Lookism" src="lookism.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="I Got a Cheat Skill in Another World and Became Unrivaled in the Real World, Too" src="igotcheat.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Yakitate!! Japan" src="bread.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Lycoris Recoil" src="lycoris.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Cowboy Bebop" src="bebop.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="HighSchool DxD" src="dxd.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="The Eminence In Shadow" src="eminence.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Fairy Tail" src="fairytail.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Overlord" src="overlord.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Uncle from Another World" src="uncle.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Sword Art Online" src="sao.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Code Geass" src="codegeass.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Kotaro Lives Alone" src="kotaro.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Samurai Pizza Cats" src="spc.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Attack On Titan" src="aot.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Let This Grieving Soul Retire" src="grievingsoul.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="The Vision Of Escaflowne" src="escaflowne.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Kill La Kill" src="killlakill.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Gachiakuta" src="gachiakuta.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Frieren" src="frieren.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Chained Soldier" src="chainedsoldier.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Tokyo Ghoul" src="tokyoghoul.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Sakamoto Days" src="sakamoto.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Rooster Fighter" src="rooster.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Liar Game" src="liar.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Daemons Of The Shadow Realm" src="daemon.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Marika's Love Meter Malfunction" src="marika.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="The Legend of Zorro" src="zorro.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Christopher Columbus" src="columbus.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Level One Demon Lord and One Room Hero" src="level1.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Klutzy Class Monitor and the Girl with the Short Skirt" src="klutzy.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Dara-san of Reiwa" src="dara.avif"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Kamui ---He's Behind You" src="behind.jpg"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Ingoku Danchi: Deviant's Apartment Complex" src="pervert.avif"/></a>
-			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
-<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Young Ladies Don't Play Fighting Games" src="fighting.avif"/></a>
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const grid = document.querySelector(".supporter-list");
-  const items = Array.from(grid.children);
+	<div class="supporter-list">
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Beheneko"
+				src="beheneko.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Bleach"
+				src="bleach.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Boruto"
+				src="boruto.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Bungo Stray Dogs"
+				src="bungostraydogs.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Chainsaw Man"
+				src="chainsawman.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Chiikawa"
+				src="chiikawa.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Chuhai Lips"
+				src="chuhailips.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Dan Da Dan"
+				src="dandadan.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Deathnote"
+				src="deathnote.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Demon Slayer"
+				src="demonslayer.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Doraemon"
+				src="doraemon.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Dragon Ball Super"
+				src="dragonball.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Dragon Ball Daima"
+				src="dragonballdaima.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+				title="Dragon Goes House Hunting" src="dragongoeshousehunting.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Dr. Stone"
+				src="drstone.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Fireforce"
+				src="fireforce.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+				title="Fullmetal Alchemist: Brotherhood" src="fullmetalalchemistbrotherhood.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Go Go Loser Ranger"
+				src="gogoloserranger.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Grand Blue Dreaming"
+				src="grandblue.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Hell's Paradise"
+				src="hellsparadise.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Hi Score Girl"
+				src="hiscoregirl.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Isekai Quartet"
+				src="isekaiquartet.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Jujutsu Kaisen"
+				src="jujutsukaisen.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Kaiju No.8"
+				src="kaiju8.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Konosuba"
+				src="konosuba.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Lazarus"
+				src="lazarus.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Love Flops"
+				src="loveflops.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+				title="Kaguya-Sama: Love Is War" src="loveiswar.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Mars Red"
+				src="marsred.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Mashle"
+				src="mashle.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Mono" src="mono.jpg" />
+		</a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Mushoku Tensei"
+				src="mushokutensei.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="My Hero Academia"
+				src="myheroacademia.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+				title="My Hero Academia: Vigilantes" src="myheroacademiavigilantes.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Naruto"
+				src="naruto.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Ninja Kamui"
+				src="ninjakamui.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="One Piece"
+				src="onepiece.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Parasyte"
+				src="parasyte.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+				title="Please Put Them On Takamine-san" src="pleaseputthemontakaminesan.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Promised Neverland"
+				src="promisedneverland.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Ranma 1/2"
+				src="ranma.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+				title="Re:Zero: Starting Life In Another World" src="rezero.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Saga of Tanya the Evil"
+				src="sagaoftanya.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Shangri-La Frontier"
+				src="shangrilafrontier.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Shinchan"
+				src="shinchan.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Solo Leveling"
+				src="sololeveling.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Spy X Family"
+				src="spyxfamily.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+				title="The Rising of Shield Hero" src="therisingofshieldhero.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="To Be Hero X"
+				src="tobeherox.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Tokyo Revengers"
+				src="tokyorevengers.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Urusei Yatsura"
+				src="uruseiyatsura.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Vinland Saga"
+				src="vinlandsaga.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Windbreaker"
+				src="windbreaker.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Gleipnir"
+				src="gleipnir.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Exorcist"
+				src="exorcist.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Chillin' in the 30s"
+				src="chillinin30s.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Reincarnated as a Slime"
+				src="rimuru.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Black Clover"
+				src="blackclover.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Yu Yu Hakushou"
+				src="yuyuhakushu.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Stein's Gate"
+				src="steinsgate.jpg" /> </a>
+		<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+			<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Kochikame"
+				src="kochikame.jpg" />
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="Jojo's Bizzare Adventures" src="jojo.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="The Disastrous Life of Saiki K" src="saikik.jpg" /> </a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="One Punch Man"
+					src="onepunchman.jpg" /></a><a class="gold"
+				href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Mob Psycho 100"
+					src="mobpsycho100.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Get Backers"
+					src="getbackers.jpg" /> </a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="Super Fishing Grander Musashi" src="grandermusashi.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="The Law of Ueki"
+					src="lawofueki.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Flame of Recca"
+					src="flameofrecca.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="Dead Mount Death Play" src="deadmountdeathplay.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Beyblade"
+					src="beyblade.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Digimon"
+					src="digimon.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Pokemon"
+					src="pokemon.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Galaxy Angel"
+					src="galaxyangel.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Cardcaptor Sakura"
+					src="pokemon.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Ghost in the Shell"
+					src="ghostinshell.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="Great Teacher Onizuka" src="onizuka.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="InuYasha"
+					src="inuyasha.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Duel Masters Charge"
+					src="duelmasters.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Yu-Gi-Oh!"
+					src="yugioh.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="Komi can't communicate" src="komi.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="No Game, No Life!"
+					src="nogamenolife.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="Cherry Magic! Thirty Years of Virginity can make you a Wizard" src="cherrymagic.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Sailor Moon"
+					src="sailormoon.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Gintama"
+					src="gintama.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Hunter X Hunter"
+					src="hunterxhunter.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Plunderer"
+					src="plunderer.jpg" /> </a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="Apparently, Disillusioned Adventurers Will Save The World" src="apparently.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="The Aristocrat's Otherworldly Adventure: Serving Gods Who Go Too Far"
+					src="aristocrat.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="Kamikatsu: Working For God In A Godless World" src="kamikatsu.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Prison School"
+					src="prisonschool.jpg" /> </a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Captain Tsubasa"
+					src="tsubasa.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="Vivy: Fluorite Eye’s Song" src="vivy.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Beelzebub"
+					src="beelzebub.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="The Weakest Tamer Began A Journey To Pickup Trash" src="weakesttamer.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Gamers!"
+					src="gamers.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Listeners"
+					src="listeners.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Lookism"
+					src="lookism.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="I Got a Cheat Skill in Another World and Became Unrivaled in the Real World, Too"
+					src="igotcheat.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Yakitate!! Japan"
+					src="bread.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Lycoris Recoil"
+					src="lycoris.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Cowboy Bebop"
+					src="bebop.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="HighSchool DxD"
+					src="dxd.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="The Eminence In Shadow" src="eminence.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Fairy Tail"
+					src="fairytail.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Overlord"
+					src="overlord.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="Uncle from Another World" src="uncle.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Sword Art Online"
+					src="sao.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Code Geass"
+					src="codegeass.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Kotaro Lives Alone"
+					src="kotaro.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Samurai Pizza Cats"
+					src="spc.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Attack On Titan"
+					src="aot.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="Let This Grieving Soul Retire" src="grievingsoul.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="The Vision Of Escaflowne" src="escaflowne.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Kill La Kill"
+					src="killlakill.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Gachiakuta"
+					src="gachiakuta.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Frieren"
+					src="frieren.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Chained Soldier"
+					src="chainedsoldier.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Tokyo Ghoul"
+					src="tokyoghoul.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Sakamoto Days"
+					src="sakamoto.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Rooster Fighter"
+					src="rooster.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Liar Game"
+					src="liar.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="Daemons Of The Shadow Realm" src="daemon.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="Marika's Love Meter Malfunction" src="marika.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="The Legend of Zorro"
+					src="zorro.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="Christopher Columbus" src="columbus.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="Level One Demon Lord and One Room Hero" src="level1.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="Klutzy Class Monitor and the Girl with the Short Skirt" src="klutzy.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw" title="Dara-san of Reiwa"
+					src="dara.avif" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="Kamui ---He's Behind You" src="behind.jpg" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="Ingoku Danchi: Deviant's Apartment Complex" src="pervert.avif" /></a>
+			<a class="gold" href="https://theindex.moe/collection/self-hosted-streaming-sites">
+				<img decoding="async" loading="lazy" sizes="(min-width: 160px) 160px, 100vw"
+					title="Young Ladies Don't Play Fighting Games" src="fighting.avif" /></a>
+	</div>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const grid = document.querySelector(".supporter-list");
+			const items = Array.from(grid.children);
 
-  // Fisher–Yates shuffle
-  for (let i = items.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [items[i], items[j]] = [items[j], items[i]];
-  }
+			// Fisher–Yates shuffle
+			for (let i = items.length - 1; i > 0; i--) {
+				const j = Math.floor(Math.random() * (i + 1));
+				[items[i], items[j]] = [items[j], items[i]];
+			}
 
-  // re-append in shuffled order
-  items.forEach(el => grid.appendChild(el));
-});
-</script>
+			// re-append in shuffled order
+			items.forEach(el => grid.appendChild(el));
+		});
+	</script>
 </body>
 <!-- partial -->
+
 </html>
