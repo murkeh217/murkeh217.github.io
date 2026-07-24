@@ -209,7 +209,7 @@
        ? are you snapped 
     */
     img {
-      @container scroll-state(snapped: x) {
+      @container (scroll-state: x) {
         /* create outline */
         outline: 5px solid blue;
         outline-offset: 5px;
@@ -230,7 +230,7 @@
         /* you = nearest scroll-state container */
         /* if you are not snapped… then hide yo'self! */
         /* if you are snapped, stay visible! */
-        @container not scroll-state(snapped: x) {
+        @container not (scroll-state: x) {
           translate: 0 50px;
           opacity: 0;
         }
