@@ -11,7 +11,6 @@ CustomEase.create("hop", "0.9, 0, 0.1, 1");
 const items = [
   "2B",
   "Psylocke",
-  "Weed",
   "Disha Patani",
   "Angie Miller",
   "Yuu Shinoda",
@@ -23,7 +22,6 @@ const items = [
 const imageUrls = [
   "2bsexy.jpg",
   "psylocke.png",
-  "weed.webp",
   "disha.png",
   "angiemiller.jpg",
   "yuushinoda.jpg",
